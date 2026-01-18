@@ -17,7 +17,6 @@ healthcheckTimeout = 100
 # Environment-specific configurations
 [environments.production.deploy]
 restartPolicyType = "always"
-restartPolicyMaxRetries = 0
 
 [environments.staging.deploy]
 restartPolicyType = "on_failure"
