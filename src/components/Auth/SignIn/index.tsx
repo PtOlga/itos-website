@@ -8,6 +8,9 @@ import Logo from "@/components/Layout/Header/Logo"
 import Loader from "@/components/Common/Loader";
 import toast, { Toaster } from 'react-hot-toast';
 import AuthDialogContext from "@/app/context/AuthDialogContext";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 
 const Signin = ({signInOpen}:{signInOpen?:any}) => {
@@ -70,35 +73,36 @@ const Signin = ({signInOpen}:{signInOpen?:any}) => {
       </span>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-[22px]">
-          <input
+        <div className="mb-[22px] space-y-2">
+          <Label htmlFor="username">Username</Label>
+          <Input
+            id="username"
             type="text"
             placeholder="Username"
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full rounded-md border placeholder:text-gray-400  border-BorderLine dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
           />
         </div>
-        <div className="mb-[22px]">
-          <input
+        <div className="mb-[22px] space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <Input
+            id="password"
             type="password"
             required
             value={password}
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-md border border-BorderLine dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
           />
         </div>
         <div className="mb-9">
-          <button
+          <Button
             type="submit"
-            className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-primary hover:bg-darkprimary dark:hover:bg-darkprimary! px-5 py-3 text-base text-white transition duration-300 ease-in-out "
+            className="w-full bg-primary hover:bg-darkprimary dark:hover:bg-darkprimary"
           >
             Sign In
             {/* {loading && <Loader />} */}
-          </button>
-      
+          </Button>
         </div>
       </form>
 

@@ -7,6 +7,9 @@ import Logo from "@/components/Layout/Header/Logo"
 import { useContext, useState } from "react";
 import Loader from "@/components/Common/Loader";
 import AuthDialogContext from "@/app/context/AuthDialogContext";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -64,40 +67,43 @@ const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
       </span>
 
       <form onSubmit={handleSubmit}>
-        <div className="mb-[22px]">
-          <input
+        <div className="mb-[22px] space-y-2">
+          <Label htmlFor="name">Name</Label>
+          <Input
+            id="name"
             type="text"
             placeholder="Name"
             name="name"
             required
-            className="w-full rounded-md border border-BorderLine dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
           />
         </div>
-        <div className="mb-[22px]">
-          <input
+        <div className="mb-[22px] space-y-2">
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
             type="email"
             placeholder="Email"
             name="email"
             required
-            className="w-full rounded-md border border-BorderLine dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
           />
         </div>
-        <div className="mb-[22px]">
-          <input
-            type="text"
+        <div className="mb-[22px] space-y-2">
+          <Label htmlFor="password">Password</Label>
+          <Input
+            id="password"
+            type="password"
             placeholder="Password"
             name="password"
             required
-            className="w-full rounded-md border border-BorderLine dark:border-dark_border border-solid bg-transparent px-5 py-3 text-base text-dark outline-hidden transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
           />
         </div>
         <div className="mb-9">
-          <button
+          <Button
             type="submit"
-            className="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:bg-darkprimary! dark:hover:bg-darkprimary!"
+            className="w-full bg-primary hover:bg-darkprimary dark:hover:bg-darkprimary"
           >
             Sign Up {loading && <Loader />}
-          </button>
+          </Button>
         </div>
       </form>
 

@@ -1,14 +1,16 @@
 import React from "react";
 import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
 
 
 const SocialSignUp = () => {
     return (
         <>
             <div className="flex gap-4">
-                <button
+                <Button
                     onClick={() => signIn("google")}
-                    className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-solid hover:bg-stroke border-BorderLine p-3.5 text-dark duration-200 ease-in  dark:border-dark_border dark:text-white dark:hover:bg-primary/10 hover:bg-primary/10"
+                    variant="outline"
+                    className="flex w-full items-center justify-center gap-2.5"
                 >
                     Sign Up
                     <svg
@@ -47,11 +49,12 @@ const SocialSignUp = () => {
                             </clipPath>
                         </defs>
                     </svg>
-                </button>
+                </Button>
 
-                <button
+                <Button
                     onClick={() => signIn("github")}
-                    className="flex w-full items-center justify-center gap-2.5 rounded-lg border border-solid hover:bg-stroke border-BorderLine p-3.5 text-dark duration-200 ease-in  dark:border-dark_border dark:text-white dark:hover:bg-primary/10 hover:bg-primary/10"
+                    variant="outline"
+                    className="flex w-full items-center justify-center gap-2.5"
                 >
                     Sign Up
                     <svg
@@ -66,7 +69,7 @@ const SocialSignUp = () => {
                             fill="currentColor"
                         />
                     </svg>
-                </button>
+                </Button>
             </div>
         </>
     );
