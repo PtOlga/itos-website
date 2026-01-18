@@ -168,7 +168,7 @@
 }
 
 .blog-details hr {
-  @apply dark:bg-dark_border bg-border text-LightApricot! h-[0.0625rem];
+  @apply dark:bg-dark_border bg-border !text-LightApricot h-[0.0625rem];
 }
 
 .blog-details p,
@@ -280,13 +280,13 @@
 }
 /* Slick Slider */
 .slick-dots li button:before {
-  @apply text-base! text-LavenderBlue! dark:text-darklight! opacity-100!;
+  @apply !text-base !text-LavenderBlue dark:!text-darklight !opacity-100;
 }
 .slick-dots li.slick-active button:before {
-  @apply text-primary!;
+  @apply !text-primary;
 }
 .slick-dots {
-  @apply md:-bottom-10! -bottom-6!;
+  @apply md:!-bottom-10 !-bottom-6;
 }
 
 @layer base {
