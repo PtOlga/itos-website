@@ -1,0 +1,29 @@
+# Railway Configuration File
+# https://docs.railway.app/deploy/config-as-code
+
+[build]
+builder = "nixpacks"
+buildCommand = "npm ci --omit=dev && npm run build"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+# Health check configuration
+healthcheckPath = "/"
+healthcheckTimeout = 100
+
+# Environment-specific configurations
+[environments.production.deploy]
+restartPolicyType = "always"
+restartPolicyMaxRetries = 0
+
+[environments.staging.deploy]
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 5
+
+# Pull request environment configuration
+[environments.pr.deploy]
+restartPolicyType = "never"
+
