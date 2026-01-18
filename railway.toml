@@ -9,14 +9,13 @@ buildCommand = "npm ci --omit=dev && npm run build"
 startCommand = "npm start"
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 10
-
-# Health check configuration
 healthcheckPath = "/"
 healthcheckTimeout = 100
 
 # Environment-specific configurations
 [environments.production.deploy]
 restartPolicyType = "always"
+restartPolicyMaxRetries = 1
 
 [environments.staging.deploy]
 restartPolicyType = "on_failure"
@@ -25,4 +24,5 @@ restartPolicyMaxRetries = 5
 # Pull request environment configuration
 [environments.pr.deploy]
 restartPolicyType = "never"
+restartPolicyMaxRetries = 1
 
