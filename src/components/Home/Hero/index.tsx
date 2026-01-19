@@ -1,6 +1,10 @@
+'use client'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 const Hero = () => {
+  const t = useTranslations('hero')
+
   return (
     <>
       <section className="relative overflow-x-clip top-0 bg-primary circalanimat before:content-[''] before:absolute before:bg-[url('/images/work-grow/work-line.png')] before:bg-no-repeat before:bg-contain before:w-44 before:h-20 before:bottom-40 lg:before:inline-block before:hidden">
@@ -13,10 +17,10 @@ const Hero = () => {
                 data-aos-delay='200'
                 data-aos-duration='1000'>
                 <h1 className='text-white relative max-w-473'>
-                  Amazingly fexible, customizable and easy to use
+                  {t('title')}
                 </h1>
                 <button className='bg-white text-base font-normal text-primary py-3 px-12 rounded-lg mb-16 mt-8 transition-all duration-0.4s hover:bg-secondary hover:text-white'>
-                  Get Started
+                  {t('startProject')}
                 </button>
                 <div className='flex items-center mb-8'>
                   <svg

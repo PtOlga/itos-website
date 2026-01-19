@@ -83,10 +83,10 @@ const PriceCalculator = () => {
               1
             </div>
             <h3 className="text-xl font-bold text-secondary dark:text-white mb-2">
-              Check domain
+              {t('steps.step1Title')}
             </h3>
             <p className="text-SlateBlue dark:text-darktext">
-              Check domain for availability
+              {t('steps.step1Desc')}
             </p>
           </div>
 

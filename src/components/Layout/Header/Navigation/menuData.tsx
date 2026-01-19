@@ -1,24 +1,24 @@
 import { HeaderItem } from "@/types/menu";
 
-export const headerData: HeaderItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+export const getHeaderData = (t: (key: string) => string): HeaderItem[] => [
+  { label: t('home'), href: "/" },
+  { label: t('about'), href: "/about" },
   {
-    label: "Portfolio",
+    label: t('portfolio'),
     href: "/portfolio",
     submenu: [
-      { label: "Portfolio list", href: "/portfolio" },
-      { label: "Portfolio details", href: "/portfolio/portfolio-1" },
+      { label: t('portfolioList'), href: "/portfolio" },
+      { label: t('portfolioDetails'), href: "/portfolio/portfolio-1" },
     ],
   },
   {
-    label: "Blog",
+    label: t('blog'),
     href: "#",
     submenu: [
-      { label: "Blog list", href: "/blog" },
-      { label: "Blog details", href: "/blog/blog_1" },
+      { label: t('blogList'), href: "/blog" },
+      { label: t('blogDetails'), href: "/blog/blog_1" },
     ],
   },
-  { label: "Contact", href: "/contact" },
-  { label: "Pricing", href: "/pricing" },
+  { label: t('contact'), href: "/contact" },
+  { label: t('pricing'), href: "/pricing" },
 ];

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useContext, useEffect, useRef, useState } from 'react'
-import { headerData } from '../Header/Navigation/menuData'
+import { getHeaderData } from '../Header/Navigation/menuData'
 import Image from 'next/image'
 import HeaderLink from '../Header/Navigation/HeaderLink'
 import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
@@ -15,10 +15,13 @@ import { FailedLogin } from '@/components/Auth/AuthDialog/FailedLogin'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { UserRegistered } from '@/components/Auth/AuthDialog/UserRegistered'
 import AuthDialogContext from '@/app/context/AuthDialogContext'
+import { useTranslations } from 'next-intl'
 
 const Header: React.FC = () => {
   const pathUrl = usePathname()
   const { theme, setTheme } = useTheme()
+  const t = useTranslations('navigation')
+  const headerData = getHeaderData(t)
 
   const [navbarOpen, setNavbarOpen] = useState(false)
   const [sticky, setSticky] = useState(false)
@@ -129,7 +132,7 @@ const Header: React.FC = () => {
               onClick={() => {
                 setIsSignInOpen(true)
               }}>
-              Sign In
+              {t('signIn')}
             </Link>
             {isSignInOpen && (
               <div
@@ -157,7 +160,7 @@ const Header: React.FC = () => {
               onClick={() => {
                 setIsSignUpOpen(true)
               }}>
-              Sign Up
+              {t('signUp')}
             </Link>
             {isSignUpOpen && (
               <div
