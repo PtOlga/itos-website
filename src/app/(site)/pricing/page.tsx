@@ -1,4 +1,4 @@
-import Preferred from '@/components/Home/preferred-plan'
+import PriceCalculator from '@/components/Pricing/PriceCalculator'
 import HeroSub from '@/components/SharedComponent/HeroSub'
 import React from 'react'
 import { Metadata } from "next";
@@ -10,10 +10,10 @@ const page = () => {
   return (
     <>
         <HeroSub
-            title="Pricing"
-            description=""
+            title="Website Cost Calculator"
+            description="Use the calculator below to see the project price based on your requirements"
         />
-        <Preferred/>
+        <PriceCalculator/>
     </>
   )
 }
