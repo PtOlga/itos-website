@@ -12,8 +12,18 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
+import { Metadata } from 'next';
 
 const dmsans = DM_Sans({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: {
+    default: 'ITOS - IT Solutions',
+    template: '%s | ITOS'
+  },
+  description: 'Professional IT solutions and web development services',
+  keywords: ['IT solutions', 'web development', 'software development'],
+};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

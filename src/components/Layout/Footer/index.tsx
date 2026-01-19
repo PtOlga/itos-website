@@ -26,7 +26,7 @@ const Footer: FC = () => {
             <Link href='/'>
               <Image
                 src='/images/footer/ftr-logo.svg'
-                alt='Company logo'
+                alt='ITOS Logo'
                 width={160}
                 height={50}
                 style={{ width: 'auto', height: 'auto' }}
@@ -120,9 +120,9 @@ const Footer: FC = () => {
               <p className='text-base font-normal text-SlateBlue max-w-310 pt-3'>
                 © Copyright 2025. All rights reserved by{' '}
                 <Link
-                  href={'https://getnextjstemplates.com/'}
+                  href={'https://itos-website-production.up.railway.app/'}
                   className='hover:text-primary'>
-                  GetNextJs Themes
+                  ITOS
                 </Link>
               </p>
             </div>

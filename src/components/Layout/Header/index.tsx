@@ -90,7 +90,7 @@ const Header: React.FC = () => {
           <Link href='/'>
             <Image
               src='/images/logo/logo.svg'
-              alt='logo'
+              alt='ITOS Logo'
               width={160}
               height={50}
               style={{ width: 'auto', height: 'auto' }}
