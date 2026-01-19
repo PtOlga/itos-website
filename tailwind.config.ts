@@ -85,7 +85,7 @@ const config: Config = {
   			primary: '#1358d8',
   			darkprimary: '#054ac8',
   			lightPrimary: '#3187F4',
-  			secondary: '#13c296',
+  			secondary: '#102c46',
   			SlateBlue: '#547593',
   			AliceBlue: '#F3F9FD',
   			LightApricot: '#F9C78F',
