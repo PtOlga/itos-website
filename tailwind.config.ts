@@ -81,20 +81,15 @@ const config: Config = {
   			'3': '3'
   		},
   		colors: {
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
+  			// Original project colors (restored)
+  			primary: '#1358d8',
   			darkprimary: '#054ac8',
   			lightPrimary: '#3187F4',
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
+  			secondary: '#13c296',
   			SlateBlue: '#547593',
   			AliceBlue: '#F3F9FD',
   			LightApricot: '#F9C78F',
-  			border: 'hsl(var(--border))',
+  			border: '#233d55',
   			BorderLine: '#CCD7E1',
   			darkmode: '#021526',
   			darklight: '#061B2E',
@@ -104,31 +99,42 @@ const config: Config = {
   			LavenderBlue: '#DBE7FF',
   			LightSoftBlue: '#DBE9F6',
   			gray: '#ACBCCA',
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
+
+  			// Shadcn/ui colors (prefixed to avoid conflicts)
+  			'shadcn-background': 'hsl(var(--background))',
+  			'shadcn-foreground': 'hsl(var(--foreground))',
+  			'shadcn-primary': {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			'shadcn-secondary': {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			'shadcn-border': 'hsl(var(--border))',
+  			'shadcn-input': 'hsl(var(--input))',
+  			'shadcn-ring': 'hsl(var(--ring))',
+  			'shadcn-card': {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
   			},
-  			popover: {
+  			'shadcn-popover': {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
-  			muted: {
+  			'shadcn-muted': {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
   			},
-  			accent: {
+  			'shadcn-accent': {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
-  			destructive: {
+  			'shadcn-destructive': {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
+  			'shadcn-chart': {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',
   				'3': 'hsl(var(--chart-3))',
