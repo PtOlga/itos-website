@@ -20,5 +20,5 @@ export const headerData: HeaderItem[] = [
     ],
   },
   { label: "Contact", href: "/contact" },
-  { label: "Docs", href: "/documentation" },
+  { label: "Pricing", href: "/pricing" },
 ];
