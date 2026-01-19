@@ -1,0 +1,90 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "portfolioList": "Portfolio list",
+    "portfolioDetails": "Portfolio details",
+    "blog": "Blog",
+    "blogList": "Blog list",
+    "blogDetails": "Blog details",
+    "contact": "Contact",
+    "pricing": "Pricing",
+    "faqs": "FAQs",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "hero": {
+    "title": "Amazingly flexible, customizable and easy to use",
+    "description": "It's easy to set up and the support experience is the best and unparalleled comparatively.",
+    "startProject": "Start the project"
+  },
+  "pricing": {
+    "title": "Website Cost Calculator",
+    "description": "Use the calculator below to see the project price based on your requirements",
+    "steps": {
+      "step1Title": "Check domain",
+      "step1Desc": "Check domain for availability",
+      "step2Title": "Template selection",
+      "step2Desc": "Select template in \"design\" section or any other",
+      "step3Title": "Options selection",
+      "step3Desc": "Select necessary CMS options in calculator below"
+    },
+    "calculator": {
+      "title": "Cost calculator",
+      "websiteType": "Website type",
+      "total": "Total",
+      "calculateOrder": "Calculate & Order"
+    },
+    "websiteTypes": {
+      "landing": "One-page website (Landing)",
+      "multipage": "Multi-page website",
+      "store": "Online store"
+    },
+    "categories": {
+      "main": "Main options",
+      "communication": "Interactive communication",
+      "seo": "Functions for quality promotion",
+      "additional": "Additional features",
+      "store": "Store"
+    },
+    "options": {
+      "news": "News",
+      "catalog": "Catalog",
+      "search": "Search",
+      "gallery": "Photo gallery",
+      "articles": "Articles",
+      "map": "Geo map (Google)",
+      "faq": "Frequently asked questions (FAQ)",
+      "reviews": "Discussion / Reviews",
+      "sitemap": "Site map (XML)",
+      "microformats": "Microformats",
+      "rss": "RSS feed",
+      "autoImport": "Auto-import articles from internet",
+      "ads": "Advertising rotation (text, banners, links)",
+      "excelImport": "Import-Export price Excel",
+      "multilang": "Additional languages on site",
+      "productVariants": "Product variants (sizes, colors, configurations)",
+      "productSearch": "Search products by parameters",
+      "alphabeticalSearch": "Alphabetical search"
+    },
+    "orderForm": {
+      "title": "Order placement",
+      "description": "Fill in all required fields (*) and click \"Order\"",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "domain": "Future domain:",
+      "design": "Design URL/№:",
+      "notes": "Notes:",
+      "submit": "Order"
+    }
+  },
+  "footer": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "company": "Company",
+    "support": "Support",
+    "allRightsReserved": "All rights reserved"
+  }
+}
+

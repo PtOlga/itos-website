@@ -1,0 +1,90 @@
+{
+  "navigation": {
+    "home": "Hem",
+    "about": "Om oss",
+    "portfolio": "Portfolio",
+    "portfolioList": "Portfoliolista",
+    "portfolioDetails": "Portfoliodetaljer",
+    "blog": "Blogg",
+    "blogList": "Blogglista",
+    "blogDetails": "Bloggdetaljer",
+    "contact": "Kontakt",
+    "pricing": "Priser",
+    "faqs": "Vanliga frågor",
+    "signIn": "Logga in",
+    "signUp": "Registrera"
+  },
+  "hero": {
+    "title": "Otroligt flexibel, anpassningsbar och lätt att använda",
+    "description": "Det är lätt att ställa in och supportupplevelsen är den bästa och oöverträffad jämförelsevis.",
+    "startProject": "Starta projektet"
+  },
+  "pricing": {
+    "title": "Webbplatskostnadskalkylator",
+    "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",
+    "steps": {
+      "step1Title": "Kontrollera domän",
+      "step1Desc": "Kontrollera domäntillgänglighet",
+      "step2Title": "Mallval",
+      "step2Desc": "Välj mall i \"design\"-sektionen eller någon annan",
+      "step3Title": "Alternativval",
+      "step3Desc": "Välj nödvändiga CMS-alternativ i kalkylatorn nedan"
+    },
+    "calculator": {
+      "title": "Kostnadskalkylator",
+      "websiteType": "Webbplatstyp",
+      "total": "Totalt",
+      "calculateOrder": "Beräkna & Beställ"
+    },
+    "websiteTypes": {
+      "landing": "Ensidig webbplats (Landing)",
+      "multipage": "Flersidig webbplats",
+      "store": "Nätbutik"
+    },
+    "categories": {
+      "main": "Huvudalternativ",
+      "communication": "Interaktiv kommunikation",
+      "seo": "Funktioner för kvalitetsmarknadsföring",
+      "additional": "Ytterligare funktioner",
+      "store": "Butik"
+    },
+    "options": {
+      "news": "Nyheter",
+      "catalog": "Katalog",
+      "search": "Sök",
+      "gallery": "Fotogalleri",
+      "articles": "Artiklar",
+      "map": "Geokarta (Google)",
+      "faq": "Vanliga frågor (FAQ)",
+      "reviews": "Diskussion / Recensioner",
+      "sitemap": "Webbplatskarta (XML)",
+      "microformats": "Mikroformat",
+      "rss": "RSS-flöde",
+      "autoImport": "Auto-import av artiklar från internet",
+      "ads": "Annonsrotation (text, banners, länkar)",
+      "excelImport": "Import-Export pris Excel",
+      "multilang": "Ytterligare språk på webbplatsen",
+      "productVariants": "Produktvarianter (storlekar, färger, konfigurationer)",
+      "productSearch": "Sök produkter efter parametrar",
+      "alphabeticalSearch": "Alfabetisk sökning"
+    },
+    "orderForm": {
+      "title": "Beställning",
+      "description": "Fyll i alla obligatoriska fält (*) och klicka på \"Beställ\"",
+      "name": "Namn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "domain": "Framtida domän:",
+      "design": "Design URL/№:",
+      "notes": "Anteckningar:",
+      "submit": "Beställ"
+    }
+  },
+  "footer": {
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "company": "Företag",
+    "support": "Support",
+    "allRightsReserved": "Alla rättigheter förbehållna"
+  }
+}
+

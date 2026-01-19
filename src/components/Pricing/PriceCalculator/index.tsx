@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { projectTypes, calculatorOptions, categoryNames } from './options'
 import type { ProjectType, CalculatorOption } from './options'
+import { useTranslations } from 'next-intl'
 
 const PriceCalculator = () => {
+  const t = useTranslations('pricing')
   const [selectedProject, setSelectedProject] = useState<ProjectType['id']>('landing')
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set())
   const [showOrderForm, setShowOrderForm] = useState(false)
