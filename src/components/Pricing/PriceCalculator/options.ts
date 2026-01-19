@@ -6,21 +6,26 @@ export interface CalculatorOption {
 }
 
 export interface ProjectType {
-  id: 'standard' | 'store'
+  id: 'landing' | 'multipage' | 'store'
   name: string
   basePrice: number
 }
 
 export const projectTypes: ProjectType[] = [
   {
-    id: 'standard',
-    name: 'Standard website',
-    basePrice: 380,
+    id: 'landing',
+    name: 'One-page website (Landing)',
+    basePrice: 190,
+  },
+  {
+    id: 'multipage',
+    name: 'Multi-page website',
+    basePrice: 690, // 190 + 500
   },
   {
     id: 'store',
     name: 'Online store',
-    basePrice: 970, // 380 + 590
+    basePrice: 840, // 190 + 650
   },
 ]
 
@@ -58,7 +63,7 @@ export const calculatorOptions: CalculatorOption[] = [
   },
   {
     id: 'map',
-    name: 'Geo map (Google/2Gis)',
+    name: 'Geo map (Google)',
     price: 60,
     category: 'main',
   },
@@ -66,7 +71,7 @@ export const calculatorOptions: CalculatorOption[] = [
   // Interactive communication
   {
     id: 'faq',
-    name: 'Frequently asked questions',
+    name: 'Frequently asked questions (FAQ)',
     price: 60,
     category: 'communication',
   },
@@ -80,7 +85,7 @@ export const calculatorOptions: CalculatorOption[] = [
   // SEO functions
   {
     id: 'sitemap',
-    name: 'Site map (xml)',
+    name: 'Site map (XML)',
     price: 40,
     category: 'seo',
   },
@@ -108,12 +113,6 @@ export const calculatorOptions: CalculatorOption[] = [
     id: 'ads',
     name: 'Advertising rotation (text, banners, links)',
     price: 90,
-    category: 'additional',
-  },
-  {
-    id: 'yandex-map',
-    name: 'Overview on map - maps.yandex.ru',
-    price: 60,
     category: 'additional',
   },
   {

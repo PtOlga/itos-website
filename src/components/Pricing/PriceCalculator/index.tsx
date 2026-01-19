@@ -5,7 +5,7 @@ import { projectTypes, calculatorOptions, categoryNames } from './options'
 import type { ProjectType, CalculatorOption } from './options'
 
 const PriceCalculator = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectType['id']>('standard')
+  const [selectedProject, setSelectedProject] = useState<ProjectType['id']>('landing')
   const [selectedOptions, setSelectedOptions] = useState<Set<string>>(new Set())
   const [showOrderForm, setShowOrderForm] = useState(false)
   const [formData, setFormData] = useState({
