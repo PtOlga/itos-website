@@ -190,7 +190,7 @@ const PriceCalculator = () => {
                         {option.name}
                       </span>
                       <span className="text-base font-bold text-primary">
-                        ${option.price}
+                        €{option.price}
                       </span>
                     </label>
                   ))}
@@ -206,7 +206,7 @@ const PriceCalculator = () => {
                 Total:
               </span>
               <span className="text-4xl font-bold text-primary">
-                ${calculateTotal()}
+                €{calculateTotal()}
               </span>
             </div>
 
