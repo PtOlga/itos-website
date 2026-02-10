@@ -6,10 +6,10 @@ export default createMiddleware({
   locales: locales,
 
   // Used when no locale matches
-  defaultLocale: 'en',
+  defaultLocale: 'sv',
 
-  // Always use locale prefix
-  localePrefix: 'always'
+  // Swedish (sv) without prefix, English (en) with prefix
+  localePrefix: 'as-needed'
 });
 
 export const config = {
