@@ -1,0 +1,81 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "72gc4LrFpVVHVdH6iUBSQo",
+      "projectApiToken": "ECSoAYF7KU6XzLq3rBiHxARN1PIJAOZdvLr8YpyKPT5KO8Pddy1kHpllY2iqt8sm60v39GwCTh2YVjQzgOQ",
+      "projectName": "ITOS website",
+      "version": "latest",
+      "cssFilePath": "plasmic/itos_website/plasmic.module.css",
+      "components": [
+        {
+          "id": "BTP9nQzmO3ED",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "72gc4LrFpVVHVdH6iUBSQo",
+          "renderModuleFilePath": "plasmic/itos_website/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/itos_website/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        }
+      ],
+      "icons": [],
+      "images": [],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "styleTokensProviderFilePath": "plasmic/itos_website/PlasmicStyleTokensProvider.tsx",
+      "dataTokensFilePath": "",
+      "projectModuleFilePath": "plasmic/itos_website/plasmic.tsx",
+      "codeComponents": [
+        {
+          "id": "qI6qrX64gCWp",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "9ZZtncq6pmMj",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": []
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "preserveJsImportExtensions": false,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.357",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.357/dist/plasmic.schema.json"
+}
