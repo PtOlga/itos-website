@@ -15,6 +15,7 @@ export default createMiddleware({
 export const config = {
   // Match only internationalized pathnames
   // Skip all paths that should not be internationalized
-  matcher: ['/', '/(sv|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
+  // Exclude /plasmic-host for Plasmic Studio integration
+  matcher: ['/', '/(sv|en)/:path*', '/((?!api|_next|_vercel|plasmic-host|.*\\..*).*)']
 };
 
