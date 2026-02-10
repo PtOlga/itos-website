@@ -12,6 +12,7 @@
     "@iconify/icons-ion": "^1.2.10",
     "@iconify/react": "^5.0.1",
     "@plasmicapp/cli": "^0.1.357",
+    "@plasmicapp/loader-nextjs": "^1.0.453",
     "@plasmicapp/react-web": "^0.2.418",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.11",
