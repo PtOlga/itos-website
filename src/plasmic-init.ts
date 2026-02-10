@@ -12,6 +12,6 @@ export const PLASMIC = initPlasmicLoader({
 
   // By default Plasmic will use the latest published version of your project.
   // For development you can set preview: true to see changes in real-time.
-  preview: false,
+  preview: true,
 });
 
