@@ -120,21 +120,19 @@ const Hero = () => {
                 </div>
               </div>
               <div
-                className="md:w-1/2 w-full relative z-1 flex justify-center items-center before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
+                className="md:w-1/2 w-full relative z-1 before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
                 data-aos='fade-left'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
-                <div style={{ width: '900px', maxWidth: '100%' }}>
-                  <Image
-                    src='/images/hero/hero-image.png'
-                    alt='Hero illustration'
-                    width={900}
-                    height={900}
-                    quality={100}
-                    style={{ width: '100%', height: 'auto' }}
-                    priority
-                  />
-                </div>
+                <Image
+                  src='/images/hero/hero-image.png'
+                  alt='Hero illustration'
+                  width={900}
+                  height={900}
+                  quality={100}
+                  className='w-full h-auto'
+                  priority
+                />
               </div>
             </div>
           </div>
