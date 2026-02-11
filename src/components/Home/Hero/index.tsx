@@ -120,85 +120,19 @@ const Hero = () => {
                 </div>
               </div>
               <div
-                className="md:w-1/4 w-full md:-ml-16 -ml-0 relative z-1 before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
+                className="md:w-1/3 w-full md:-ml-16 -ml-0 relative z-1 before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
                 data-aos='fade-left'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
-                <form>
-                  <h6 className='text-white sm:text-[26px] leading-[2.11rem] text-xl font-bold pb-5'>
-                    Start the project
-                  </h6>
-                  <div className='grid md:grid-cols-2 grid-cols-1 gap-4 items-center mb-6'>
-                    <div className='col-span-1'>
-                      <input
-                        type='text'
-                        id='firstName'
-                        className='bg-white text-darkmode text-base rounded-lg block w-full p-2.5 dark:bg-darkmode dark:placeholder:gray-400 dark:text-white focus:outline-0 focus:ring-1 focus:ring-secondary dark:focus:ring-white'
-                        placeholder='First name'
-                        required
-                      />
-                    </div>
-                    <div className='col-span-1'>
-                      <input
-                        type='text'
-                        id='lastName'
-                        className='bg-white text-darkmode text-base rounded-lg dark:bg-darkmode block w-full p-2.5 dark:placeholder:gray-400 dark:text-white focus:outline-0 focus:ring-1 focus:ring-secondary dark:focus:ring-white'
-                        placeholder='Last name'
-                        required
-                      />
-                    </div>
-                    <div className='md:col-span-2 col-span-1'>
-                      <input
-                        type='text'
-                        id='company'
-                        className='bg-white text-darkmode text-base rounded-lg block w-full p-2.5 dark:bg-darkmode dark:placeholder:gray-400 dark:text-white focus:outline-0 focus:ring-1 focus:ring-secondary dark:focus:ring-white'
-                        placeholder='youremail@website.com'
-                        required
-                      />
-                    </div>
-                    <div className='md:col-span-2 col-span-1'>
-                      <input
-                        type='text'
-                        id='country'
-                        className='bg-white text-darkmode text-base rounded-lg block w-full p-2.5 dark:bg-darkmode dark:placeholder:gray-400 dark:text-white focus:outline-0 focus:ring-1 focus:ring-secondary dark:focus:ring-white'
-                        placeholder='Country'
-                        required
-                      />
-                    </div>
-                    <div className='md:col-span-2 col-span-1'>
-                      <textarea
-                        id='message'
-                        rows={4}
-                        className='bg-white block p-2.5 w-full text-base text-darkmode rounded-lg dark:bg-darkmode dark:placeholder:gray-400 dark:text-white focus:outline-0 focus:ring-1 focus:ring-secondary dark:focus:ring-white'
-                        placeholder='Write your thoughts here...'></textarea>
-                    </div>
-                  </div>
-                  <div className='flex items-start mb-6'>
-                    <div className='flex items-center h-5'>
-                      <input
-                        id='remember'
-                        type='checkbox'
-                        value=''
-                        className='w-4 h-4 border border-gray-300 rounded-sm checked:accent-LightApricot bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:outline-0'
-                        required
-                      />
-                    </div>
-                    <label className='ms-2 text-base font-normal text-white dark:text-gray-300'>
-                      I have read and acknowledge the{' '}
-                      <a
-                        href='#'
-                        className='text-white underline dark:text-white'>
-                        Terms and Conditions
-                      </a>
-                      .
-                    </label>
-                  </div>
-                  <button
-                    type='submit'
-                    className='text-secondary bg-LightApricot hover:bg-secondary focus:ring-4 hover:text-white focus:outline-hidden focus:ring-blue-300 font-normal rounded-lg text-base w-full px-5 py-2.5 text-center  transition-all duration-0.4s'>
-                    Submit Inquiry
-                  </button>
-                </form>
+                <Image
+                  src='/images/hero/hero-image.png'
+                  alt='Hero illustration'
+                  width={600}
+                  height={600}
+                  quality={100}
+                  className='w-full h-auto rounded-lg'
+                  priority
+                />
               </div>
             </div>
           </div>
