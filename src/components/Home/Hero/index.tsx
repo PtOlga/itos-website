@@ -124,12 +124,12 @@ const Hero = () => {
                 data-aos='fade-left'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
-                <div style={{ width: '700px', maxWidth: '100%' }}>
+                <div style={{ width: '900px', maxWidth: '100%' }}>
                   <Image
                     src='/images/hero/hero-image.png'
                     alt='Hero illustration'
-                    width={1200}
-                    height={1200}
+                    width={900}
+                    height={900}
                     quality={100}
                     style={{ width: '100%', height: 'auto' }}
                     priority
