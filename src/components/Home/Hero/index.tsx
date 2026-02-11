@@ -127,10 +127,10 @@ const Hero = () => {
                 <Image
                   src='/images/hero/hero-image.png'
                   alt='Hero illustration'
-                  width={600}
-                  height={600}
+                  width={750}
+                  height={750}
                   quality={100}
-                  className='w-full h-auto rounded-lg'
+                  className='w-[125%] h-auto'
                   priority
                 />
               </div>
