@@ -120,7 +120,7 @@ const Hero = () => {
                 </div>
               </div>
               <div
-                className="md:w-1/3 w-full md:-ml-16 -ml-0 relative z-1 before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
+                className="md:w-1/2 w-full md:-ml-0 -ml-0 relative z-1 flex justify-center items-center before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
                 data-aos='fade-left'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
@@ -130,7 +130,7 @@ const Hero = () => {
                   width={1200}
                   height={1200}
                   quality={100}
-                  className='w-[200%] h-auto'
+                  className='w-full max-w-[600px] h-auto'
                   priority
                 />
               </div>
