@@ -19,9 +19,17 @@ const Hero = () => {
                 <h1 className='text-white relative max-w-473'>
                   {t('title')}
                 </h1>
-                <button className='bg-white text-base font-normal text-primary py-3 px-12 rounded-lg mb-16 mt-8 transition-all duration-0.4s hover:bg-secondary hover:text-white'>
-                  {t('startProject')}
-                </button>
+                <p className='text-base font-normal text-white leading-7 mt-6 mb-8 max-w-2xl'>
+                  {t('description')}
+                </p>
+                <div className='flex items-center gap-4 mb-8'>
+                  <button className='bg-white text-base font-normal text-primary py-3 px-8 rounded-lg transition-all duration-300 hover:bg-secondary hover:text-white'>
+                    {t('primaryButton')}
+                  </button>
+                  <button className='bg-transparent border-2 border-white text-base font-normal text-white py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white hover:text-primary'>
+                    {t('secondaryButton')}
+                  </button>
+                </div>
                 <div className='flex items-center mb-8'>
                   <svg
                     className='w-4 h-4 text-LightApricot ms-1'
@@ -64,11 +72,7 @@ const Hero = () => {
                     <path d='M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z' />
                   </svg>
                 </div>
-                <p className='text-base font-normal text-white leading-7 pb-11 max-w-408'>
-                  It's easy to set up and the support experience is the best and
-                  unparalleled comparatively.
-                </p>
-                <div className='flex items-center gap-6'>
+                <div className='flex items-center gap-6 mt-8'>
                   <div>
                     <Image
                       src='/images/hero/wise_white.png'
