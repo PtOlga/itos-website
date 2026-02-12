@@ -10,9 +10,9 @@ const Hero = () => {
       <section className="relative overflow-x-clip top-0 bg-primary circalanimat before:content-[''] before:absolute before:bg-[url('/images/work-grow/work-line.png')] before:bg-no-repeat before:bg-contain before:w-44 before:h-20 before:bottom-40 lg:before:inline-block before:hidden">
         <div className='banner-shap it-wrapper'>
           <div className='container py-20'>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap items-center'>
               <div
-                className='pb-3 sm:pb-0 md:w-2/3 w-full relative z-1'
+                className='pb-3 sm:pb-0 md:w-1/2 w-full relative z-1'
                 data-aos='fade-right'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
@@ -65,7 +65,7 @@ const Hero = () => {
                   </svg>
                 </div>
                 <p className='text-base font-normal text-white leading-7 pb-11 max-w-408'>
-                  It’s easy to set up and the support experience is the best and
+                  It's easy to set up and the support experience is the best and
                   unparalleled comparatively.
                 </p>
                 <div className='flex items-center gap-6'>
@@ -120,17 +120,17 @@ const Hero = () => {
                 </div>
               </div>
               <div
-                className="md:w-1/3 w-full md:-ml-16 -ml-0 relative z-1 before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
+                className="md:w-1/2 w-full relative z-1 flex justify-center items-center before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
                 data-aos='fade-left'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
                 <Image
                   src='/images/hero/hero-image.png'
                   alt='Hero illustration'
-                  width={750}
-                  height={750}
+                  width={900}
+                  height={900}
                   quality={100}
-                  className='w-[125%] h-auto'
+                  className='w-full h-auto max-w-[140%]'
                   priority
                 />
               </div>
