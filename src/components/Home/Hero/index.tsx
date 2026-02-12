@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 
 const Hero = () => {
   const t = useTranslations('hero')
+  const b = useTranslations('benefits')
 
   return (
     <>
@@ -73,54 +74,55 @@ const Hero = () => {
                     <path d='M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z' />
                   </svg>
                 </div>
-                <div className='flex items-center gap-6 mt-8'>
-                  <div>
-                    <Image
-                      src='/images/hero/wise_white.png'
-                      alt='logo'
-                      width={0}
-                      height={0}
-                      quality={100}
-                      layout='responsive'
-                      sizes='100vh'
-                      className='w-20! h-5!'
-                    />
+
+                {/* Key Benefits */}
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-2xl'>
+                  <div className='flex items-start gap-3'>
+                    <span className='text-2xl'>🎯</span>
+                    <div>
+                      <h3 className='text-white font-semibold text-base mb-1'>
+                        {b('experience.title')}
+                      </h3>
+                      <p className='text-white/80 text-sm'>
+                        {b('experience.description')}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <Image
-                      src='/images/hero/google_white.png'
-                      alt='logo'
-                      width={0}
-                      height={0}
-                      quality={100}
-                      layout='responsive'
-                      sizes='100vh'
-                      className=' h-5!'
-                    />
+
+                  <div className='flex items-start gap-3'>
+                    <span className='text-2xl'>💬</span>
+                    <div>
+                      <h3 className='text-white font-semibold text-base mb-1'>
+                        {b('communication.title')}
+                      </h3>
+                      <p className='text-white/80 text-sm'>
+                        {b('communication.description')}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <Image
-                      src='/images/hero/pay_white.png'
-                      alt='logo'
-                      width={0}
-                      height={0}
-                      quality={100}
-                      layout='responsive'
-                      sizes='100vh'
-                      className=' h-5!'
-                    />
+
+                  <div className='flex items-start gap-3'>
+                    <span className='text-2xl'>🚀</span>
+                    <div>
+                      <h3 className='text-white font-semibold text-base mb-1'>
+                        {b('fullCycle.title')}
+                      </h3>
+                      <p className='text-white/80 text-sm'>
+                        {b('fullCycle.description')}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <Image
-                      src='/images/hero/stripe_white.png'
-                      alt='logo'
-                      width={0}
-                      height={0}
-                      quality={100}
-                      layout='responsive'
-                      sizes='100vh'
-                      className='w-14! h-5!'
-                    />
+
+                  <div className='flex items-start gap-3'>
+                    <span className='text-2xl'>🤝</span>
+                    <div>
+                      <h3 className='text-white font-semibold text-base mb-1'>
+                        {b('directAccess.title')}
+                      </h3>
+                      <p className='text-white/80 text-sm'>
+                        {b('directAccess.description')}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
