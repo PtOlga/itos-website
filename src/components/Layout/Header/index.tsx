@@ -89,7 +89,7 @@ const Header: React.FC = () => {
         <div className='container mx-auto flex items-center justify-between p-6'>
           <Link href='/'>
             <Image
-              src='/images/logo/logo.svg'
+              src='/images/logo/logo.png'
               alt='ITOS Logo'
               width={160}
               height={50}
