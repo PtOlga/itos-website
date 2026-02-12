@@ -19,7 +19,7 @@ const Hero = () => {
                 <h1 className='text-white relative max-w-473'>
                   {t('title')}
                 </h1>
-                <p className='text-base font-normal text-white leading-7 mt-6 mb-8 max-w-2xl'>
+                <p className='text-base font-normal text-white leading-7 mt-6 mb-8 max-w-lg'>
                   {t('description')}
                 </p>
                 <div className='flex items-center gap-4 mb-8'>
