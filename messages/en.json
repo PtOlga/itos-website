@@ -15,9 +15,28 @@
     "signUp": "Sign Up"
   },
   "hero": {
-    "title": "Amazingly flexible, customizable and easy to use",
-    "description": "It's easy to set up and the support experience is the best and unparalleled comparatively.",
-    "startProject": "Start the project"
+    "title": "IT Solutions That Work FOR YOU",
+    "description": "I turn business challenges into simple and effective solutions. Website development, CRM, automation — explaining complex things in simple terms. I develop, implement, and support. No agency markup — you work directly with an expert.",
+    "primaryButton": "Tell Me About Your Challenge",
+    "secondaryButton": "View Case Studies"
+  },
+  "benefits": {
+    "experience": {
+      "title": "15+ Years of Experience",
+      "description": "From code to business strategy"
+    },
+    "communication": {
+      "title": "I Speak Your Language",
+      "description": "No IT jargon, just the essentials"
+    },
+    "fullCycle": {
+      "title": "From Idea to Launch",
+      "description": "Full development cycle"
+    },
+    "directAccess": {
+      "title": "Direct Expert Access",
+      "description": "No middlemen, no markup"
+    }
   },
   "pricing": {
     "title": "Website Cost Calculator",
@@ -87,4 +106,3 @@
     "allRightsReserved": "All rights reserved"
   }
 }
-

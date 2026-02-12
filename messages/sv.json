@@ -15,9 +15,28 @@
     "signUp": "Registrera"
   },
   "hero": {
-    "title": "Otroligt flexibel, anpassningsbar och lätt att använda",
-    "description": "Det är lätt att ställa in och supportupplevelsen är den bästa och oöverträffad jämförelsevis.",
-    "startProject": "Starta projektet"
+    "title": "IT-lösningar som arbetar FÖR DIG",
+    "description": "Jag förvandlar affärsutmaningar till enkla och effektiva lösningar. Webbutveckling, CRM, automatisering — förklarar det komplexa med enkla ord. Jag utvecklar, implementerar och supporterar. Ingen byråpåslag — du arbetar direkt med en expert.",
+    "primaryButton": "Berätta om din utmaning",
+    "secondaryButton": "Se våra case"
+  },
+  "benefits": {
+    "experience": {
+      "title": "15+ års erfarenhet",
+      "description": "Från kod till affärsstrategi"
+    },
+    "communication": {
+      "title": "Pratar ditt språk",
+      "description": "Ingen IT-jargong, bara det väsentliga"
+    },
+    "fullCycle": {
+      "title": "Från idé till lansering",
+      "description": "Full utvecklingscykel"
+    },
+    "directAccess": {
+      "title": "Direkt kontakt med experten",
+      "description": "Inga mellanhänder, inga påslag"
+    }
   },
   "pricing": {
     "title": "Webbplatskostnadskalkylator",
@@ -87,4 +106,3 @@
     "allRightsReserved": "Alla rättigheter förbehållna"
   }
 }
-
