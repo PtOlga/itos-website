@@ -10,7 +10,7 @@ const Hero = () => {
       <section className="relative overflow-x-clip top-0 bg-primary circalanimat before:content-[''] before:absolute before:bg-[url('/images/work-grow/work-line.png')] before:bg-no-repeat before:bg-contain before:w-44 before:h-20 before:bottom-40 lg:before:inline-block before:hidden">
         <div className='banner-shap it-wrapper'>
           <div className='container py-20'>
-            <div className='flex flex-wrap items-center'>
+            <div className='flex flex-wrap'>
               <div
                 className='pb-3 sm:pb-0 md:w-1/2 w-full relative z-1'
                 data-aos='fade-right'
@@ -120,7 +120,7 @@ const Hero = () => {
                 </div>
               </div>
               <div
-                className="md:w-1/2 w-full relative z-1 flex justify-center items-center before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
+                className="md:w-1/2 w-full md:-mt-8 relative z-1 before:absolute before:content-[''] before:bg-[url('/images/hero/grid-line.png')] before:bg-no-repeat before:w-24 before:h-24 before:-top-32 before:-right-16 lg:before:inline-block before:hidden after:content-[''] after:absolute after:bg-[url('/images/hero/circal.png')] after:bg-no-repeat after:w-[2.625rem] after:h-[2.625rem] after:top-10 after:-left-[8.25rem] xl:after:inline-block after:hidden"
                 data-aos='fade-left'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
@@ -130,7 +130,7 @@ const Hero = () => {
                   width={900}
                   height={900}
                   quality={100}
-                  className='w-full h-auto max-w-[140%]'
+                  className='w-[160%] h-auto ml-auto'
                   priority
                 />
               </div>
