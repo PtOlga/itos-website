@@ -3,7 +3,7 @@ import NotFound from "../../NotFound";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "404 Page | Sustainable ",
+  title: "404 Page",
 };
 
 const ErrorPage = () => {

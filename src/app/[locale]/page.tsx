@@ -7,7 +7,7 @@ import Counter from '@/components/Home/Counter';
 import FaqQuestion from '@/components/Home/faq';
 
 export const metadata: Metadata = {
-  title: "Sustainable",
+  title: "ITOS",
 };
 
 export default function Home() {

@@ -5,7 +5,7 @@ import Counter from '@/components/Home/Counter';
 import WorkGrow from '@/components/Home/work-grow';
 import BuildAmazing from '@/components/Home/Build-Amazing';
 export const metadata: Metadata = {
-    title: "About | Sustainable",
+    title: "About",
 };
 
 const page = () => {

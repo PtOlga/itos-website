@@ -18,7 +18,7 @@ const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'ITOS - IT Solutions',
+    default: 'ITOS',
     template: '%s | ITOS'
   },
   description: 'Professional IT solutions and web development services',

@@ -1,10 +1,11 @@
 # ITOS Website
 
-A modern, sustainable Next.js website built with TypeScript, Tailwind CSS, and Shadcn/ui components.
+A modern Next.js website for IT solutions and web development services, built with TypeScript, Tailwind CSS, and Shadcn/ui components.
 
 ## 🚀 Features
 
 - ⚡ **Next.js 15.5.9** - Latest React framework with App Router
+- 🌍 **Internationalization** - Multi-language support (English & Swedish) with next-intl
 - 🎨 **Tailwind CSS v3** - Utility-first CSS framework
 - 🧩 **Shadcn/ui** - Beautiful, accessible component library
 - 🔐 **NextAuth.js** - Authentication with Google, GitHub, and credentials
@@ -14,6 +15,7 @@ A modern, sustainable Next.js website built with TypeScript, Tailwind CSS, and S
 - 🎭 **Iconify** - Extensive icon library
 - ✨ **AOS Animations** - Scroll animations
 - 📊 **TypeScript** - Type-safe development
+- 💰 **Price Calculator** - Interactive website cost calculator
 
 ## 📦 Tech Stack
 

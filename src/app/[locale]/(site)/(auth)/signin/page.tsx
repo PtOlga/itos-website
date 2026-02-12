@@ -3,8 +3,7 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Sign In | Sustainable",
+  title: "Sign In",
 };
 
 const SigninPage = () => {
