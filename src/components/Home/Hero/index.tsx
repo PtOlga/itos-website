@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 const Hero = () => {
@@ -23,12 +24,12 @@ const Hero = () => {
                   {t('description')}
                 </p>
                 <div className='flex items-center gap-4 mb-8'>
-                  <button className='bg-white text-base font-normal text-primary py-3 px-8 rounded-lg transition-all duration-300 hover:bg-secondary hover:text-white'>
+                  <Link href='/contact' className='bg-white text-base font-normal text-primary py-3 px-8 rounded-lg transition-all duration-300 hover:bg-secondary hover:text-white inline-block text-center'>
                     {t('primaryButton')}
-                  </button>
-                  <button className='bg-transparent border-2 border-white text-base font-normal text-white py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white hover:text-primary'>
+                  </Link>
+                  <Link href='/portfolio' className='bg-transparent border-2 border-white text-base font-normal text-white py-3 px-8 rounded-lg transition-all duration-300 hover:bg-white hover:text-primary inline-block text-center'>
                     {t('secondaryButton')}
-                  </button>
+                  </Link>
                 </div>
                 <div className='flex items-center mb-8'>
                   <svg
