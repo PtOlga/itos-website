@@ -1,8 +1,11 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
-import { cardData } from '../../../app/api/data'
+import { useTranslations } from 'next-intl'
 
 const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
+  const t = useTranslations('services')
+
   return (
     <>
       <section className={`${isSpace ? '' : ''} dark:bg-darkmode pt-40 pb-20`}>
@@ -14,12 +17,10 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
               data-aos-delay='200'
               data-aos-duration='1000'>
               <h2 className='text-secondary dark:text-white max-w-420 pb-8'>
-                Build amazing websites and landing pages with ease using
-                Sustaniable
+                {t('title')}
               </h2>
               <p className='text-base font-normal text-SlateBlue dark:text-darktext max-w-408'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elited do
-                eiusmod tempor incididunt.
+                {t('subtitle')}
               </p>
               <div className='pt-6 flex flex-col gap-y-5'>
                 <div className='flex items-center gap-2'>
@@ -50,7 +51,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                   </svg>
 
                   <span className='text-base font-normal text-SlateBlue dark:text-darktext'>
-                    Easy Drag & Drop
+                    {t('features.consultation')}
                   </span>
                 </div>
                 <div className='flex items-center gap-2'>
@@ -81,7 +82,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                   </svg>
 
                   <span className='text-base font-normal text-SlateBlue dark:text-darktext'>
-                    Powered by Elementor
+                    {t('features.pricing')}
                   </span>
                 </div>
                 <div className='flex items-center gap-2'>
@@ -112,48 +113,133 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                   </svg>
 
                   <span className='text-base font-normal text-SlateBlue dark:text-darktext'>
-                    Create new sections
+                    {t('features.support')}
                   </span>
                 </div>
               </div>
               <div className='mt-8'>
-                <Link href='/' className='btn inline-flex items-center gap-3'>
-                  Get Started
+                <Link href='/contact' className='btn inline-flex items-center gap-3'>
+                  {t('button')}
                   <i className="bg-[url('/images/build-amazing/right-arrow.svg')] bg-no-repeat bg-contain w-4 h-3 inline-block"></i>
                 </Link>
               </div>
             </div>
             <div className='grid md:grid-cols-2 grid-cols-1 gap-7'>
-              {cardData.map((card, index) => (
-                <div
-                  key={index}
-                  className='group'
-                  data-aos='fade-up'
-                  data-aos-delay={`${(index + 1) * 200}`}
-                  data-aos-duration='1000'>
-                  <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+              {/* Web Development */}
+              <div
+                className='group'
+                data-aos='fade-up'
+                data-aos-delay='200'
+                data-aos-duration='1000'>
+                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                  <i
+                    className='bg-no-repeat w-10 h-10 inline-block'
+                    style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
+                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                    {t('cards.webDev.title')}
+                  </h6>
+                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                    {t('cards.webDev.description')}
+                  </p>
+                  <Link
+                    href='/portfolio'
+                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    {t('cards.webDev.button')}
                     <i
-                      className='bg-no-repeat w-10 h-10 inline-block'
-                      style={{ backgroundImage: `url(${card.iconUrl})` }}></i>
-                    <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
-                      {card.title}
-                    </h6>
-                    <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
-                      {card.description}
-                    </p>
-                    <Link
-                      href={card.link}
-                      className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
-                      Get Started
-                      <i
-                        className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
-                        style={{
-                          backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
-                        }}></i>
-                    </Link>
-                  </div>
+                      className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
+                      style={{
+                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
+                      }}></i>
+                  </Link>
                 </div>
-              ))}
+              </div>
+
+              {/* AI & Automation */}
+              <div
+                className='group'
+                data-aos='fade-up'
+                data-aos-delay='400'
+                data-aos-duration='1000'>
+                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                  <i
+                    className='bg-no-repeat w-10 h-10 inline-block'
+                    style={{ backgroundImage: `url('/images/build-amazing/coded.svg')` }}></i>
+                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                    {t('cards.ai.title')}
+                  </h6>
+                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                    {t('cards.ai.description')}
+                  </p>
+                  <Link
+                    href='/portfolio'
+                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    {t('cards.ai.button')}
+                    <i
+                      className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
+                      style={{
+                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
+                      }}></i>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Business Tools */}
+              <div
+                className='group'
+                data-aos='fade-up'
+                data-aos-delay='600'
+                data-aos-duration='1000'>
+                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                  <i
+                    className='bg-no-repeat w-10 h-10 inline-block'
+                    style={{ backgroundImage: `url('/images/build-amazing/amazing.svg')` }}></i>
+                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                    {t('cards.tools.title')}
+                  </h6>
+                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                    {t('cards.tools.description')}
+                  </p>
+                  <Link
+                    href='/portfolio'
+                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    {t('cards.tools.button')}
+                    <i
+                      className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
+                      style={{
+                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
+                      }}></i>
+                  </Link>
+                </div>
+              </div>
+
+              {/* CRM Solutions */}
+              <div
+                className='group'
+                data-aos='fade-up'
+                data-aos-delay='800'
+                data-aos-duration='1000'>
+                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                  <i
+                    className='bg-no-repeat w-10 h-10 inline-block'
+                    style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
+                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                    {t('cards.crm.title')}
+                  </h6>
+                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                    {t('cards.crm.description')}
+                  </p>
+                  <Link
+                    href='/contact'
+                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    {t('cards.crm.button')}
+                    <i
+                      className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
+                      style={{
+                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
+                      }}></i>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

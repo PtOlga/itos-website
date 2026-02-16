@@ -38,6 +38,38 @@
       "description": "No middlemen, no markup"
     }
   },
+  "services": {
+    "title": "How I Can Help Your Business",
+    "subtitle": "Full range of IT services: from website creation to process automation with AI. I work until results are achieved.",
+    "features": {
+      "consultation": "Free initial consultation and task analysis",
+      "pricing": "Transparent pricing",
+      "support": "Post-launch support"
+    },
+    "button": "Discuss Your Task",
+    "cards": {
+      "webDev": {
+        "title": "Web Development",
+        "description": "Modern websites and web applications from simple HTML, WordPress to React/Next.js. From landing pages or marketplaces to corporate websites. Fast, modern for desktop and mobile.",
+        "button": "View Projects →"
+      },
+      "ai": {
+        "title": "AI & Automation",
+        "description": "Smart solutions for your business: AI assistants, data recognition, routine automation. Time savings and error reduction.",
+        "button": "View Projects →"
+      },
+      "tools": {
+        "title": "Business Tools",
+        "description": "Development of specialized tools for specific tasks: reminders, document processing, system integrations.",
+        "button": "View Projects →"
+      },
+      "crm": {
+        "title": "CRM Solutions",
+        "description": "Setup and implementation of CRM systems. All clients and deals in one place. Integration with website, social media, and other tools.",
+        "button": "Discuss Project →"
+      }
+    }
+  },
   "pricing": {
     "title": "Website Cost Calculator",
     "description": "Use the calculator below to see the project price based on your requirements",

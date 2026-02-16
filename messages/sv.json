@@ -38,6 +38,38 @@
       "description": "Inga mellanhänder, inga påslag"
     }
   },
+  "services": {
+    "title": "Hur jag kan hjälpa ditt företag",
+    "subtitle": "Fullständigt utbud av IT-tjänster: från webbplatsskapande till processautomatisering med AI. Jag arbetar tills resultat uppnås.",
+    "features": {
+      "consultation": "Gratis första konsultation och uppgiftsanalys",
+      "pricing": "Transparent prissättning",
+      "support": "Support efter lansering"
+    },
+    "button": "Diskutera din uppgift",
+    "cards": {
+      "webDev": {
+        "title": "Webbutveckling",
+        "description": "Moderna webbplatser och webbapplikationer från enkel HTML, WordPress till React/Next.js. Från landningssida eller marknadsplats till företagswebbplats. Snabba, moderna för dator och mobil.",
+        "button": "Visa projekt →"
+      },
+      "ai": {
+        "title": "AI & Automatisering",
+        "description": "Smarta lösningar för ditt företag: AI-assistenter, dataigenkänning, rutinautomatisering. Tidsbesparing och felreducering.",
+        "button": "Visa projekt →"
+      },
+      "tools": {
+        "title": "Affärsverktyg",
+        "description": "Utveckling av specialiserade verktyg för specifika uppgifter: påminnelser, dokumentbehandling, systemintegrationer.",
+        "button": "Visa projekt →"
+      },
+      "crm": {
+        "title": "CRM-lösningar",
+        "description": "Installation och implementering av CRM-system. Alla kunder och affärer på ett ställe. Integration med webbplats, sociala medier och andra verktyg.",
+        "button": "Diskutera projekt →"
+      }
+    }
+  },
   "pricing": {
     "title": "Webbplatskostnadskalkylator",
     "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",
