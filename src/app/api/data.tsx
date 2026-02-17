@@ -1,18 +1,23 @@
 export const count = [
     {
-        icon: "/images/counter/star.svg",
-        value: "4.86",
-        description: "Out of 5 stars from 3896 reviews on google platform",
+        icon: "/images/counter/euro.svg",
+        value: "€0",
+        description: "First Consultation",
     },
     {
-        icon: "/images/counter/admin.svg",
-        value: "364",
-        description: "Client testimonials received in the year 2021",
+        icon: "/images/counter/calendar.svg",
+        value: "15+",
+        description: "Years of Experience",
     },
     {
-        icon: "/images/counter/bag.svg",
-        value: "45M+",
-        description: "Revenue generated through new projects & marketing",
+        icon: "/images/counter/lightbulb.svg",
+        value: "100+",
+        description: "Ideas for Your Business",
+    },
+    {
+        icon: "/images/counter/coffee.svg",
+        value: "∞",
+        description: "Coffee Consumed",
     },
 ];
 
