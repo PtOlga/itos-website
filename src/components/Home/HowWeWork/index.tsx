@@ -65,15 +65,15 @@ const HowWeWork = () => {
       setVisibleSteps([0, 1, 2, 3])
     }, 6000)
 
-    // 8 сек: сброс и начало заново
+    // 11 сек (6 + 5 пауза): сброс и начало заново
     const timer4 = setTimeout(() => {
       setVisibleSteps([])
       setTimeout(() => {
         setVisibleSteps([0])
       }, 100)
-    }, 8000)
+    }, 11000)
 
-    // Повторяем цикл каждые 8.1 секунды
+    // Повторяем цикл каждые 11.1 секунды
     const interval = setInterval(() => {
       setVisibleSteps([0])
 
@@ -83,8 +83,8 @@ const HowWeWork = () => {
       setTimeout(() => {
         setVisibleSteps([])
         setTimeout(() => setVisibleSteps([0]), 100)
-      }, 8000)
-    }, 8100)
+      }, 11000)
+    }, 11100)
 
     return () => {
       clearTimeout(timer1)
