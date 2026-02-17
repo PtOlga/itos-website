@@ -138,20 +138,16 @@ const HowWeWork = () => {
         <div className='grid lg:grid-cols-5 grid-cols-1 gap-10 items-start'>
           {/* Left side - Lottie Animation (40% width = 2 columns out of 5) */}
           <div className='lg:col-span-2 col-span-1 lg:sticky lg:top-24' data-aos='fade-right' data-aos-duration='1000'>
-            <div className='relative w-full aspect-square'>
-              <div className='w-full h-full flex items-center justify-center p-8'>
+            <div className='relative w-full aspect-square overflow-hidden'>
+              <div className='w-full h-full flex items-center justify-center p-4'>
                 {animationData ? (
                   <div
                     key={currentAnimation}
-                    className={`w-full h-full ${
-                      isTransitioning
-                        ? 'animate-[rotateOut_0.6s_ease-in-out] opacity-0'
-                        : 'animate-[rotateIn_0.6s_ease-in-out] opacity-100'
-                    }`}
+                    className='w-full h-full'
                     style={{
                       animation: isTransitioning
-                        ? 'rotateOut 0.6s ease-in-out forwards'
-                        : 'rotateIn 0.6s ease-in-out forwards'
+                        ? 'slideOutLeft 0.5s ease-in-out forwards'
+                        : 'slideInRight 0.5s ease-in-out forwards'
                     }}>
                     <Lottie
                       animationData={animationData}

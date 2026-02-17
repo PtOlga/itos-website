@@ -312,25 +312,25 @@
   animation: progress 2s linear;
 }
 
-/* How We Work - Rotate + Fade Animation */
-@keyframes rotateIn {
+/* How We Work - Slide Animation */
+@keyframes slideInRight {
   from {
     opacity: 0;
-    transform: rotate(-15deg) scale(0.9);
+    transform: translateX(100%);
   }
   to {
     opacity: 1;
-    transform: rotate(0deg) scale(1);
+    transform: translateX(0);
   }
 }
 
-@keyframes rotateOut {
+@keyframes slideOutLeft {
   from {
     opacity: 1;
-    transform: rotate(0deg) scale(1);
+    transform: translateX(0);
   }
   to {
     opacity: 0;
-    transform: rotate(15deg) scale(0.9);
+    transform: translateX(-100%);
   }
 }
