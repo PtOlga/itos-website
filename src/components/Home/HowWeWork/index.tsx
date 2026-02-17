@@ -15,7 +15,7 @@ const Lottie = dynamic(() => import('lottie-react'), {
 
 const HowWeWork = () => {
   const t = useTranslations('howWeWork')
-  const [activeStep, setActiveStep] = useState(0)
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]) // Массив видимых шагов
   const [animationData, setAnimationData] = useState(null)
 
   const steps = [
@@ -39,20 +39,37 @@ const HowWeWork = () => {
 
   // Загрузка JSON анимации
   useEffect(() => {
-    fetch('/animations/consultation.json')
+    fetch('/animations/employee-getting-customer-requirements.json')
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error('Error loading animation:', error))
   }, [])
 
-  // Auto-scroll через шаги каждые 4 секунды
+  // Последовательное появление пунктов
   useEffect(() => {
+    let currentStep = 0
+
+    // Показываем первый пункт сразу
+    setVisibleSteps([0])
+    currentStep = 1
+
     const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length)
-    }, 4000)
+      if (currentStep <= 3) {
+        // Добавляем следующий пункт
+        setVisibleSteps((prev) => [...prev, currentStep])
+        currentStep++
+      } else {
+        // Сбрасываем и начинаем заново
+        setVisibleSteps([])
+        setTimeout(() => {
+          setVisibleSteps([0])
+          currentStep = 1
+        }, 500) // Небольшая пауза перед началом нового цикла
+      }
+    }, 2000) // Каждые 2 секунды
 
     return () => clearInterval(interval)
-  }, [steps.length])
+  }, [])
 
   return (
     <section className='bg-AliceBlue dark:bg-darklight py-20'>
@@ -82,15 +99,8 @@ const HowWeWork = () => {
                   </div>
                 ) : (
                   <div className='text-center'>
-                    <div className='text-8xl font-bold text-primary/20 mb-4'>
-                      {steps[activeStep].number}
-                    </div>
-                    <div className='text-6xl'>
-                      {activeStep === 0 && '💬'}
-                      {activeStep === 1 && '📋'}
-                      {activeStep === 2 && '⚙️'}
-                      {activeStep === 3 && '🚀'}
-                    </div>
+                    <div className='text-8xl font-bold text-primary/20 mb-4'>01</div>
+                    <div className='text-6xl'>💬</div>
                   </div>
                 )}
               </div>
@@ -100,69 +110,76 @@ const HowWeWork = () => {
           {/* Right side - Steps (60% width = 3 columns out of 5) */}
           <div className='lg:col-span-3 col-span-1'>
             <div className='flex flex-col gap-6'>
-              {steps.map((step, index) => (
-                <div
-                  key={step.key}
-                  className={`transition-all duration-500 ease-in-out p-6 rounded-2xl ${
-                    activeStep === index
-                      ? 'bg-white dark:bg-darkmode shadow-xl scale-[1.02]'
-                      : 'bg-white/50 dark:bg-darkmode/50'
-                  }`}
-                  data-aos='fade-left'
-                  data-aos-delay={`${index * 100}`}
-                  data-aos-duration='1000'>
-                  <div className='flex items-start gap-4'>
-                    {/* Step Number */}
-                    <div
-                      className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 ${
-                        activeStep === index
-                          ? 'bg-primary text-white scale-110'
-                          : 'bg-primary/10 text-primary'
-                      }`}>
-                      {step.number}
-                    </div>
+              {steps.map((step, index) => {
+                const isVisible = visibleSteps.includes(index)
+                const isLatest = visibleSteps[visibleSteps.length - 1] === index
 
-                    {/* Step Content */}
-                    <div className='flex-1'>
-                      <h3
-                        className={`text-xl font-bold mb-2 transition-colors duration-300 ${
-                          activeStep === index
-                            ? 'text-secondary dark:text-white'
-                            : 'text-secondary/70 dark:text-white/70'
-                        }`}>
-                        {t(`steps.${step.key}.title`)}
-                      </h3>
-                      <p
-                        className={`text-base transition-all duration-300 ${
-                          activeStep === index
-                            ? 'text-SlateBlue dark:text-darktext opacity-100'
-                            : 'text-SlateBlue/70 dark:text-darktext/70 opacity-80'
-                        }`}>
-                        {t(`steps.${step.key}.description`)}
-                      </p>
-                    </div>
+                if (!isVisible) return null
 
-                    {/* Active Indicator */}
-                    <div className='flex-shrink-0'>
+                return (
+                  <div
+                    key={step.key}
+                    className={`transition-all duration-500 ease-in-out p-6 rounded-2xl ${
+                      isLatest
+                        ? 'bg-white dark:bg-darkmode shadow-xl scale-[1.02]'
+                        : 'bg-white/50 dark:bg-darkmode/50'
+                    }`}
+                    data-aos='fade-left'
+                    data-aos-delay='200'
+                    data-aos-duration='500'>
+                    <div className='flex items-start gap-4'>
+                      {/* Step Number */}
                       <div
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          activeStep === index
-                            ? 'bg-primary scale-100 animate-pulse'
-                            : 'bg-transparent scale-0'
-                        }`}></div>
+                        className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all duration-300 ${
+                          isLatest
+                            ? 'bg-primary text-white scale-110'
+                            : 'bg-primary/10 text-primary'
+                        }`}>
+                        {step.number}
+                      </div>
+
+                      {/* Step Content */}
+                      <div className='flex-1'>
+                        <h3
+                          className={`text-xl font-bold mb-2 transition-colors duration-300 ${
+                            isLatest
+                              ? 'text-secondary dark:text-white'
+                              : 'text-secondary/70 dark:text-white/70'
+                          }`}>
+                          {t(`steps.${step.key}.title`)}
+                        </h3>
+                        <p
+                          className={`text-base transition-all duration-300 ${
+                            isLatest
+                              ? 'text-SlateBlue dark:text-darktext opacity-100'
+                              : 'text-SlateBlue/70 dark:text-darktext/70 opacity-80'
+                          }`}>
+                          {t(`steps.${step.key}.description`)}
+                        </p>
+                      </div>
+
+                      {/* Active Indicator */}
+                      <div className='flex-shrink-0'>
+                        <div
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            isLatest
+                              ? 'bg-primary scale-100 animate-pulse'
+                              : 'bg-transparent scale-0'
+                          }`}></div>
+                      </div>
                     </div>
+
+                    {/* Progress Bar - только для последнего добавленного */}
+                    {isLatest && (
+                      <div className='mt-4 h-1 bg-primary/10 rounded-full overflow-hidden'>
+                        <div
+                          key={`progress-${index}-${visibleSteps.length}`}
+                          className='h-full bg-primary rounded-full animate-progress'></div>
+                      </div>
+                    )}
                   </div>
-
-                  {/* Progress Bar */}
-                  {activeStep === index && (
-                    <div className='mt-4 h-1 bg-primary/10 rounded-full overflow-hidden'>
-                      <div
-                        key={`progress-${index}`}
-                        className='h-full bg-primary rounded-full animate-progress'></div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
