@@ -47,28 +47,52 @@ const HowWeWork = () => {
 
   // Последовательное появление пунктов
   useEffect(() => {
-    let currentStep = 0
-
     // Показываем первый пункт сразу
     setVisibleSteps([0])
-    currentStep = 1
 
+    // 2 сек: пункты 1, 2
+    const timer1 = setTimeout(() => {
+      setVisibleSteps([0, 1])
+    }, 2000)
+
+    // 4 сек: пункты 1, 2, 3
+    const timer2 = setTimeout(() => {
+      setVisibleSteps([0, 1, 2])
+    }, 4000)
+
+    // 6 сек: пункты 1, 2, 3, 4
+    const timer3 = setTimeout(() => {
+      setVisibleSteps([0, 1, 2, 3])
+    }, 6000)
+
+    // 8 сек: сброс и начало заново
+    const timer4 = setTimeout(() => {
+      setVisibleSteps([])
+      setTimeout(() => {
+        setVisibleSteps([0])
+      }, 100)
+    }, 8000)
+
+    // Повторяем цикл каждые 8.1 секунды
     const interval = setInterval(() => {
-      if (currentStep <= 3) {
-        // Добавляем следующий пункт
-        setVisibleSteps((prev) => [...prev, currentStep])
-        currentStep++
-      } else {
-        // Сбрасываем и начинаем заново
-        setVisibleSteps([])
-        setTimeout(() => {
-          setVisibleSteps([0])
-          currentStep = 1
-        }, 500) // Небольшая пауза перед началом нового цикла
-      }
-    }, 2000) // Каждые 2 секунды
+      setVisibleSteps([0])
 
-    return () => clearInterval(interval)
+      setTimeout(() => setVisibleSteps([0, 1]), 2000)
+      setTimeout(() => setVisibleSteps([0, 1, 2]), 4000)
+      setTimeout(() => setVisibleSteps([0, 1, 2, 3]), 6000)
+      setTimeout(() => {
+        setVisibleSteps([])
+        setTimeout(() => setVisibleSteps([0]), 100)
+      }, 8000)
+    }, 8100)
+
+    return () => {
+      clearTimeout(timer1)
+      clearTimeout(timer2)
+      clearTimeout(timer3)
+      clearTimeout(timer4)
+      clearInterval(interval)
+    }
   }, [])
 
   return (
@@ -87,7 +111,7 @@ const HowWeWork = () => {
           {/* Left side - Lottie Animation (40% width = 2 columns out of 5) */}
           <div className='lg:col-span-2 col-span-1' data-aos='fade-right' data-aos-duration='1000'>
             <div className='relative w-full aspect-square'>
-              <div className='w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 rounded-3xl flex items-center justify-center p-8 overflow-hidden'>
+              <div className='w-full h-full flex items-center justify-center p-8'>
                 {animationData ? (
                   <div className='w-full h-full'>
                     <Lottie
