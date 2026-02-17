@@ -45,11 +45,11 @@ const HowWeWork = () => {
       .catch((error) => console.error('Error loading animation:', error))
   }, [])
 
-  // Auto-scroll через шаги каждые 5 секунд
+  // Auto-scroll через шаги каждые 4 секунды
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % steps.length)
-    }, 5000)
+    }, 4000)
 
     return () => clearInterval(interval)
   }, [steps.length])
@@ -103,11 +103,10 @@ const HowWeWork = () => {
               {steps.map((step, index) => (
                 <div
                   key={step.key}
-                  onClick={() => setActiveStep(index)}
-                  className={`cursor-pointer transition-all duration-500 ease-in-out p-6 rounded-2xl ${
+                  className={`transition-all duration-500 ease-in-out p-6 rounded-2xl ${
                     activeStep === index
                       ? 'bg-white dark:bg-darkmode shadow-xl scale-[1.02]'
-                      : 'bg-white/50 dark:bg-darkmode/50 hover:bg-white dark:hover:bg-darkmode hover:shadow-md'
+                      : 'bg-white/50 dark:bg-darkmode/50'
                   }`}
                   data-aos='fade-left'
                   data-aos-delay={`${index * 100}`}
