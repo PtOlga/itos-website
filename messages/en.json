@@ -70,6 +70,28 @@
       }
     }
   },
+  "howWeWork": {
+    "title": "How We'll Work Together",
+    "subtitle": "Simple and clear process from idea to launch",
+    "steps": {
+      "consultation": {
+        "title": "Free Consultation",
+        "description": "Discuss the task and goals"
+      },
+      "planning": {
+        "title": "Plan and Estimate",
+        "description": "Propose solution with clear plan and price"
+      },
+      "development": {
+        "title": "Development",
+        "description": "Build and show intermediate results"
+      },
+      "launch": {
+        "title": "Launch and Support",
+        "description": "Help with launch and stay in touch"
+      }
+    }
+  },
   "pricing": {
     "title": "Website Cost Calculator",
     "description": "Use the calculator below to see the project price based on your requirements",

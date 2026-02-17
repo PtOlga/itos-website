@@ -297,3 +297,17 @@
     @apply bg-shadcn-background text-shadcn-foreground;
   }
 }
+
+/* How We Work Progress Animation */
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 5s linear;
+}

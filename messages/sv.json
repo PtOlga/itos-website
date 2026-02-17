@@ -70,6 +70,28 @@
       }
     }
   },
+  "howWeWork": {
+    "title": "Hur vi kommer att arbeta tillsammans",
+    "subtitle": "Enkel och tydlig process från idé till lansering",
+    "steps": {
+      "consultation": {
+        "title": "Gratis konsultation",
+        "description": "Diskutera uppgiften och målen"
+      },
+      "planning": {
+        "title": "Plan och uppskattning",
+        "description": "Föreslå lösning med tydlig plan och pris"
+      },
+      "development": {
+        "title": "Utveckling",
+        "description": "Bygga och visa mellanresultat"
+      },
+      "launch": {
+        "title": "Lansering och support",
+        "description": "Hjälpa med lansering och hålla kontakten"
+      }
+    }
+  },
   "pricing": {
     "title": "Webbplatskostnadskalkylator",
     "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",
