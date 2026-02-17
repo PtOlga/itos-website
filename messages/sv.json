@@ -50,22 +50,22 @@
     "cards": {
       "webDev": {
         "title": "Webbutveckling",
-        "description": "Moderna webbplatser och webbapplikationer från enkel HTML, WordPress till React/Next.js. Från landningssida eller marknadsplats till företagswebbplats. Snabba, moderna för dator och mobil.",
+        "description": "Moderna webbplatser från HTML/WordPress till React/Next.js. Snabba, responsiva, från landningssidor till företagswebbplatser.",
         "button": "Visa projekt →"
       },
       "ai": {
         "title": "AI & Automatisering",
-        "description": "Smarta lösningar för ditt företag: AI-assistenter, dataigenkänning, rutinautomatisering. Tidsbesparing och felreducering.",
+        "description": "AI-assistenter, dataigenkänning, rutinautomatisering. Spara tid och minska fel med smarta lösningar.",
         "button": "Visa projekt →"
       },
       "tools": {
         "title": "Affärsverktyg",
-        "description": "Utveckling av specialiserade verktyg för specifika uppgifter: påminnelser, dokumentbehandling, systemintegrationer.",
+        "description": "Specialiserade verktyg för dina uppgifter: påminnelser, dokumentbearbetning, systemintegrationer.",
         "button": "Visa projekt →"
       },
       "crm": {
         "title": "CRM-lösningar",
-        "description": "Installation och implementering av CRM-system. Alla kunder och affärer på ett ställe. Integration med webbplats, sociala medier och andra verktyg.",
+        "description": "CRM-installation och implementering. Alla kunder och affärer på ett ställe med fullständiga integrationer.",
         "button": "Diskutera projekt →"
       }
     }

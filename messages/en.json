@@ -50,22 +50,22 @@
     "cards": {
       "webDev": {
         "title": "Web Development",
-        "description": "Modern websites and web applications from simple HTML, WordPress to React/Next.js. From landing pages or marketplaces to corporate websites. Fast, modern for desktop and mobile.",
+        "description": "Modern websites from HTML/WordPress to React/Next.js. Fast, responsive, from landing pages to corporate sites.",
         "button": "View Projects →"
       },
       "ai": {
         "title": "AI & Automation",
-        "description": "Smart solutions for your business: AI assistants, data recognition, routine automation. Time savings and error reduction.",
+        "description": "AI assistants, data recognition, routine automation. Save time and reduce errors with smart solutions.",
         "button": "View Projects →"
       },
       "tools": {
         "title": "Business Tools",
-        "description": "Development of specialized tools for specific tasks: reminders, document processing, system integrations.",
+        "description": "Specialized tools for your tasks: reminders, document processing, system integrations.",
         "button": "View Projects →"
       },
       "crm": {
         "title": "CRM Solutions",
-        "description": "Setup and implementation of CRM systems. All clients and deals in one place. Integration with website, social media, and other tools.",
+        "description": "CRM setup and implementation. All clients and deals in one place with full integrations.",
         "button": "Discuss Project →"
       }
     }
