@@ -51,11 +51,11 @@ const HowWeWork = () => {
         const response = await fetch(steps[currentAnimation].animation)
         const data = await response.json()
 
-        // Небольшая задержка для плавности перехода
+        // Задержка для плавного перехода (400ms для fadeOut)
         setTimeout(() => {
           setAnimationData(data)
           setIsTransitioning(false)
-        }, 300)
+        }, 400)
       } catch (error) {
         console.error('Error loading animation:', error)
         setIsTransitioning(false)
@@ -139,15 +139,15 @@ const HowWeWork = () => {
           {/* Left side - Lottie Animation (40% width = 2 columns out of 5) */}
           <div className='lg:col-span-2 col-span-1 lg:sticky lg:top-24' data-aos='fade-right' data-aos-duration='1000'>
             <div className='relative w-full aspect-square overflow-hidden'>
-              <div className='w-full h-full flex items-center justify-center p-4'>
+              <div className='w-full h-full flex items-center justify-center p-2'>
                 {animationData ? (
                   <div
                     key={currentAnimation}
                     className='w-full h-full'
                     style={{
                       animation: isTransitioning
-                        ? 'slideOutLeft 0.5s ease-in-out forwards'
-                        : 'slideInRight 0.5s ease-in-out forwards'
+                        ? 'fadeOutScale 0.8s ease-in-out forwards'
+                        : 'fadeInScale 0.8s ease-in-out forwards'
                     }}>
                     <Lottie
                       animationData={animationData}
