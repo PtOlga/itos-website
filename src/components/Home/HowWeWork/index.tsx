@@ -48,14 +48,19 @@ const HowWeWork = () => {
     const loadAnimation = async () => {
       try {
         setIsTransitioning(true)
+
+        // Ждём завершения fadeOut анимации (700ms)
+        await new Promise(resolve => setTimeout(resolve, 700))
+
         const response = await fetch(steps[currentAnimation].animation)
         const data = await response.json()
 
-        // Задержка для плавного перехода (400ms для fadeOut)
+        setAnimationData(data)
+
+        // Небольшая задержка перед fadeIn
         setTimeout(() => {
-          setAnimationData(data)
           setIsTransitioning(false)
-        }, 400)
+        }, 50)
       } catch (error) {
         console.error('Error loading animation:', error)
         setIsTransitioning(false)
@@ -141,13 +146,10 @@ const HowWeWork = () => {
             <div className='relative w-full aspect-square overflow-hidden'>
               <div className='w-full h-full flex items-center justify-center p-2'>
                 {animationData ? (
-                  <div
-                    key={currentAnimation}
-                    className='w-full h-full'
+                  <div className='w-full h-full transition-all duration-700 ease-in-out'
                     style={{
-                      animation: isTransitioning
-                        ? 'fadeOutScale 0.8s ease-in-out forwards'
-                        : 'fadeInScale 0.8s ease-in-out forwards'
+                      opacity: isTransitioning ? 0 : 1,
+                      transform: isTransitioning ? 'scale(0.95)' : 'scale(1)'
                     }}>
                     <Lottie
                       animationData={animationData}
