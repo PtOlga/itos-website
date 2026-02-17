@@ -16,34 +16,62 @@ const Lottie = dynamic(() => import('lottie-react'), {
 const HowWeWork = () => {
   const t = useTranslations('howWeWork')
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]) // Массив видимых шагов
+  const [currentAnimation, setCurrentAnimation] = useState(0) // Индекс текущей анимации
   const [animationData, setAnimationData] = useState(null)
+  const [isTransitioning, setIsTransitioning] = useState(false) // Флаг перехода
 
   const steps = [
     {
       key: 'consultation',
       number: '01',
+      animation: '/animations/girl-setting-favorite-button-in-website.json',
     },
     {
       key: 'planning',
       number: '02',
+      animation: '/animations/employee-getting-customer-requirements.json',
     },
     {
       key: 'development',
       number: '03',
+      animation: '/animations/work-from-home.json',
     },
     {
       key: 'launch',
       number: '04',
+      animation: '/animations/target-evaluation.json',
     },
   ]
 
-  // Загрузка JSON анимации
+  // Загрузка анимации при изменении currentAnimation
   useEffect(() => {
-    fetch('/animations/employee-getting-customer-requirements.json')
-      .then((response) => response.json())
-      .then((data) => setAnimationData(data))
-      .catch((error) => console.error('Error loading animation:', error))
-  }, [])
+    const loadAnimation = async () => {
+      try {
+        setIsTransitioning(true)
+        const response = await fetch(steps[currentAnimation].animation)
+        const data = await response.json()
+
+        // Небольшая задержка для плавности перехода
+        setTimeout(() => {
+          setAnimationData(data)
+          setIsTransitioning(false)
+        }, 300)
+      } catch (error) {
+        console.error('Error loading animation:', error)
+        setIsTransitioning(false)
+      }
+    }
+
+    loadAnimation()
+  }, [currentAnimation])
+
+  // Обновление анимации при изменении видимых шагов
+  useEffect(() => {
+    if (visibleSteps.length > 0) {
+      const latestStep = visibleSteps[visibleSteps.length - 1]
+      setCurrentAnimation(latestStep)
+    }
+  }, [visibleSteps])
 
   // Последовательное появление пунктов
   useEffect(() => {
@@ -113,7 +141,18 @@ const HowWeWork = () => {
             <div className='relative w-full aspect-square'>
               <div className='w-full h-full flex items-center justify-center p-8'>
                 {animationData ? (
-                  <div className='w-full h-full'>
+                  <div
+                    key={currentAnimation}
+                    className={`w-full h-full ${
+                      isTransitioning
+                        ? 'animate-[rotateOut_0.6s_ease-in-out] opacity-0'
+                        : 'animate-[rotateIn_0.6s_ease-in-out] opacity-100'
+                    }`}
+                    style={{
+                      animation: isTransitioning
+                        ? 'rotateOut 0.6s ease-in-out forwards'
+                        : 'rotateIn 0.6s ease-in-out forwards'
+                    }}>
                     <Lottie
                       animationData={animationData}
                       loop={true}
