@@ -192,15 +192,6 @@ const HowWeWork = () => {
                           }`}></div>
                       </div>
                     </div>
-
-                    {/* Progress Bar - только для последнего добавленного */}
-                    {isLatest && (
-                      <div className='mt-4 h-1 bg-primary/10 rounded-full overflow-hidden'>
-                        <div
-                          key={`progress-${index}-${visibleSteps.length}`}
-                          className='h-full bg-primary rounded-full animate-progress'></div>
-                      </div>
-                    )}
                   </div>
                 )
               })}
