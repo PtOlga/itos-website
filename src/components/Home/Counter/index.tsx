@@ -22,8 +22,8 @@ const Counter = () => {
               <Image
                 src={item.icon}
                 alt='icon'
-                width={30}
-                height={30}
+                width={60}
+                height={60}
                 unoptimized
               />
               <span className='text-5xl font-bold text-secondary dark:text-white'>
