@@ -1,37 +1,64 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
+import dynamic from 'next/dynamic'
+
+// Динамический импорт Lottie для оптимизации
+const Lottie = dynamic(() => import('lottie-react'), {
+  ssr: false,
+  loading: () => (
+    <div className='w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl flex items-center justify-center'>
+      <div className='animate-pulse text-primary text-4xl'>⏳</div>
+    </div>
+  ),
+})
 
 const HowWeWork = () => {
   const t = useTranslations('howWeWork')
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]) // Массив видимых шагов
+  const [animationsData, setAnimationsData] = useState<any[]>([]) // Данные всех анимаций
 
   const steps = [
     {
       key: 'consultation',
       number: '1',
-      icon: '💬',
       animation: '/animations/girl-setting-favorite-button-in-website.json',
     },
     {
       key: 'planning',
       number: '2',
-      icon: '⚙️',
       animation: '/animations/employee-getting-customer-requirements.json',
     },
     {
       key: 'development',
       number: '3',
-      icon: '👥',
       animation: '/animations/work-from-home.json',
     },
     {
       key: 'launch',
       number: '4',
-      icon: '🚀',
       animation: '/animations/target-evaluation.json',
     },
   ]
+
+  // Загрузка всех анимаций при монтировании компонента
+  useEffect(() => {
+    const loadAllAnimations = async () => {
+      try {
+        const loadedAnimations = await Promise.all(
+          steps.map(async (step) => {
+            const response = await fetch(step.animation)
+            return await response.json()
+          })
+        )
+        setAnimationsData(loadedAnimations)
+      } catch (error) {
+        console.error('Error loading animations:', error)
+      }
+    }
+
+    loadAllAnimations()
+  }, [])
 
   // Последовательное появление карточек справа налево
   useEffect(() => {
@@ -98,6 +125,7 @@ const HowWeWork = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
           {steps.map((step, index) => {
             const isVisible = visibleSteps.includes(index)
+            const isActive = visibleSteps[visibleSteps.length - 1] === index
 
             return (
               <div
@@ -110,28 +138,45 @@ const HowWeWork = () => {
                 style={{
                   transitionDelay: `${index * 150}ms`,
                 }}>
-                <div className='bg-white dark:bg-darkmode rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col'>
-                  {/* Icon */}
+                <div className={`bg-white dark:bg-darkmode rounded-3xl p-6 shadow-xl transition-all duration-300 h-full flex flex-col ${
+                  isActive ? 'ring-4 ring-white/50 scale-105' : 'hover:shadow-2xl hover:-translate-y-2'
+                }`}>
+                  {/* Lottie Animation */}
                   <div className='flex justify-center mb-6'>
-                    <div className='text-7xl'>
-                      {step.icon}
+                    <div className='w-32 h-32'>
+                      {animationsData[index] ? (
+                        <Lottie
+                          animationData={animationsData[index]}
+                          loop={true}
+                          autoplay={true}
+                          style={{ width: '100%', height: '100%' }}
+                        />
+                      ) : (
+                        <div className='w-full h-full bg-primary/10 rounded-2xl flex items-center justify-center'>
+                          <div className='animate-pulse text-primary text-4xl'>⏳</div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
                   {/* Number */}
                   <div className='text-center mb-4'>
-                    <span className='text-sm font-bold text-primary'>
+                    <span className={`text-sm font-bold ${isActive ? 'text-primary' : 'text-primary/60'}`}>
                       {step.number}.
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className='text-lg font-bold text-secondary dark:text-white text-center mb-3 min-h-[3.5rem] flex items-center justify-center'>
+                  <h3 className={`text-lg font-bold text-center mb-3 min-h-[3.5rem] flex items-center justify-center ${
+                    isActive ? 'text-secondary dark:text-white' : 'text-secondary/70 dark:text-white/70'
+                  }`}>
                     {t(`steps.${step.key}.title`)}
                   </h3>
 
                   {/* Description */}
-                  <p className='text-sm text-SlateBlue dark:text-darktext text-center leading-relaxed'>
+                  <p className={`text-sm text-center leading-relaxed ${
+                    isActive ? 'text-SlateBlue dark:text-darktext' : 'text-SlateBlue/70 dark:text-darktext/70'
+                  }`}>
                     {t(`steps.${step.key}.description`)}
                   </p>
                 </div>
