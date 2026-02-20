@@ -76,19 +76,19 @@
     "steps": {
       "consultation": {
         "title": "Free Consultation",
-        "description": "Discuss the task and goals"
+        "description": "We discuss your task, goals and expectations. I analyze the situation and suggest possible solutions. No obligations - just a business conversation."
       },
       "planning": {
         "title": "Plan and Estimate",
-        "description": "Propose solution with clear plan and price"
+        "description": "I prepare a detailed work plan with clear deadlines and costs. You get full transparency - what will be done, when and for how much. No hidden fees."
       },
       "development": {
         "title": "Development",
-        "description": "Build and show intermediate results"
+        "description": "I implement the project step by step, showing intermediate results. You see the progress and can make adjustments along the way. Constant communication and feedback."
       },
       "launch": {
         "title": "Launch and Support",
-        "description": "Help with launch and stay in touch"
+        "description": "I help with project launch and train you on the system. I remain available for technical support and improvements. Your project is not left unattended after release."
       }
     }
   },

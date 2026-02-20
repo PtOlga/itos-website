@@ -159,18 +159,11 @@ const HowWeWork = () => {
                     </div>
                   </div>
 
-                  {/* Number */}
-                  <div className='text-center mb-3'>
-                    <span className={`text-sm font-bold ${isActive ? 'text-primary' : 'text-primary/60'}`}>
-                      {step.number}.
-                    </span>
-                  </div>
-
-                  {/* Title */}
+                  {/* Title with Number */}
                   <h3 className={`text-lg font-bold text-center mb-2 ${
                     isActive ? 'text-secondary dark:text-white' : 'text-secondary/70 dark:text-white/70'
                   }`}>
-                    {t(`steps.${step.key}.title`)}
+                    {step.number}. {t(`steps.${step.key}.title`)}
                   </h3>
 
                   {/* Description */}

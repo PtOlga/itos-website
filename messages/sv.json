@@ -76,19 +76,19 @@
     "steps": {
       "consultation": {
         "title": "Gratis konsultation",
-        "description": "Diskutera uppgiften och målen"
+        "description": "Vi diskuterar din uppgift, mål och förväntningar. Jag analyserar situationen och föreslår möjliga lösningar. Inga förpliktelser - bara en saklig diskussion."
       },
       "planning": {
         "title": "Plan och uppskattning",
-        "description": "Föreslå lösning med tydlig plan och pris"
+        "description": "Jag förbereder en detaljerad arbetsplan med tydliga deadlines och kostnader. Du får full transparens - vad som görs, när och till vilket pris. Inga dolda avgifter."
       },
       "development": {
         "title": "Utveckling",
-        "description": "Bygga och visa mellanresultat"
+        "description": "Jag genomför projektet stegvis och visar mellanresultat. Du ser framstegen och kan göra justeringar under vägen. Konstant kommunikation och feedback."
       },
       "launch": {
         "title": "Lansering och support",
-        "description": "Hjälpa med lansering och hålla kontakten"
+        "description": "Jag hjälper till med projektlansering och utbildar dig i systemet. Jag finns tillgänglig för teknisk support och förbättringar. Ditt projekt lämnas inte utan uppmärksamhet efter release."
       }
     }
   },
