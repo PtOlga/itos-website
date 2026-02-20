@@ -138,12 +138,12 @@ const HowWeWork = () => {
                 style={{
                   transitionDelay: `${index * 150}ms`,
                 }}>
-                <div className={`bg-white dark:bg-darkmode rounded-3xl p-6 shadow-xl transition-all duration-300 h-full flex flex-col ${
+                <div className={`bg-white dark:bg-darkmode rounded-3xl p-8 shadow-xl transition-all duration-300 h-full flex flex-col ${
                   isActive ? 'ring-4 ring-white/50 scale-105' : 'hover:shadow-2xl hover:-translate-y-2'
                 }`}>
                   {/* Lottie Animation */}
-                  <div className='flex justify-center mb-6'>
-                    <div className='w-32 h-32'>
+                  <div className='flex justify-center mb-6 flex-1'>
+                    <div className='w-full aspect-square max-w-[200px]'>
                       {animationsData[index] ? (
                         <Lottie
                           animationData={animationsData[index]}
@@ -160,14 +160,14 @@ const HowWeWork = () => {
                   </div>
 
                   {/* Number */}
-                  <div className='text-center mb-4'>
+                  <div className='text-center mb-3'>
                     <span className={`text-sm font-bold ${isActive ? 'text-primary' : 'text-primary/60'}`}>
                       {step.number}.
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className={`text-lg font-bold text-center mb-3 min-h-[3.5rem] flex items-center justify-center ${
+                  <h3 className={`text-lg font-bold text-center mb-2 ${
                     isActive ? 'text-secondary dark:text-white' : 'text-secondary/70 dark:text-white/70'
                   }`}>
                     {t(`steps.${step.key}.title`)}
