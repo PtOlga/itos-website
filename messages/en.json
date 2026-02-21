@@ -1,162 +1,162 @@
 {
   "navigation": {
-    "home": "Home",
-    "about": "About",
+    "home": "Hem",
+    "about": "Om oss",
     "portfolio": "Portfolio",
-    "portfolioList": "Portfolio list",
-    "portfolioDetails": "Portfolio details",
-    "blog": "Blog",
-    "blogList": "Blog list",
-    "blogDetails": "Blog details",
-    "contact": "Contact",
-    "pricing": "Pricing",
-    "faqs": "FAQs",
-    "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "portfolioList": "Portfoliolista",
+    "portfolioDetails": "Portfoliodetaljer",
+    "blog": "Blogg",
+    "blogList": "Blogglista",
+    "blogDetails": "Bloggdetaljer",
+    "contact": "Kontakt",
+    "pricing": "Priser",
+    "faqs": "Vanliga frågor",
+    "signIn": "Logga in",
+    "signUp": "Registrera"
   },
   "hero": {
-    "title": "IT Solutions That Work FOR YOU",
-    "description": "I turn business challenges into simple and effective solutions. Website development, CRM, automation — explaining complex things in simple terms. I develop, implement, and support. No agency markup — you work directly with an expert.",
-    "primaryButton": "Tell Me About Your Challenge",
-    "secondaryButton": "View Case Studies"
+    "title": "IT-lösningar som arbetar FÖR DIG",
+    "description": "Jag förvandlar affärsutmaningar till enkla och effektiva lösningar. Webbutveckling, CRM, automatisering — förklarar det komplexa med enkla ord. Jag utvecklar, implementerar och supporterar. Ingen byråpåslag — du arbetar direkt med en expert.",
+    "primaryButton": "Berätta om din utmaning",
+    "secondaryButton": "Se våra case"
   },
   "benefits": {
     "experience": {
-      "title": "15+ Years of Experience",
-      "description": "From code to business strategy"
+      "title": "15+ års erfarenhet",
+      "description": "Från kod till affärsstrategi"
     },
     "communication": {
-      "title": "I Speak Your Language",
-      "description": "No IT jargon, just the essentials"
+      "title": "Pratar ditt språk",
+      "description": "Ingen IT-jargong, bara det väsentliga"
     },
     "fullCycle": {
-      "title": "From Idea to Launch",
-      "description": "Full development cycle"
+      "title": "Från idé till lansering",
+      "description": "Full utvecklingscykel"
     },
     "directAccess": {
-      "title": "Direct Expert Access",
-      "description": "No middlemen, no markup"
+      "title": "Direkt kontakt med experten",
+      "description": "Inga mellanhänder, inga påslag"
     }
   },
   "services": {
-    "title": "How I Can Help Your Business",
-    "subtitle": "Full range of IT services: from website creation to process automation with AI. I work until results are achieved.",
+    "title": "Hur jag kan hjälpa ditt företag",
+    "subtitle": "Fullständigt utbud av IT-tjänster: från webbplatsskapande till processautomatisering med AI. Jag arbetar tills resultat uppnås.",
     "features": {
-      "consultation": "Free initial consultation and task analysis",
-      "pricing": "Transparent pricing",
-      "support": "Post-launch support"
+      "consultation": "Gratis första konsultation och uppgiftsanalys",
+      "pricing": "Transparent prissättning",
+      "support": "Support efter lansering"
     },
-    "button": "Discuss Your Task",
+    "button": "Diskutera din uppgift",
     "cards": {
       "webDev": {
-        "title": "Web Development",
-        "description": "Modern websites from HTML/WordPress to React/Next.js. Fast, responsive, from landing pages to corporate sites.",
-        "button": "View Projects →"
+        "title": "Webbutveckling",
+        "description": "Moderna webbplatser från HTML/WordPress till React/Next.js. Snabba, responsiva, från landningssidor till företagswebbplatser.",
+        "button": "Visa projekt →"
       },
       "ai": {
-        "title": "AI & Automation",
-        "description": "AI assistants, data recognition, routine automation. Save time and reduce errors with smart solutions.",
-        "button": "View Projects →"
+        "title": "AI & Automatisering",
+        "description": "AI-assistenter, dataigenkänning, rutinautomatisering. Spara tid och minska fel med smarta lösningar.",
+        "button": "Visa projekt →"
       },
       "tools": {
-        "title": "Business Tools",
-        "description": "Specialized tools for your tasks: reminders, document processing, system integrations.",
-        "button": "View Projects →"
+        "title": "Affärsverktyg",
+        "description": "Specialiserade verktyg för dina uppgifter: påminnelser, dokumentbearbetning, systemintegrationer.",
+        "button": "Visa projekt →"
       },
       "crm": {
-        "title": "CRM Solutions",
-        "description": "CRM setup and implementation. All clients and deals in one place with full integrations.",
-        "button": "Discuss Project →"
+        "title": "CRM-lösningar",
+        "description": "CRM-installation och implementering. Alla kunder och affärer på ett ställe med fullständiga integrationer.",
+        "button": "Diskutera projekt →"
       }
     }
   },
   "howWeWork": {
-    "title": "How We'll Work Together",
-    "subtitle": "Simple and clear process from idea to launch",
+    "title": "Hur vi kommer att arbeta tillsammans",
+    "subtitle": "Enkel och tydlig process från idé till lansering",
     "steps": {
       "consultation": {
-        "title": "Free Consultation",
-        "description": "Your goals and challenges come first. The current situation is carefully analyzed and practical solutions are proposed. No pressure — just clarity on what will move your project forward."
+        "title": "Gratis konsultation",
+        "description": "Dina mål och utmaningar står i fokus. Situationen analyseras noggrant och konkreta lösningar föreslås. Ingen press – bara tydlighet kring nästa steg för ditt projekt."
       },
       "planning": {
-        "title": "Plan and Estimate",
-        "description": "You receive a structured plan with clear milestones, timelines, and costs. Everything is transparent from the start. You know exactly what to expect — no surprises, no hidden fees."
+        "title": "Plan och uppskattning",
+        "description": "Du får en strukturerad plan med tydliga milstolpar, tidsramar och kostnader. Full transparens från början – du vet exakt vad som ingår, inga dolda avgifter."
       },
       "development": {
-        "title": "Development",
-        "description": "Your project is built step by step with visible progress. You review intermediate results and adjust along the way. Clear communication ensures full control at every stage."
+        "title": "Utveckling",
+        "description": "Projektet byggs steg för steg med synliga framsteg. Du granskar delresultat och kan justera längs vägen. Tydlig kommunikation ger full kontroll i varje skede."
       },
       "launch": {
-        "title": "Launch and Support",
-        "description": "Your solution is carefully prepared for launch and smooth operation. Guidance and onboarding are provided when needed. Ongoing support ensures long-term stability and growth."
+        "title": "Lansering och support",
+        "description": "Lösningen förbereds noggrant för en smidig lansering. Introduktion och vägledning ges när det behövs. Löpande support säkerställer stabilitet och långsiktig tillväxt."
       }
     }
   },
   "pricing": {
-    "title": "Website Cost Calculator",
-    "description": "Use the calculator below to see the project price based on your requirements",
+    "title": "Webbplatskostnadskalkylator",
+    "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",
     "steps": {
-      "step1Title": "Check domain",
-      "step1Desc": "Check domain for availability",
-      "step2Title": "Template selection",
-      "step2Desc": "Select template in \"design\" section or any other",
-      "step3Title": "Options selection",
-      "step3Desc": "Select necessary CMS options in calculator below"
+      "step1Title": "Kontrollera domän",
+      "step1Desc": "Kontrollera domäntillgänglighet",
+      "step2Title": "Mallval",
+      "step2Desc": "Välj mall i \"design\"-sektionen eller någon annan",
+      "step3Title": "Alternativval",
+      "step3Desc": "Välj nödvändiga CMS-alternativ i kalkylatorn nedan"
     },
     "calculator": {
-      "title": "Cost calculator",
-      "websiteType": "Website type",
-      "total": "Total",
-      "calculateOrder": "Calculate & Order"
+      "title": "Kostnadskalkylator",
+      "websiteType": "Webbplatstyp",
+      "total": "Totalt",
+      "calculateOrder": "Beräkna & Beställ"
     },
     "websiteTypes": {
-      "landing": "One-page website (Landing)",
-      "multipage": "Multi-page website",
-      "store": "Online store"
+      "landing": "Ensidig webbplats (Landing)",
+      "multipage": "Flersidig webbplats",
+      "store": "Nätbutik"
     },
     "categories": {
-      "main": "Main options",
-      "communication": "Interactive communication",
-      "seo": "Functions for quality promotion",
-      "additional": "Additional features",
-      "store": "Store"
+      "main": "Huvudalternativ",
+      "communication": "Interaktiv kommunikation",
+      "seo": "Funktioner för kvalitetsmarknadsföring",
+      "additional": "Ytterligare funktioner",
+      "store": "Butik"
     },
     "options": {
-      "news": "News",
-      "catalog": "Catalog",
-      "search": "Search",
-      "gallery": "Photo gallery",
-      "articles": "Articles",
-      "map": "Geo map (Google)",
-      "faq": "Frequently asked questions (FAQ)",
-      "reviews": "Discussion / Reviews",
-      "sitemap": "Site map (XML)",
-      "microformats": "Microformats",
-      "rss": "RSS feed",
-      "autoImport": "Auto-import articles from internet",
-      "ads": "Advertising rotation (text, banners, links)",
-      "excelImport": "Import-Export price Excel",
-      "multilang": "Additional languages on site",
-      "productVariants": "Product variants (sizes, colors, configurations)",
-      "productSearch": "Search products by parameters",
-      "alphabeticalSearch": "Alphabetical search"
+      "news": "Nyheter",
+      "catalog": "Katalog",
+      "search": "Sök",
+      "gallery": "Fotogalleri",
+      "articles": "Artiklar",
+      "map": "Geokarta (Google)",
+      "faq": "Vanliga frågor (FAQ)",
+      "reviews": "Diskussion / Recensioner",
+      "sitemap": "Webbplatskarta (XML)",
+      "microformats": "Mikroformat",
+      "rss": "RSS-flöde",
+      "autoImport": "Auto-import av artiklar från internet",
+      "ads": "Annonsrotation (text, banners, länkar)",
+      "excelImport": "Import-Export pris Excel",
+      "multilang": "Ytterligare språk på webbplatsen",
+      "productVariants": "Produktvarianter (storlekar, färger, konfigurationer)",
+      "productSearch": "Sök produkter efter parametrar",
+      "alphabeticalSearch": "Alfabetisk sökning"
     },
     "orderForm": {
-      "title": "Order placement",
-      "description": "Fill in all required fields (*) and click \"Order\"",
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
-      "domain": "Future domain:",
+      "title": "Beställning",
+      "description": "Fyll i alla obligatoriska fält (*) och klicka på \"Beställ\"",
+      "name": "Namn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "domain": "Framtida domän:",
       "design": "Design URL/№:",
-      "notes": "Notes:",
-      "submit": "Order"
+      "notes": "Anteckningar:",
+      "submit": "Beställ"
     }
   },
   "footer": {
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "company": "Company",
+    "company": "Företag",
     "support": "Support",
-    "allRightsReserved": "All rights reserved"
+    "allRightsReserved": "Alla rättigheter förbehållna"
   }
 }
