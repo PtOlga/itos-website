@@ -17,6 +17,7 @@ const HowWeWork = () => {
   const t = useTranslations('howWeWork')
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]) // Массив видимых шагов
   const [animationsData, setAnimationsData] = useState<any[]>([]) // Данные всех анимаций
+  const [activeStep, setActiveStep] = useState<number | null>(0) // Активный шаг (null = нет активного)
 
   const steps = [
     {
@@ -64,40 +65,68 @@ const HowWeWork = () => {
   useEffect(() => {
     // Показываем первую карточку сразу
     setVisibleSteps([0])
+    setActiveStep(0)
 
     // 1.5 сек: карточки 1, 2
     const timer1 = setTimeout(() => {
       setVisibleSteps([0, 1])
+      setActiveStep(1)
     }, 1500)
 
     // 3 сек: карточки 1, 2, 3
     const timer2 = setTimeout(() => {
       setVisibleSteps([0, 1, 2])
+      setActiveStep(2)
     }, 3000)
 
     // 4.5 сек: карточки 1, 2, 3, 4
     const timer3 = setTimeout(() => {
       setVisibleSteps([0, 1, 2, 3])
+      setActiveStep(3)
     }, 4500)
 
-    // 10 сек: сброс и начало заново
+    // 6 сек: убираем активное состояние (все карточки одинакового размера)
     const timer4 = setTimeout(() => {
+      setActiveStep(null)
+    }, 6000)
+
+    // 10 сек: сброс и начало заново
+    const timer5 = setTimeout(() => {
       setVisibleSteps([])
+      setActiveStep(null)
       setTimeout(() => {
         setVisibleSteps([0])
+        setActiveStep(0)
       }, 100)
     }, 10000)
 
     // Повторяем цикл каждые 10.1 секунды
     const interval = setInterval(() => {
       setVisibleSteps([0])
+      setActiveStep(0)
 
-      setTimeout(() => setVisibleSteps([0, 1]), 1500)
-      setTimeout(() => setVisibleSteps([0, 1, 2]), 3000)
-      setTimeout(() => setVisibleSteps([0, 1, 2, 3]), 4500)
+      setTimeout(() => {
+        setVisibleSteps([0, 1])
+        setActiveStep(1)
+      }, 1500)
+      setTimeout(() => {
+        setVisibleSteps([0, 1, 2])
+        setActiveStep(2)
+      }, 3000)
+      setTimeout(() => {
+        setVisibleSteps([0, 1, 2, 3])
+        setActiveStep(3)
+      }, 4500)
+      setTimeout(() => {
+        setActiveStep(null)
+      }, 6000)
       setTimeout(() => {
         setVisibleSteps([])
-        setTimeout(() => setVisibleSteps([0]), 100)
+        setActiveStep(null)
+        setTimeout(() => {
+          setVisibleSteps([0])
+          setActiveStep(0)
+        }, 100)
       }, 10000)
     }, 10100)
 
@@ -106,6 +135,7 @@ const HowWeWork = () => {
       clearTimeout(timer2)
       clearTimeout(timer3)
       clearTimeout(timer4)
+      clearTimeout(timer5)
       clearInterval(interval)
     }
   }, [])
@@ -125,7 +155,7 @@ const HowWeWork = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
           {steps.map((step, index) => {
             const isVisible = visibleSteps.includes(index)
-            const isActive = visibleSteps[visibleSteps.length - 1] === index
+            const isActive = activeStep === index
 
             return (
               <div
