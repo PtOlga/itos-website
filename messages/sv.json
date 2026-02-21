@@ -75,20 +75,20 @@
     "subtitle": "Enkel och tydlig process från idé till lansering",
     "steps": {
       "consultation": {
-        "title": "Gratis konsultation",
-        "description": "Vi diskuterar din uppgift, mål och förväntningar. Jag analyserar situationen och föreslår möjliga lösningar. Inga förpliktelser - bara en saklig diskussion."
+        "title": "1. Gratis konsultation",
+        "description": ""
       },
       "planning": {
-        "title": "Plan och uppskattning",
-        "description": "Jag förbereder en detaljerad arbetsplan med tydliga deadlines och kostnader. Du får full transparens - vad som görs, när och till vilket pris. Inga dolda avgifter."
+        "title": "2. Plan och uppskattning",
+        "description": "Du får en strukturerad plan med tydliga milstolpar, tidsramar och kostnader. Full transparens från början. Du vet exakt vad som ingår – inga dolda avgifter."
       },
       "development": {
-        "title": "Utveckling",
-        "description": "Jag genomför projektet stegvis och visar mellanresultat. Du ser framstegen och kan göra justeringar under vägen. Konstant kommunikation och feedback."
+        "title": "3. Utveckling",
+        "description": "Projektet byggs steg för steg med synliga resultat. Du granskar delmoment och kan justera under processen. Tydlig kommunikation ger full kontroll hela vägen."
       },
       "launch": {
-        "title": "Lansering och support",
-        "description": "Jag hjälper till med projektlansering och utbildar dig i systemet. Jag finns tillgänglig för teknisk support och förbättringar. Ditt projekt lämnas inte utan uppmärksamhet efter release."
+        "title": "4. Lansering och support",
+        "description": "Lösningen förbereds för en trygg och smidig lansering. Introduktion och vägledning ges vid behov. Löpande support säkerställer stabilitet och vidare utveckling."
       }
     }
   },

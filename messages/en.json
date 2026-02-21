@@ -75,20 +75,20 @@
     "subtitle": "Simple and clear process from idea to launch",
     "steps": {
       "consultation": {
-        "title": "Free Consultation",
-        "description": "We discuss your task, goals and expectations. I analyze the situation and suggest possible solutions. No obligations - just a business conversation."
+        "title": "1. Free Consultation",
+        "description": "Your goals and challenges come first. The current situation is carefully analyzed and practical solutions are proposed. No pressure — just clarity on what will move your project forward."
       },
       "planning": {
-        "title": "Plan and Estimate",
-        "description": "I prepare a detailed work plan with clear deadlines and costs. You get full transparency - what will be done, when and for how much. No hidden fees."
+        "title": "2. Plan and Estimate",
+        "description": "You receive a structured plan with clear milestones, timelines, and costs. Everything is transparent from the start. You know exactly what to expect — no surprises, no hidden fees."
       },
       "development": {
-        "title": "Development",
-        "description": "I implement the project step by step, showing intermediate results. You see the progress and can make adjustments along the way. Constant communication and feedback."
+        "title": "3. Development",
+        "description": "Your project is built step by step with visible progress. You review intermediate results and adjust along the way. Clear communication ensures full control at every stage."
       },
       "launch": {
-        "title": "Launch and Support",
-        "description": "I help with project launch and train you on the system. I remain available for technical support and improvements. Your project is not left unattended after release."
+        "title": "4. Launch and Support",
+        "description": "Your solution is carefully prepared for launch and smooth operation. Guidance and onboarding are provided when needed. Ongoing support ensures long-term stability and growth."
       }
     }
   },
