@@ -75,19 +75,19 @@
     "subtitle": "Simple and clear process from idea to launch",
     "steps": {
       "consultation": {
-        "title": "1. Free Consultation",
+        "title": "Free Consultation",
         "description": "Your goals and challenges come first. The current situation is carefully analyzed and practical solutions are proposed. No pressure — just clarity on what will move your project forward."
       },
       "planning": {
-        "title": "2. Plan and Estimate",
+        "title": "Plan and Estimate",
         "description": "You receive a structured plan with clear milestones, timelines, and costs. Everything is transparent from the start. You know exactly what to expect — no surprises, no hidden fees."
       },
       "development": {
-        "title": "3. Development",
+        "title": "Development",
         "description": "Your project is built step by step with visible progress. You review intermediate results and adjust along the way. Clear communication ensures full control at every stage."
       },
       "launch": {
-        "title": "4. Launch and Support",
+        "title": "Launch and Support",
         "description": "Your solution is carefully prepared for launch and smooth operation. Guidance and onboarding are provided when needed. Ongoing support ensures long-term stability and growth."
       }
     }
