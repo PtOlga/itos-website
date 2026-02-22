@@ -79,7 +79,7 @@
         "description": "Dina mål och utmaningar står i fokus. Situationen analyseras noggrant och konkreta lösningar föreslås. Ingen press – bara tydlighet kring nästa steg för ditt projekt."
       },
       "planning": {
-        "title": "Plan och uppskattning",
+        "title": "Planering och offert",
         "description": "Du får en strukturerad plan med tydliga milstolpar, tidsramar och kostnader. Full transparens från början. Du vet exakt vad som ingår – inga dolda avgifter."
       },
       "development": {
@@ -87,7 +87,7 @@
         "description": "Projektet byggs steg för steg med synliga resultat. Du granskar delmoment och kan justera under processen. Tydlig kommunikation ger full kontroll hela vägen."
       },
       "launch": {
-        "title": "Lansering och support",
+        "title": "Lansering och stöd",
         "description": "Lösningen förbereds för en trygg och smidig lansering. Introduktion och vägledning ges vid behov. Löpande support säkerställer stabilitet och vidare utveckling."
       }
     }
