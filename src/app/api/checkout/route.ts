@@ -12,7 +12,6 @@ function trimToLength(value: unknown, maxLength: number) {
   if (typeof value !== 'string') {
     return ''
   }
-
   return value.trim().slice(0, maxLength)
 }
 
@@ -31,7 +30,6 @@ function normalizeBaseUrl(rawBaseUrl: string | undefined, fallbackOrigin: string
       continue
     }
   }
-
   return fallbackOrigin
 }
 
@@ -40,6 +38,7 @@ export async function POST(req: NextRequest) {
     const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 
     if (!stripeSecretKey) {
+      console.error('STRIPE_SECRET_KEY is missing. Available env keys:', Object.keys(process.env).filter(k => k.includes('STRIPE')))
       return NextResponse.json(
         { error: 'Stripe is not configured' },
         { status: 500 }
