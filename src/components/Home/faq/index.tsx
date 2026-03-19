@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { accordionData } from '../../../app/api/data'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 const FaqQuestion = () => {
   const [activeIndex, setActiveIndex] = useState(null)
@@ -10,9 +9,6 @@ const FaqQuestion = () => {
   const toggleAccordion = (index: any) => {
     setActiveIndex(activeIndex === index ? null : index)
   }
-
-  const pathname = usePathname()
-  console.log(pathname)
 
   return (
     <>

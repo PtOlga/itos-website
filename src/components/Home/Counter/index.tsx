@@ -2,12 +2,8 @@
 import React from 'react'
 import { count } from '@/app/api/data'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
 
 const Counter = () => {
-  const pathname = usePathname()
-  console.log(pathname)
-
   return (
     <section className={`dark:bg-darkmode py-20`}>
       <div className='container'>

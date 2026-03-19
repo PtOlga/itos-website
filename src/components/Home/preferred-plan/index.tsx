@@ -1,7 +1,6 @@
 'use client'
 import { useReducer, useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 const Preferred = () => {
   const [activeTab, setActiveTab] = useState('monthly')
@@ -53,9 +52,6 @@ const Preferred = () => {
   }
 
   const [tabConfig, dispatch] = useReducer(reducer, initialTabConfig)
-
-  const pathname = usePathname()
-  console.log(pathname)
 
   return (
     <>

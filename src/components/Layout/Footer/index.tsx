@@ -13,7 +13,6 @@ const footerTitles = {
 
 const Footer: FC = () => {
   const pathname = usePathname()
-  console.log(pathname) // For debugging
 
   return (
     <footer
