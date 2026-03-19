@@ -72,6 +72,10 @@ const PriceCalculator = () => {
 
       const data = await response.json()
 
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to create checkout session')
+      }
+
       if (data.url) {
         window.location.href = data.url
       } else {
@@ -217,7 +221,7 @@ const PriceCalculator = () => {
                 </div>
                 <div>
                   <label className="block text-base font-medium text-secondary dark:text-white mb-2">Notes:</label>
-                  <textarea name="notes" value={formData.notes} onChange={handleFormChange} rows={4}
+                  <textarea name="notes" value={formData.notes} onChange={handleFormChange} rows={4} maxLength={500}
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <button type="submit" disabled={isLoading} className="w-full btn py-4 rounded-lg text-lg font-semibold disabled:opacity-50">
