@@ -3,6 +3,7 @@
 
 [build]
 builder = "nixpacks"
+buildCommand = "npm install && npm run build"
 
 [deploy]
 startCommand = "npm start"
@@ -24,4 +25,3 @@ restartPolicyMaxRetries = 5
 [environments.pr.deploy]
 restartPolicyType = "never"
 restartPolicyMaxRetries = 1
-
