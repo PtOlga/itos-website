@@ -5,8 +5,6 @@ import Footer from "@/components/Layout/Footer";
 import { ThemeProvider } from "next-themes";
 import ScrollToTop from '@/components/ScrollToTop';
 import Aoscompo from "@/utils/aos";
-import SessionProviderComp from "@/components/nextauth/SessionProvider";
-import { AuthDialogProvider } from "../context/AuthDialogContext";
 import NextTopLoader from "nextjs-toploader";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -51,23 +49,19 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={dmsans.className}>
         <NextIntlClientProvider messages={messages}>
-          <AuthDialogProvider>
-            <SessionProviderComp>
-              <ThemeProvider
-                attribute="class"
-                enableSystem={true}
-                defaultTheme="system"
-              >
-                <Aoscompo>
-                  <Header />
-                  <NextTopLoader color='#f9c78f' />
-                  {children}
-                  <Footer />
-                </Aoscompo>
-                <ScrollToTop />
-              </ThemeProvider>
-            </SessionProviderComp>
-          </AuthDialogProvider>
+          <ThemeProvider
+            attribute="class"
+            enableSystem={true}
+            defaultTheme="system"
+          >
+            <Aoscompo>
+              <Header />
+              <NextTopLoader color='#f9c78f' />
+              {children}
+              <Footer />
+            </Aoscompo>
+            <ScrollToTop />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

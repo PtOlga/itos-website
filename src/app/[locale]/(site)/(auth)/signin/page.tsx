@@ -1,19 +1,7 @@
-import Signin from "@/components/Auth/SignIn";
-import Breadcrumb from "@/components/Common/Breadcrumb";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Sign In",
-};
+import { notFound } from "next/navigation";
 
 const SigninPage = () => {
-  return (
-    <>
-      <Breadcrumb pageName="Sign In Page" />
-
-      <Signin />
-    </>
-  );
+  return notFound();
 };
 
 export default SigninPage;
