@@ -92,6 +92,40 @@
       }
     }
   },
+  "contact": {
+    "hero": {
+      "title": "Kontakt",
+      "description": "Låt oss diskutera ditt projekt"
+    },
+    "email": {
+      "title": "Skicka e-post",
+      "description": "Skriv gärna till mig. Jag svarar inom 24 timmar.",
+      "link": "Skicka ett meddelande"
+    },
+    "partnership": {
+      "title": "Partnerskap",
+      "description": "Intresserad av samarbete? Låt oss diskutera hur vi kan arbeta tillsammans.",
+      "link": "Diskutera partnerskap"
+    },
+    "form": {
+      "title": "Få en gratis konsultation",
+      "firstName": "Förnamn",
+      "lastName": "Efternamn",
+      "email": "E-post",
+      "phone": "Telefon",
+      "message": "Ditt meddelande",
+      "messagePlaceholder": "Beskriv din uppgift eller fråga...",
+      "submit": "Skicka meddelande",
+      "successMessage": "Tack! Jag återkommer snart.",
+      "errorMessage": "Något gick fel. Försök igen."
+    },
+    "location": {
+      "title": "Kontaktuppgifter",
+      "address": "Charlottenberg, 67392, Sverige",
+      "emailLabel": "E-post",
+      "phoneLabel": "Telefon"
+    }
+  },
   "pricing": {
     "title": "Webbplatskostnadskalkylator",
     "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",

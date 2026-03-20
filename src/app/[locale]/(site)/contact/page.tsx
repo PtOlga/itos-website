@@ -1,24 +1,26 @@
 import ContactForm from "@/components/Contact/Form";
 import ContactInfo from "@/components/Contact/ContactInfo";
 import Location from "@/components/Contact/OfficeLocation";
-import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
-export const metadata: Metadata = {
-    title: "Contact",
-};
 
-const page = () => {
-  const breadcrumbLinks = [
-    { href: "/", text: "Home" },
-    { href: "/contact", text: "Contact" },
-  ];
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("contact.hero");
+  return {
+    title: t("title"),
+  };
+}
+
+const ContactPage = () => {
+  const t = useTranslations("contact.hero");
+
   return (
     <>
       <HeroSub
-        title="Contact Us"
-        description=""
-
+        title={t("title")}
+        description={t("description")}
       />
       <ContactInfo />
       <ContactForm />
@@ -27,4 +29,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ContactPage;

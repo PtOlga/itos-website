@@ -92,6 +92,40 @@
       }
     }
   },
+  "contact": {
+    "hero": {
+      "title": "Contact",
+      "description": "Let's discuss your project"
+    },
+    "email": {
+      "title": "Email Us",
+      "description": "Feel free to write. I respond within 24 hours.",
+      "link": "Send a message"
+    },
+    "partnership": {
+      "title": "Partnership",
+      "description": "Interested in collaboration? Let's discuss how we can work together.",
+      "link": "Discuss partnership"
+    },
+    "form": {
+      "title": "Get a Free Consultation",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Your message",
+      "messagePlaceholder": "Describe your task or question...",
+      "submit": "Send Message",
+      "successMessage": "Thank you! I will get back to you soon.",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "location": {
+      "title": "Contact Details",
+      "address": "Charlottenberg, 67392, Sweden",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone"
+    }
+  },
   "pricing": {
     "title": "Website Cost Calculator",
     "description": "Use the calculator below to see the project price based on your requirements",
