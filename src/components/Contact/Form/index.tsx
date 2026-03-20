@@ -11,7 +11,7 @@ import contactAnimation from '../../../../public/animations/Contact_Us_itos.json
 import emailjs from '@emailjs/browser'
 
 const SERVICE_ID = 'service_ji0tfkm'
-const TEMPLATE_ID = 'template_k7yb4si'
+const TEMPLATE_ID = 'template_fzdqm4x'
 const PUBLIC_KEY = 'u3MskHaERL6uivJcK'
 
 const ContactForm = () => {
