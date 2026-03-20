@@ -193,5 +193,44 @@
     "company": "Company",
     "support": "Support",
     "allRightsReserved": "All rights reserved"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "contactText": "Still have questions?",
+    "contactLink": "Contact us",
+    "items": [
+      {
+        "question": "How much does a website cost?",
+        "answer": "The price depends on the complexity. A simple landing page starts from 2,200 SEK / €190. A multi-page business website costs 5,000–10,000 SEK, and an advanced website with integrations costs 10,000–25,000 SEK. The first consultation is free — I'll give you an exact quote after discussing your needs."
+      },
+      {
+        "question": "How long does it take to build a website?",
+        "answer": "A simple website takes 1–2 weeks, a standard business website 2–4 weeks, and a complex project with integrations 4–6 weeks. The timeline depends on how quickly you provide content and feedback."
+      },
+      {
+        "question": "Do you work with clients across Sweden?",
+        "answer": "Yes, I work fully remotely and serve clients throughout Sweden, Norway, and the EU. Location is not a barrier — all communication, delivery, and support happen online."
+      },
+      {
+        "question": "What is included in the free consultation?",
+        "answer": "The free consultation lasts 30–60 minutes. We discuss your goals, current situation, and challenges. I analyse your needs and suggest practical solutions. No pressure — you get clarity on next steps with no obligations."
+      },
+      {
+        "question": "Do I need a CRM system?",
+        "answer": "If you have more than 10 active clients and find yourself losing track of contacts, follow-ups, or deals — yes, a CRM will save you time and money. I work with PlanFix and Bitrix24 and handle the full setup, customisation, and training."
+      },
+      {
+        "question": "Do you work only with Swedish companies?",
+        "answer": "No, I also work with companies in Norway and across the EU. I provide services in three languages — Swedish, English, and Russian — so the language is never a barrier."
+      },
+      {
+        "question": "How does payment work?",
+        "answer": "For projects: 50% upfront at the start, 50% upon delivery. For ongoing support: monthly invoicing. Payment methods include bank transfer (faktura with 30-day terms) and Swish for smaller amounts. Instalments are possible for larger projects."
+      },
+      {
+        "question": "What is included in post-launch support?",
+        "answer": "Post-launch support includes updates, bug fixes, technical assistance, and small improvements. The rate is 300–800 SEK/hour, or we can agree on a monthly support package starting from 2,000 SEK/month."
+      }
+    ]
   }
 }

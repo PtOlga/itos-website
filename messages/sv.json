@@ -193,5 +193,44 @@
     "company": "Företag",
     "support": "Support",
     "allRightsReserved": "Alla rättigheter förbehållna"
+  },
+  "faq": {
+    "title": "Vanliga frågor",
+    "contactText": "Har du fler frågor?",
+    "contactLink": "Kontakta oss",
+    "items": [
+      {
+        "question": "Vad kostar en webbplats?",
+        "answer": "Priset beror på komplexiteten. En enkel landningssida börjar från 2 200 kr / €190. En flersidig företagswebbplats kostar 5 000–10 000 kr, och en avancerad webbplats med integrationer kostar 10 000–25 000 kr. Första konsultationen är gratis — jag ger dig ett exakt pris efter att vi diskuterat dina behov."
+      },
+      {
+        "question": "Hur lång tid tar det att bygga en webbplats?",
+        "answer": "En enkel webbplats tar 1–2 veckor, en vanlig företagswebbplats 2–4 veckor och ett komplext projekt med integrationer 4–6 veckor. Tidsplanen beror på hur snabbt du levererar innehåll och återkoppling."
+      },
+      {
+        "question": "Jobbar du med kunder i hela Sverige?",
+        "answer": "Ja, jag arbetar helt på distans och betjänar kunder i hela Sverige, Norge och EU. Plats är inget hinder — all kommunikation, leverans och support sker online."
+      },
+      {
+        "question": "Vad ingår i den kostnadsfria konsultationen?",
+        "answer": "Den kostnadsfria konsultationen varar 30–60 minuter. Vi diskuterar dina mål, nuläge och utmaningar. Jag analyserar dina behov och föreslår praktiska lösningar. Ingen press — du får klarhet kring nästa steg utan några förpliktelser."
+      },
+      {
+        "question": "Behöver jag ett CRM-system?",
+        "answer": "Om du har fler än 10 aktiva kunder och tappar koll på kontakter, uppföljningar eller affärer — ja, ett CRM sparar tid och pengar. Jag arbetar med PlanFix och Bitrix24 och sköter hela installationen, anpassningen och utbildningen."
+      },
+      {
+        "question": "Jobbar du bara med svenska företag?",
+        "answer": "Nej, jag jobbar också med företag i Norge och EU. Jag levererar tjänster på tre språk — svenska, engelska och ryska — så språket är aldrig ett hinder."
+      },
+      {
+        "question": "Hur fungerar betalningen?",
+        "answer": "För projekt: 50% förskott vid start, 50% vid leverans. För löpande support: månadsfakturering. Betalningsmetoder inkluderar faktura (30 dagars betalningsvillkor) och Swish för mindre belopp. Delbetalning är möjlig för större projekt."
+      },
+      {
+        "question": "Vad ingår i supporten efter lansering?",
+        "answer": "Support efter lansering inkluderar uppdateringar, felrättningar, teknisk hjälp och mindre förbättringar. Priset är 300–800 kr/timme, eller så kan vi komma överens om ett månatligt supportpaket från 2 000 kr/månad."
+      }
+    ]
   }
 }
