@@ -189,10 +189,23 @@
     }
   },
   "footer": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "IT solutions that work for you. Web development, CRM, automation — direct expert access, no agency markup.",
     "company": "Company",
-    "support": "Support",
-    "allRightsReserved": "All rights reserved"
+    "services": "Services",
+    "contactTitle": "Contact",
+    "allRightsReserved": "All rights reserved by",
+    "links": {
+      "about": "About",
+      "portfolio": "Portfolio",
+      "blog": "Blog",
+      "faqs": "FAQs",
+      "contact": "Contact",
+      "webDev": "Web Development",
+      "ai": "AI & Automation",
+      "crm": "CRM Solutions",
+      "tools": "Business Tools",
+      "pricing": "Pricing"
+    }
   },
   "faq": {
     "title": "Frequently asked questions",

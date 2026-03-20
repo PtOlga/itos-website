@@ -189,10 +189,23 @@
     }
   },
   "footer": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "IT-lösningar som arbetar för dig. Webbutveckling, CRM, automatisering — direkt kontakt med experten, ingen byråpåslag.",
     "company": "Företag",
-    "support": "Support",
-    "allRightsReserved": "Alla rättigheter förbehållna"
+    "services": "Tjänster",
+    "contactTitle": "Kontakt",
+    "allRightsReserved": "Alla rättigheter förbehållna av",
+    "links": {
+      "about": "Om oss",
+      "portfolio": "Portfolio",
+      "blog": "Blogg",
+      "faqs": "Vanliga frågor",
+      "contact": "Kontakt",
+      "webDev": "Webbutveckling",
+      "ai": "AI & Automatisering",
+      "crm": "CRM-lösningar",
+      "tools": "Affärsverktyg",
+      "pricing": "Priser"
+    }
   },
   "faq": {
     "title": "Vanliga frågor",
