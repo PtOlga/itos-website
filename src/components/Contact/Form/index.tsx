@@ -8,6 +8,11 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import Lottie from 'lottie-react'
 import contactAnimation from '../../../../public/animations/Contact_Us_itos.json'
+import emailjs from '@emailjs/browser'
+
+const SERVICE_ID = 'service_ji0tfkm'
+const TEMPLATE_ID = 'template_k7yb4si'
+const PUBLIC_KEY = 'u3MskHaERL6uivJcK'
 
 const ContactForm = () => {
   const t = useTranslations('contact')
@@ -31,10 +36,29 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // TODO: replace with real API call
-    await new Promise((res) => setTimeout(res, 800))
-    setStatus('success')
-    setLoading(false)
+    setStatus('idle')
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone || '—',
+          message: formData.message,
+        },
+        PUBLIC_KEY
+      )
+      setStatus('success')
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' })
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      setStatus('error')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -49,9 +73,17 @@ const ContactForm = () => {
             </h2>
 
             {status === 'success' ? (
-              <p className='text-primary text-xl font-medium py-8'>
-                {t('form.successMessage')}
-              </p>
+              <div className='py-8'>
+                <p className='text-primary text-xl font-medium mb-4'>
+                  {t('form.successMessage')}
+                </p>
+                <Button
+                  onClick={() => setStatus('idle')}
+                  variant='outline'
+                  className='mt-2'>
+                  ← {t('form.sendAnother')}
+                </Button>
+              </div>
             ) : (
               <form onSubmit={handleSubmit} className='flex flex-wrap w-full justify-between'>
 

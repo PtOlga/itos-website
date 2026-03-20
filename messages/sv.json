@@ -117,7 +117,8 @@
       "messagePlaceholder": "Beskriv din uppgift eller fråga...",
       "submit": "Skicka meddelande",
       "successMessage": "Tack! Jag återkommer snart.",
-      "errorMessage": "Något gick fel. Försök igen."
+      "errorMessage": "Något gick fel. Försök igen.",
+      "sendAnother": "Skicka ett nytt meddelande"
     },
     "location": {
       "title": "Kontaktuppgifter",

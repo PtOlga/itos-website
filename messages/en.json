@@ -117,7 +117,8 @@
       "messagePlaceholder": "Describe your task or question...",
       "submit": "Send Message",
       "successMessage": "Thank you! I will get back to you soon.",
-      "errorMessage": "Something went wrong. Please try again."
+      "errorMessage": "Something went wrong. Please try again.",
+      "sendAnother": "Send another message"
     },
     "location": {
       "title": "Contact Details",
