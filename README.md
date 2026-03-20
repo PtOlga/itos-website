@@ -4,7 +4,7 @@ Marketing website for IT services and web development, built with Next.js App Ro
 
 ## Overview
 
-This repository contains the ITOS company website with localized routes, authentication pages, a blog powered by local MDX content, a portfolio section, project documentation pages, and a client-side website price calculator.
+This repository contains the ITOS company website with localized routes, a blog powered by local Markdown content, a portfolio section, project documentation pages, and a Stripe-powered website price calculator.
 
 ## Features
 
@@ -12,13 +12,15 @@ This repository contains the ITOS company website with localized routes, authent
 - TypeScript + Tailwind CSS
 - `next-intl` localization for English and Swedish
 - Swedish as the default locale, English available via `/en/...`
-- `next-auth` authentication with Google, GitHub, and credentials providers
+- Stripe checkout for the pricing calculator
+- Support for `card` and `klarna` payment methods in checkout
 - Dark mode via `next-themes`
 - Blog posts loaded from `markdown/Blog/*.mdx`
 - Reusable UI components with shadcn/ui and Radix primitives
 - AOS-based scroll animations
 - Responsive marketing pages for services, portfolio, FAQs, and contact
 - Interactive website cost calculator
+- Railway-ready deployment
 
 ## Tech Stack
 
@@ -26,7 +28,7 @@ This repository contains the ITOS company website with localized routes, authent
 - **Language:** TypeScript
 - **UI:** React 19, Tailwind CSS 3, shadcn/ui, Radix UI
 - **i18n:** next-intl
-- **Auth:** next-auth
+- **Payments:** Stripe Checkout
 - **Content:** gray-matter + remark + remark-html
 - **Utilities:** clsx, tailwind-merge, class-variance-authority, date-fns
 - **Deployment:** Railway
@@ -47,9 +49,16 @@ Notable pages:
 - `/portfolio`
 - `/portfolio/[slug]`
 - `/pricing`
-- `/signin`
-- `/signup`
 - `/demo`
+
+API routes:
+
+- `/api/checkout` — creates a Stripe Checkout session
+
+Authentication routes are currently disabled:
+
+- `/signin` and `/signup` intentionally return `404`
+- `/api/auth/[...nextauth]` is kept only as a disabled compatibility route
 
 English pages are also available under `/en/...`, for example `/en/pricing`.
 
@@ -73,16 +82,16 @@ npm install
 Create a `.env` file in the project root:
 
 ```env
-NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-secret-key-here
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
 
-# Optional OAuth providers
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-
-GITHUB_ID=your-github-client-id
-GITHUB_SECRET=your-github-client-secret
+# Optional site metadata
+SITE_NAME=ITOS
+AUTHOR_NAME=ITOS
 ```
+
+For local development and testing, Stripe test keys are recommended.
 
 ### Run Locally
 
@@ -115,12 +124,12 @@ itos-website/
 │   │   │   ├── demo/              # shadcn/ui demo page
 │   │   │   ├── layout.tsx         # Main app layout
 │   │   │   └── page.tsx           # Localized home page
-│   │   ├── api/auth/[...nextauth]/# NextAuth route
+│   │   ├── api/checkout/            # Stripe checkout session route
+│   │   ├── api/auth/[...nextauth]/  # Disabled auth compatibility route
 │   │   ├── context/               # App-level React context
 │   │   ├── globals.css            # Global styles
 │   │   └── not-found.tsx          # 404 page
 │   ├── components/
-│   │   ├── Auth/
 │   │   ├── Blog/
 │   │   ├── Contact/
 │   │   ├── Documentation/
@@ -158,17 +167,27 @@ Post content goes here.
 
 Posts are read from the filesystem with `gray-matter` and converted to HTML with `remark`.
 
-## Authentication
+## Payments
 
-Authentication is configured in `src/app/api/auth/[...nextauth]/route.js`.
+The pricing calculator posts to `src/app/api/checkout/route.ts`.
 
-Currently included providers:
+Current checkout behavior:
 
-- Google OAuth
-- GitHub OAuth
-- Credentials provider
+- validates `amount` and `currency`
+- normalizes the base URL for redirects
+- truncates long notes and options before sending them to Stripe
+- creates localized success and cancel URLs back to the pricing page
+- supports `card` and `klarna`
 
-If you only need local UI development, OAuth credentials can be omitted.
+## Authentication Status
+
+Authentication is currently disabled in runtime:
+
+- login and registration buttons were removed from the header
+- `/signin` and `/signup` return `404`
+- `/api/auth/[...nextauth]` no longer initializes active auth providers
+
+There are still legacy auth-related files in the repository, but they are not part of the active user flow.
 
 ## UI Components
 
@@ -192,7 +211,7 @@ npm start
 
 ## Links
 
-- Live site: https://itos-website-production.up.railway.app
+- Live site: https://itos.nu
 - Repository: https://github.com/PtOlga/itos-website
 - Next.js docs: https://nextjs.org/docs
 - shadcn/ui docs: https://ui.shadcn.com

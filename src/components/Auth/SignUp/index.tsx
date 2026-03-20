@@ -31,7 +31,7 @@ const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
       body: JSON.stringify(finalData),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         toast.success("Successfully registered");
         setLoading(false);
         router.push("/");

@@ -1,12 +1,10 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import SocialSignIn from "../SocialSignIn";
 import Logo from "@/components/Layout/Header/Logo"
-import Loader from "@/components/Common/Loader";
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import AuthDialogContext from "@/app/context/AuthDialogContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,26 +12,18 @@ import { Label } from "@/components/ui/label";
 
 
 const Signin = ({signInOpen}:{signInOpen?:any}) => {
-  const { data: session } = useSession();
   const [username, setUsername] = useState("admin");
   const [password, setPassword] = useState("admin123");
-  const [error, setError] = useState("");
   const authDialog = useContext(AuthDialogContext);
 
 
   const handleSubmit = async (e: any) => {
-    const notify = () => toast('Here is your toast.');
     e.preventDefault();
     const result = await signIn("credentials", {
       redirect: false,
       username,
       password,
     });
-    console.log(result);
-    if (result?.error) {
-      // Handle successful sign-in
-      setError(result.error);
-    }
     if(result?.status === 200){
        setTimeout(() => {
         signInOpen(false);
