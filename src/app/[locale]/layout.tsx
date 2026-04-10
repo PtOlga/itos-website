@@ -11,6 +11,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/request';
 import { Metadata } from 'next';
+import Script from "next/script";
 
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
@@ -47,6 +48,14 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="TwtKVhhnWtH5kaegiFIDwg"
+          strategy="afterInteractive"
+          async
+        />
+      </head>
       <body className={dmsans.className}>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider
@@ -67,4 +76,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-
