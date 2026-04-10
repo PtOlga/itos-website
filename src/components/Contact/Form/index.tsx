@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import Lottie from 'lottie-react'
-import contactAnimation from '../../../../public/animations/Contact_Us_itos.json'
+import contactAnimation from '../../../../public/animations/contact-us-itos.json'
 import emailjs from '@emailjs/browser'
 
 const SERVICE_ID = 'service_ji0tfkm'

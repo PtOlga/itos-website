@@ -1,7 +1,7 @@
 'use client'
 
 import Lottie from 'lottie-react'
-import catAnimation from '@/animations/Cat_playing_animation.json'
+import catAnimation from '../../../public/animations/cat-playing-animation.json'
 
 interface UnderConstructionProps {
   title?: string
