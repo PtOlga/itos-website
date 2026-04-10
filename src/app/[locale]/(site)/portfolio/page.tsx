@@ -1,5 +1,5 @@
-import CardBox from "@/components/Home/porfolio/cardbox";
 import HeroSub from "@/components/SharedComponent/HeroSub";
+import UnderConstruction from '@/components/SharedComponent/UnderConstruction'
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
@@ -10,9 +10,10 @@ const page = () => {
   return (
     <>
       <HeroSub title="Portfolio" description="" />
-      <div className="-my-52 py-52 bg-AliceBlue">
-        <CardBox />
-      </div>
+      <UnderConstruction
+        title='Portfolio page is coming soon'
+        message='We are updating our portfolio. The main portfolio page will be available soon.'
+      />
     </>
   );
 };

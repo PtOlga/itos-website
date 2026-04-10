@@ -1,9 +1,7 @@
 import HeroSub from '@/components/SharedComponent/HeroSub'
+import UnderConstruction from '@/components/SharedComponent/UnderConstruction'
 import React from 'react'
 import { Metadata } from "next";
-import Counter from '@/components/Home/Counter';
-import WorkGrow from '@/components/Home/work-grow';
-import BuildAmazing from '@/components/Home/Build-Amazing';
 export const metadata: Metadata = {
     title: "About",
 };
@@ -15,9 +13,10 @@ const page = () => {
             title="About Us"
             description=""
         />
-        <Counter/>
-        <WorkGrow/>
-        <BuildAmazing isSpace={false} />
+        <UnderConstruction
+          title='About page is coming soon'
+          message='We are preparing the About page content. Please check back soon.'
+        />
     </>
   )
 }
