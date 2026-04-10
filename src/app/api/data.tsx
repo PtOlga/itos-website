@@ -47,40 +47,6 @@ export const cardData = [
       link: '/',
     },
   ];
-
-  export const boxData = [
-    {
-      src: '/images/work-grow/mobile-application.jpg',
-      alt: 'work-grow',
-      title: 'Apex Mobile Application Development',
-      slug: "portfolio-1"
-    },
-    {
-      src: '/images/work-grow/weby-dashboard-design.jpg',
-      alt: 'work-grow',
-      title: 'Weby Dashboard Design',
-      slug: "portfolio-2"
-    },
-    {
-      src: '/images/work-grow/frontend-development.jpg',
-      alt: 'work-grow',
-      title: 'Frontend Development',
-      slug: "portfolio-3"
-    },
-    {
-      src: '/images/work-grow/illustration.jpg',
-      alt: 'work-grow',
-      title: 'Lying on arrow concept illustration',
-      slug: "portfolio-4"
-    },
-    {
-      src: '/images/work-grow/financial-image.jpg',
-      alt: 'work-grow',
-      title: 'Financial data concept illustration',
-      slug: "portfolio-5"
-    },
-  ];
-
  export const accordionData = [
     {
       title: "How do I figure out what to learn?",

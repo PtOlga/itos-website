@@ -4,7 +4,7 @@ Marketing website for IT services and web development, built with Next.js App Ro
 
 ## Overview
 
-This repository contains the ITOS company website with localized routes, a blog powered by local Markdown content, a portfolio section, project documentation pages, and a Stripe-powered website price calculator.
+This repository contains the ITOS company website with localized routes, project documentation pages, marketing sections, and a Stripe-powered website price calculator.
 
 ## Features
 
@@ -29,7 +29,6 @@ This repository contains the ITOS company website with localized routes, a blog 
 - **UI:** React 19, Tailwind CSS 3, shadcn/ui, Radix UI
 - **i18n:** next-intl
 - **Payments:** Stripe Checkout
-- **Content:** gray-matter + remark + remark-html
 - **Utilities:** clsx, tailwind-merge, class-variance-authority, date-fns
 - **Deployment:** Railway
 
@@ -42,12 +41,10 @@ Notable pages:
 - `/` — home
 - `/about`
 - `/blog`
-- `/blog/[slug]`
 - `/contact`
 - `/documentation`
 - `/faqs`
 - `/portfolio`
-- `/portfolio/[slug]`
 - `/pricing`
 - `/demo`
 
@@ -59,6 +56,8 @@ Authentication routes are currently disabled:
 
 - `/signin` and `/signup` intentionally return `404`
 - `/api/auth/[...nextauth]` is kept only as a disabled compatibility route
+
+Blog and portfolio detail routes have been removed. The top-level `/blog` and `/portfolio` pages are currently placeholder pages.
 
 English pages are also available under `/en/...`, for example `/en/pricing`.
 
@@ -114,7 +113,6 @@ npm run lint
 
 ```text
 itos-website/
-├── markdown/Blog/                 # Local blog posts in .mdx format
 ├── messages/                      # next-intl translation files
 ├── public/                        # Static assets
 ├── src/
@@ -130,7 +128,6 @@ itos-website/
 │   │   ├── globals.css            # Global styles
 │   │   └── not-found.tsx          # 404 page
 │   ├── components/
-│   │   ├── Blog/
 │   │   ├── Contact/
 │   │   ├── Documentation/
 │   │   ├── Home/
@@ -140,32 +137,11 @@ itos-website/
 │   ├── i18n/                      # Locale configuration
 │   ├── lib/
 │   ├── middleware.ts              # Locale routing middleware
-│   └── utils/                     # Markdown, AOS, validation helpers
+│   └── utils/                     # AOS and other helpers
 ├── components.json                # shadcn/ui configuration
 ├── railway.toml                   # Railway deployment config
 └── tailwind.config.ts
 ```
-
-## Blog Content
-
-Blog posts are stored in `markdown/Blog` as `.mdx` files.
-
-Minimum frontmatter example:
-
-```md
----
-title: "Your Post Title"
-excerpt: "Short summary"
-date: 2026-01-19
-coverImage: /images/blog/your-image.jpg
-author: your-name
-authorImage: /images/blogdetail-page/author.png
----
-
-Post content goes here.
-```
-
-Posts are read from the filesystem with `gray-matter` and converted to HTML with `remark`.
 
 ## Payments
 
