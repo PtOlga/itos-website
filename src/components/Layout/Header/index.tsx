@@ -8,11 +8,13 @@ import HeaderLink from '../Header/Navigation/HeaderLink'
 import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
 import { useTheme } from 'next-themes'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
-import { useTranslations } from 'next-intl'
-import { stripLocalePrefix } from '@/utils/localePath'
+import { useLocale, useTranslations } from 'next-intl'
+import { getLocalizedPath, stripLocalePrefix } from '@/utils/localePath'
+import type { Locale } from '@/i18n/config'
 
 const Header: React.FC = () => {
   const pathUrl = stripLocalePrefix(usePathname())
+  const locale = useLocale() as Locale
   const { theme, setTheme } = useTheme()
   const t = useTranslations('navigation')
   const headerData = getHeaderData(t)
@@ -62,7 +64,7 @@ const Header: React.FC = () => {
             : 'shadow-none'
         }`}>
         <div className='container mx-auto flex items-center justify-between p-6'>
-          <Link href='/'>
+          <Link href={getLocalizedPath('/', locale)}>
             <Image
               src='/images/logo/logo.png'
               alt='ITOS Logo'

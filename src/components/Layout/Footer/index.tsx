@@ -3,27 +3,29 @@ import React, { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useTranslations } from 'next-intl'
-import { stripLocalePrefix } from '@/utils/localePath'
+import { useLocale, useTranslations } from 'next-intl'
+import type { Locale } from '@/i18n/config'
+import { getLocalizedPath, stripLocalePrefix } from '@/utils/localePath'
 
 const Footer: FC = () => {
   const pathname = stripLocalePrefix(usePathname())
+  const locale = useLocale() as Locale
   const t = useTranslations('footer')
 
   const companyLinks = [
-    { name: t('links.about'), href: '/about' },
-    { name: t('links.portfolio'), href: '/portfolio' },
-    { name: t('links.blog'), href: '/blog' },
-    { name: t('links.faqs'), href: '/faqs' },
-    { name: t('links.contact'), href: '/contact' },
+    { name: t('links.about'), href: getLocalizedPath('/about', locale) },
+    { name: t('links.portfolio'), href: getLocalizedPath('/portfolio', locale) },
+    { name: t('links.blog'), href: getLocalizedPath('/blog', locale) },
+    { name: t('links.faqs'), href: getLocalizedPath('/faqs', locale) },
+    { name: t('links.contact'), href: getLocalizedPath('/contact', locale) },
   ]
 
   const serviceLinks = [
-    { name: t('links.webDev'), href: '/portfolio' },
-    { name: t('links.ai'), href: '/portfolio' },
-    { name: t('links.crm'), href: '/portfolio' },
-    { name: t('links.tools'), href: '/portfolio' },
-    { name: t('links.pricing'), href: '/pricing' },
+    { name: t('links.webDev'), href: getLocalizedPath('/portfolio', locale) },
+    { name: t('links.ai'), href: getLocalizedPath('/portfolio', locale) },
+    { name: t('links.crm'), href: getLocalizedPath('/portfolio', locale) },
+    { name: t('links.tools'), href: getLocalizedPath('/portfolio', locale) },
+    { name: t('links.pricing'), href: getLocalizedPath('/pricing', locale) },
   ]
 
   return (
@@ -36,7 +38,7 @@ const Footer: FC = () => {
 
           {/* Top row — logo + social */}
           <div className='flex items-center justify-between pb-16 border-b border-dark_border border-solid'>
-            <Link href='/'>
+            <Link href={getLocalizedPath('/', locale)}>
               <Image
                 src='/images/footer/ftr-logo.svg'
                 alt='ITOS Logo'
@@ -146,7 +148,7 @@ const Footer: FC = () => {
             <p className='text-base font-normal text-SlateBlue text-center'>
               © Copyright 2025. {t('allRightsReserved')}{' '}
               <Link
-                href='/'
+                href={getLocalizedPath('/', locale)}
                 className='hover:text-primary'>
                 ITOS
               </Link>
