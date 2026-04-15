@@ -1,42 +1,46 @@
 # ITOS Website
 
-Marketing website for IT services and web development, built with Next.js App Router, TypeScript, Tailwind CSS, and shadcn/ui.
+Localized marketing website for IT consulting and web development services, built with Next.js App Router, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Overview
 
-This repository contains the ITOS company website with localized routes, project documentation pages, marketing sections, and a Stripe-powered website price calculator.
+This repository powers the ITOS company website. The current application includes:
 
-## Features
+- localized marketing pages in Swedish and English
+- a Stripe-powered website pricing calculator
+- a contact form powered by EmailJS
+- a shadcn/ui demo page
+- placeholder pages for sections that are not yet publicly launched
+
+## Current Features
 
 - Next.js 15 App Router
 - TypeScript + Tailwind CSS
-- `next-intl` localization for English and Swedish
-- Swedish as the default locale, English available via `/en/...`
-- Stripe checkout for the pricing calculator
-- Support for `card` and `klarna` payment methods in checkout
-- Dark mode via `next-themes`
-- Blog posts loaded from `markdown/Blog/*.mdx`
-- Reusable UI components with shadcn/ui and Radix primitives
+- `next-intl` localization
+- Swedish as the default locale
+- English pages under `/en/...`
+- dark mode via `next-themes`
+- Stripe Checkout integration for pricing requests
+- EmailJS-based contact form submission
+- reusable UI components with shadcn/ui and Radix primitives
 - AOS-based scroll animations
-- Responsive marketing pages for services, portfolio, FAQs, and contact
-- Interactive website cost calculator
-- Railway-ready deployment
+- Railway deployment configuration
 
-## Tech Stack
+## Locale and Routing
 
-- **Framework:** Next.js 15.5.9
-- **Language:** TypeScript
-- **UI:** React 19, Tailwind CSS 3, shadcn/ui, Radix UI
-- **i18n:** next-intl
-- **Payments:** Stripe Checkout
-- **Utilities:** clsx, tailwind-merge, class-variance-authority, date-fns
-- **Deployment:** Railway
+Main routes live under `src/app/[locale]`.
 
-## Routes
+### Locale behavior
 
-Main site routes live under `src/app/[locale]`.
+- Swedish (`sv`) is the default locale and is served without a prefix
+- English (`en`) is served with an `/en` prefix
+- examples:
+  - `/pricing`
+  - `/en/pricing`
+  - `/contact`
+  - `/en/contact`
 
-Notable pages:
+### Public pages
 
 - `/` — home
 - `/about`
@@ -48,24 +52,39 @@ Notable pages:
 - `/pricing`
 - `/demo`
 
-API routes:
+### API routes
 
 - `/api/checkout` — creates a Stripe Checkout session
+- `/api/auth/[...nextauth]` — disabled compatibility endpoint returning `404`
 
-Authentication routes are currently disabled:
+### Current placeholder / disabled routes
 
-- `/signin` and `/signup` intentionally return `404`
-- `/api/auth/[...nextauth]` is kept only as a disabled compatibility route
+- `/about` — placeholder content
+- `/blog` — placeholder content
+- `/portfolio` — placeholder content
+- `/signin` — intentionally returns `404`
+- `/signup` — intentionally returns `404`
 
-Blog and portfolio detail routes have been removed. The top-level `/blog` and `/portfolio` pages are currently placeholder pages.
+### Content drafts
 
-English pages are also available under `/en/...`, for example `/en/pricing`.
+Draft blog content currently exists in `markdown/Blog/*.mdx`, but the public blog route is not wired to render those MDX files yet.
+
+## Tech Stack
+
+- **Framework:** Next.js 15.5.9
+- **Language:** TypeScript
+- **UI:** React 19, Tailwind CSS 3, shadcn/ui, Radix UI
+- **i18n:** `next-intl`
+- **Forms:** EmailJS
+- **Payments:** Stripe Checkout
+- **Utilities:** `clsx`, `tailwind-merge`, `class-variance-authority`, `date-fns`, `aos`
+- **Deployment:** Railway
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 22.x or higher
+- Node.js 20+ (20 LTS recommended)
 - npm
 
 ### Installation
@@ -78,7 +97,13 @@ npm install
 
 ### Environment Variables
 
-Create a `.env` file in the project root:
+Start from the example file:
+
+```bash
+cp .env.example .env
+```
+
+At minimum, configure the Stripe-related values for the pricing flow:
 
 ```env
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
@@ -90,7 +115,11 @@ SITE_NAME=ITOS
 AUTHOR_NAME=ITOS
 ```
 
-For local development and testing, Stripe test keys are recommended.
+Notes:
+
+- use Stripe test keys for local development
+- `.env.example` still contains legacy NextAuth variables; auth is currently disabled at runtime
+- the contact form currently uses EmailJS identifiers defined in `src/components/Contact/Form/index.tsx`
 
 ### Run Locally
 
@@ -100,33 +129,53 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Available Scripts
+## Scripts
 
 ```bash
 npm run dev
+npm run typecheck
 npm run build
 npm start
 npm run lint
+```
+
+Script notes:
+
+- `npm run typecheck` runs TypeScript against `tsconfig.typecheck.json`
+- `npm run build` performs a production build and type validation
+- `npm run lint` currently uses legacy `next lint`; without a committed ESLint config it will start the interactive setup wizard instead of running a non-interactive lint pass
+
+## Quality Checks
+
+There is currently no automated test suite in the repository.
+
+Recommended verification commands:
+
+```bash
+npm run typecheck
+npm run build
 ```
 
 ## Project Structure
 
 ```text
 itos-website/
-├── messages/                      # next-intl translation files
-├── public/                        # Static assets
+├── .env.example
+├── markdown/Blog/                 # Draft MDX blog content
+├── messages/                      # Translation files
+├── public/                        # Static assets and animations
 ├── src/
 │   ├── app/
 │   │   ├── [locale]/
 │   │   │   ├── (site)/            # Main localized pages
 │   │   │   ├── demo/              # shadcn/ui demo page
-│   │   │   ├── layout.tsx         # Main app layout
-│   │   │   └── page.tsx           # Localized home page
-│   │   ├── api/checkout/            # Stripe checkout session route
-│   │   ├── api/auth/[...nextauth]/  # Disabled auth compatibility route
-│   │   ├── context/               # App-level React context
-│   │   ├── globals.css            # Global styles
-│   │   └── not-found.tsx          # 404 page
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── api/
+│   │   │   ├── auth/[...nextauth]/
+│   │   │   └── checkout/
+│   │   ├── globals.css
+│   │   └── not-found.tsx
 │   ├── components/
 │   │   ├── Contact/
 │   │   ├── Documentation/
@@ -134,42 +183,48 @@ itos-website/
 │   │   ├── Layout/
 │   │   ├── Pricing/
 │   │   └── ui/
-│   ├── i18n/                      # Locale configuration
+│   ├── i18n/
+│   │   ├── config.ts
+│   │   └── request.ts
 │   ├── lib/
-│   ├── middleware.ts              # Locale routing middleware
-│   └── utils/                     # AOS and other helpers
-├── components.json                # shadcn/ui configuration
-├── railway.toml                   # Railway deployment config
-└── tailwind.config.ts
+│   ├── middleware.ts
+│   └── utils/
+│       ├── aos.tsx
+│       ├── localePath.ts
+│       └── validateEmail.ts
+├── components.json
+├── next.config.mjs
+├── railway.toml
+├── tsconfig.json
+└── tsconfig.typecheck.json
 ```
 
 ## Payments
 
-The pricing calculator posts to `src/app/api/checkout/route.ts`.
+The pricing calculator submits to `src/app/api/checkout/route.ts`.
 
 Current checkout behavior:
 
 - validates `amount` and `currency`
+- accepts `sek` and `eur`
 - normalizes the base URL for redirects
-- truncates long notes and options before sending them to Stripe
-- creates localized success and cancel URLs back to the pricing page
+- truncates long notes and selected options before sending them to Stripe
+- builds locale-aware success and cancel URLs back to the pricing page
 - supports `card` and `klarna`
 
 ## Authentication Status
 
 Authentication is currently disabled in runtime:
 
-- login and registration buttons were removed from the header
-- `/signin` and `/signup` return `404`
-- `/api/auth/[...nextauth]` no longer initializes active auth providers
-
-There are still legacy auth-related files in the repository, but they are not part of the active user flow.
+- `/signin` and `/signup` intentionally return `404`
+- `/api/auth/[...nextauth]` returns a disabled JSON response with `404`
+- legacy auth-related environment variables remain in `.env.example` for compatibility/history, but they are not part of the active flow
 
 ## UI Components
 
 shadcn/ui is configured through `components.json`, with generated components in `src/components/ui`.
 
-You can preview installed components on the demo page:
+Preview routes:
 
 - `/demo`
 - `/en/demo`
@@ -190,6 +245,7 @@ npm start
 - Live site: https://itos.nu
 - Repository: https://github.com/PtOlga/itos-website
 - Next.js docs: https://nextjs.org/docs
+- next-intl docs: https://next-intl.dev
 - shadcn/ui docs: https://ui.shadcn.com
 - Tailwind CSS docs: https://tailwindcss.com/docs
 

@@ -9,9 +9,10 @@ import MobileHeaderLink from '../Header/Navigation/MobileHeaderLink'
 import { useTheme } from 'next-themes'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { useTranslations } from 'next-intl'
+import { stripLocalePrefix } from '@/utils/localePath'
 
 const Header: React.FC = () => {
-  const pathUrl = usePathname()
+  const pathUrl = stripLocalePrefix(usePathname())
   const { theme, setTheme } = useTheme()
   const t = useTranslations('navigation')
   const headerData = getHeaderData(t)

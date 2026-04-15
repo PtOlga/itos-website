@@ -4,9 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTranslations } from 'next-intl'
+import { stripLocalePrefix } from '@/utils/localePath'
 
 const Footer: FC = () => {
-  const pathname = usePathname()
+  const pathname = stripLocalePrefix(usePathname())
   const t = useTranslations('footer')
 
   const companyLinks = [

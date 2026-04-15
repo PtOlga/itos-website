@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { HeaderItem } from '../../../../types/menu';
 import { usePathname } from 'next/navigation';
+import { isPathActive } from '@/utils/localePath';
 
 const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -11,13 +12,14 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   };
 
   const path = usePathname();
+  const itemIsActive = isPathActive(path, item.href);
 
   return (
     <div className="relative w-full">
       <Link
       href={item.href}
         onClick={item.submenu ? handleToggle : undefined}
-        className={`flex items-center justify-between w-full py-2 px-3 rounded-md text-black dark:text-white focus:outline-hidden ${path == item.href ? 'bg-primary text-white! dark:bg-primary dark:text-white' : null} ${path.startsWith(`/${item.label.toLowerCase()}`) ? "bg-primary text-white! dark:bg-primary dark:text-white" : null}`}
+        className={`flex items-center justify-between w-full py-2 px-3 rounded-md text-black dark:text-white focus:outline-hidden ${itemIsActive ? 'bg-primary text-white! dark:bg-primary dark:text-white' : null}`}
       >
         {item.label}
         {item.submenu && (
@@ -29,7 +31,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       {submenuOpen && item.submenu && (
         <div className="bg-white dark:bg-darkmode p-2 w-full">
           {item.submenu.map((subItem, index) => (
-            <Link key={index} href={subItem.href} className={`block py-2 px-3 text-gray-500 hover:bg-gray-200 ${path === subItem.href ? 'text-primary!' : null}`}>
+            <Link key={index} href={subItem.href} className={`block py-2 px-3 text-gray-500 hover:bg-gray-200 ${isPathActive(path, subItem.href) ? 'text-primary!' : null}`}>
               {subItem.label}
             </Link>
           ))}

@@ -47,7 +47,15 @@ export async function POST(req: NextRequest) {
 
     const stripe = new Stripe(stripeSecretKey)
 
-    const body = await req.json()
+    const body = (await req.json()) as {
+      amount?: unknown
+      currency?: unknown
+      customerName?: unknown
+      customerEmail?: unknown
+      projectType?: unknown
+      notes?: unknown
+      selectedOptions?: unknown
+    }
     const amount = Number(body?.amount)
     const currency = typeof body?.currency === 'string' ? body.currency.toLowerCase() : ''
 
@@ -64,7 +72,7 @@ export async function POST(req: NextRequest) {
     const projectType = trimToLength(body?.projectType, 80) || 'website'
     const notes = trimToLength(body?.notes, MAX_METADATA_LENGTH)
     const selectedOptions = Array.isArray(body?.selectedOptions)
-      ? body.selectedOptions
+      ? (body.selectedOptions as unknown[])
           .filter((option): option is string => typeof option === 'string')
           .map((option) => trimToLength(option, 80))
           .filter(Boolean)

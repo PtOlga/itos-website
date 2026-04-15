@@ -1,9 +1,12 @@
 'use client'
 import { useReducer, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { stripLocalePrefix } from '@/utils/localePath'
 
 const Preferred = () => {
   const [activeTab, setActiveTab] = useState('monthly')
+  const pathname = stripLocalePrefix(usePathname())
 
   const initialTabConfig = {
     planType: 'monthly',

@@ -8,7 +8,7 @@ const nextConfig = {
     unoptimized: true,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    tsconfigPath: './tsconfig.typecheck.json',
   },
   eslint: {
     ignoreDuringBuilds: true,
