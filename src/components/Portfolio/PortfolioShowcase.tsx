@@ -10,13 +10,14 @@ type Project = {
   tags: string[]
   previewClass: string
   previewImage?: string
+  previewDurationMs?: number
 }
 
 const projects: Project[] = [
-  { id: 1, title: 'Interpol Check', label: 'interpol-check.me', href: 'https://interpol-check.me', description: 'Landing page for Status Law focused on lead generation: INTERPOL database checks, EU/Asia regional pricing, and a clear client inquiry flow.', category: 'Website', tags: ['Legal services', 'Landing page', 'Lead generation'], previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.png' },
-  { id: 2, title: 'Status Law', label: 'status.law', href: 'https://status.law', description: 'Corporate website for a law firm with service presentation, trust-oriented structure, and straightforward contact paths for new clients.', category: 'Website', tags: ['Corporate site', 'Law firm', 'Trust-building'], previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]' },
-  { id: 3, title: 'Portfolio', label: 'ptolga.github.io', href: 'https://ptolga.github.io', description: 'Personal bilingual portfolio with project filtering and PDF resume generation — designed to present services, skills, and completed work clearly.', category: 'Website', tags: ['Portfolio', 'Bilingual', 'PDF resume'], previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]' },
-  { id: 4, title: 'PraDos', label: 'prados.org.ua', href: 'https://prados.org.ua', description: 'Website for a Ukrainian non-profit organization that provides legal help to Ukrainians living abroad.', category: 'Website', tags: ['Non-profit', 'Legal help', 'Information site'], previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]' },
+  { id: 1, title: 'Interpol Check', label: 'interpol-check.me', href: 'https://interpol-check.me', description: 'Landing page for Status Law focused on lead generation: INTERPOL database checks, EU/Asia regional pricing, and a clear client inquiry flow.', category: 'Website', tags: ['Legal services', 'Landing page', 'Lead generation'], previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.png', previewDurationMs: 36000 },
+  { id: 2, title: 'Status Law', label: 'status.law', href: 'https://status.law', description: 'Corporate website for a law firm with service presentation, trust-oriented structure, and straightforward contact paths for new clients.', category: 'Website', tags: ['Corporate site', 'Law firm', 'Trust-building'], previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.png', previewDurationMs: 18000 },
+  { id: 3, title: 'Portfolio', label: 'ptolga.github.io', href: 'https://ptolga.github.io', description: 'Personal bilingual portfolio with project filtering and PDF resume generation — designed to present services, skills, and completed work clearly.', category: 'Website', tags: ['Portfolio', 'Bilingual', 'PDF resume'], previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.png', previewDurationMs: 36000 },
+  { id: 4, title: 'PraDos', label: 'prados.org.ua', href: 'https://prados.org.ua', description: 'Website for a Ukrainian non-profit organization that provides legal help to Ukrainians living abroad.', category: 'Website', tags: ['Non-profit', 'Legal help', 'Information site'], previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.png', previewDurationMs: 22000 },
   { id: 5, title: 'Disk Catalog', label: 'disk-catalog-488612.web.app', href: 'https://disk-catalog-488612.web.app', description: 'PWA catalog for DVD and audio collections with barcode scanning and mobile search across the library.', category: 'Web app', tags: ['PWA', 'Barcode scanning', 'Mobile-first'], previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]' },
   { id: 6, title: 'MEGA PDF Compressor', label: 'mega-pdf-compressor-en.up.railway.app', href: 'https://mega-pdf-compressor-en.up.railway.app', description: 'Web app for batch PDF compression from local folders or MEGA cloud storage using the iLovePDF API.', category: 'Web app', tags: ['PDF tools', 'Cloud integration', 'Batch processing'], previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]' },
   { id: 7, title: 'GDPR Scanner', label: 'WordPress plugin', description: 'WordPress plugin concept for scanning websites for GDPR-related elements and helping with a quick privacy compliance review.', category: 'WP plugin', tags: ['WordPress', 'Privacy', 'Compliance'], previewClass: 'from-[#23283a] via-[#31384f] to-[#48516d]' },
@@ -34,7 +35,7 @@ const BrowserPreview = ({ project }: { project: Project }) => (
       <span className='truncate'>{project.label}</span>
     </div>
 
-    <div className='h-[144px] overflow-hidden rounded-[0.95rem] border border-white/10 bg-white/5 backdrop-blur-sm'>
+    <div className={`${project.previewImage ? 'h-[220px]' : 'h-[144px]'} overflow-hidden rounded-[0.95rem] border border-white/10 bg-white/5 backdrop-blur-sm`}>
       {project.previewImage ? (
         <div className='relative h-full overflow-hidden bg-[#18304a]'>
           <div className='absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-2 bg-gradient-to-b from-[#17304f]/95 via-[#17304f]/70 to-transparent px-3 py-2'>
@@ -45,8 +46,8 @@ const BrowserPreview = ({ project }: { project: Project }) => (
           </div>
 
           <div
-            className='translate-y-0 transition-transform ease-linear group-hover:translate-y-[calc(144px-100%)]'
-            style={{ transitionDuration: '5000ms' }}
+            className='translate-y-0 transition-transform ease-linear group-hover:translate-y-[calc(220px-100%)]'
+            style={{ transitionDuration: `${project.previewDurationMs ?? 22000}ms` }}
           >
             <img
               src={project.previewImage}
@@ -133,7 +134,7 @@ export default function PortfolioShowcase({ contactHref }: { contactHref: string
         <div className='grid gap-5 xl:grid-cols-2'>
           {projects.map((project) => (
             <article key={project.id} className='group grid gap-5 rounded-[1.5rem] border border-BorderLine bg-white p-5 shadow-light-shadwo transition-transform duration-300 hover:-translate-y-1 dark:border-dark_border dark:bg-darklight lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start'>
-              <div className='lg:sticky lg:top-5'>
+              <div>
                 <BrowserPreview project={project} />
               </div>
 
