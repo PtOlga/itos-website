@@ -1,19 +1,27 @@
 import HeroSub from "@/components/SharedComponent/HeroSub";
-import UnderConstruction from '@/components/SharedComponent/UnderConstruction'
+import PortfolioShowcase from '@/components/Portfolio/PortfolioShowcase'
 import React from "react";
 import { Metadata } from "next";
+
 export const metadata: Metadata = {
   title: "Portfolio",
 };
 
-const page = () => {
+const page = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) => {
+  const { locale } = await params
+  const contactHref = locale === 'en' ? '/en/contact' : '/contact'
+
   return (
     <>
-      <HeroSub title="Portfolio" description="" />
-      <UnderConstruction
-        title='Portfolio page is coming soon'
-        message='We are updating our portfolio. The main portfolio page will be available soon.'
+      <HeroSub
+        title="Portfolio"
+        description="Examples of websites, web apps, and automation projects presented in a simple client-friendly format."
       />
+      <PortfolioShowcase contactHref={contactHref} />
     </>
   );
 };
