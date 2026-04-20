@@ -9,10 +9,11 @@ type Project = {
   category: string
   tags: string[]
   previewClass: string
+  previewImage?: string
 }
 
 const projects: Project[] = [
-  { id: 1, title: 'Interpol Check', label: 'interpol-check.me', href: 'https://interpol-check.me', description: 'Landing page for Status Law focused on lead generation: INTERPOL database checks, EU/Asia regional pricing, and a clear client inquiry flow.', category: 'Website', tags: ['Legal services', 'Landing page', 'Lead generation'], previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]' },
+  { id: 1, title: 'Interpol Check', label: 'interpol-check.me', href: 'https://interpol-check.me', description: 'Landing page for Status Law focused on lead generation: INTERPOL database checks, EU/Asia regional pricing, and a clear client inquiry flow.', category: 'Website', tags: ['Legal services', 'Landing page', 'Lead generation'], previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.png' },
   { id: 2, title: 'Status Law', label: 'status.law', href: 'https://status.law', description: 'Corporate website for a law firm with service presentation, trust-oriented structure, and straightforward contact paths for new clients.', category: 'Website', tags: ['Corporate site', 'Law firm', 'Trust-building'], previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]' },
   { id: 3, title: 'Portfolio', label: 'ptolga.github.io', href: 'https://ptolga.github.io', description: 'Personal bilingual portfolio with project filtering and PDF resume generation — designed to present services, skills, and completed work clearly.', category: 'Website', tags: ['Portfolio', 'Bilingual', 'PDF resume'], previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]' },
   { id: 4, title: 'PraDos', label: 'prados.org.ua', href: 'https://prados.org.ua', description: 'Website for a Ukrainian non-profit organization that provides legal help to Ukrainians living abroad.', category: 'Website', tags: ['Non-profit', 'Legal help', 'Information site'], previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]' },
@@ -34,46 +35,71 @@ const BrowserPreview = ({ project }: { project: Project }) => (
     </div>
 
     <div className='h-[144px] overflow-hidden rounded-[0.95rem] border border-white/10 bg-white/5 backdrop-blur-sm'>
-      <div className='translate-y-0 p-4 transition-transform duration-1000 ease-out group-hover:-translate-y-10'>
-        <div className='mb-4 flex items-center justify-between gap-2'>
-          <span className='rounded-full bg-LightApricot/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-darkmode'>
-            {project.category}
-          </span>
-          <span className='text-[10px] uppercase tracking-[0.22em] text-white/55'>Live preview</span>
-        </div>
-
-        <div className='mb-4 space-y-2'>
-          <div className='h-2 w-16 rounded-full bg-white/15' />
-          <div className='h-6 w-4/5 rounded-full bg-white/90' />
-          <div className='h-2 w-full rounded-full bg-white/12' />
-          <div className='h-2 w-2/3 rounded-full bg-white/12' />
-        </div>
-
-        <div className='mb-4 rounded-2xl border border-white/10 bg-darkmode/15 p-3'>
-          <div className='mb-2 flex items-center justify-between'>
-            <div className='h-2 w-20 rounded-full bg-LightApricot/70' />
-            <div className='h-2 w-10 rounded-full bg-white/15' />
+      {project.previewImage ? (
+        <div className='relative h-full overflow-hidden bg-[#18304a]'>
+          <div className='absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-2 bg-gradient-to-b from-[#17304f]/95 via-[#17304f]/70 to-transparent px-3 py-2'>
+            <span className='rounded-full bg-LightApricot/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-darkmode'>
+              {project.category}
+            </span>
+            <span className='text-[10px] uppercase tracking-[0.22em] text-white/70'>Live preview</span>
           </div>
-          <div className='grid grid-cols-2 gap-2'>
-            <div className='h-14 rounded-xl bg-white/10' />
-            <div className='space-y-2 rounded-xl bg-white/5 p-2'>
-              <div className='h-2 rounded-full bg-white/15' />
-              <div className='h-2 rounded-full bg-white/15' />
-              <div className='h-2 w-3/4 rounded-full bg-[#3bd18c]/60' />
+
+          <div
+            className='translate-y-0 transition-transform ease-linear group-hover:translate-y-[calc(144px-100%)]'
+            style={{ transitionDuration: '5000ms' }}
+          >
+            <img
+              src={project.previewImage}
+              alt={`${project.title} preview`}
+              className='block w-full h-auto'
+              loading='lazy'
+            />
+          </div>
+
+          <div className='pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#17304f]/70 to-transparent' />
+        </div>
+      ) : (
+        <div className='translate-y-0 p-4 transition-transform duration-1000 ease-out group-hover:-translate-y-10'>
+          <div className='mb-4 flex items-center justify-between gap-2'>
+            <span className='rounded-full bg-LightApricot/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-darkmode'>
+              {project.category}
+            </span>
+            <span className='text-[10px] uppercase tracking-[0.22em] text-white/55'>Live preview</span>
+          </div>
+
+          <div className='mb-4 space-y-2'>
+            <div className='h-2 w-16 rounded-full bg-white/15' />
+            <div className='h-6 w-4/5 rounded-full bg-white/90' />
+            <div className='h-2 w-full rounded-full bg-white/12' />
+            <div className='h-2 w-2/3 rounded-full bg-white/12' />
+          </div>
+
+          <div className='mb-4 rounded-2xl border border-white/10 bg-darkmode/15 p-3'>
+            <div className='mb-2 flex items-center justify-between'>
+              <div className='h-2 w-20 rounded-full bg-LightApricot/70' />
+              <div className='h-2 w-10 rounded-full bg-white/15' />
+            </div>
+            <div className='grid grid-cols-2 gap-2'>
+              <div className='h-14 rounded-xl bg-white/10' />
+              <div className='space-y-2 rounded-xl bg-white/5 p-2'>
+                <div className='h-2 rounded-full bg-white/15' />
+                <div className='h-2 rounded-full bg-white/15' />
+                <div className='h-2 w-3/4 rounded-full bg-[#3bd18c]/60' />
+              </div>
+            </div>
+          </div>
+
+          <div className='space-y-2 rounded-2xl border border-white/10 bg-white/5 p-3'>
+            <div className='h-2 w-24 rounded-full bg-white/15' />
+            <div className='h-2 rounded-full bg-white/10' />
+            <div className='h-2 rounded-full bg-white/10' />
+            <div className='h-2 w-4/5 rounded-full bg-white/10' />
+            <div className='pt-2'>
+              <div className='h-8 w-28 rounded-full bg-LightApricot/80' />
             </div>
           </div>
         </div>
-
-        <div className='space-y-2 rounded-2xl border border-white/10 bg-white/5 p-3'>
-          <div className='h-2 w-24 rounded-full bg-white/15' />
-          <div className='h-2 rounded-full bg-white/10' />
-          <div className='h-2 rounded-full bg-white/10' />
-          <div className='h-2 w-4/5 rounded-full bg-white/10' />
-          <div className='pt-2'>
-            <div className='h-8 w-28 rounded-full bg-LightApricot/80' />
-          </div>
-        </div>
-      </div>
+      )}
     </div>
   </div>
 )
