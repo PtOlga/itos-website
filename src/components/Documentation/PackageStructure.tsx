@@ -1,17 +1,20 @@
+"use client";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { useTranslations } from "next-intl";
 
 
 export const PackageStructure = () => {
+  const t = useTranslations('documentationPage.structure')
   const Counts = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
   return (
     <div id="structure" className="md:scroll-m-[130px] scroll-m-28">
       <h3 className=" text-black text-2xl font-semibold mt-8 dark:text-white">
-        Pacakge Structure
+        {t('title')}
       </h3>
       <div className="rounded-md p-6 pt-3 border border-solid border-BorderLine dark:border-dark_border mt-6">
         <div className="flex items-center gap-4">
           <h5 className="text-base font-medium mt-3 mb-1">
-            Sustainable Tailwind Nextjs Templates
+            {t('appName')}
           </h5>
         </div>
         <ul className="ps-3 md:ps-5 list-unstyled">
@@ -110,7 +113,7 @@ export const PackageStructure = () => {
                                       (site)
                                     </span>{" "}
                                     <span className="fs-9 text-SlateBlue dark:text-darktext ms-4">
-                                      (Contains all the pages)
+                                      {t('siteNote')}
                                     </span>
                                   </div>
                                 <div className="flex">

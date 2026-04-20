@@ -1,8 +1,10 @@
 "use client"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 
 export const DocNavigation = () => {
+    const t = useTranslations('documentationPage.nav')
 
     const [navItem, setNavItem] = useState("version");
 
@@ -17,22 +19,22 @@ export const DocNavigation = () => {
     const DocsNav = [
         {
             id:1,
-            navItem:"Package Versions",
+            navItem:t('packageVersions'),
             hash:"version"
         },
         {
             id:2,
-            navItem:"Pacakge Structure",
+            navItem:t('packageStructure'),
             hash:"structure"
         },
         {
             id:3,
-            navItem:"Quick Start",
+            navItem:t('quickStart'),
             hash:"start"
         },
         {
             id:4,
-            navItem:"Project Configuration",
+            navItem:t('projectConfiguration'),
             hash:"configuration"
         },
     ]

@@ -10,7 +10,10 @@ import AuthDialogContext from "@/app/context/AuthDialogContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useTranslations } from "next-intl";
 const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
+  const t = useTranslations('auth.signUp')
+  const tCommon = useTranslations('auth.common')
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const authDialog = useContext(AuthDialogContext);
@@ -32,7 +35,7 @@ const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
     })
       .then((res) => res.json())
       .then(() => {
-        toast.success("Successfully registered");
+        toast.success(t('success'));
         setLoading(false);
         router.push("/");
       })
@@ -62,37 +65,37 @@ const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
       <span className="z-1 relative my-8 block text-center">
         <span className="-z-1 absolute left-0 top-1/2 block h-px w-full bg-BorderLine dark:bg-dark_border"></span>
         <span className="text-body-secondary relative z-10 inline-block bg-white dark:bg-darklight px-3 text-base dark:bg-dark">
-          OR
+          {tCommon('or')}
         </span>
       </span>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-[22px] space-y-2">
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">{t('name')}</Label>
           <Input
             id="name"
             type="text"
-            placeholder="Name"
+            placeholder={t('name')}
             name="name"
             required
           />
         </div>
         <div className="mb-[22px] space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('email')}</Label>
           <Input
             id="email"
             type="email"
-            placeholder="Email"
+            placeholder={t('email')}
             name="email"
             required
           />
         </div>
         <div className="mb-[22px] space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('password')}</Label>
           <Input
             id="password"
             type="password"
-            placeholder="Password"
+            placeholder={t('password')}
             name="password"
             required
           />
@@ -102,29 +105,29 @@ const SignUp = ({signUpOpen}:{signUpOpen?:any}) => {
             type="submit"
             className="w-full bg-primary hover:bg-darkprimary dark:hover:bg-darkprimary"
           >
-            Sign Up {loading && <Loader />}
+            {t('submit')} {loading && <Loader />}
           </Button>
         </div>
       </form>
 
       <p className="text-body-secondary mb-4 text-base">
-        By creating an account you are agree with our{" "}
+        {t('agreement')}{" "}
         <a href="/#" className="text-primary hover:underline">
-          Privacy
+          {t('privacy')}
         </a>{" "}
-        and{" "}
+        {t('and')}{" "}
         <a href="/#" className="text-primary hover:underline">
-          Policy
+          {t('policy')}
         </a>
       </p>
 
       <p className="text-body-secondary text-base">
-        Already have an account?
+        {t('alreadyHave')}
         <Link
           href="/"
           className="pl-2 text-primary hover:bg-darkprimary hover:underline"
         >
-          Sign In
+          {t('signIn')}
         </Link>
       </p>
     </>

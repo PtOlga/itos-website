@@ -213,6 +213,148 @@
     "faqs": {
       "title": "FAQs",
       "description": "Answers to the most common questions about websites, pricing, timelines, and support."
+    },
+    "documentation": {
+      "title": "Documentation"
+    },
+    "demo": {
+      "title": "Demo"
+    }
+  },
+  "demoPage": {
+    "title": "Shadcn/ui Components Demo",
+    "description": "Explore the beautiful UI components integrated into your project.",
+    "buttons": {
+      "title": "Buttons",
+      "description": "Different button variants and sizes",
+      "default": "Default",
+      "secondary": "Secondary",
+      "destructive": "Destructive",
+      "outline": "Outline",
+      "ghost": "Ghost",
+      "link": "Link",
+      "small": "Small",
+      "large": "Large"
+    },
+    "profile": {
+      "title": "User Profile",
+      "badge": "Pro",
+      "description": "Manage your account settings",
+      "action": "Edit Profile"
+    },
+    "contact": {
+      "title": "Contact Form",
+      "description": "Send us a message",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Enter your email",
+      "message": "Message",
+      "messagePlaceholder": "Type your message here",
+      "action": "Send Message"
+    },
+    "tabs": {
+      "title": "Tabs Component",
+      "account": "Account",
+      "password": "Password",
+      "settings": "Settings",
+      "accountContent": "Make changes to your account here. Click save when you're done.",
+      "passwordContent": "Change your password here. After saving, you'll be logged out.",
+      "settingsContent": "Manage your application settings and preferences."
+    },
+    "accordion": {
+      "title": "Accordion Component",
+      "item1Title": "Is it accessible?",
+      "item1Content": "Yes. It adheres to the WAI-ARIA design pattern.",
+      "item2Title": "Is it styled?",
+      "item2Content": "Yes. It comes with default styles that match the other components' aesthetic.",
+      "item3Title": "Is it animated?",
+      "item3Content": "Yes. It's animated by default, but you can disable it if you prefer."
+    }
+  },
+  "documentationPage": {
+    "nav": {
+      "packageVersions": "Package Versions",
+      "packageStructure": "Package Structure",
+      "quickStart": "Quick Start",
+      "projectConfiguration": "Project Configuration"
+    },
+    "intro": {
+      "title": "Package Versions",
+      "menuTitle": "Docs Menu",
+      "description1": "This project is built with Tailwind CSS and Next.js.",
+      "description2": "The theme is ready to use and can be customized to fit your needs.",
+      "description3": "To customize it confidently, you should be familiar with Next.js, React, Tailwind CSS, and JSX."
+    },
+    "structure": {
+      "title": "Package Structure",
+      "appName": "Project structure",
+      "siteNote": "(Contains all public pages)"
+    },
+    "quickStart": {
+      "title": "Quick Start",
+      "requirementsTitle": "1. Requirements",
+      "requirementsText": "Before proceeding, make sure the latest stable version of",
+      "recommendedEnvironment": "Recommended environment:",
+      "installTitle": "2. Install",
+      "installDescription": "Open the project folder and install its dependencies. We recommend npm or yarn.",
+      "installWithNpm": "1) Install with npm:",
+      "installWithYarn": "2) Install with yarn:",
+      "startTitle": "3. Start",
+      "startDescription": "Once the dependencies are installed, you can run the app.",
+      "localServer": "This command will start a local web server at",
+      "buildTitle": "4. Build / Deployment",
+      "buildDescription": "After updating the required URLs or environment variables, run the build command below.",
+      "ready": "Finally, your website is ready to be deployed. 🥳"
+    },
+    "configuration": {
+      "title": "Project Configuration",
+      "colors": "Colors",
+      "overrideColorsTitle": "1. Override colors",
+      "overrideColorsText": "For any color changes, edit: src/utils/globals.css",
+      "overrideThemeColorsTitle": "2. Override theme colors",
+      "overrideThemeColorsText": "To change theme colors, go to: src/utils/globals.css",
+      "typography": "Typography",
+      "typographyText": "1. Change the font family here:",
+      "logo": "Logo",
+      "logoText": "1. Change the logo here:"
+    }
+  },
+  "notFound": {
+    "heroDescription": "We can't seem to find the page you're looking for.",
+    "title": "We can't seem to find the page you're looking for.",
+    "text": "Oops! The page you are looking for does not exist. It might have been moved or deleted.",
+    "button": "Go to home"
+  },
+  "auth": {
+    "common": {
+      "or": "OR"
+    },
+    "signIn": {
+      "username": "Username",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgotPassword": "Forgot password?",
+      "notMember": "Not a member yet?",
+      "signUp": "Sign Up"
+    },
+    "signUp": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign Up",
+      "success": "Successfully registered",
+      "agreement": "By creating an account you agree with our",
+      "privacy": "Privacy",
+      "and": "and",
+      "policy": "Policy",
+      "alreadyHave": "Already have an account?",
+      "signIn": "Sign In"
+    },
+    "dialogs": {
+      "loginSuccess": "Success! Logged in successfully.",
+      "loginFailed": "Failed! Login failed.",
+      "registered": "Success! User registered successfully."
     }
   },
   "portfolioPage": {

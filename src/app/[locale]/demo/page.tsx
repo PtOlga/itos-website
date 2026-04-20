@@ -7,36 +7,45 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Metadata } from "next"
+import { getTranslations } from "next-intl/server"
 
-export default function DemoPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pages.demo')
+  return { title: t('title') }
+}
+
+export default async function DemoPage() {
+  const t = await getTranslations('demoPage')
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-darkmode dark:to-darklight py-12 px-4">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Shadcn/ui Components Demo
+            {t('title')}
           </h1>
           <p className="text-lg text-gray-600 dark:text-darktext">
-            Explore the beautiful components integrated into your project
+            {t('description')}
           </p>
         </div>
 
         {/* Buttons Section */}
         <Card>
           <CardHeader>
-            <CardTitle>Buttons</CardTitle>
-            <CardDescription>Different button variants and sizes</CardDescription>
+            <CardTitle>{t('buttons.title')}</CardTitle>
+            <CardDescription>{t('buttons.description')}</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-4">
-            <Button>Default</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="destructive">Destructive</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="link">Link</Button>
-            <Button size="sm">Small</Button>
-            <Button size="lg">Large</Button>
+            <Button>{t('buttons.default')}</Button>
+            <Button variant="secondary">{t('buttons.secondary')}</Button>
+            <Button variant="destructive">{t('buttons.destructive')}</Button>
+            <Button variant="outline">{t('buttons.outline')}</Button>
+            <Button variant="ghost">{t('buttons.ghost')}</Button>
+            <Button variant="link">{t('buttons.link')}</Button>
+            <Button size="sm">{t('buttons.small')}</Button>
+            <Button size="lg">{t('buttons.large')}</Button>
           </CardContent>
         </Card>
 
@@ -45,10 +54,10 @@ export default function DemoPage() {
           <Card>
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle>User Profile</CardTitle>
-                <Badge>Pro</Badge>
+                <CardTitle>{t('profile.title')}</CardTitle>
+                <Badge>{t('profile.badge')}</Badge>
               </div>
-              <CardDescription>Manage your account settings</CardDescription>
+              <CardDescription>{t('profile.description')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
@@ -63,31 +72,31 @@ export default function DemoPage() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Edit Profile</Button>
+              <Button className="w-full">{t('profile.action')}</Button>
             </CardFooter>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Contact Form</CardTitle>
-              <CardDescription>Send us a message</CardDescription>
+              <CardTitle>{t('contact.title')}</CardTitle>
+              <CardDescription>{t('contact.description')}</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Enter your name" />
+                <Label htmlFor="name">{t('contact.name')}</Label>
+                <Input id="name" placeholder={t('contact.namePlaceholder')} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="Enter your email" />
+                <Label htmlFor="email">{t('contact.email')}</Label>
+                <Input id="email" type="email" placeholder={t('contact.emailPlaceholder')} />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Type your message here" />
+                <Label htmlFor="message">{t('contact.message')}</Label>
+                <Textarea id="message" placeholder={t('contact.messagePlaceholder')} />
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full">Send Message</Button>
+              <Button className="w-full">{t('contact.action')}</Button>
             </CardFooter>
           </Card>
         </div>
@@ -95,28 +104,28 @@ export default function DemoPage() {
         {/* Tabs */}
         <Card>
           <CardHeader>
-            <CardTitle>Tabs Component</CardTitle>
+            <CardTitle>{t('tabs.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="account" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="account">Account</TabsTrigger>
-                <TabsTrigger value="password">Password</TabsTrigger>
-                <TabsTrigger value="settings">Settings</TabsTrigger>
+                <TabsTrigger value="account">{t('tabs.account')}</TabsTrigger>
+                <TabsTrigger value="password">{t('tabs.password')}</TabsTrigger>
+                <TabsTrigger value="settings">{t('tabs.settings')}</TabsTrigger>
               </TabsList>
               <TabsContent value="account" className="space-y-4">
                 <p className="text-sm text-gray-600 dark:text-darktext">
-                  Make changes to your account here. Click save when you're done.
+                  {t('tabs.accountContent')}
                 </p>
               </TabsContent>
               <TabsContent value="password" className="space-y-4">
                 <p className="text-sm text-gray-600 dark:text-darktext">
-                  Change your password here. After saving, you'll be logged out.
+                  {t('tabs.passwordContent')}
                 </p>
               </TabsContent>
               <TabsContent value="settings" className="space-y-4">
                 <p className="text-sm text-gray-600 dark:text-darktext">
-                  Manage your application settings and preferences.
+                  {t('tabs.settingsContent')}
                 </p>
               </TabsContent>
             </Tabs>
@@ -126,26 +135,26 @@ export default function DemoPage() {
         {/* Accordion */}
         <Card>
           <CardHeader>
-            <CardTitle>Accordion Component</CardTitle>
+            <CardTitle>{t('accordion.title')}</CardTitle>
           </CardHeader>
           <CardContent>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionTrigger>{t('accordion.item1Title')}</AccordionTrigger>
                 <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
+                  {t('accordion.item1Content')}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2">
-                <AccordionTrigger>Is it styled?</AccordionTrigger>
+                <AccordionTrigger>{t('accordion.item2Title')}</AccordionTrigger>
                 <AccordionContent>
-                  Yes. It comes with default styles that matches the other components' aesthetic.
+                  {t('accordion.item2Content')}
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
-                <AccordionTrigger>Is it animated?</AccordionTrigger>
+                <AccordionTrigger>{t('accordion.item3Title')}</AccordionTrigger>
                 <AccordionContent>
-                  Yes. It's animated by default, but you can disable it if you prefer.
+                  {t('accordion.item3Content')}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

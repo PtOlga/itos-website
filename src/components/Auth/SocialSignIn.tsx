@@ -1,9 +1,11 @@
 import React from "react";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 
 const SocialSignIn = () => {
+  const t = useTranslations('auth.signIn')
   const handleGoogleSignIn = async () => {
     await signIn("google");
   };
@@ -18,7 +20,7 @@ const SocialSignIn = () => {
           variant="outline"
           className="flex w-full items-center justify-center gap-2.5"
         >
-          Sign In
+          {t('submit')}
           <svg
             width="23"
             height="22"
@@ -62,7 +64,7 @@ const SocialSignIn = () => {
           variant="outline"
           className="flex w-full items-center justify-center gap-2.5"
         >
-          Sign In
+          {t('submit')}
           <svg
             width="22"
             height="22"

@@ -213,6 +213,148 @@
     "faqs": {
       "title": "Vanliga frågor",
       "description": "Svar på de vanligaste frågorna om webbplatser, priser, tidsplaner och support."
+    },
+    "documentation": {
+      "title": "Dokumentation"
+    },
+    "demo": {
+      "title": "Demo"
+    }
+  },
+  "demoPage": {
+    "title": "Demo av Shadcn/ui-komponenter",
+    "description": "Utforska de snygga UI-komponenterna som är integrerade i projektet.",
+    "buttons": {
+      "title": "Knappar",
+      "description": "Olika knappvarianter och storlekar",
+      "default": "Standard",
+      "secondary": "Sekundär",
+      "destructive": "Destruktiv",
+      "outline": "Kontur",
+      "ghost": "Ghost",
+      "link": "Länk",
+      "small": "Liten",
+      "large": "Stor"
+    },
+    "profile": {
+      "title": "Användarprofil",
+      "badge": "Pro",
+      "description": "Hantera inställningarna för ditt konto",
+      "action": "Redigera profil"
+    },
+    "contact": {
+      "title": "Kontaktformulär",
+      "description": "Skicka ett meddelande till oss",
+      "name": "Namn",
+      "namePlaceholder": "Ange ditt namn",
+      "email": "E-post",
+      "emailPlaceholder": "Ange din e-post",
+      "message": "Meddelande",
+      "messagePlaceholder": "Skriv ditt meddelande här",
+      "action": "Skicka meddelande"
+    },
+    "tabs": {
+      "title": "Flikar",
+      "account": "Konto",
+      "password": "Lösenord",
+      "settings": "Inställningar",
+      "accountContent": "Gör ändringar i ditt konto här. Klicka på spara när du är klar.",
+      "passwordContent": "Ändra ditt lösenord här. Efter att du sparat blir du utloggad.",
+      "settingsContent": "Hantera applikationens inställningar och preferenser."
+    },
+    "accordion": {
+      "title": "Accordion-komponent",
+      "item1Title": "Är den tillgänglig?",
+      "item1Content": "Ja. Den följer WAI-ARIA:s designmönster.",
+      "item2Title": "Är den stylad?",
+      "item2Content": "Ja. Den levereras med standardstilar som matchar övriga komponenters utseende.",
+      "item3Title": "Är den animerad?",
+      "item3Content": "Ja. Den är animerad som standard, men du kan stänga av det om du vill."
+    }
+  },
+  "documentationPage": {
+    "nav": {
+      "packageVersions": "Paketversioner",
+      "packageStructure": "Paketstruktur",
+      "quickStart": "Snabbstart",
+      "projectConfiguration": "Projektkonfiguration"
+    },
+    "intro": {
+      "title": "Paketversioner",
+      "menuTitle": "Dokumentationsmeny",
+      "description1": "Det här projektet är byggt med Tailwind CSS och Next.js.",
+      "description2": "Temat är redo att användas och kan anpassas efter dina behov.",
+      "description3": "För att anpassa det tryggt bör du känna till Next.js, React, Tailwind CSS och JSX."
+    },
+    "structure": {
+      "title": "Paketstruktur",
+      "appName": "Projektstruktur",
+      "siteNote": "(Innehåller alla publika sidor)"
+    },
+    "quickStart": {
+      "title": "Snabbstart",
+      "requirementsTitle": "1. Krav",
+      "requirementsText": "Innan du fortsätter, kontrollera att den senaste stabila versionen av",
+      "recommendedEnvironment": "Rekommenderad miljö:",
+      "installTitle": "2. Installera",
+      "installDescription": "Öppna projektmappen och installera beroendena. Vi rekommenderar npm eller yarn.",
+      "installWithNpm": "1) Installera med npm:",
+      "installWithYarn": "2) Installera med yarn:",
+      "startTitle": "3. Starta",
+      "startDescription": "När beroendena är installerade kan du köra appen.",
+      "localServer": "Det här kommandot startar en lokal webbserver på",
+      "buildTitle": "4. Bygg / Driftsättning",
+      "buildDescription": "När du har uppdaterat nödvändiga URL:er eller miljövariabler kör du byggkommandot nedan.",
+      "ready": "Till sist är din webbplats redo att driftsättas. 🥳"
+    },
+    "configuration": {
+      "title": "Projektkonfiguration",
+      "colors": "Färger",
+      "overrideColorsTitle": "1. Åsidosätt färger",
+      "overrideColorsText": "För att ändra färger, redigera: src/utils/globals.css",
+      "overrideThemeColorsTitle": "2. Åsidosätt temafärger",
+      "overrideThemeColorsText": "För att ändra temafärger, gå till: src/utils/globals.css",
+      "typography": "Typografi",
+      "typographyText": "1. Ändra typsnittsfamiljen här:",
+      "logo": "Logotyp",
+      "logoText": "1. Ändra logotypen här:"
+    }
+  },
+  "notFound": {
+    "heroDescription": "Vi verkar inte kunna hitta sidan du letar efter.",
+    "title": "Vi verkar inte kunna hitta sidan du letar efter.",
+    "text": "Oj! Sidan du söker finns inte. Den kan ha flyttats eller tagits bort.",
+    "button": "Gå till startsidan"
+  },
+  "auth": {
+    "common": {
+      "or": "ELLER"
+    },
+    "signIn": {
+      "username": "Användarnamn",
+      "password": "Lösenord",
+      "submit": "Logga in",
+      "forgotPassword": "Glömt lösenordet?",
+      "notMember": "Inte medlem än?",
+      "signUp": "Registrera"
+    },
+    "signUp": {
+      "name": "Namn",
+      "email": "E-post",
+      "password": "Lösenord",
+      "submit": "Registrera",
+      "success": "Registreringen lyckades",
+      "agreement": "Genom att skapa ett konto godkänner du vår",
+      "privacy": "Integritet",
+      "and": "och",
+      "policy": "Policy",
+      "alreadyHave": "Har du redan ett konto?",
+      "signIn": "Logga in"
+    },
+    "dialogs": {
+      "loginSuccess": "Klart! Du är nu inloggad.",
+      "loginFailed": "Misslyckades! Inloggningen gick inte igenom.",
+      "registered": "Klart! Användaren registrerades."
     }
   },
   "portfolioPage": {

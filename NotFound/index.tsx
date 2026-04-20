@@ -2,7 +2,19 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const NotFound = () => {
+type NotFoundProps = {
+  title?: string
+  text?: string
+  buttonLabel?: string
+  homeHref?: string
+}
+
+const NotFound = ({
+  title = "We Can't Seem to Find The Page You're Looking For.",
+  text = "Oops! The page you are looking for does not exist. It might have been moved or deleted.",
+  buttonLabel = "Go To Home",
+  homeHref = "/",
+}: NotFoundProps) => {
   return (
     <section className="bg-white pt-8 pb-20 dark:bg-darkmode dark:-mt-52 dark:pt-72">
       <div className="container">
@@ -55,17 +67,16 @@ const NotFound = () => {
                 </svg>
               </div>
               <h3 className="mb-5 text-2xl font-semibold text-dark dark:text-white">
-                We Can&#39;t Seem to Find The Page You&#39;re Looking For.
+                {title}
               </h3>
               <p className="mb-8 text-base text-body-color dark:text-dark-6">
-                Oops! The page you are looking for does not exist. It might have
-                been moved or deleted.
+                {text}
               </p>
               <Link
-                href="/"
+                href={homeHref}
                 className="rounded-lg px-7 py-3 text-base font-medium text-white transition hover:bg-blue-700 bg-primary"
               >
-                Go To Home
+                {buttonLabel}
               </Link>
             </div>
           </div>

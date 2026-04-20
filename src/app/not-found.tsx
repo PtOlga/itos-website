@@ -6,19 +6,17 @@ export const metadata: Metadata = {
   title: "404 Page",
 };
 
-const ErrorPage = () => {
-  const breadcrumbLinks = [
-    { href: "/", text: "Home" },
-    { href: "/contact", text: "404" },
-  ];
+const ErrorPage = async () => {
+  const messages = (await import("../../messages/sv.json")).default;
+  const t = messages.notFound;
+
   return (
     <>
       <HeroSub
         title="404"
-        description="We Can't Seem to Find The Page You're Looking For."
-        
+        description={t.heroDescription}
       />
-      <NotFound />
+      <NotFound title={t.title} text={t.text} buttonLabel={t.button} homeHref="/" />
     </>
   );
 };

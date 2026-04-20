@@ -1,19 +1,23 @@
+"use client";
+import { useTranslations } from "next-intl";
+
 export const QuickStart = () => {
+  const t = useTranslations('documentationPage.quickStart')
   return (
     <div className="pb-10 md:scroll-m-[130px] scroll-m-28" id="start">
       <h3 className=" text-black text-2xl font-semibold mt-8 dark:text-white">
-        Quick Start
+        {t('title')}
       </h3>
       <div className="p-6 rounded-md border border-solid mt-6 border-BorderLine dark:border-dark_border ">
-        <h6 className="dark:text-white text-lg font-medium">1. Requirements</h6>
+        <h6 className="dark:text-white text-lg font-medium">{t('requirementsTitle')}</h6>
         <p className="text-base font-medium text-SlateBlue dark:text-darktext">
-          Before proceeding, you need to have the latest stable{" "}
+          {t('requirementsText')}{" "}
           <a href="https://nodejs.org/" className="text-primary">
             node.js
-          </a>{" "}
+          </a>
         </p>
         <h6 className="mt-4 mb-2 dark:text-white text-dark font-medium text-base">
-          Recommended environment:
+          {t('recommendedEnvironment')}
         </h6>
         <ul className="list-disc ps-6">
           <li>node js 20+</li>
@@ -21,13 +25,12 @@ export const QuickStart = () => {
         </ul>
       </div>
       <div className="p-6 rounded-md border mt-6 border-BorderLine dark:border-dark_border border-solid">
-        <h6 className="dark:text-white text-lg font-medium">2. Install</h6>
+        <h6 className="dark:text-white text-lg font-medium">{t('installTitle')}</h6>
         <p className="text-base font-medium text-SlateBlue dark:text-darktext">
-          Open package folder and install its dependencies. We recommanded yarn
-          or npm.{" "}
+          {t('installDescription')}
         </p>
         <h6 className="mt-4 mb-2 dark:text-white text-dark font-medium text-base">
-          1) Install with npm:
+          {t('installWithNpm')}
         </h6>
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-BorderLine">
@@ -36,7 +39,7 @@ export const QuickStart = () => {
           <p className="text-sm text-BorderLine mt-2">npm install</p>
         </div>
         <h6 className="mt-4 mb-2 dark:text-white text-dark font-medium text-base">
-          1) Install with yarn:
+          {t('installWithYarn')}
         </h6>
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-BorderLine">
@@ -46,16 +49,16 @@ export const QuickStart = () => {
         </div>
       </div>
       <div className="p-6 rounded-md border mt-6 border-BorderLine dark:border-dark_border border-solid">
-        <h6 className="dark:text-white text-lg font-medium">3. Start</h6>
+        <h6 className="dark:text-white text-lg font-medium">{t('startTitle')}</h6>
         <p className="text-base font-medium text-SlateBlue dark:text-darktext mb-4">
-          Once npm install is done now you an run the app.
+          {t('startDescription')}
         </p>
 
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-BorderLine">npm run dev or yarn run dev</p>
         </div>
         <p className="text-base font-medium text-SlateBlue dark:text-darktext my-4">
-          This command will start a local webserver{" "}
+          {t('localServer')}{" "}
           <span className="dark:text-white">http://localhost:3000:</span>
         </p>
         <div className="py-4 px-3 rounded-md bg-black">
@@ -71,17 +74,17 @@ export const QuickStart = () => {
       </div>
       <div className="p-6 rounded-md border mt-6 border-BorderLine dark:border-dark_border border-solid">
         <h6 className="dark:text-white text-lg font-medium">
-          4. Build / Deployment
+          {t('buildTitle')}
         </h6>
         <p className="text-base font-medium text-SlateBlue dark:text-darktext mb-4">
-          After adding url run below command for build a app.
+          {t('buildDescription')}
         </p>
 
         <div className="py-4 px-3 rounded-md bg-black">
           <p className="text-sm text-BorderLine">npm run build or yarn build</p>
         </div>
         <p className="text-base font-medium text-SlateBlue dark:text-darktext mt-6">
-          Finally, Your webiste is ready to be deployed.🥳
+          {t('ready')}
         </p>
       </div>
     </div>

@@ -1,9 +1,13 @@
+"use client";
+import { useTranslations } from "next-intl";
+
 export const LogoConfiguration = () => {
+    const t = useTranslations('documentationPage.configuration')
     return (
         <>
-            <h3 className=" text-black text-xl font-semibold mt-8 dark:text-white" >Logo</h3>
+            <h3 className=" text-black text-xl font-semibold mt-8 dark:text-white" >{t('logo')}</h3>
             <div className="p-6 rounded-md border mt-4 border-BorderLine dark:border-dark_border border-solid">
-                <p className="text-base font-medium text-SlateBlue dark:text-darktext flex lg:flex-row flex-col" >1. Change Logo over here : <span className="font-semibold text-base overflow-x-auto">src/components/Layout/Header/Logo/index.tsx</span>  </p>
+                <p className="text-base font-medium text-SlateBlue dark:text-darktext flex lg:flex-row flex-col" >{t('logoText')} <span className="font-semibold text-base overflow-x-auto">src/components/Layout/Header/Logo/index.tsx</span>  </p>
                 <div className="py-4 px-3 rounded-md bg-black mt-8">
 
                     <div className="text-sm text-BorderLine">

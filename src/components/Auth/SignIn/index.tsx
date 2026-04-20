@@ -9,9 +9,12 @@ import AuthDialogContext from "@/app/context/AuthDialogContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useTranslations } from "next-intl";
 
 
 const Signin = ({signInOpen}:{signInOpen?:any}) => {
+  const t = useTranslations('auth.signIn')
+  const tCommon = useTranslations('auth.common')
   const [username, setUsername] = useState("admin");
   const [password, setPassword] = useState("admin123");
   const authDialog = useContext(AuthDialogContext);
@@ -57,31 +60,31 @@ const Signin = ({signInOpen}:{signInOpen?:any}) => {
       <span className="z-1 relative my-8 block text-center">
         <span className="-z-1 absolute left-0 top-1/2 block h-px w-full bg-BorderLine dark:bg-dark_border"></span>
         <span className="text-body-secondary relative z-10 inline-block bg-white px-3 text-base dark:bg-secondary">
-          OR
+          {tCommon('or')}
         </span>
         <Toaster />
       </span>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-[22px] space-y-2">
-          <Label htmlFor="username">Username</Label>
+          <Label htmlFor="username">{t('username')}</Label>
           <Input
             id="username"
             type="text"
-            placeholder="Username"
+            placeholder={t('username')}
             required
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="mb-[22px] space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('password')}</Label>
           <Input
             id="password"
             type="password"
             required
             value={password}
-            placeholder="Password"
+            placeholder={t('password')}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
@@ -90,7 +93,7 @@ const Signin = ({signInOpen}:{signInOpen?:any}) => {
             type="submit"
             className="w-full bg-primary hover:bg-darkprimary dark:hover:bg-darkprimary"
           >
-            Sign In
+            {t('submit')}
             {/* {loading && <Loader />} */}
           </Button>
         </div>
@@ -100,12 +103,12 @@ const Signin = ({signInOpen}:{signInOpen?:any}) => {
         href="/"
         className="mb-2 inline-block text-base text-dark hover:text-primary dark:text-white dark:hover:text-primary"
       >
-        Forget Password?
+        {t('forgotPassword')}
       </Link>
       <p className="text-body-secondary text-base">
-        Not a member yet?{" "}
+        {t('notMember')}{" "}
         <Link href="/" className="text-primary hover:underline">
-          Sign Up
+          {t('signUp')}
         </Link>
       </p>
     </>

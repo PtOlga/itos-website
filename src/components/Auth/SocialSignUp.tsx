@@ -1,9 +1,11 @@
 import React from "react";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 
 const SocialSignUp = () => {
+    const t = useTranslations('auth.signUp')
     return (
         <>
             <div className="flex gap-4">
@@ -12,7 +14,7 @@ const SocialSignUp = () => {
                     variant="outline"
                     className="flex w-full items-center justify-center gap-2.5"
                 >
-                    Sign Up
+                    {t('submit')}
                     <svg
                         width="23"
                         height="22"
@@ -56,7 +58,7 @@ const SocialSignUp = () => {
                     variant="outline"
                     className="flex w-full items-center justify-center gap-2.5"
                 >
-                    Sign Up
+                    {t('submit')}
                     <svg
                         width="22"
                         height="22"

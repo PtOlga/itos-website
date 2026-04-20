@@ -1,10 +1,14 @@
+"use client";
+import { useTranslations } from "next-intl";
+
 export const ColorConfiguration = () => {
+    const t = useTranslations('documentationPage.configuration')
     return (
         <>
-            <h3 className=" text-black text-xl font-semibold mt-8 dark:text-white" >Colors</h3>
+            <h3 className=" text-black text-xl font-semibold mt-8 dark:text-white" >{t('colors')}</h3>
             <div className="p-6 rounded-md border mt-4 border-BorderLine dark:border-dark_border border-solid">
-                <p className="text-base font-medium text-SlateBlue dark:text-darktext" ><span className="font-semibold text-lg"><span className="text-black dark:text-white" >1. Override Colors</span></span> <br />
-                    For any change in colors : src/utils/globals.css</p>
+                <p className="text-base font-medium text-SlateBlue dark:text-darktext" ><span className="font-semibold text-lg"><span className="text-black dark:text-white" >{t('overrideColorsTitle')}</span></span> <br />
+                    {t('overrideColorsText')}</p>
                 <div className="py-4 px-5 rounded-md bg-black mt-8">
                     <p className="text-sm text-BorderLine flex flex-col gap-2">
                         <span>--color-primary: #1358d8;</span>
@@ -29,8 +33,8 @@ export const ColorConfiguration = () => {
                 </div>
             </div>
             <div className="p-6 rounded-md border mt-4 border-BorderLine dark:border-dark_border border-solid">
-                <p className="text-base font-medium text-SlateBlue dark:text-darktext" ><span className="font-semibold text-lg text-black dark:text-white">2. Override Theme Colors</span> <br />
-                    For change , go to : src/utils/globals.css</p>
+                <p className="text-base font-medium text-SlateBlue dark:text-darktext" ><span className="font-semibold text-lg text-black dark:text-white">{t('overrideThemeColorsTitle')}</span> <br />
+                    {t('overrideThemeColorsText')}</p>
                 <div className="py-4 px-5 rounded-md bg-black mt-8">
                     <p className="text-sm text-BorderLine flex flex-col gap-2">
                         <span>--color-primary: #1358d8;</span>
