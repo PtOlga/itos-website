@@ -124,7 +124,7 @@ const Header: React.FC = () => {
           } z-50`}>
           <div className='flex items-center justify-between p-4'>
             <h2 className='text-lg font-bold text-black dark:text-white'>
-              Menu
+              {t('menu')}
             </h2>
             <button
               onClick={() => setNavbarOpen(false)}

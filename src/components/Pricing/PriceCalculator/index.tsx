@@ -2,8 +2,31 @@
 
 import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { projectTypes, calculatorOptions, categoryNames } from './options'
+import { projectTypes, calculatorOptions } from './options'
 import type { ProjectType, CalculatorOption } from './options'
+
+const categoryOrder: CalculatorOption['category'][] = ['main', 'communication', 'seo', 'additional', 'store']
+
+const optionTranslationKey: Record<string, string> = {
+  news: 'news',
+  catalog: 'catalog',
+  search: 'search',
+  gallery: 'gallery',
+  articles: 'articles',
+  map: 'map',
+  faq: 'faq',
+  reviews: 'reviews',
+  sitemap: 'sitemap',
+  microformats: 'microformats',
+  rss: 'rss',
+  'auto-import': 'autoImport',
+  ads: 'ads',
+  'excel-import': 'excelImport',
+  multilang: 'multilang',
+  'product-variants': 'productVariants',
+  'product-search': 'productSearch',
+  'alphabetical-search': 'alphabeticalSearch',
+}
 
 const PriceCalculator = () => {
   const t = useTranslations('pricing')
@@ -73,17 +96,17 @@ const PriceCalculator = () => {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to create checkout session')
+        throw new Error(data.error || t('errors.checkout'))
       }
 
       if (data.url) {
         window.location.href = data.url
       } else {
-        alert('Something went wrong. Please try again.')
+        alert(t('errors.checkout'))
       }
     } catch (error) {
       console.error('Checkout error:', error)
-      alert('Something went wrong. Please try again.')
+      alert(t('errors.checkout'))
     } finally {
       setIsLoading(false)
     }
@@ -110,23 +133,23 @@ const PriceCalculator = () => {
           </div>
           <div className="text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">2</div>
-            <h3 className="text-xl font-bold text-secondary dark:text-white mb-2">Template selection</h3>
-            <p className="text-SlateBlue dark:text-darktext">Select template in "design" section or any other</p>
+            <h3 className="text-xl font-bold text-secondary dark:text-white mb-2">{t('steps.step2Title')}</h3>
+            <p className="text-SlateBlue dark:text-darktext">{t('steps.step2Desc')}</p>
           </div>
           <div className="text-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">3</div>
-            <h3 className="text-xl font-bold text-secondary dark:text-white mb-2">Options selection</h3>
-            <p className="text-SlateBlue dark:text-darktext">Select necessary CMS options in calculator below</p>
+            <h3 className="text-xl font-bold text-secondary dark:text-white mb-2">{t('steps.step3Title')}</h3>
+            <p className="text-SlateBlue dark:text-darktext">{t('steps.step3Desc')}</p>
           </div>
         </div>
 
         {/* Calculator */}
         <div className="bg-white dark:bg-darklight rounded-2xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-          <h2 className="text-3xl font-bold text-secondary dark:text-white mb-8 text-center">Cost calculator</h2>
+          <h2 className="text-3xl font-bold text-secondary dark:text-white mb-8 text-center">{t('calculator.title')}</h2>
 
           {/* Project Type */}
           <div className="mb-8">
-            <h3 className="text-xl font-bold text-secondary dark:text-white mb-4">Website type</h3>
+            <h3 className="text-xl font-bold text-secondary dark:text-white mb-4">{t('calculator.websiteType')}</h3>
             <div className="space-y-3">
               {projectTypes.map((project) => (
                 <label key={project.id} className="flex items-center gap-3 cursor-pointer p-4 rounded-lg border border-BorderLine dark:border-dark_border hover:bg-AliceBlue dark:hover:bg-darkmode transition-colors">
@@ -138,7 +161,7 @@ const PriceCalculator = () => {
                     onChange={(e) => setSelectedProject(e.target.value as ProjectType['id'])}
                     className="w-5 h-5 text-primary"
                   />
-                  <span className="text-base text-secondary dark:text-white flex-1">{project.name}</span>
+                  <span className="text-base text-secondary dark:text-white flex-1">{t(`websiteTypes.${project.id}`)}</span>
                   <span className="text-base font-bold text-primary">
                     {formatPrice(isSEK ? project.basePriceSEK : project.basePrice)}
                   </span>
@@ -148,12 +171,12 @@ const PriceCalculator = () => {
           </div>
 
           {/* Options by Category */}
-          {Object.entries(categoryNames).map(([category, categoryName]) => {
-            if (!shouldShowCategory(category as CalculatorOption['category'])) return null
-            const options = getOptionsByCategory(category as CalculatorOption['category'])
+          {categoryOrder.map((category) => {
+            if (!shouldShowCategory(category)) return null
+            const options = getOptionsByCategory(category)
             return (
               <div key={category} className="mb-8">
-                <h3 className="text-xl font-bold text-secondary dark:text-white mb-4">{categoryName}</h3>
+                <h3 className="text-xl font-bold text-secondary dark:text-white mb-4">{t(`categories.${category}`)}</h3>
                 <div className="space-y-3">
                   {options.map((option) => (
                     <label key={option.id} className="flex items-center gap-3 cursor-pointer p-4 rounded-lg border border-BorderLine dark:border-dark_border hover:bg-AliceBlue dark:hover:bg-darkmode transition-colors">
@@ -163,7 +186,7 @@ const PriceCalculator = () => {
                         onChange={() => handleOptionToggle(option.id)}
                         className="w-5 h-5 text-primary rounded"
                       />
-                      <span className="text-base text-secondary dark:text-white flex-1">{option.name}</span>
+                      <span className="text-base text-secondary dark:text-white flex-1">{t(`options.${optionTranslationKey[option.id]}`)}</span>
                       <span className="text-base font-bold text-primary">
                         {formatPrice(isSEK ? option.priceSEK : option.price)}
                       </span>
@@ -177,12 +200,12 @@ const PriceCalculator = () => {
           {/* Total */}
           <div className="border-t border-BorderLine dark:border-dark_border pt-8 mt-8">
             <div className="flex items-center justify-between mb-6">
-              <span className="text-2xl font-bold text-secondary dark:text-white">Total:</span>
+              <span className="text-2xl font-bold text-secondary dark:text-white">{t('calculator.total')}:</span>
               <span className="text-4xl font-bold text-primary">{formatPrice(calculateTotal())}</span>
             </div>
             {!showOrderForm && (
               <button onClick={() => setShowOrderForm(true)} className="w-full btn py-4 rounded-lg text-lg font-semibold">
-                Calculate & Order
+                {t('calculator.calculateOrder')}
               </button>
             )}
           </div>
@@ -190,42 +213,42 @@ const PriceCalculator = () => {
           {/* Order Form */}
           {showOrderForm && (
             <div className="border-t border-BorderLine dark:border-dark_border pt-8 mt-8">
-              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4">Order placement</h3>
-              <p className="text-SlateBlue dark:text-darktext mb-6">Fill in all required fields (*) and click "Order"</p>
+              <h3 className="text-2xl font-bold text-secondary dark:text-white mb-4">{t('orderForm.title')}</h3>
+              <p className="text-SlateBlue dark:text-darktext mb-6">{t('orderForm.description')}</p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">* Name</label>
+                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">* {t('orderForm.name')}</label>
                   <input type="text" name="name" value={formData.name} onChange={handleFormChange} required
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <div>
-                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">* Email</label>
+                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">* {t('orderForm.email')}</label>
                   <input type="email" name="email" value={formData.email} onChange={handleFormChange} required
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <div>
-                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">* Phone</label>
+                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">* {t('orderForm.phone')}</label>
                   <input type="tel" name="phone" value={formData.phone} onChange={handleFormChange} required
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <div>
-                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">Future domain:</label>
+                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">{t('orderForm.domain')}</label>
                   <input type="text" name="domain" value={formData.domain} onChange={handleFormChange}
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <div>
-                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">Design URL/№:</label>
+                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">{t('orderForm.design')}</label>
                   <input type="text" name="design" value={formData.design} onChange={handleFormChange}
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <div>
-                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">Notes:</label>
+                  <label className="block text-base font-medium text-secondary dark:text-white mb-2">{t('orderForm.notes')}</label>
                   <textarea name="notes" value={formData.notes} onChange={handleFormChange} rows={4} maxLength={500}
                     className="w-full px-4 py-3 rounded-lg border border-BorderLine dark:border-dark_border bg-white dark:bg-darkmode text-secondary dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <button type="submit" disabled={isLoading} className="w-full btn py-4 rounded-lg text-lg font-semibold disabled:opacity-50">
-                  {isLoading ? 'Processing...' : 'Order'}
+                  {isLoading ? t('orderForm.processing') : t('orderForm.submit')}
                 </button>
               </form>
             </div>

@@ -1,14 +1,22 @@
 'use client'
 import React from 'react'
-import { count } from '@/app/api/data'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 const Counter = () => {
+  const t = useTranslations('counter')
+  const items = [
+    { icon: '/images/counter/euro.svg', value: '€0', key: 'consultation' },
+    { icon: '/images/counter/calendar.svg', value: '15+', key: 'experience' },
+    { icon: '/images/counter/lightbulb.svg', value: '100+', key: 'ideas' },
+    { icon: '/images/counter/coffee.svg', value: '∞', key: 'coffee' },
+  ]
+
   return (
     <section className={`dark:bg-darkmode py-20`}>
       <div className='container'>
         <div className='flex flex-wrap items-center md:justify-between justify-center md:gap-0 gap-9'>
-          {count.map((item, index) => (
+          {items.map((item, index) => (
             <div
               key={index}
               className='flex flex-col items-center gap-4'
@@ -26,7 +34,7 @@ const Counter = () => {
                 {item.value}
               </span>
               <p className='text-20 text-SlateBlue font-normal text-center max-w-72 w-full dark:text-darktext'>
-                {item.description}
+                {t(`items.${item.key}`)}
               </p>
             </div>
           ))}

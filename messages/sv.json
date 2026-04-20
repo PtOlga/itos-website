@@ -8,7 +8,8 @@
     "pricing": "Priser",
     "faqs": "Vanliga frågor",
     "signIn": "Logga in",
-    "signUp": "Registrera"
+    "signUp": "Registrera",
+    "menu": "Meny"
   },
   "hero": {
     "title": "IT-lösningar som arbetar FÖR DIG",
@@ -181,7 +182,115 @@
       "domain": "Framtida domän:",
       "design": "Design URL/№:",
       "notes": "Anteckningar:",
-      "submit": "Beställ"
+      "submit": "Beställ",
+      "processing": "Bearbetar..."
+    },
+    "errors": {
+      "checkout": "Något gick fel. Försök igen."
+    }
+  },
+  "counter": {
+    "items": {
+      "consultation": "Första konsultation",
+      "experience": "Års erfarenhet",
+      "ideas": "Idéer för ditt företag",
+      "coffee": "Koppar kaffe"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "Om oss",
+      "description": "Lär känna hur jag arbetar och vad som är viktigt i varje projekt.",
+      "underConstructionTitle": "Om-sidan kommer snart",
+      "underConstructionMessage": "Jag förbereder innehållet för Om-sidan. Titta gärna tillbaka snart."
+    },
+    "blog": {
+      "title": "Blogg",
+      "description": "Praktiska artiklar om webbplatser, automatisering, CRM och IT-lösningar för företag.",
+      "underConstructionTitle": "Kommer snart",
+      "underConstructionMessage": "Bloggen är under uppbyggnad. Jag förbereder nyttiga artiklar för dig — håll utkik!"
+    },
+    "faqs": {
+      "title": "Vanliga frågor",
+      "description": "Svar på de vanligaste frågorna om webbplatser, priser, tidsplaner och support."
+    }
+  },
+  "portfolioPage": {
+    "hero": {
+      "title": "Portfolio",
+      "description": "Exempel på webbplatser, webbappar och automationsprojekt presenterade i ett enkelt och kundvänligt format."
+    },
+    "eyebrow": "Utvalda projekt",
+    "title": "Kompakt projektlista med levande förhandsvisningar",
+    "description": "Varje kort visar projekttyp, en kort affärsinriktad beskrivning och ett litet interaktivt förhandsvisningsområde. Just nu är vissa previews placeholders med hover-rörelse, så att vi först kan låsa layouten och sedan byta innehållet.",
+    "filters": {
+      "websites": "Webbplatser",
+      "webApps": "Webbappar",
+      "wpPlugins": "WP-plugins",
+      "automation": "Automatisering"
+    },
+    "actions": {
+      "openProject": "Öppna projekt",
+      "linkComingSoon": "Länk kommer snart",
+      "needSomethingSimilar": "Behöver du något liknande?"
+    },
+    "projects": {
+      "interpolCheck": {
+        "title": "Interpol Check",
+        "label": "interpol-check.me",
+        "description": "Landningssida fokuserad på leadgenerering: INTERPOL-kontroller, regional prissättning och ett tydligt flöde för klientförfrågningar.",
+        "category": "Webbplats",
+        "tags": ["Juridiska tjänster", "Landningssida", "Leadgenerering"]
+      },
+      "statusLaw": {
+        "title": "Status Law",
+        "label": "status.law",
+        "description": "Företagswebbplats för en juristbyrå med tjänstepresentation, förtroendeskapande struktur och tydliga kontaktvägar för nya klienter.",
+        "category": "Webbplats",
+        "tags": ["Företagswebbplats", "Juristbyrå", "Förtroende"]
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "label": "ptolga.github.io",
+        "description": "Tvåspråkig personlig portfolio med projektfiltrering och PDF-CV — utformad för att presentera tjänster, kompetens och färdiga arbeten tydligt.",
+        "category": "Webbplats",
+        "tags": ["Portfolio", "Tvåspråkig", "PDF-CV"]
+      },
+      "prados": {
+        "title": "PraDos",
+        "label": "prados.org.ua",
+        "description": "Webbplats för en ukrainsk ideell organisation som erbjuder juridisk hjälp till ukrainare som bor utomlands.",
+        "category": "Webbplats",
+        "tags": ["Ideell organisation", "Juridisk hjälp", "Informationssajt"]
+      },
+      "diskCatalog": {
+        "title": "Disk Catalog",
+        "label": "disk-catalog-488612.web.app",
+        "description": "PWA-katalog för DVD- och ljudsamlingar med streckkodsskanning och mobilsökning i hela biblioteket.",
+        "category": "Webbapp",
+        "tags": ["PWA", "Streckkodsskanning", "Mobil först"]
+      },
+      "megaPdfCompressor": {
+        "title": "MEGA PDF Compressor",
+        "label": "mega-pdf-compressor-en.up.railway.app",
+        "description": "Webbapp för batchkomprimering av PDF-filer från lokala mappar eller MEGA-lagring med hjälp av iLovePDF API.",
+        "category": "Webbapp",
+        "tags": ["PDF-verktyg", "Molnintegration", "Batchbearbetning"]
+      },
+      "gdprScanner": {
+        "title": "GDPR Scanner",
+        "label": "WordPress-plugin",
+        "description": "WordPress-pluginkoncept för att skanna webbplatser efter GDPR-relaterade element och hjälpa till med en snabb integritetsgranskning.",
+        "category": "WP-plugin",
+        "tags": ["WordPress", "Integritet", "Efterlevnad"]
+      },
+      "planfixReminder": {
+        "title": "PlanFix Reminder",
+        "label": "Desktopapp",
+        "description": "Desktopverktyg för automation som skickar uppgiftspåminnelser från PlanFix till WhatsApp och minskar manuellt uppföljningsarbete.",
+        "category": "CRM / Automatisering",
+        "tags": ["Automatisering", "PlanFix", "WhatsApp"]
+      }
     }
   },
   "footer": {
@@ -190,6 +299,7 @@
     "services": "Tjänster",
     "contactTitle": "Kontakt",
     "allRightsReserved": "Alla rättigheter förbehållna av",
+    "address": "Charlottenberg, 67392, Sverige",
     "links": {
       "about": "Om oss",
       "portfolio": "Portfolio",

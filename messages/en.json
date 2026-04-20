@@ -8,7 +8,8 @@
     "pricing": "Pricing",
     "faqs": "FAQs",
     "signIn": "Sign In",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "menu": "Menu"
   },
   "hero": {
     "title": "IT Solutions That Work FOR YOU",
@@ -181,7 +182,115 @@
       "domain": "Future domain:",
       "design": "Design URL/№:",
       "notes": "Notes:",
-      "submit": "Order"
+      "submit": "Order",
+      "processing": "Processing..."
+    },
+    "errors": {
+      "checkout": "Something went wrong. Please try again."
+    }
+  },
+  "counter": {
+    "items": {
+      "consultation": "First Consultation",
+      "experience": "Years of Experience",
+      "ideas": "Ideas for Your Business",
+      "coffee": "Coffee Consumed"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "description": "Learn more about how I work and what matters in every project.",
+      "underConstructionTitle": "About page is coming soon",
+      "underConstructionMessage": "We are preparing the About page content. Please check back soon."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Practical articles on websites, automation, CRM, and business-focused IT solutions.",
+      "underConstructionTitle": "Coming Soon",
+      "underConstructionMessage": "Our blog is under construction. We are preparing useful articles for you — stay tuned!"
+    },
+    "faqs": {
+      "title": "FAQs",
+      "description": "Answers to the most common questions about websites, pricing, timelines, and support."
+    }
+  },
+  "portfolioPage": {
+    "hero": {
+      "title": "Portfolio",
+      "description": "Examples of websites, web apps, and automation projects presented in a simple client-friendly format."
+    },
+    "eyebrow": "Selected work",
+    "title": "Compact project list with quick live-style previews",
+    "description": "Each card shows the project type, a short business-focused description, and a small interactive preview area. For now the previews are placeholders with hover motion, so we can lock the layout first and replace content later.",
+    "filters": {
+      "websites": "Websites",
+      "webApps": "Web apps",
+      "wpPlugins": "WP plugins",
+      "automation": "Automation"
+    },
+    "actions": {
+      "openProject": "Open project",
+      "linkComingSoon": "Link coming soon",
+      "needSomethingSimilar": "Need something similar?"
+    },
+    "projects": {
+      "interpolCheck": {
+        "title": "Interpol Check",
+        "label": "interpol-check.me",
+        "description": "Landing page focused on lead generation: INTERPOL database checks, regional pricing, and a clear client inquiry flow.",
+        "category": "Website",
+        "tags": ["Legal services", "Landing page", "Lead generation"]
+      },
+      "statusLaw": {
+        "title": "Status Law",
+        "label": "status.law",
+        "description": "Corporate website for a law firm with service presentation, trust-oriented structure, and straightforward contact paths for new clients.",
+        "category": "Website",
+        "tags": ["Corporate site", "Law firm", "Trust-building"]
+      },
+      "portfolio": {
+        "title": "Portfolio",
+        "label": "ptolga.github.io",
+        "description": "Personal bilingual portfolio with project filtering and PDF resume generation — designed to present services, skills, and completed work clearly.",
+        "category": "Website",
+        "tags": ["Portfolio", "Bilingual", "PDF resume"]
+      },
+      "prados": {
+        "title": "PraDos",
+        "label": "prados.org.ua",
+        "description": "Website for a Ukrainian non-profit organization that provides legal help to Ukrainians living abroad.",
+        "category": "Website",
+        "tags": ["Non-profit", "Legal help", "Information site"]
+      },
+      "diskCatalog": {
+        "title": "Disk Catalog",
+        "label": "disk-catalog-488612.web.app",
+        "description": "PWA catalog for DVD and audio collections with barcode scanning and mobile search across the library.",
+        "category": "Web app",
+        "tags": ["PWA", "Barcode scanning", "Mobile-first"]
+      },
+      "megaPdfCompressor": {
+        "title": "MEGA PDF Compressor",
+        "label": "mega-pdf-compressor-en.up.railway.app",
+        "description": "Web app for batch PDF compression from local folders or MEGA cloud storage using the iLovePDF API.",
+        "category": "Web app",
+        "tags": ["PDF tools", "Cloud integration", "Batch processing"]
+      },
+      "gdprScanner": {
+        "title": "GDPR Scanner",
+        "label": "WordPress plugin",
+        "description": "WordPress plugin concept for scanning websites for GDPR-related elements and helping with a quick privacy compliance review.",
+        "category": "WP plugin",
+        "tags": ["WordPress", "Privacy", "Compliance"]
+      },
+      "planfixReminder": {
+        "title": "PlanFix Reminder",
+        "label": "Desktop app",
+        "description": "Desktop automation tool that sends task reminders from PlanFix to WhatsApp, reducing manual follow-up work.",
+        "category": "CRM / Automation",
+        "tags": ["Automation", "PlanFix", "WhatsApp"]
+      }
     }
   },
   "footer": {
@@ -190,6 +299,7 @@
     "services": "Services",
     "contactTitle": "Contact",
     "allRightsReserved": "All rights reserved by",
+    "address": "Charlottenberg, 67392, Sweden",
     "links": {
       "about": "About",
       "portfolio": "Portfolio",

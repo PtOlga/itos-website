@@ -1,21 +1,27 @@
 import HeroSub from '@/components/SharedComponent/HeroSub'
 import UnderConstruction from '@/components/SharedComponent/UnderConstruction'
 import React from 'react'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Metadata } from "next";
-export const metadata: Metadata = {
-    title: "About",
-};
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pages.about')
+  return { title: t('title') }
+}
 
 const page = () => {
+  const t = useTranslations('pages.about')
+
   return (
     <>
         <HeroSub
-            title="About Us"
-            description=""
+            title={t('title')}
+            description={t('description')}
         />
         <UnderConstruction
-          title='About page is coming soon'
-          message='We are preparing the About page content. Please check back soon.'
+          title={t('underConstructionTitle')}
+          message={t('underConstructionMessage')}
         />
     </>
   )

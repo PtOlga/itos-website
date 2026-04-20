@@ -11,6 +11,7 @@ const Footer: FC = () => {
   const pathname = stripLocalePrefix(usePathname())
   const locale = useLocale() as Locale
   const t = useTranslations('footer')
+  const tLocation = useTranslations('contact.location')
 
   const companyLinks = [
     { name: t('links.about'), href: getLocalizedPath('/about', locale) },
@@ -136,7 +137,7 @@ const Footer: FC = () => {
                   </Link>
                 </li>
                 <li className='text-base font-normal text-SlateBlue leading-8'>
-                  Charlottenberg, 67392, Sweden
+                  {tLocation('address')}
                 </li>
               </ul>
             </div>

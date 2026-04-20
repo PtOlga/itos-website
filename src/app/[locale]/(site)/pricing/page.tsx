@@ -1,17 +1,23 @@
 import PriceCalculator from '@/components/Pricing/PriceCalculator'
 import HeroSub from '@/components/SharedComponent/HeroSub'
 import React from 'react'
+import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { Metadata } from "next";
-export const metadata: Metadata = {
-    title: "Pricing",
-};
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pricing')
+  return { title: t('title') }
+}
 
 const page = () => {
+  const t = useTranslations('pricing')
+
   return (
     <>
         <HeroSub
-            title="Website Cost Calculator"
-            description="Use the calculator below to see the project price based on your requirements"
+            title={t('title')}
+            description={t('description')}
         />
         <PriceCalculator/>
     </>
