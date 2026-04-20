@@ -38,13 +38,6 @@ const BrowserPreview = ({ project }: { project: Project }) => (
     <div className={`${project.previewImage ? 'h-[220px]' : 'h-[144px]'} overflow-hidden rounded-[0.95rem] border border-white/10 bg-white/5 backdrop-blur-sm`}>
       {project.previewImage ? (
         <div className='relative h-full overflow-hidden bg-[#18304a]'>
-          <div className='absolute inset-x-0 top-0 z-10 flex items-center justify-between gap-2 bg-gradient-to-b from-[#17304f]/95 via-[#17304f]/70 to-transparent px-3 py-2'>
-            <span className='rounded-full bg-LightApricot/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-darkmode'>
-              {project.category}
-            </span>
-            <span className='text-[10px] uppercase tracking-[0.22em] text-white/70'>Live preview</span>
-          </div>
-
           <div
             className='translate-y-0 transition-transform ease-linear group-hover:translate-y-[calc(220px-100%)]'
             style={{ transitionDuration: `${project.previewDurationMs ?? 22000}ms` }}
@@ -61,13 +54,6 @@ const BrowserPreview = ({ project }: { project: Project }) => (
         </div>
       ) : (
         <div className='translate-y-0 p-4 transition-transform duration-1000 ease-out group-hover:-translate-y-10'>
-          <div className='mb-4 flex items-center justify-between gap-2'>
-            <span className='rounded-full bg-LightApricot/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-darkmode'>
-              {project.category}
-            </span>
-            <span className='text-[10px] uppercase tracking-[0.22em] text-white/55'>Live preview</span>
-          </div>
-
           <div className='mb-4 space-y-2'>
             <div className='h-2 w-16 rounded-full bg-white/15' />
             <div className='h-6 w-4/5 rounded-full bg-white/90' />
