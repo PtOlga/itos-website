@@ -48,8 +48,8 @@ const projectVisuals: Record<ProjectKey, Omit<Project, 'id' | 'title' | 'label' 
   statusLaw: { href: 'https://status.law', previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.png', previewDurationMs: 18000 },
   portfolio: { href: 'https://ptolga.github.io', previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.png', previewDurationMs: 36000 },
   prados: { href: 'https://prados.org.ua', previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.png', previewDurationMs: 22000 },
-  diskCatalog: { href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]' },
-  megaPdfCompressor: { href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]' },
+  diskCatalog: { href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]', previewImage: '/images/portfolio-details/disk-catalog.png', previewDurationMs: 20000 },
+  megaPdfCompressor: { href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]', previewImage: '/images/portfolio-details/mega-pdf-compressor.png', previewDurationMs: 21000 },
   gdprScanner: { previewClass: 'from-[#23283a] via-[#31384f] to-[#48516d]' },
   planfixReminder: { previewClass: 'from-[#182d2c] via-[#22504a] to-[#2e776d]' },
 }

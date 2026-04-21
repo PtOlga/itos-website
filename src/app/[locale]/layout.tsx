@@ -14,6 +14,7 @@ import { Metadata } from 'next';
 import Script from "next/script";
 
 const dmsans = DM_Sans({ subsets: ["latin"] });
+const GOOGLE_TAG_ID = "G-NYPHMV09ZH";
 
 export const metadata: Metadata = {
   title: {
@@ -55,6 +56,18 @@ export default async function LocaleLayout({
           strategy="afterInteractive"
           async
         />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_TAG_ID}');
+          `}
+        </Script>
       </head>
       <body className={dmsans.className}>
         <NextIntlClientProvider messages={messages}>
