@@ -8,11 +8,14 @@ type Project = {
   href?: string
   description: string
   category: string
+  group: ProjectGroupKey
   tags: string[]
   previewClass: string
   previewImage?: string
   previewDurationMs?: number
 }
+
+type ProjectGroupKey = 'websites' | 'webApps' | 'wpPlugins' | 'automation'
 
 type ProjectKey =
   | 'interpolCheck'
@@ -44,14 +47,14 @@ const projectOrder: ProjectKey[] = [
 ]
 
 const projectVisuals: Record<ProjectKey, Omit<Project, 'id' | 'title' | 'label' | 'description' | 'category' | 'tags'>> = {
-  interpolCheck: { href: 'https://interpol-check.me', previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.png', previewDurationMs: 36000 },
-  statusLaw: { href: 'https://status.law', previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.png', previewDurationMs: 18000 },
-  portfolio: { href: 'https://ptolga.github.io', previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.png', previewDurationMs: 36000 },
-  prados: { href: 'https://prados.org.ua', previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.png', previewDurationMs: 22000 },
-  diskCatalog: { href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]', previewImage: '/images/portfolio-details/disk-catalog.png', previewDurationMs: 20000 },
-  megaPdfCompressor: { href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]', previewImage: '/images/portfolio-details/mega-pdf-compressor.png', previewDurationMs: 21000 },
-  gdprScanner: { previewClass: 'from-[#23283a] via-[#31384f] to-[#48516d]' },
-  planfixReminder: { previewClass: 'from-[#182d2c] via-[#22504a] to-[#2e776d]' },
+  interpolCheck: { group: 'websites', href: 'https://interpol-check.me', previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.png', previewDurationMs: 36000 },
+  statusLaw: { group: 'websites', href: 'https://status.law', previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.png', previewDurationMs: 18000 },
+  portfolio: { group: 'websites', href: 'https://ptolga.github.io', previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.png', previewDurationMs: 36000 },
+  prados: { group: 'websites', href: 'https://prados.org.ua', previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.png', previewDurationMs: 22000 },
+  diskCatalog: { group: 'webApps', href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]', previewImage: '/images/portfolio-details/disk-catalog.png', previewDurationMs: 20000 },
+  megaPdfCompressor: { group: 'webApps', href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]', previewImage: '/images/portfolio-details/mega-pdf-compressor.png', previewDurationMs: 21000 },
+  gdprScanner: { group: 'wpPlugins', previewClass: 'from-[#23283a] via-[#31384f] to-[#48516d]' },
+  planfixReminder: { group: 'automation', previewClass: 'from-[#182d2c] via-[#22504a] to-[#2e776d]' },
 }
 
 const BrowserPreview = ({ project }: { project: Project }) => (
@@ -130,11 +133,16 @@ export default async function PortfolioShowcase({ contactHref }: { contactHref: 
   }))
 
   const filters = [
-    t('filters.websites'),
-    t('filters.webApps'),
-    t('filters.wpPlugins'),
-    t('filters.automation'),
+    { id: 'websites' as const, label: t('filters.websites') },
+    { id: 'webApps' as const, label: t('filters.webApps') },
+    { id: 'wpPlugins' as const, label: t('filters.wpPlugins') },
+    { id: 'automation' as const, label: t('filters.automation') },
   ]
+
+  const projectsByGroup = filters.map((filter) => ({
+    ...filter,
+    projects: projects.filter((project) => project.group === filter.id),
+  }))
 
   return (
     <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
@@ -154,63 +162,82 @@ export default async function PortfolioShowcase({ contactHref }: { contactHref: 
 
           <div className='grid gap-2 sm:grid-cols-2 lg:min-w-[320px]'>
             {filters.map((item) => (
-              <div key={item} className='rounded-2xl border border-BorderLine bg-AliceBlue px-4 py-3 text-sm font-medium text-secondary dark:border-dark_border dark:bg-secondary dark:text-white'>
-                {item}
-              </div>
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className='rounded-2xl border border-BorderLine bg-AliceBlue px-4 py-3 text-sm font-medium text-secondary transition-colors hover:border-primary hover:text-primary dark:border-dark_border dark:bg-secondary dark:text-white dark:hover:border-LightApricot dark:hover:text-LightApricot'
+              >
+                {item.label}
+              </a>
             ))}
           </div>
         </div>
 
-        <div className='grid gap-5 xl:grid-cols-2'>
-          {projects.map((project) => (
-            <article key={project.id} className='group grid gap-5 rounded-[1.5rem] border border-BorderLine bg-white p-5 shadow-light-shadwo transition-transform duration-300 hover:-translate-y-1 dark:border-dark_border dark:bg-darklight lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start'>
-              <div>
-                <BrowserPreview project={project} />
+        <div className='space-y-12'>
+          {projectsByGroup.map((group) => (
+            <div key={group.id} id={group.id} className='scroll-mt-32'>
+              <div className='mb-5 flex items-center gap-3'>
+                <span className='rounded-full bg-LightApricot/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-secondary dark:text-LightApricot'>
+                  {group.label}
+                </span>
+                <span className='text-sm text-SlateBlue dark:text-gray'>
+                  {group.projects.length}
+                </span>
               </div>
 
-              <div className='min-w-0'>
-                <div className='mb-3 flex items-start justify-between gap-4'>
-                  <div>
-                    <div className='mb-2 flex items-center gap-2.5'>
-                      <span className='inline-flex h-7 w-7 items-center justify-center rounded-full bg-LightApricot text-xs font-semibold text-darkmode'>
-                        {project.id}
-                      </span>
-                      <span className='rounded-full border border-BorderLine px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-SlateBlue dark:border-dark_border dark:text-gray'>
-                        {project.category}
-                      </span>
+              <div className='grid gap-5 xl:grid-cols-2'>
+                {group.projects.map((project) => (
+                  <article key={project.id} className='group grid gap-5 rounded-[1.5rem] border border-BorderLine bg-white p-5 shadow-light-shadwo transition-transform duration-300 hover:-translate-y-1 dark:border-dark_border dark:bg-darklight lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start'>
+                    <div>
+                      <BrowserPreview project={project} />
                     </div>
-                    <h3 className='text-xl font-semibold text-secondary dark:text-white md:text-2xl'>{project.title}</h3>
-                    <p className='mt-1 text-sm text-primary dark:text-LightApricot'>{project.label}</p>
-                  </div>
-                </div>
 
-                <p className='mb-4 text-sm leading-7 text-SlateBlue dark:text-gray md:text-base'>{project.description}</p>
+                    <div className='min-w-0'>
+                      <div className='mb-3 flex items-start justify-between gap-4'>
+                        <div>
+                          <div className='mb-2 flex items-center gap-2.5'>
+                            <span className='inline-flex h-7 w-7 items-center justify-center rounded-full bg-LightApricot text-xs font-semibold text-darkmode'>
+                              {project.id}
+                            </span>
+                            <span className='rounded-full border border-BorderLine px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-SlateBlue dark:border-dark_border dark:text-gray'>
+                              {project.category}
+                            </span>
+                          </div>
+                          <h3 className='text-xl font-semibold text-secondary dark:text-white md:text-2xl'>{project.title}</h3>
+                          <p className='mt-1 text-sm text-primary dark:text-LightApricot'>{project.label}</p>
+                        </div>
+                      </div>
 
-                <div className='mb-5 flex flex-wrap gap-2'>
-                  {project.tags.map((tag) => (
-                    <span key={tag} className='rounded-full bg-AliceBlue px-3 py-2 text-xs font-medium text-secondary dark:bg-secondary dark:text-white'>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                      <p className='mb-4 text-sm leading-7 text-SlateBlue dark:text-gray md:text-base'>{project.description}</p>
 
-                <div className='flex flex-wrap gap-3'>
-                  {project.href ? (
-                    <a href={project.href} target='_blank' rel='noopener noreferrer' className='inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-darkprimary'>
-                      {t('actions.openProject')}
-                    </a>
-                  ) : (
-                    <span className='inline-flex items-center justify-center rounded-full bg-BorderLine px-4 py-2.5 text-sm font-medium text-secondary dark:bg-secondary dark:text-white'>
-                      {t('actions.linkComingSoon')}
-                    </span>
-                  )}
+                      <div className='mb-5 flex flex-wrap gap-2'>
+                        {project.tags.map((tag) => (
+                          <span key={tag} className='rounded-full bg-AliceBlue px-3 py-2 text-xs font-medium text-secondary dark:bg-secondary dark:text-white'>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
 
-                  <Link href={contactHref} className='inline-flex items-center justify-center rounded-full border border-BorderLine px-4 py-2.5 text-sm font-medium text-secondary transition-colors hover:border-primary hover:text-primary dark:border-dark_border dark:text-white dark:hover:border-LightApricot dark:hover:text-LightApricot'>
-                    {t('actions.needSomethingSimilar')}
-                  </Link>
-                </div>
+                      <div className='flex flex-wrap gap-3'>
+                        {project.href ? (
+                          <a href={project.href} target='_blank' rel='noopener noreferrer' className='inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-darkprimary'>
+                            {t('actions.openProject')}
+                          </a>
+                        ) : (
+                          <span className='inline-flex items-center justify-center rounded-full bg-BorderLine px-4 py-2.5 text-sm font-medium text-secondary dark:bg-secondary dark:text-white'>
+                            {t('actions.linkComingSoon')}
+                          </span>
+                        )}
+
+                        <Link href={contactHref} className='inline-flex items-center justify-center rounded-full border border-BorderLine px-4 py-2.5 text-sm font-medium text-secondary transition-colors hover:border-primary hover:text-primary dark:border-dark_border dark:text-white dark:hover:border-LightApricot dark:hover:text-LightApricot'>
+                          {t('actions.needSomethingSimilar')}
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
