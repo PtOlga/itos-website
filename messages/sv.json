@@ -435,12 +435,21 @@
       }
     }
   },
+  "consent": {
+    "title": "Samtycke till cookies",
+    "description": "Vi använder analyscookies för att förstå trafik till webbplatsen och förbättra sidan. Du kan när som helst acceptera eller avvisa valfri analys.",
+    "accept": "Acceptera analys",
+    "reject": "Avvisa valfria cookies",
+    "statusAccepted": "Analyscookies är för närvarande tillåtna.",
+    "statusRejected": "Valfria analyscookies är för närvarande avstängda."
+  },
   "footer": {
     "description": "IT-lösningar som arbetar för dig. Webbutveckling, CRM, automatisering — direkt kontakt med experten, ingen byråpåslag.",
     "company": "Företag",
     "services": "Tjänster",
     "contactTitle": "Kontakt",
     "allRightsReserved": "Alla rättigheter förbehållna av",
+    "cookieSettings": "Cookie-inställningar",
     "address": "Charlottenberg, 67392, Sverige",
     "links": {
       "about": "Om oss",

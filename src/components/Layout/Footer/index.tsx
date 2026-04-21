@@ -6,12 +6,17 @@ import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import type { Locale } from '@/i18n/config'
 import { getLocalizedPath, stripLocalePrefix } from '@/utils/localePath'
+import { OPEN_CONSENT_SETTINGS_EVENT } from '@/utils/consent'
 
 const Footer: FC = () => {
   const pathname = stripLocalePrefix(usePathname())
   const locale = useLocale() as Locale
   const t = useTranslations('footer')
   const tLocation = useTranslations('contact.location')
+
+  const openCookieSettings = () => {
+    window.dispatchEvent(new Event(OPEN_CONSENT_SETTINGS_EVENT))
+  }
 
   const companyLinks = [
     { name: t('links.about'), href: getLocalizedPath('/about', locale) },
@@ -146,14 +151,23 @@ const Footer: FC = () => {
 
           {/* Copyright */}
           <div className='border-t border-dark_border border-solid mt-12 pt-6'>
-            <p className='text-base font-normal text-SlateBlue text-center'>
-              © Copyright 2025. {t('allRightsReserved')}{' '}
-              <Link
-                href={getLocalizedPath('/', locale)}
-                className='hover:text-primary'>
-                ITOS
-              </Link>
-            </p>
+            <div className='flex flex-col items-center gap-3 text-center'>
+              <p className='text-base font-normal text-SlateBlue'>
+                © Copyright 2025. {t('allRightsReserved')}{' '}
+                <Link
+                  href={getLocalizedPath('/', locale)}
+                  className='hover:text-primary'>
+                  ITOS
+                </Link>
+              </p>
+              <button
+                type='button'
+                onClick={openCookieSettings}
+                className='text-sm font-medium text-SlateBlue underline-offset-4 transition hover:text-white hover:underline'
+              >
+                {t('cookieSettings')}
+              </button>
+            </div>
           </div>
 
         </div>

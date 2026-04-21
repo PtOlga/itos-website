@@ -12,9 +12,12 @@ import { notFound } from 'next/navigation';
 import { locales } from '@/i18n/config';
 import { Metadata } from 'next';
 import Script from "next/script";
+import ConsentManager from '@/components/Consent/ConsentManager'
+import { DENIED_ANALYTICS_CONSENT } from '@/utils/consent'
 
 const dmsans = DM_Sans({ subsets: ["latin"] });
 const GOOGLE_TAG_ID = "G-NYPHMV09ZH";
+const AHREFS_ANALYTICS_KEY = "TwtKVhhnWtH5kaegiFIDwg";
 
 export const metadata: Metadata = {
   title: {
@@ -50,22 +53,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="TwtKVhhnWtH5kaegiFIDwg"
-          strategy="afterInteractive"
-          async
-        />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_TAG_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-tag" strategy="afterInteractive">
+        <Script id="google-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GOOGLE_TAG_ID}');
+            function gtag(){window.dataLayer.push(arguments);}
+            window.gtag = window.gtag || gtag;
+            window.gtag('consent', 'default', ${JSON.stringify({ ...DENIED_ANALYTICS_CONSENT, wait_for_update: 500 })});
           `}
         </Script>
       </head>
@@ -82,6 +75,7 @@ export default async function LocaleLayout({
               {children}
               <Footer />
             </Aoscompo>
+            <ConsentManager googleTagId={GOOGLE_TAG_ID} ahrefsKey={AHREFS_ANALYTICS_KEY} />
             <ScrollToTop />
           </ThemeProvider>
         </NextIntlClientProvider>

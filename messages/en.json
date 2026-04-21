@@ -435,12 +435,21 @@
       }
     }
   },
+  "consent": {
+    "title": "Cookie consent",
+    "description": "We use analytics cookies to understand website traffic and improve the site. You can accept or reject optional analytics at any time.",
+    "accept": "Accept analytics",
+    "reject": "Reject optional cookies",
+    "statusAccepted": "Analytics cookies are currently allowed.",
+    "statusRejected": "Optional analytics cookies are currently disabled."
+  },
   "footer": {
     "description": "IT solutions that work for you. Web development, CRM, automation — direct expert access, no agency markup.",
     "company": "Company",
     "services": "Services",
     "contactTitle": "Contact",
     "allRightsReserved": "All rights reserved by",
+    "cookieSettings": "Cookie settings",
     "address": "Charlottenberg, 67392, Sweden",
     "links": {
       "about": "About",
