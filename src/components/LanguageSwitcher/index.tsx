@@ -1,9 +1,8 @@
 'use client';
 
 import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/config';
-import { getLocalizedPath } from '@/utils/localePath';
+import { usePathname, useRouter } from '@/i18n/navigation';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -11,7 +10,7 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
 
   const switchLocale = (newLocale: Locale) => {
-    router.push(getLocalizedPath(pathname, newLocale));
+    router.replace(pathname, {locale: newLocale});
   };
 
   return (
