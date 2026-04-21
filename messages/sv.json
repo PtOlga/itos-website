@@ -571,7 +571,7 @@
         {
           "title": "Analyscookies och verktyg",
           "paragraphs": [
-            "Om du accepterar analys kan denna webbplats ladda Google Analytics (Google tag / GA4) och Ahrefs analytics för att mäta besök, sidvisningar och allmän användning av webbplatsen.",
+            "Om du accepterar analys kan denna webbplats ladda Google Analytics (Google tag / GA4) och, när det är tillfälligt aktiverat, andra analysverktyg för att mäta besök, sidvisningar och allmän användning av webbplatsen.",
             "Dessa verktyg kan sätta egna mätcookies eller använda liknande tekniker. De aktiveras inte förrän du lämnar samtycke via cookie-bannern. Om du avvisar valfria cookies förblir analysen avstängd."
           ]
         },
@@ -586,7 +586,7 @@
         {
           "title": "Tredjepartstjänster",
           "paragraphs": [
-            "När analys är aktiverad kan Google och Ahrefs behandla tekniska uppgifter om ditt besök som självständiga leverantörer enligt deras egna integritets- och cookiepolicys.",
+            "När analys är aktiverad kan Google och en eventuellt tillfälligt aktiverad analysleverantör behandla tekniska uppgifter om ditt besök som självständiga leverantörer enligt sina egna integritets- och cookiepolicys.",
             "När tredjepartsleverantörer behandlar uppgifter utanför EU eller EES strävar vi efter att använda lämpliga skyddsåtgärder som krävs enligt GDPR."
           ]
         },
