@@ -34,6 +34,11 @@ const Footer: FC = () => {
     { name: t('links.pricing'), href: getLocalizedPath('/pricing', locale) },
   ]
 
+  const legalLinks = [
+    { name: t('privacyPolicy'), href: getLocalizedPath('/privacy-policy', locale) },
+    { name: t('cookiePolicy'), href: getLocalizedPath('/cookie-policy', locale) },
+  ]
+
   return (
     <footer
       className={`relative dark:bg-darkmode bg-[url('/images/footer/ftr-bg.png')] bg-cover bg-no-repeat w-full h-full ${
@@ -167,6 +172,17 @@ const Footer: FC = () => {
               >
                 {t('cookieSettings')}
               </button>
+              <div className='flex flex-wrap items-center justify-center gap-x-4 gap-y-2'>
+                {legalLinks.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className='text-sm font-medium text-SlateBlue underline-offset-4 transition hover:text-white hover:underline'
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 

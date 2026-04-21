@@ -440,8 +440,165 @@
     "description": "Vi använder analyscookies för att förstå trafik till webbplatsen och förbättra sidan. Du kan när som helst acceptera eller avvisa valfri analys.",
     "accept": "Acceptera analys",
     "reject": "Avvisa valfria cookies",
+    "privacyLink": "Integritetspolicy",
+    "cookieLink": "Cookiepolicy",
     "statusAccepted": "Analyscookies är för närvarande tillåtna.",
     "statusRejected": "Valfria analyscookies är för närvarande avstängda."
+  },
+  "legal": {
+    "privacy": {
+      "hero": {
+        "title": "Integritetspolicy",
+        "description": "Hur ITOS, ett svenskt företag, behandlar personuppgifter enligt GDPR och tillämplig svensk lagstiftning."
+      },
+      "updatedLabel": "Senast uppdaterad",
+      "updatedDate": "21 april 2026",
+      "contactLabel": "Kontakt",
+      "intro": [
+        "Denna integritetspolicy förklarar hur ITOS, baserat i Sverige, samlar in, använder, lagrar och skyddar personuppgifter när du använder denna webbplats, kontaktar oss eller begär tjänster.",
+        "Vi strävar efter att behandla personuppgifter öppet, säkert och i enlighet med EU:s allmänna dataskyddsförordning (GDPR) samt tillämplig svensk dataskyddslagstiftning."
+      ],
+      "sections": [
+        {
+          "title": "Vem som ansvarar för dina personuppgifter",
+          "paragraphs": [
+            "ITOS är en verksamhet baserad i Charlottenberg, Sverige. För denna webbplats och klientkommunikation är ITOS personuppgiftsansvarig för de personuppgifter som beskrivs i denna policy.",
+            "Om du har frågor om integritet, personuppgifter eller dina rättigheter kan du kontakta oss via e-post på 5441700@gmail.com."
+          ]
+        },
+        {
+          "title": "Vilka personuppgifter vi kan samla in",
+          "items": [
+            "Kontaktuppgifter som du lämnar, till exempel namn, e-postadress, telefonnummer och företagsuppgifter.",
+            "Innehållet i meddelanden, projektförfrågningar och annan information som du skickar via kontaktformulär, e-post eller telefon.",
+            "Teknisk information och användningsdata om besök på webbplatsen, men endast om du har accepterat valfri analys.",
+            "Uppgifter som behövs för att ta fram offerter, leverera tjänster, besvara frågor och upprätthålla affärskommunikation."
+          ]
+        },
+        {
+          "title": "Varför vi använder personuppgifter",
+          "items": [
+            "För att besvara förfrågningar och kommunicera med potentiella eller befintliga kunder.",
+            "För att ta fram förslag, leverera begärda tjänster och hantera projektrelaterad kommunikation.",
+            "För att driva, säkra och förbättra webbplatsen och dess innehåll.",
+            "För att mäta webbplatsens prestanda genom analysverktyg där du har lämnat samtycke.",
+            "För att uppfylla bokföringsmässiga, skattemässiga, rättsliga eller regulatoriska skyldigheter enligt svensk och europeisk rätt."
+          ]
+        },
+        {
+          "title": "Rättsliga grunder enligt GDPR",
+          "items": [
+            "Samtycke — för valfria analyscookies och relaterade mätverktyg.",
+            "Åtgärder före avtal eller fullgörande av avtal — när du begär offert, diskuterar ett projekt eller blir kund.",
+            "Berättigat intresse — för löpande affärskommunikation, webbplatssäkerhet och förbättring av tjänster där dessa intressen inte väger tyngre än dina rättigheter.",
+            "Rättslig förpliktelse — när vi måste bevara eller lämna ut information för att följa tillämplig lag."
+          ]
+        },
+        {
+          "title": "Delning av uppgifter med tjänsteleverantörer",
+          "paragraphs": [
+            "Vi kan använda betrodda tjänsteleverantörer för att driva webbplatsen och leverera tjänster, till exempel hostingleverantörer, webbplatsinfrastruktur, analysleverantörer och kommunikations- eller formulärverktyg såsom EmailJS.",
+            "Dessa leverantörer får endast tillgång till personuppgifter när det är nödvändigt för deras uppdrag och förväntas behandla uppgifterna under lämpliga krav på sekretess och dataskydd. Vi säljer inte dina personuppgifter."
+          ]
+        },
+        {
+          "title": "Internationella dataöverföringar",
+          "paragraphs": [
+            "Vissa leverantörer som vi använder kan behandla uppgifter utanför EU eller EES. När detta sker strävar vi efter att använda lämpliga skyddsåtgärder, såsom avtalsmässiga skydd, standardavtalsklausuler eller andra lagliga överföringsmekanismer som krävs enligt GDPR."
+          ]
+        },
+        {
+          "title": "Hur länge vi sparar uppgifter",
+          "paragraphs": [
+            "Vi sparar personuppgifter endast så länge som det är nödvändigt för det ändamål de samlades in för, inklusive att besvara förfrågningar, hantera affärsrelationer, leverera tjänster och uppfylla rättsliga eller bokföringsmässiga krav.",
+            "Om du kontaktar oss men inte blir kund sparar vi normalt dina uppgifter endast så länge som det är rimligt nödvändigt för att hantera dialogen och eventuell uppföljning, om vi inte måste spara dem av rättsliga skäl."
+          ]
+        },
+        {
+          "title": "Dina rättigheter",
+          "items": [
+            "Rätt att få tillgång till dina personuppgifter.",
+            "Rätt att begära rättelse av felaktiga eller ofullständiga uppgifter.",
+            "Rätt att begära radering när det är tillämpligt.",
+            "Rätt att begränsa behandling i vissa situationer.",
+            "Rätt att invända mot behandling som grundas på berättigat intresse.",
+            "Rätt till dataportabilitet där GDPR är tillämplig.",
+            "Rätt att när som helst återkalla samtycke för behandling som grundas på samtycke, inklusive analyscookies."
+          ]
+        },
+        {
+          "title": "Klagomål och tillsynsmyndighet",
+          "paragraphs": [
+            "Om du anser att dina personuppgifter har hanterats olagligt har du rätt att först kontakta oss så att vi kan försöka lösa frågan.",
+            "Du har också rätt att lämna in klagomål till Integritetsskyddsmyndigheten (IMY), som är tillsynsmyndighet i Sverige för dataskyddsfrågor."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "hero": {
+        "title": "Cookiepolicy",
+        "description": "Hur ITOS använder cookies och liknande tekniker på denna webbplats, inklusive analysverktyg som endast aktiveras efter samtycke."
+      },
+      "updatedLabel": "Senast uppdaterad",
+      "updatedDate": "21 april 2026",
+      "contactLabel": "Kontakt",
+      "intro": [
+        "Denna cookiepolicy förklarar vad cookies är, vilka cookies som kan användas på denna webbplats och hur du kan hantera dina val.",
+        "Eftersom ITOS är en svensk verksamhet som betjänar användare i Sverige och EU använder vi en samtyckesbaserad modell för valfri analys i linje med GDPR och kraven kring elektronisk integritet."
+      ],
+      "sections": [
+        {
+          "title": "Vad cookies är",
+          "paragraphs": [
+            "Cookies är små textfiler som lagras på din enhet när du besöker en webbplats. De kan hjälpa en webbplats att komma ihåg dina inställningar, förstå trafikmönster och förbättra användarupplevelsen."
+          ]
+        },
+        {
+          "title": "Vilka typer av cookies vi använder",
+          "items": [
+            "Strikt nödvändiga cookies — krävs för grundläggande funktioner på webbplatsen, inklusive att komma ihåg ditt val om cookies.",
+            "Analyscookies — används endast efter ditt samtycke för att förstå trafik och förbättra webbplatsen."
+          ]
+        },
+        {
+          "title": "Nödvändig samtyckescookie",
+          "paragraphs": [
+            "När du använder cookie-bannern sparar vi ditt val i en liten preferenscookie och i lokal webblagring så att webbplatsen kan komma ihåg om du har accepterat eller avvisat valfri analys.",
+            "Det aktuella cookienamnet som används för detta ändamål är itos_cookie_consent. Denna cookie är nödvändig för att respektera ditt val och kräver inte samtycke till valfri analys."
+          ]
+        },
+        {
+          "title": "Analyscookies och verktyg",
+          "paragraphs": [
+            "Om du accepterar analys kan denna webbplats ladda Google Analytics (Google tag / GA4) och Ahrefs analytics för att mäta besök, sidvisningar och allmän användning av webbplatsen.",
+            "Dessa verktyg kan sätta egna mätcookies eller använda liknande tekniker. De aktiveras inte förrän du lämnar samtycke via cookie-bannern. Om du avvisar valfria cookies förblir analysen avstängd."
+          ]
+        },
+        {
+          "title": "Hur du hanterar dina val",
+          "items": [
+            "Du kan acceptera eller avvisa valfri analys i cookie-bannern när du besöker webbplatsen första gången.",
+            "Du kan öppna bannern igen senare via knappen Cookie-inställningar i footern.",
+            "Du kan också hantera eller radera cookies via inställningarna i din webbläsare när som helst."
+          ]
+        },
+        {
+          "title": "Tredjepartstjänster",
+          "paragraphs": [
+            "När analys är aktiverad kan Google och Ahrefs behandla tekniska uppgifter om ditt besök som självständiga leverantörer enligt deras egna integritets- och cookiepolicys.",
+            "När tredjepartsleverantörer behandlar uppgifter utanför EU eller EES strävar vi efter att använda lämpliga skyddsåtgärder som krävs enligt GDPR."
+          ]
+        },
+        {
+          "title": "Uppdateringar och kontakt",
+          "paragraphs": [
+            "Vi kan uppdatera denna cookiepolicy då och då för att återspegla rättsliga, tekniska eller affärsmässiga förändringar. Datumet för senaste uppdatering visas högst upp på denna sida.",
+            "Om du har frågor om cookies eller integritet på denna webbplats kan du kontakta ITOS på 5441700@gmail.com."
+          ]
+        }
+      ]
+    }
   },
   "footer": {
     "description": "IT-lösningar som arbetar för dig. Webbutveckling, CRM, automatisering — direkt kontakt med experten, ingen byråpåslag.",
@@ -450,6 +607,8 @@
     "contactTitle": "Kontakt",
     "allRightsReserved": "Alla rättigheter förbehållna av",
     "cookieSettings": "Cookie-inställningar",
+    "privacyPolicy": "Integritetspolicy",
+    "cookiePolicy": "Cookiepolicy",
     "address": "Charlottenberg, 67392, Sverige",
     "links": {
       "about": "Om oss",

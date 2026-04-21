@@ -1,9 +1,12 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Script from 'next/script'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
+import type { Locale } from '@/i18n/config'
+import { getLocalizedPath } from '@/utils/localePath'
 import {
   CONSENT_COOKIE_MAX_AGE,
   CONSENT_COOKIE_NAME,
@@ -26,6 +29,7 @@ const persistConsent = (value: ConsentChoice) => {
 }
 
 export default function ConsentManager({ googleTagId, ahrefsKey }: { googleTagId: string; ahrefsKey: string }) {
+  const locale = useLocale() as Locale
   const t = useTranslations('consent')
   const [consent, setConsent] = useState<ConsentChoice | null>(null)
   const [isReady, setIsReady] = useState(false)
@@ -92,6 +96,14 @@ export default function ConsentManager({ googleTagId, ahrefsKey }: { googleTagId
               <div className='max-w-2xl'>
                 <h2 className='text-lg font-semibold text-secondary dark:text-white'>{t('title')}</h2>
                 <p className='mt-2 text-sm leading-6 text-SlateBlue dark:text-gray'>{t('description')}</p>
+                <div className='mt-3 flex flex-wrap gap-4 text-sm'>
+                  <Link href={getLocalizedPath('/privacy-policy', locale)} className='text-primary underline-offset-4 hover:underline dark:text-LightApricot'>
+                    {t('privacyLink')}
+                  </Link>
+                  <Link href={getLocalizedPath('/cookie-policy', locale)} className='text-primary underline-offset-4 hover:underline dark:text-LightApricot'>
+                    {t('cookieLink')}
+                  </Link>
+                </div>
                 {consent && (
                   <p className='mt-2 text-xs font-medium uppercase tracking-[0.16em] text-primary dark:text-LightApricot'>
                     {consent === 'accepted' ? t('statusAccepted') : t('statusRejected')}
