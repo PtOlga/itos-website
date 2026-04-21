@@ -21,9 +21,9 @@ const UnderConstruction = ({
           autoplay={true}
         />
       </div>
-      <h1 className="mt-6 text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
+      <h2 className="mt-6 text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
         {title}
-      </h1>
+      </h2>
       <p className="mt-4 max-w-md text-base md:text-lg text-gray-500 dark:text-gray-400">
         {message}
       </p>
