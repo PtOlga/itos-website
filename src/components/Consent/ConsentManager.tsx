@@ -28,7 +28,7 @@ const persistConsent = (value: ConsentChoice) => {
   document.cookie = `${CONSENT_COOKIE_NAME}=${value}; path=/; max-age=${CONSENT_COOKIE_MAX_AGE}; samesite=lax`
 }
 
-export default function ConsentManager({ googleTagId, ahrefsKey }: { googleTagId: string; ahrefsKey: string }) {
+export default function ConsentManager({ googleTagId }: { googleTagId: string }) {
   const locale = useLocale() as Locale
   const t = useTranslations('consent')
   const [consent, setConsent] = useState<ConsentChoice | null>(null)
@@ -85,7 +85,6 @@ export default function ConsentManager({ googleTagId, ahrefsKey }: { googleTagId
               window.gtag('config', '${googleTagId}');
             `}
           </Script>
-          <Script src='https://analytics.ahrefs.com/analytics.js' data-key={ahrefsKey} strategy='afterInteractive' />
         </>
       )}
 

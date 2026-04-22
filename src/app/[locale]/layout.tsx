@@ -53,6 +53,11 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <script
+          async
+          src='https://analytics.ahrefs.com/analytics.js'
+          data-key={AHREFS_ANALYTICS_KEY}
+        ></script>
         <Script id="google-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -75,7 +80,7 @@ export default async function LocaleLayout({
               {children}
               <Footer />
             </Aoscompo>
-            <ConsentManager googleTagId={GOOGLE_TAG_ID} ahrefsKey={AHREFS_ANALYTICS_KEY} />
+            <ConsentManager googleTagId={GOOGLE_TAG_ID} />
             <ScrollToTop />
           </ThemeProvider>
         </NextIntlClientProvider>
