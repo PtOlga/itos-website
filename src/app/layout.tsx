@@ -1,18 +1,21 @@
 import { DM_Sans } from 'next/font/google'
 import Script from 'next/script'
+import { getLocale } from 'next-intl/server'
 import './globals.css'
 import { DENIED_ANALYTICS_CONSENT } from '@/utils/consent'
 
 const dmsans = DM_Sans({ subsets: ['latin'] })
 const AHREFS_ANALYTICS_KEY = 'TwtKVhhnWtH5kaegiFlDwg'
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale()
+
   return (
-    <html lang='sv' suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <script
           async
