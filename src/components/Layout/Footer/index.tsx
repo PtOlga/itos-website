@@ -41,7 +41,7 @@ const Footer: FC = () => {
 
   return (
     <footer
-      className={`relative dark:bg-darkmode bg-[url('/images/footer/ftr-bg.png')] bg-cover bg-no-repeat w-full h-full ${
+      className={`relative dark:bg-darkmode bg-[url('/images/footer/ftr-bg.webp')] bg-cover bg-no-repeat w-full h-full ${
         pathname === '/' ? 'pt-72 z-3' : 'pt-32'
       }`}>
       <div className='bg-secondary md:pb-20 pb-8'>

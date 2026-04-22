@@ -47,12 +47,12 @@ const projectOrder: ProjectKey[] = [
 ]
 
 const projectVisuals: Record<ProjectKey, Omit<Project, 'id' | 'title' | 'label' | 'description' | 'category' | 'tags'>> = {
-  interpolCheck: { group: 'websites', href: 'https://interpol-check.me', previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.png', previewDurationMs: 36000 },
-  statusLaw: { group: 'websites', href: 'https://status.law', previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.png', previewDurationMs: 18000 },
-  portfolio: { group: 'websites', href: 'https://ptolga.github.io', previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.png', previewDurationMs: 36000 },
-  prados: { group: 'websites', href: 'https://prados.org.ua', previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.png', previewDurationMs: 22000 },
-  diskCatalog: { group: 'webApps', href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]', previewImage: '/images/portfolio-details/disk-catalog.png', previewDurationMs: 20000 },
-  megaPdfCompressor: { group: 'webApps', href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]', previewImage: '/images/portfolio-details/mega-pdf-compressor.png', previewDurationMs: 21000 },
+  interpolCheck: { group: 'websites', href: 'https://interpol-check.me', previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.webp', previewDurationMs: 36000 },
+  statusLaw: { group: 'websites', href: 'https://status.law', previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.webp', previewDurationMs: 18000 },
+  portfolio: { group: 'websites', href: 'https://ptolga.github.io', previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.webp', previewDurationMs: 36000 },
+  prados: { group: 'websites', href: 'https://prados.org.ua', previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.webp', previewDurationMs: 22000 },
+  diskCatalog: { group: 'webApps', href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]', previewImage: '/images/portfolio-details/disk-catalog.webp', previewDurationMs: 20000 },
+  megaPdfCompressor: { group: 'webApps', href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]', previewImage: '/images/portfolio-details/mega-pdf-compressor.webp', previewDurationMs: 21000 },
   gdprScanner: { group: 'wpPlugins', previewClass: 'from-[#23283a] via-[#31384f] to-[#48516d]' },
   planfixReminder: { group: 'automation', previewClass: 'from-[#182d2c] via-[#22504a] to-[#2e776d]' },
 }

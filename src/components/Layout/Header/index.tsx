@@ -66,7 +66,7 @@ const Header: React.FC = () => {
         <div className='container mx-auto flex items-center justify-between p-6'>
           <Link href={getLocalizedPath('/', locale)}>
             <Image
-              src='/images/logo/logo.png'
+                src='/images/logo/logo.webp'
               alt='ITOS Logo'
               width={160}
               height={50}
