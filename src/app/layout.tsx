@@ -4,7 +4,7 @@ import './globals.css'
 import { DENIED_ANALYTICS_CONSENT } from '@/utils/consent'
 
 const dmsans = DM_Sans({ subsets: ['latin'] })
-const AHREFS_ANALYTICS_KEY = 'TwtKVhhnWtH5kaegiFIDwg'
+const AHREFS_ANALYTICS_KEY = 'TwtKVhhnWtH5kaegiFlDwg'
 
 export default function RootLayout({
   children,
