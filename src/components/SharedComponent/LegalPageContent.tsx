@@ -34,9 +34,7 @@ export default function LegalPageContent({
             <p className='mt-2 text-base font-medium text-secondary dark:text-white'>{updatedDate}</p>
             <p className='mt-3 text-sm leading-7 text-SlateBlue dark:text-gray'>
               <span className='font-medium text-secondary dark:text-white'>{contactLabel}: </span>
-              <Link href={`mailto:${contactEmail}`} className='text-primary hover:underline dark:text-LightApricot'>
-                {contactEmail}
-              </Link>
+              <span className='text-primary dark:text-LightApricot'>{contactEmail}</span>
             </p>
           </div>
 

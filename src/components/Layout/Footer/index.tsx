@@ -137,9 +137,7 @@ const Footer: FC = () => {
               </p>
               <ul className='flex flex-col gap-2'>
                 <li className='text-base font-normal text-SlateBlue leading-8 hover:text-white'>
-                  <Link href='mailto:5441700@gmail.com'>
-                    5441700@gmail.com
-                  </Link>
+                  <span className='select-all'>5441700@gmail.com</span>
                 </li>
                 <li className='text-base font-normal text-SlateBlue leading-8 hover:text-white'>
                   <Link href='tel:+46737686471'>

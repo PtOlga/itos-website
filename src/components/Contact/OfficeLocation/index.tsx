@@ -28,11 +28,9 @@ const Location = () => {
 
           {/* Email + Phone */}
           <div className='flex flex-col gap-3'>
-            <Link
-              href='mailto:5441700@gmail.com'
-              className='sm:text-2xl text-xl text-secondary dark:text-darkprimary font-medium underline hover:text-primary dark:hover:text-white'>
+            <span className='select-all sm:text-2xl text-xl text-secondary dark:text-darkprimary font-medium'>
               5441700@gmail.com
-            </Link>
+            </span>
             <Link
               href='tel:+46737686471'
               className='sm:text-2xl text-xl text-secondary dark:text-primary flex items-center gap-2 w-fit hover:text-primary dark:hover:text-white'>

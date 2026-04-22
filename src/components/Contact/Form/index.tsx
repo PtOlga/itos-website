@@ -62,7 +62,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className='dark:bg-darkmode pt-0 md:pb-24 pb-10'>
+    <section id='contact-form' className='scroll-mt-32 dark:bg-darkmode pt-0 md:pb-24 pb-10'>
       <div className='container'>
         <div className='grid lg:grid-cols-2 grid-cols-1 md:gap-20 gap-10 items-center'>
 

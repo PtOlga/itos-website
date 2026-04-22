@@ -25,7 +25,7 @@ const ContactInfo = () => {
                 {t('email.description')}
               </p>
               <Link
-                href='mailto:5441700@gmail.com'
+                href='#contact-form'
                 className='text-primary text-lg font-medium flex items-center gap-3 group hover:text-secondary dark:hover:text-white'>
                 {t('email.link')}
                 <i className="bg-[url('/images/contact/arrow.svg')] bg-no-repeat bg-contain inline-block w-6 h-4 group-hover:bg-[url('/images/contact/arrow-hover.svg')] dark:group-hover:bg-[url('/images/contact/arrow-hover-white.svg')]"></i>
@@ -48,7 +48,7 @@ const ContactInfo = () => {
                 </p>
               </div>
               <Link
-                href='mailto:5441700@gmail.com?subject=Partnership'
+                href='#contact-form'
                 className='text-primary text-lg font-medium flex items-center gap-3 group hover:text-secondary dark:hover:text-white'>
                 {t('partnership.link')}
                 <i className="bg-[url('/images/contact/arrow.svg')] bg-no-repeat bg-contain inline-block w-6 h-4 group-hover:bg-[url('/images/contact/arrow-hover.svg')] dark:group-hover:bg-[url('/images/contact/arrow-hover-white.svg')]"></i>
