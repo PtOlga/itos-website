@@ -10,7 +10,7 @@ interface UnderConstructionProps {
 
 const UnderConstruction = ({
   title = 'Coming Soon',
-  message = 'We\'re working hard to bring you something great. Check back soon!',
+  message = 'This page is being prepared. Check back soon!',
 }: UnderConstructionProps) => {
   return (
     <section className="flex flex-col items-center justify-center min-h-[60vh] px-4 py-16 text-center">

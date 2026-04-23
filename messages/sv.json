@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "Hem",
-    "about": "Om oss",
+    "about": "Om mig",
     "portfolio": "Portfolio",
     "blog": "Blogg",
     "contact": "Kontakt",
@@ -15,7 +15,7 @@
     "title": "IT-lösningar som arbetar FÖR DIG",
     "description": "Jag förvandlar affärsutmaningar till enkla och effektiva lösningar. Webbutveckling, CRM, automatisering — förklarar det komplexa med enkla ord. Jag utvecklar, implementerar och supporterar. Ingen byråpåslag — du arbetar direkt med en expert.",
     "primaryButton": "Berätta om din utmaning",
-    "secondaryButton": "Se våra case"
+    "secondaryButton": "Se mina case"
   },
   "benefits": {
     "experience": {
@@ -68,7 +68,7 @@
     }
   },
   "howWeWork": {
-    "title": "Hur vi kommer att arbeta tillsammans",
+    "title": "Så arbetar jag",
     "subtitle": "Enkel och tydlig process från idé till lansering",
     "steps": {
       "consultation": {
@@ -92,7 +92,7 @@
   "contact": {
     "hero": {
       "title": "Kontakt",
-      "description": "Låt oss diskutera ditt projekt"
+      "description": "Berätta om ditt projekt"
     },
     "email": {
       "title": "Skicka e-post",
@@ -101,8 +101,8 @@
     },
     "partnership": {
       "title": "Partnerskap",
-      "description": "Intresserad av samarbete? Låt oss diskutera hur vi kan arbeta tillsammans.",
-      "link": "Diskutera partnerskap"
+      "description": "Intresserad av samarbete? Berätta om din idé, så ser jag hur jag kan hjälpa till.",
+      "link": "Prata om samarbete"
     },
     "form": {
       "title": "Få en gratis konsultation",
@@ -199,9 +199,9 @@
   },
   "pages": {
     "about": {
-      "title": "Om oss",
+      "title": "Om mig",
       "description": "Lär känna hur jag arbetar och vad som är viktigt i varje projekt.",
-      "underConstructionTitle": "Om-sidan kommer snart",
+      "underConstructionTitle": "Sidan Om mig kommer snart",
       "underConstructionMessage": "Jag förbereder innehållet för Om-sidan. Titta gärna tillbaka snart."
     },
     "blog": {
@@ -321,8 +321,8 @@
     }
   },
   "notFound": {
-    "heroDescription": "Vi verkar inte kunna hitta sidan du letar efter.",
-    "title": "Vi verkar inte kunna hitta sidan du letar efter.",
+    "heroDescription": "Sidan du letar efter kunde inte hittas.",
+    "title": "Sidan hittades inte",
     "text": "Oj! Sidan du söker finns inte. Den kan ha flyttats eller tagits bort.",
     "button": "Gå till startsidan"
   },
@@ -360,11 +360,11 @@
   "portfolioPage": {
     "hero": {
       "title": "Portfolio",
-      "description": "Exempel på webbplatser, webbappar och automationsprojekt presenterade i ett enkelt och kundvänligt format."
+      "description": "Ett urval av webbplatser, webbappar och automationsprojekt som jag har byggt för kunder och egna produkter."
     },
     "eyebrow": "Utvalda projekt",
-    "title": "Kompakt projektlista med levande förhandsvisningar",
-    "description": "Varje kort visar projekttyp, en kort affärsinriktad beskrivning och ett litet interaktivt förhandsvisningsområde. Just nu är vissa previews placeholders med hover-rörelse, så att vi först kan låsa layouten och sedan byta innehållet.",
+    "title": "Webbplatser, webbappar och automation jag har byggt",
+    "description": "Här ser du konkreta exempel på mitt arbete — från kundwebbplatser och webbappar till WordPress-plugins och automatiseringsverktyg. Varje case visar typ av projekt, kort beskrivning och länk när projektet är publikt.",
     "filters": {
       "websites": "Webbplatser",
       "webApps": "Webbappar",
@@ -372,9 +372,9 @@
       "automation": "Automatisering"
     },
     "actions": {
-      "openProject": "Öppna projekt",
+      "openProject": "Visa projekt",
       "linkComingSoon": "Länk kommer snart",
-      "needSomethingSimilar": "Behöver du något liknande?"
+      "needSomethingSimilar": "Jag vill ha något liknande"
     },
     "projects": {
       "interpolCheck": {
@@ -437,7 +437,7 @@
   },
   "consent": {
     "title": "Samtycke till cookies",
-    "description": "Vi använder analyscookies för att förstå trafik till webbplatsen och förbättra sidan. Du kan när som helst acceptera eller avvisa valfri analys.",
+    "description": "Analyscookies kan användas på denna webbplats för att förstå trafik och förbättra sidan. Du kan när som helst acceptera eller avvisa valfri analys.",
     "accept": "Acceptera analys",
     "reject": "Avvisa valfria cookies",
     "privacyLink": "Integritetspolicy",
@@ -455,15 +455,15 @@
       "updatedDate": "21 april 2026",
       "contactLabel": "Kontakt",
       "intro": [
-        "Denna integritetspolicy förklarar hur ITOS, baserat i Sverige, samlar in, använder, lagrar och skyddar personuppgifter när du använder denna webbplats, kontaktar oss eller begär tjänster.",
-        "Vi strävar efter att behandla personuppgifter öppet, säkert och i enlighet med EU:s allmänna dataskyddsförordning (GDPR) samt tillämplig svensk dataskyddslagstiftning."
+        "Denna integritetspolicy förklarar hur ITOS, baserat i Sverige, samlar in, använder, lagrar och skyddar personuppgifter när du använder denna webbplats, kontaktar ITOS eller begär tjänster.",
+        "ITOS strävar efter att behandla personuppgifter öppet, säkert och i enlighet med EU:s allmänna dataskyddsförordning (GDPR) samt tillämplig svensk dataskyddslagstiftning."
       ],
       "sections": [
         {
           "title": "Vem som ansvarar för dina personuppgifter",
           "paragraphs": [
             "ITOS är en verksamhet baserad i Charlottenberg, Sverige. För denna webbplats och klientkommunikation är ITOS personuppgiftsansvarig för de personuppgifter som beskrivs i denna policy.",
-            "Om du har frågor om integritet, personuppgifter eller dina rättigheter kan du kontakta oss via e-post på 5441700@gmail.com."
+            "Om du har frågor om integritet, personuppgifter eller dina rättigheter kan du kontakta ITOS via e-post på 5441700@gmail.com."
           ]
         },
         {
@@ -491,27 +491,27 @@
             "Samtycke — för valfria analyscookies och relaterade mätverktyg.",
             "Åtgärder före avtal eller fullgörande av avtal — när du begär offert, diskuterar ett projekt eller blir kund.",
             "Berättigat intresse — för löpande affärskommunikation, webbplatssäkerhet och förbättring av tjänster där dessa intressen inte väger tyngre än dina rättigheter.",
-            "Rättslig förpliktelse — när vi måste bevara eller lämna ut information för att följa tillämplig lag."
+            "Rättslig förpliktelse — när information måste bevaras eller lämnas ut för att följa tillämplig lag."
           ]
         },
         {
           "title": "Delning av uppgifter med tjänsteleverantörer",
           "paragraphs": [
-            "Vi kan använda betrodda tjänsteleverantörer för att driva webbplatsen och leverera tjänster, till exempel hostingleverantörer, webbplatsinfrastruktur, analysleverantörer och kommunikations- eller formulärverktyg såsom EmailJS.",
-            "Dessa leverantörer får endast tillgång till personuppgifter när det är nödvändigt för deras uppdrag och förväntas behandla uppgifterna under lämpliga krav på sekretess och dataskydd. Vi säljer inte dina personuppgifter."
+            "ITOS kan använda betrodda tjänsteleverantörer för att driva webbplatsen och leverera tjänster, till exempel hostingleverantörer, webbplatsinfrastruktur, analysleverantörer och kommunikations- eller formulärverktyg såsom EmailJS.",
+            "Dessa leverantörer får endast tillgång till personuppgifter när det är nödvändigt för deras uppdrag och förväntas behandla uppgifterna under lämpliga krav på sekretess och dataskydd. ITOS säljer inte dina personuppgifter."
           ]
         },
         {
           "title": "Internationella dataöverföringar",
           "paragraphs": [
-            "Vissa leverantörer som vi använder kan behandla uppgifter utanför EU eller EES. När detta sker strävar vi efter att använda lämpliga skyddsåtgärder, såsom avtalsmässiga skydd, standardavtalsklausuler eller andra lagliga överföringsmekanismer som krävs enligt GDPR."
+            "Vissa leverantörer som används av ITOS kan behandla uppgifter utanför EU eller EES. När detta sker används lämpliga skyddsåtgärder, såsom avtalsmässiga skydd, standardavtalsklausuler eller andra lagliga överföringsmekanismer som krävs enligt GDPR, där det är tillämpligt."
           ]
         },
         {
           "title": "Hur länge vi sparar uppgifter",
           "paragraphs": [
-            "Vi sparar personuppgifter endast så länge som det är nödvändigt för det ändamål de samlades in för, inklusive att besvara förfrågningar, hantera affärsrelationer, leverera tjänster och uppfylla rättsliga eller bokföringsmässiga krav.",
-            "Om du kontaktar oss men inte blir kund sparar vi normalt dina uppgifter endast så länge som det är rimligt nödvändigt för att hantera dialogen och eventuell uppföljning, om vi inte måste spara dem av rättsliga skäl."
+            "Personuppgifter sparas endast så länge som det är nödvändigt för det ändamål de samlades in för, inklusive att besvara förfrågningar, hantera affärsrelationer, leverera tjänster och uppfylla rättsliga eller bokföringsmässiga krav.",
+            "Om du kontaktar ITOS men inte blir kund sparas dina uppgifter normalt endast så länge som det är rimligt nödvändigt för att hantera dialogen och eventuell uppföljning, om de inte måste sparas av rättsliga skäl."
           ]
         },
         {
@@ -529,7 +529,7 @@
         {
           "title": "Klagomål och tillsynsmyndighet",
           "paragraphs": [
-            "Om du anser att dina personuppgifter har hanterats olagligt har du rätt att först kontakta oss så att vi kan försöka lösa frågan.",
+            "Om du anser att dina personuppgifter har hanterats olagligt har du rätt att först kontakta ITOS så att frågan kan granskas.",
             "Du har också rätt att lämna in klagomål till Integritetsskyddsmyndigheten (IMY), som är tillsynsmyndighet i Sverige för dataskyddsfrågor."
           ]
         }
@@ -545,7 +545,7 @@
       "contactLabel": "Kontakt",
       "intro": [
         "Denna cookiepolicy förklarar vad cookies är, vilka cookies som kan användas på denna webbplats och hur du kan hantera dina val.",
-        "Eftersom ITOS är en svensk verksamhet som betjänar användare i Sverige och EU använder vi en samtyckesbaserad modell för valfri analys i linje med GDPR och kraven kring elektronisk integritet."
+        "Eftersom ITOS är en svensk verksamhet som betjänar användare i Sverige och EU använder ITOS en samtyckesbaserad modell för valfri analys i linje med GDPR och kraven kring elektronisk integritet."
       ],
       "sections": [
         {
@@ -564,7 +564,7 @@
         {
           "title": "Nödvändig samtyckescookie",
           "paragraphs": [
-            "När du använder cookie-bannern sparar vi ditt val i en liten preferenscookie och i lokal webblagring så att webbplatsen kan komma ihåg om du har accepterat eller avvisat valfri analys.",
+            "När du använder cookie-bannern sparas ditt val i en liten preferenscookie och i lokal webblagring så att webbplatsen kan komma ihåg om du har accepterat eller avvisat valfri analys.",
             "Det aktuella cookienamnet som används för detta ändamål är itos_cookie_consent. Denna cookie är nödvändig för att respektera ditt val och kräver inte samtycke till valfri analys."
           ]
         },
@@ -587,13 +587,13 @@
           "title": "Tredjepartstjänster",
           "paragraphs": [
             "När analys är aktiverad kan Google och en eventuellt tillfälligt aktiverad analysleverantör behandla tekniska uppgifter om ditt besök som självständiga leverantörer enligt sina egna integritets- och cookiepolicys.",
-            "När tredjepartsleverantörer behandlar uppgifter utanför EU eller EES strävar vi efter att använda lämpliga skyddsåtgärder som krävs enligt GDPR."
+            "När tredjepartsleverantörer behandlar uppgifter utanför EU eller EES används lämpliga skyddsåtgärder som krävs enligt GDPR, där det är tillämpligt."
           ]
         },
         {
           "title": "Uppdateringar och kontakt",
           "paragraphs": [
-            "Vi kan uppdatera denna cookiepolicy då och då för att återspegla rättsliga, tekniska eller affärsmässiga förändringar. Datumet för senaste uppdatering visas högst upp på denna sida.",
+            "Denna cookiepolicy kan uppdateras då och då för att återspegla rättsliga, tekniska eller affärsmässiga förändringar. Datumet för senaste uppdatering visas högst upp på denna sida.",
             "Om du har frågor om cookies eller integritet på denna webbplats kan du kontakta ITOS på 5441700@gmail.com."
           ]
         }
@@ -611,7 +611,7 @@
     "cookiePolicy": "Cookiepolicy",
     "address": "Charlottenberg, 67392, Sverige",
     "links": {
-      "about": "Om oss",
+      "about": "Om mig",
       "portfolio": "Portfolio",
       "blog": "Blogg",
       "faqs": "Vanliga frågor",
@@ -626,11 +626,11 @@
   "faq": {
     "title": "Vanliga frågor",
     "contactText": "Har du fler frågor?",
-    "contactLink": "Kontakta oss",
+    "contactLink": "Kontakta mig",
     "items": [
       {
         "question": "Vad kostar en webbplats?",
-        "answer": "Priset beror på komplexiteten. En enkel landningssida börjar från 2 200 kr / €190. En flersidig företagswebbplats kostar 5 000–10 000 kr, och en avancerad webbplats med integrationer kostar 10 000–25 000 kr. Första konsultationen är gratis — jag ger dig ett exakt pris efter att vi diskuterat dina behov."
+        "answer": "Priset beror på komplexiteten. En enkel landningssida börjar från 2 200 kr / €190. En flersidig företagswebbplats kostar 5 000–10 000 kr, och en avancerad webbplats med integrationer kostar 10 000–25 000 kr. Första konsultationen är gratis — jag ger dig ett exakt pris efter att jag gått igenom dina behov."
       },
       {
         "question": "Hur lång tid tar det att bygga en webbplats?",
@@ -642,7 +642,7 @@
       },
       {
         "question": "Vad ingår i den kostnadsfria konsultationen?",
-        "answer": "Den kostnadsfria konsultationen varar 30–60 minuter. Vi diskuterar dina mål, nuläge och utmaningar. Jag analyserar dina behov och föreslår praktiska lösningar. Ingen press — du får klarhet kring nästa steg utan några förpliktelser."
+        "answer": "Den kostnadsfria konsultationen varar 30–60 minuter. Jag går igenom dina mål, ditt nuläge och dina utmaningar och föreslår sedan praktiska lösningar. Ingen press — du får tydlighet kring nästa steg utan några förpliktelser."
       },
       {
         "question": "Behöver jag ett CRM-system?",
@@ -658,7 +658,7 @@
       },
       {
         "question": "Vad ingår i supporten efter lansering?",
-        "answer": "Support efter lansering inkluderar uppdateringar, felrättningar, teknisk hjälp och mindre förbättringar. Priset är 300–800 kr/timme, eller så kan vi komma överens om ett månatligt supportpaket från 2 000 kr/månad."
+        "answer": "Support efter lansering inkluderar uppdateringar, felrättningar, teknisk hjälp och mindre förbättringar. Priset är 300–800 kr/timme, och månatliga supportpaket finns från 2 000 kr/månad."
       }
     ]
   }
