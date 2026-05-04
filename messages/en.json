@@ -13,7 +13,9 @@
   },
   "hero": {
     "title": "IT Solutions That Work FOR YOU",
+    "metaTitle": "Web Development, CRM & Automation in Sweden",
     "description": "I turn business challenges into simple and effective solutions. Website development, CRM, automation — explaining complex things in simple terms. I develop, implement, and support. No agency markup — you work directly with an expert.",
+    "metaDescription": "Sweden-based IT consultant offering websites, CRM solutions, automation, and business tools with direct expert support and no agency markup.",
     "primaryButton": "Tell Me About Your Challenge",
     "secondaryButton": "View Case Studies"
   },
@@ -92,7 +94,9 @@
   "contact": {
     "hero": {
       "title": "Contact",
-      "description": "Tell me about your project"
+      "metaTitle": "Contact for Websites, CRM & Automation",
+      "description": "Tell me about your project",
+      "metaDescription": "Contact ITOS in Charlottenberg to discuss websites, CRM setup, automation, or custom business tools. Replies within 24 hours."
     },
     "email": {
       "title": "Email Me",
@@ -126,7 +130,9 @@
   },
   "pricing": {
     "title": "Website Cost Calculator",
+    "metaTitle": "Website Cost Calculator & Quote Request",
     "description": "Use the calculator below to see the project price based on your requirements",
+    "metaDescription": "Estimate the cost of your website project and send a request for a tailored quote based on your goals, features, and requirements.",
     "steps": {
       "step1Title": "Check domain",
       "step1Desc": "Check domain for availability",
@@ -200,22 +206,30 @@
   "pages": {
     "about": {
       "title": "About Me",
+      "metaTitle": "About ITOS and How I Work",
       "description": "Learn more about how I work and what matters in every project.",
+      "metaDescription": "Learn how I work, what I prioritise in client projects, and how ITOS helps businesses with websites, CRM, and automation.",
       "underConstructionTitle": "About page is coming soon",
       "underConstructionMessage": "I'm preparing the About page content. Please check back soon."
     },
     "blog": {
       "title": "Blog",
+      "metaTitle": "Blog on Websites, CRM & Automation",
       "description": "Practical articles on websites, automation, CRM, and business-focused IT solutions.",
+      "metaDescription": "Read practical articles on websites, CRM, automation, and IT solutions that help small businesses work more efficiently.",
       "underConstructionTitle": "Coming Soon",
       "underConstructionMessage": "The blog is under construction. I'm preparing useful articles — check back soon."
     },
     "faqs": {
       "title": "FAQs",
-      "description": "Answers to the most common questions about websites, pricing, timelines, and support."
+      "metaTitle": "FAQ: Websites, Pricing & Support",
+      "description": "Answers to the most common questions about websites, pricing, timelines, and support.",
+      "metaDescription": "Read answers to common questions about website pricing, timelines, CRM setup, automation, payments, and post-launch support."
     },
     "documentation": {
-      "title": "Documentation"
+      "title": "Documentation",
+      "metaTitle": "Website Documentation & Setup Notes",
+      "metaDescription": "Browse project documentation, package structure, setup steps, and configuration notes for the ITOS website."
     },
     "demo": {
       "title": "Demo"
@@ -360,7 +374,9 @@
   "portfolioPage": {
     "hero": {
       "title": "Portfolio",
-      "description": "A selection of websites, web apps, and automation projects I've built for clients and my own products."
+      "metaTitle": "Portfolio: Websites, Apps & Automation",
+      "description": "A selection of websites, web apps, and automation projects I've built for clients and my own products.",
+      "metaDescription": "Explore selected websites, web apps, WordPress plugins, and automation projects built for clients and internal products by ITOS."
     },
     "eyebrow": "Selected work",
     "title": "Websites, web apps, and automation I've built",
@@ -449,7 +465,9 @@
     "privacy": {
       "hero": {
         "title": "Privacy Policy",
-        "description": "How ITOS, a Sweden-based business, handles personal data under the GDPR and applicable Swedish law."
+        "metaTitle": "Privacy Policy & GDPR Information",
+        "description": "How ITOS, a Sweden-based business, handles personal data under the GDPR and applicable Swedish law.",
+        "metaDescription": "Read how ITOS handles personal data, contact requests, analytics consent, and GDPR-related responsibilities under Swedish and EU law."
       },
       "updatedLabel": "Last updated",
       "updatedDate": "21 April 2026",
@@ -538,7 +556,9 @@
     "cookies": {
       "hero": {
         "title": "Cookie Policy",
-        "description": "How ITOS uses cookies and similar technologies on this website, including analytics tools that are only activated after consent."
+        "metaTitle": "Cookie Policy & Analytics Consent",
+        "description": "How ITOS uses cookies and similar technologies on this website, including analytics tools that are only activated after consent.",
+        "metaDescription": "Learn which cookies ITOS uses, how analytics are enabled after consent, and how to manage cookie preferences on this website."
       },
       "updatedLabel": "Last updated",
       "updatedDate": "21 April 2026",

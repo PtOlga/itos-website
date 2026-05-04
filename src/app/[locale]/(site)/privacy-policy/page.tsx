@@ -5,7 +5,10 @@ import { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('legal.privacy.hero')
-  return { title: t('title') }
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  }
 }
 
 export default async function PrivacyPolicyPage() {

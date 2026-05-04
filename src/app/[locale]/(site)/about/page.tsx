@@ -7,7 +7,10 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('pages.about')
-  return { title: t('title') }
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  }
 }
 
 const page = () => {

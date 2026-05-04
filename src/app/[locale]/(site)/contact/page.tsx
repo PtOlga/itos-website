@@ -10,7 +10,8 @@ import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("contact.hero");
   return {
-    title: t("title"),
+    title: t('metaTitle'),
+    description: t('metaDescription'),
   };
 }
 

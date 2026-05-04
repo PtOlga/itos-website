@@ -5,13 +5,17 @@ import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getTranslations('pages.documentation')
-    return { title: t('title') }
+    return {
+        title: t('metaTitle'),
+        description: t('metaDescription')
+    }
 }
 
-export default function Page() {
+export default async function Page() {
+    const t = await getTranslations('pages.documentation')
     return (
         <>
-        <Documentation/>
+        <Documentation title={t('title')} description={t('metaDescription')} />
         </>
     );
 };

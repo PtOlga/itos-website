@@ -13,7 +13,9 @@
   },
   "hero": {
     "title": "IT-lösningar som arbetar FÖR DIG",
+    "metaTitle": "Webbutveckling, CRM och automation i Sverige",
     "description": "Jag förvandlar affärsutmaningar till enkla och effektiva lösningar. Webbutveckling, CRM, automatisering — förklarar det komplexa med enkla ord. Jag utvecklar, implementerar och supporterar. Ingen byråpåslag — du arbetar direkt med en expert.",
+    "metaDescription": "Svensk IT-konsult som hjälper företag med webbplatser, CRM, automation och affärsverktyg — direkt kontakt med experten.",
     "primaryButton": "Berätta om din utmaning",
     "secondaryButton": "Se mina case"
   },
@@ -92,7 +94,9 @@
   "contact": {
     "hero": {
       "title": "Kontakt",
-      "description": "Berätta om ditt projekt"
+      "metaTitle": "Kontakt för webbplatser, CRM och automation",
+      "description": "Berätta om ditt projekt",
+      "metaDescription": "Kontakta ITOS i Charlottenberg för att diskutera webbplatser, CRM, automation eller skräddarsydda affärsverktyg. Svar inom 24 timmar."
     },
     "email": {
       "title": "Skicka e-post",
@@ -126,7 +130,9 @@
   },
   "pricing": {
     "title": "Webbplatskostnadskalkylator",
+    "metaTitle": "Kalkylator för webbplatspris och offert",
     "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",
+    "metaDescription": "Beräkna kostnaden för ditt webbprojekt och skicka en förfrågan för en offert anpassad efter mål, funktioner och behov.",
     "steps": {
       "step1Title": "Kontrollera domän",
       "step1Desc": "Kontrollera domäntillgänglighet",
@@ -200,22 +206,30 @@
   "pages": {
     "about": {
       "title": "Om mig",
+      "metaTitle": "Om ITOS och hur jag arbetar",
       "description": "Lär känna hur jag arbetar och vad som är viktigt i varje projekt.",
+      "metaDescription": "Lär känna hur jag arbetar, vad jag prioriterar i kundprojekt och hur ITOS hjälper företag med webbplatser, CRM och automation.",
       "underConstructionTitle": "Sidan Om mig kommer snart",
       "underConstructionMessage": "Jag förbereder innehållet för Om-sidan. Titta gärna tillbaka snart."
     },
     "blog": {
       "title": "Blogg",
+      "metaTitle": "Blogg om webbplatser, CRM och automation",
       "description": "Praktiska artiklar om webbplatser, automatisering, CRM och IT-lösningar för företag.",
+      "metaDescription": "Läs praktiska artiklar om webbplatser, CRM, automation och IT-lösningar som hjälper små företag att arbeta effektivare.",
       "underConstructionTitle": "Kommer snart",
       "underConstructionMessage": "Bloggen är under uppbyggnad. Jag förbereder nyttiga artiklar för dig — håll utkik!"
     },
     "faqs": {
       "title": "Vanliga frågor",
-      "description": "Svar på de vanligaste frågorna om webbplatser, priser, tidsplaner och support."
+      "metaTitle": "Vanliga frågor om webbplatser, priser och support",
+      "description": "Svar på de vanligaste frågorna om webbplatser, priser, tidsplaner och support.",
+      "metaDescription": "Läs svar på vanliga frågor om priser, tidsplaner, CRM, automation, betalning och support efter lansering."
     },
     "documentation": {
-      "title": "Dokumentation"
+      "title": "Dokumentation",
+      "metaTitle": "Dokumentation och tekniska anteckningar",
+      "metaDescription": "Här finns projektets dokumentation, paketstruktur, installationssteg och konfigurationsanteckningar för ITOS-webbplatsen."
     },
     "demo": {
       "title": "Demo"
@@ -360,7 +374,9 @@
   "portfolioPage": {
     "hero": {
       "title": "Portfolio",
-      "description": "Ett urval av webbplatser, webbappar och automationsprojekt som jag har byggt för kunder och egna produkter."
+      "metaTitle": "Portfolio: webbplatser, appar och automation",
+      "description": "Ett urval av webbplatser, webbappar och automationsprojekt som jag har byggt för kunder och egna produkter.",
+      "metaDescription": "Se ett urval av webbplatser, webbappar, WordPress-plugins och automatiseringsprojekt som jag har byggt för kunder och egna produkter."
     },
     "eyebrow": "Utvalda projekt",
     "title": "Webbplatser, webbappar och automation jag har byggt",
@@ -449,7 +465,9 @@
     "privacy": {
       "hero": {
         "title": "Integritetspolicy",
-        "description": "Hur ITOS, ett svenskt företag, behandlar personuppgifter enligt GDPR och tillämplig svensk lagstiftning."
+        "metaTitle": "Integritetspolicy och GDPR-information",
+        "description": "Hur ITOS, ett svenskt företag, behandlar personuppgifter enligt GDPR och tillämplig svensk lagstiftning.",
+        "metaDescription": "Läs hur ITOS behandlar personuppgifter, kontaktförfrågningar, analyssamtycke och GDPR-relaterat ansvar enligt svensk och europeisk lag."
       },
       "updatedLabel": "Senast uppdaterad",
       "updatedDate": "21 april 2026",
@@ -538,7 +556,9 @@
     "cookies": {
       "hero": {
         "title": "Cookiepolicy",
-        "description": "Hur ITOS använder cookies och liknande tekniker på denna webbplats, inklusive analysverktyg som endast aktiveras efter samtycke."
+        "metaTitle": "Cookiepolicy och analyssamtycke",
+        "description": "Hur ITOS använder cookies och liknande tekniker på denna webbplats, inklusive analysverktyg som endast aktiveras efter samtycke.",
+        "metaDescription": "Läs vilka cookies ITOS använder, hur analys aktiveras efter samtycke och hur du hanterar cookie-inställningar på webbplatsen."
       },
       "updatedLabel": "Senast uppdaterad",
       "updatedDate": "21 april 2026",
