@@ -1,31 +1,66 @@
 import HeroSub from '@/components/SharedComponent/HeroSub'
-import UnderConstruction from '@/components/SharedComponent/UnderConstruction'
+import Image from 'next/image'
 import React from 'react'
-import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
 import { Metadata } from "next";
+import { type Locale } from '@/i18n/config'
+import { getAboutPageContent } from '@/lib/content/pages'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('pages.about')
+type AboutPageProps = {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params
+  const content = await getAboutPageContent(locale as Locale)
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
+    title: content.hero.metaTitle,
+    description: content.hero.metaDescription,
   }
 }
 
-const page = () => {
-  const t = useTranslations('pages.about')
+const page = async ({ params }: AboutPageProps) => {
+  const { locale } = await params
+  const content = await getAboutPageContent(locale as Locale)
 
   return (
     <>
-        <HeroSub
-            title={t('title')}
-            description={t('description')}
-        />
-        <UnderConstruction
-          title={t('underConstructionTitle')}
-          message={t('underConstructionMessage')}
-        />
+      <HeroSub
+        title={content.hero.title}
+        description={content.hero.description}
+      />
+
+      <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
+        <div className='container'>
+          <div className='grid gap-8 rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight lg:grid-cols-[380px_minmax(0,1fr)] lg:p-8'>
+            <div className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-AliceBlue dark:border-dark_border dark:bg-secondary'>
+              <Image
+                src={content.image.src}
+                alt={content.image.alt}
+                width={760}
+                height={980}
+                className='h-full w-full object-cover'
+                priority
+              />
+            </div>
+
+            <div className='min-w-0'>
+              <div className='space-y-5'>
+                {content.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={paragraph}
+                    className={index === 0
+                      ? 'text-lg leading-8 text-secondary dark:text-white md:text-xl'
+                      : 'text-sm leading-7 text-SlateBlue dark:text-gray md:text-base'
+                    }
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

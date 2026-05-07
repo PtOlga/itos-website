@@ -81,3 +81,17 @@ export type LegalPageContent = {
   intro: string[]
   sections: LegalSection[]
 }
+
+export type AboutPageContent = {
+  hero: {
+    title: string
+    metaTitle: string
+    description: string
+    metaDescription: string
+  }
+  image: {
+    src: string
+    alt: string
+  }
+  paragraphs: string[]
+}
