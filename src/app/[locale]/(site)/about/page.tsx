@@ -38,7 +38,7 @@ const page = async ({ params }: AboutPageProps) => {
                 alt={content.image.alt}
                 width={760}
                 height={980}
-                className='h-full w-full object-cover'
+                className='h-full w-full object-cover [transform:scaleX(-1)]'
                 priority
               />
             </div>
