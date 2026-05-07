@@ -1,16 +1,21 @@
 # ITOS Website
 
-Localized marketing website for IT consulting and web development services, built with Next.js App Router, TypeScript, Tailwind CSS, and shadcn/ui.
+Localized marketing website for IT consulting, web development, CRM, and automation services, built with Next.js App Router, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Overview
 
-This repository powers the ITOS company website. The current application includes:
+This repository powers the public ITOS company website.
 
-- localized marketing pages in Swedish and English
+The application currently includes:
+
+- localized pages in Swedish and English
+- a content-driven About page
+- a localized blog rendered from MDX files
+- a portfolio/case studies page rendered from structured content files
+- legal pages rendered from content JSON
 - a Stripe-powered website pricing calculator
 - a contact form powered by EmailJS
 - a shadcn/ui demo page
-- placeholder pages for sections that are not yet publicly launched
 
 ## Current Features
 
@@ -20,11 +25,39 @@ This repository powers the ITOS company website. The current application include
 - Swedish as the default locale
 - English pages under `/en/...`
 - dark mode via `next-themes`
+- content layer for blog, cases, legal pages, and long-form page content
+- localized MDX blog posts with per-locale static generation
 - Stripe Checkout integration for pricing requests
 - EmailJS-based contact form submission
 - reusable UI components with shadcn/ui and Radix primitives
 - AOS-based scroll animations
 - Railway deployment configuration
+
+## Content Model
+
+The project now uses two separate content sources:
+
+### `messages/*.json`
+
+Use `messages/en.json` and `messages/sv.json` for short UI strings and interface copy, for example:
+
+- navigation labels
+- buttons
+- form labels
+- short hero text
+- reusable UI strings
+
+### `content/...`
+
+Use `content` for long-form or structured page content:
+
+- `content/blog/<locale>/*.mdx` — blog posts
+- `content/blog/<locale>/index.json` — blog page copy
+- `content/cases/<locale>.json` — portfolio/case studies content
+- `content/legal/<locale>/*.json` — privacy and cookie pages
+- `content/pages/<locale>/*.json` — content-driven static pages such as About
+
+Content readers live in `src/lib/content`.
 
 ## Locale and Routing
 
@@ -35,21 +68,24 @@ Main routes live under `src/app/[locale]`.
 - Swedish (`sv`) is the default locale and is served without a prefix
 - English (`en`) is served with an `/en` prefix
 - examples:
-  - `/pricing`
-  - `/en/pricing`
-  - `/contact`
-  - `/en/contact`
+  - `/about`
+  - `/en/about`
+  - `/blog`
+  - `/en/blog`
 
 ### Public pages
 
 - `/` — home
-- `/about`
-- `/blog`
+- `/about` — content-driven About page
+- `/blog` — localized blog index
+- `/blog/[slug]` — localized blog post page
 - `/contact`
+- `/cookie-policy`
 - `/documentation`
 - `/faqs`
-- `/portfolio`
+- `/portfolio` — content-driven portfolio page
 - `/pricing`
+- `/privacy-policy`
 - `/demo`
 
 ### API routes
@@ -57,17 +93,10 @@ Main routes live under `src/app/[locale]`.
 - `/api/checkout` — creates a Stripe Checkout session
 - `/api/auth/[...nextauth]` — disabled compatibility endpoint returning `404`
 
-### Current placeholder / disabled routes
+### Disabled routes
 
-- `/about` — placeholder content
-- `/blog` — placeholder content
-- `/portfolio` — placeholder content
 - `/signin` — intentionally returns `404`
 - `/signup` — intentionally returns `404`
-
-### Content drafts
-
-Draft blog content currently exists in `markdown/Blog/*.mdx`, but the public blog route is not wired to render those MDX files yet.
 
 ## Tech Stack
 
@@ -75,6 +104,7 @@ Draft blog content currently exists in `markdown/Blog/*.mdx`, but the public blo
 - **Language:** TypeScript
 - **UI:** React 19, Tailwind CSS 3, shadcn/ui, Radix UI
 - **i18n:** `next-intl`
+- **Content:** MDX + JSON content files, `gray-matter`, `remark`, `remark-html`
 - **Forms:** EmailJS
 - **Payments:** Stripe Checkout
 - **Utilities:** `clsx`, `tailwind-merge`, `class-variance-authority`, `date-fns`, `aos`
@@ -107,8 +137,8 @@ At minimum, configure the Stripe-related values for the pricing flow:
 
 ```env
 NEXT_PUBLIC_BASE_URL=http://localhost:3000
-STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
+STRIPE_SECRET_KEY=replace-with-stripe-secret-key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=replace-with-stripe-publishable-key
 
 # Optional site metadata
 SITE_NAME=ITOS
@@ -118,7 +148,7 @@ AUTHOR_NAME=ITOS
 Notes:
 
 - use Stripe test keys for local development
-- `.env.example` still contains legacy NextAuth variables; auth is currently disabled at runtime
+- `.env.example` still contains legacy NextAuth-related variables; authentication is currently disabled at runtime
 - the contact form currently uses EmailJS identifiers defined in `src/components/Contact/Form/index.tsx`
 
 ### Run Locally
@@ -143,7 +173,7 @@ Script notes:
 
 - `npm run typecheck` runs TypeScript against `tsconfig.typecheck.json`
 - `npm run build` performs a production build and type validation
-- `npm run lint` currently uses legacy `next lint`; without a committed ESLint config it will start the interactive setup wizard instead of running a non-interactive lint pass
+- `npm run lint` currently uses legacy `next lint`; without a committed ESLint config it may start the interactive setup wizard instead of running a non-interactive lint pass
 
 ## Quality Checks
 
@@ -161,9 +191,19 @@ npm run build
 ```text
 itos-website/
 ├── .env.example
-├── markdown/Blog/                 # Draft MDX blog content
-├── messages/                      # Translation files
-├── public/                        # Static assets and animations
+├── content/
+│   ├── blog/
+│   │   ├── en/
+│   │   └── sv/
+│   ├── cases/
+│   ├── legal/
+│   │   ├── en/
+│   │   └── sv/
+│   └── pages/
+│       ├── en/
+│       └── sv/
+├── messages/                      # UI translations
+├── public/                        # Static assets and images
 ├── src/
 │   ├── app/
 │   │   ├── [locale]/
@@ -177,21 +217,12 @@ itos-website/
 │   │   ├── globals.css
 │   │   └── not-found.tsx
 │   ├── components/
-│   │   ├── Contact/
-│   │   ├── Documentation/
-│   │   ├── Home/
-│   │   ├── Layout/
-│   │   ├── Pricing/
-│   │   └── ui/
 │   ├── i18n/
-│   │   ├── config.ts
-│   │   └── request.ts
 │   ├── lib/
+│   │   └── content/               # Content readers for pages, blog, cases, legal
 │   ├── middleware.ts
+│   ├── types/
 │   └── utils/
-│       ├── aos.tsx
-│       ├── localePath.ts
-│       └── validateEmail.ts
 ├── components.json
 ├── next.config.mjs
 ├── railway.toml
@@ -214,7 +245,7 @@ Current checkout behavior:
 
 ## Authentication Status
 
-Authentication is currently disabled in runtime:
+Authentication is currently disabled at runtime:
 
 - `/signin` and `/signup` intentionally return `404`
 - `/api/auth/[...nextauth]` returns a disabled JSON response with `404`
