@@ -33,8 +33,8 @@ const page = async ({ params }: AboutPageProps) => {
 
       <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
         <div className='container'>
-          <div className='grid gap-8 rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight lg:grid-cols-[380px_minmax(0,1fr)] lg:p-8'>
-            <div className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-AliceBlue dark:border-dark_border dark:bg-secondary'>
+          <div className='grid gap-8 rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight dark:shadow-darkmd lg:grid-cols-[380px_minmax(0,1fr)] lg:p-8'>
+            <div className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-AliceBlue dark:border-dark_border dark:bg-darklight'>
               <Image
                 src={content.image.src}
                 alt={content.image.alt}
@@ -82,7 +82,7 @@ const page = async ({ params }: AboutPageProps) => {
                 data-aos='fade-up'
                 data-aos-delay={`${index * 150}`}
                 data-aos-duration='1000'
-                className='group flex items-stretch overflow-hidden rounded-xl border border-BorderLine bg-white transition-colors duration-300 hover:border-[#e07a2f] dark:border-dark_border dark:bg-darklight dark:hover:border-[#e07a2f]'
+                className='group flex items-stretch overflow-hidden rounded-xl border border-BorderLine bg-white shadow-light-shadwo transition-colors duration-300 hover:border-[#e07a2f] dark:border-dark_border dark:bg-darklight dark:shadow-darkmd dark:hover:border-[#e07a2f]'
               >
                 {/* Step number */}
                 <div className='flex min-w-[120px] items-center justify-center px-6 py-10'>
