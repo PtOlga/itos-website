@@ -18,8 +18,16 @@ function formatPostDate(date: string, locale: Locale) {
 }
 
 export async function generateStaticParams() {
-  const slugs = await getBlogStaticSlugs()
-  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })))
+  const localizedSlugs = await Promise.all(
+    locales.map(async (locale) => ({
+      locale,
+      slugs: await getBlogStaticSlugs(locale),
+    }))
+  )
+
+  return localizedSlugs.flatMap(({ locale, slugs }) =>
+    slugs.map((slug) => ({ locale, slug }))
+  )
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {

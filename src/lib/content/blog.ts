@@ -5,16 +5,10 @@ import type { Locale } from '@/i18n/config'
 import type { BlogPageContent, BlogPost, BlogPostFrontmatter, BlogPostSummary } from '@/types/content'
 import { listContentDirectory, pathExists, readContentFile, readContentJson } from './shared'
 
-const BLOG_FALLBACK_LOCALE: Locale = 'en'
 const BLOG_FILE_EXTENSIONS = ['.md', '.mdx']
 
 function getSlugFromFilename(filename: string) {
   return filename.replace(/\.[^.]+$/, '')
-}
-
-async function resolveBlogLocale(locale: Locale) {
-  const hasLocalePosts = (await listBlogFilenames(locale)).length > 0
-  return hasLocalePosts ? locale : BLOG_FALLBACK_LOCALE
 }
 
 async function listBlogFilenames(locale: Locale) {
@@ -48,13 +42,12 @@ export async function getBlogPageContent(locale: Locale) {
 }
 
 export async function getBlogPosts(locale: Locale) {
-  const resolvedLocale = await resolveBlogLocale(locale)
-  const filenames = await listBlogFilenames(resolvedLocale)
+  const filenames = await listBlogFilenames(locale)
 
   const posts = await Promise.all(
     filenames.map(async (filename) => {
       const slug = getSlugFromFilename(filename)
-      const source = await readContentFile('blog', resolvedLocale, filename)
+      const source = await readContentFile('blog', locale, filename)
       const { data } = matter(source)
       return mapSummary(slug, data as BlogPostFrontmatter)
     })
@@ -64,7 +57,7 @@ export async function getBlogPosts(locale: Locale) {
 }
 
 export async function getBlogPostBySlug(locale: Locale, slug: string): Promise<BlogPost | null> {
-  const source = (await readPostSource(locale, slug)) ?? (locale === BLOG_FALLBACK_LOCALE ? null : await readPostSource(BLOG_FALLBACK_LOCALE, slug))
+  const source = await readPostSource(locale, slug)
 
   if (!source) {
     return null
@@ -79,7 +72,7 @@ export async function getBlogPostBySlug(locale: Locale, slug: string): Promise<B
   }
 }
 
-export async function getBlogStaticSlugs() {
-  const filenames = await listBlogFilenames(BLOG_FALLBACK_LOCALE)
+export async function getBlogStaticSlugs(locale: Locale) {
+  const filenames = await listBlogFilenames(locale)
   return filenames.map(getSlugFromFilename)
 }
