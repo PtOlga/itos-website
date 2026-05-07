@@ -75,7 +75,7 @@ const page = async ({ params }: AboutPageProps) => {
           >
             {content.howIWork.title}
           </h2>
-          <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-6'>
             {content.howIWork.steps.map((step, index) => (
               <div
                 key={step.number}
