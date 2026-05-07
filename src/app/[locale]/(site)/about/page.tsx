@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
 const page = async ({ params }: AboutPageProps) => {
   const { locale } = await params
   const content = await getAboutPageContent(locale as Locale)
+  const highlightedParagraphIndexes = new Set([2, content.paragraphs.length - 1])
 
   return (
     <>
@@ -49,8 +50,10 @@ const page = async ({ params }: AboutPageProps) => {
                   <p
                     key={paragraph}
                     className={index === 0
-                      ? 'text-lg leading-8 text-secondary dark:text-white md:text-xl'
-                      : 'text-sm leading-7 text-SlateBlue dark:text-gray md:text-base'
+                      ? 'text-lg font-medium leading-8 text-secondary dark:text-white md:text-xl'
+                      : highlightedParagraphIndexes.has(index)
+                        ? 'text-base font-semibold leading-7 text-secondary dark:text-white md:text-lg'
+                        : 'text-base font-normal leading-7 text-SlateBlue dark:text-darktext'
                     }
                   >
                     {paragraph}
