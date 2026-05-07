@@ -1,6 +1,4 @@
 import React, { FC } from 'react'
-import Breadcrumb from '@/components/Breadcrumb'
-import { BreadcrumbLink } from '@/types/breadcrumb'
 
 interface HeroSubProps {
   title: string

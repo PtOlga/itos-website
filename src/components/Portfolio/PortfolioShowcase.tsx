@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { CaseStudy, CaseStudyGroup, CasesPageContent } from '@/types/content'
 
@@ -47,11 +48,12 @@ const BrowserPreview = ({ project }: { project: Project }) => (
             className='translate-y-0 transition-transform ease-linear group-hover:translate-y-[calc(220px-100%)]'
             style={{ transitionDuration: `${project.previewDurationMs ?? 22000}ms` }}
           >
-            <img
+            <Image
               src={project.previewImage}
               alt={`${project.title} preview`}
+              width={1280}
+              height={800}
               className='block w-full h-auto'
-              loading='lazy'
             />
           </div>
 

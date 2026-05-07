@@ -75,7 +75,7 @@ const page = async ({ params }: AboutPageProps) => {
           >
             {content.howIWork.title}
           </h2>
-          <div className='grid grid-cols-1 gap-8'>
+          <div className='grid grid-cols-1 gap-6'>
             {content.howIWork.steps.map((step, index) => (
               <div
                 key={step.number}
@@ -85,7 +85,7 @@ const page = async ({ params }: AboutPageProps) => {
                 className='group flex items-stretch overflow-hidden rounded-xl border border-BorderLine bg-white transition-colors duration-300 hover:border-[#e07a2f] dark:border-dark_border dark:bg-darklight dark:hover:border-[#e07a2f]'
               >
                 {/* Step number */}
-                <div className='flex min-w-[120px] items-center justify-center px-6 py-10'>
+                <div className='flex min-w-[96px] items-center justify-center px-5'>
                   <span className='text-[72px] font-extrabold leading-none text-[#e07a2f]'>
                     {step.number}
                   </span>
@@ -95,8 +95,8 @@ const page = async ({ params }: AboutPageProps) => {
                 <div className='w-px self-stretch bg-BorderLine dark:bg-dark_border' />
 
                 {/* Title + description */}
-                <div className='flex flex-1 flex-col justify-center px-8 py-10'>
-                  <h3 className='mb-3 text-xl font-medium text-secondary dark:text-white'>
+                <div className='flex flex-1 flex-col justify-center px-6 py-6'>
+                  <h3 className='mb-2 text-xl font-medium text-secondary dark:text-white'>
                     {step.title}
                   </h3>
                   <p className='text-[15px] leading-relaxed text-SlateBlue dark:text-darktext'>

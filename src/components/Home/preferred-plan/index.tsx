@@ -1,11 +1,11 @@
 'use client'
-import { useReducer, useState } from 'react'
+import { useReducer } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { stripLocalePrefix } from '@/utils/localePath'
 
 const Preferred = () => {
-  const [activeTab, setActiveTab] = useState('monthly')
   const pathname = stripLocalePrefix(usePathname())
 
   const initialTabConfig = {
@@ -124,11 +124,12 @@ const Preferred = () => {
                 data-aos-duration='1000'
                 className='col-span-1 shadow-plan_shadwo rounded-2xl'>
                 <div className='relative h-full'>
-                  <div className='h-full bg-primary rounded-2xl overflow-hidden'>
-                    <img
+                  <div className='relative h-full bg-primary rounded-2xl overflow-hidden'>
+                    <Image
                       src='/images/price-plan/plan-image.webp'
                       alt=''
-                      className='h-full'
+                      fill
+                      className='object-cover'
                     />
                   </div>
                   <div className='pt-9 px-8 absolute z-3 top-0'>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -80,10 +81,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {post.coverImage ? (
-            <img
+            <Image
               src={post.coverImage}
               alt={post.title}
+              width={1200}
+              height={630}
               className='mb-8 w-full rounded-3xl border border-BorderLine object-cover dark:border-dark_border'
+              style={{ height: 'auto' }}
             />
           ) : null}
 

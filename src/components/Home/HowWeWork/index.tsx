@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import dynamic from 'next/dynamic'
 
-// Динамический импорт Lottie для оптимизации
 const Lottie = dynamic(() => import('lottie-react'), {
   ssr: false,
   loading: () => (
@@ -13,41 +12,41 @@ const Lottie = dynamic(() => import('lottie-react'), {
   ),
 })
 
+const STEPS = [
+  {
+    key: 'consultation',
+    number: '1',
+    animation: '/animations/girl-setting-favorite-button-in-website.json',
+  },
+  {
+    key: 'planning',
+    number: '2',
+    animation: '/animations/employee-getting-customer-requirements.json',
+  },
+  {
+    key: 'development',
+    number: '3',
+    animation: '/animations/work-from-home.json',
+  },
+  {
+    key: 'launch',
+    number: '4',
+    animation: '/animations/target-evaluation.json',
+  },
+]
+
 const HowWeWork = () => {
   const t = useTranslations('howWeWork')
-  const [visibleSteps, setVisibleSteps] = useState<number[]>([]) // Массив видимых шагов
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([])
   const [animationsData, setAnimationsData] = useState<unknown[]>([])
-  const [activeStep, setActiveStep] = useState<number | null>(0) // Активный шаг (null = нет активного)
-
-  const steps = [
-    {
-      key: 'consultation',
-      number: '1',
-      animation: '/animations/girl-setting-favorite-button-in-website.json',
-    },
-    {
-      key: 'planning',
-      number: '2',
-      animation: '/animations/employee-getting-customer-requirements.json',
-    },
-    {
-      key: 'development',
-      number: '3',
-      animation: '/animations/work-from-home.json',
-    },
-    {
-      key: 'launch',
-      number: '4',
-      animation: '/animations/target-evaluation.json',
-    },
-  ]
+  const [activeStep, setActiveStep] = useState<number | null>(0)
 
   // Загрузка всех анимаций при монтировании компонента
   useEffect(() => {
     const loadAllAnimations = async () => {
       try {
         const loadedAnimations = await Promise.all(
-          steps.map(async (step) => {
+          STEPS.map(async (step) => {
             const response = await fetch(step.animation)
             return await response.json()
           })
@@ -153,7 +152,7 @@ const HowWeWork = () => {
 
         {/* Horizontal Cards */}
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6'>
-          {steps.map((step, index) => {
+          {STEPS.map((step, index) => {
             const isVisible = visibleSteps.includes(index)
             const isActive = activeStep === index
 

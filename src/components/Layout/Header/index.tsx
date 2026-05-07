@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { getHeaderData } from '../Header/Navigation/menuData'
 import Image from 'next/image'
 import HeaderLink from '../Header/Navigation/HeaderLink'
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
     setSticky(window.scrollY >= 80)
   }
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (
       mobileMenuRef.current &&
       !mobileMenuRef.current.contains(event.target as Node) &&
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
     ) {
       setNavbarOpen(false)
     }
-  }
+  }, [navbarOpen])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll)
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [navbarOpen])
+  }, [handleClickOutside])
 
   useEffect(() => {
     if (navbarOpen) {

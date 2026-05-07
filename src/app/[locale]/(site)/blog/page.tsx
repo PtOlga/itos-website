@@ -1,4 +1,5 @@
 import HeroSub from '@/components/SharedComponent/HeroSub'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { getBlogPageContent, getBlogPosts } from '@/lib/content/blog'
@@ -47,7 +48,9 @@ const BlogPage = async ({ params }: BlogPageProps) => {
               {posts.map((post) => (
                 <article key={post.slug} className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-white shadow-light-shadwo dark:border-dark_border dark:bg-darklight'>
                   {post.coverImage ? (
-                    <img src={post.coverImage} alt={post.title} className='h-56 w-full object-cover' />
+                    <div className='relative h-56'>
+                      <Image src={post.coverImage} alt={post.title} fill className='object-cover' />
+                    </div>
                   ) : null}
 
                   <div className='p-6'>
