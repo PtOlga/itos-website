@@ -94,4 +94,12 @@ export type AboutPageContent = {
     alt: string
   }
   paragraphs: string[]
+  howIWork: {
+    title: string
+    steps: Array<{
+      number: string
+      title: string
+      description: string
+    }>
+  }
 }

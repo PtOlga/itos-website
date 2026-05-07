@@ -65,6 +65,41 @@ const page = async ({ params }: AboutPageProps) => {
           </div>
         </div>
       </section>
+
+      <section className='bg-white py-16 dark:bg-darklight'>
+        <div className='container'>
+          <h2
+            className='mb-10 text-center text-2xl font-bold text-secondary dark:text-white md:text-3xl'
+            data-aos='fade-up'
+            data-aos-duration='1000'
+          >
+            {content.howIWork.title}
+          </h2>
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+            {content.howIWork.steps.map((step, index) => (
+              <div
+                key={step.number}
+                data-aos='fade-up'
+                data-aos-delay={`${index * 150}`}
+                data-aos-duration='1000'
+                className='overflow-hidden rounded-2xl border-t-2 border-primary bg-white shadow-md dark:bg-darkmode'
+              >
+                <div className='p-6 md:p-8'>
+                  <span className='mb-3 block text-4xl font-extrabold leading-none text-primary'>
+                    {step.number}
+                  </span>
+                  <h3 className='mb-2 text-base font-bold text-secondary dark:text-white'>
+                    {step.title}
+                  </h3>
+                  <p className='text-sm font-normal leading-6 text-SlateBlue dark:text-darktext'>
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

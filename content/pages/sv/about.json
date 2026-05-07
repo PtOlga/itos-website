@@ -16,5 +16,30 @@
     "Jag bryter inte processer som fungerar. Jag anpassar dem. Automatisering för automatiseringens skull är inte min grej. Det som spelar roll för mig är ett påtagligt resultat: mindre manuellt arbete, färre misstag, mer tid för det som verkligen driver verksamheten framåt.",
     "Jag arbetar på svenska, engelska och ryska — vilket som passar dig bäst.",
     "Om du vill prata om ditt problem — hör gärna av dig, jag hjälper alltid gärna till."
-  ]
+  ],
+  "howIWork": {
+    "title": "Hur jag arbetar",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Vi förstår uppgiften",
+        "description": "Jag lyssnar, ställer frågor och sätter mig in i din verksamhet innan jag föreslår något."
+      },
+      {
+        "number": "02",
+        "title": "Jag föreslår en lösning",
+        "description": "Konkret, utan krångel, med tydlig tidsplan och prisuppskattning."
+      },
+      {
+        "number": "03",
+        "title": "Jag implementerar",
+        "description": "Utan onödiga möten eller långa godkännanden."
+      },
+      {
+        "number": "04",
+        "title": "Jag finns kvar",
+        "description": "Jag är tillgänglig efter lansering och ser till att allt fungerar som det ska."
+      }
+    ]
+  }
 }

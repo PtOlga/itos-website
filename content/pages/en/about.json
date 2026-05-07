@@ -16,5 +16,30 @@
     "I don't break processes that work. I adapt them. Automation for the sake of automation is not my thing. What matters to me is a tangible result: less manual work, fewer mistakes, more time for what actually drives the business forward.",
     "I work in Swedish, English, and Russian — whichever works best for you.",
     "If you want to talk about your problem — feel free to reach out, I'm always happy to help."
-  ]
+  ],
+  "howIWork": {
+    "title": "How I Work",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Understanding the task",
+        "description": "I listen, ask questions, and dig into your business before suggesting anything."
+      },
+      {
+        "number": "02",
+        "title": "Proposing a solution",
+        "description": "Clear, no-nonsense, with a realistic timeline and cost estimate."
+      },
+      {
+        "number": "03",
+        "title": "Getting it done",
+        "description": "No unnecessary meetings or drawn-out approvals."
+      },
+      {
+        "number": "04",
+        "title": "Staying around",
+        "description": "I'm available after launch and make sure everything works as it should."
+      }
+    ]
+  }
 }
