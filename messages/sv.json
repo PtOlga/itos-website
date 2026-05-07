@@ -204,14 +204,6 @@
     }
   },
   "pages": {
-    "about": {
-      "title": "Om mig",
-      "metaTitle": "Om ITOS och hur jag arbetar",
-      "description": "Lär känna hur jag arbetar och vad som är viktigt i varje projekt.",
-      "metaDescription": "Lär känna hur jag arbetar, vad jag prioriterar i kundprojekt och hur ITOS hjälper företag med webbplatser, CRM och automation.",
-      "underConstructionTitle": "Sidan Om mig kommer snart",
-      "underConstructionMessage": "Jag förbereder innehållet för Om-sidan. Titta gärna tillbaka snart."
-    },
     "blog": {
       "title": "Blogg",
       "metaTitle": "Blogg om webbplatser, CRM och automation",

@@ -204,14 +204,6 @@
     }
   },
   "pages": {
-    "about": {
-      "title": "About Me",
-      "metaTitle": "About ITOS and How I Work",
-      "description": "Learn more about how I work and what matters in every project.",
-      "metaDescription": "Learn how I work, what I prioritise in client projects, and how ITOS helps businesses with websites, CRM, and automation.",
-      "underConstructionTitle": "About page is coming soon",
-      "underConstructionMessage": "I'm preparing the About page content. Please check back soon."
-    },
     "blog": {
       "title": "Blog",
       "metaTitle": "Blog on Websites, CRM & Automation",
