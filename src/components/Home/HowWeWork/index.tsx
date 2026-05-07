@@ -16,7 +16,7 @@ const Lottie = dynamic(() => import('lottie-react'), {
 const HowWeWork = () => {
   const t = useTranslations('howWeWork')
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]) // Массив видимых шагов
-  const [animationsData, setAnimationsData] = useState<any[]>([]) // Данные всех анимаций
+  const [animationsData, setAnimationsData] = useState<unknown[]>([])
   const [activeStep, setActiveStep] = useState<number | null>(0) // Активный шаг (null = нет активного)
 
   const steps = [

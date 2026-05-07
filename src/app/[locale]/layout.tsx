@@ -7,7 +7,7 @@ import NextTopLoader from "nextjs-toploader";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { locales } from '@/i18n/config';
+import { locales, type Locale } from '@/i18n/config';
 import { Metadata } from 'next';
 import ConsentManager from '@/components/Consent/ConsentManager'
 
@@ -36,7 +36,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Validate locale
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 

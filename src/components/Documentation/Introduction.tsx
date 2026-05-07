@@ -3,9 +3,7 @@ import Image from "next/image";
 import nextImg from "/public/images/documentation/Categories=Nextjs.svg";
 import reactImg from "/public/images/documentation/Categories=React.svg";
 import tailwindImg from "/public/images/documentation/Categories=Tailwind.svg";
-import nextauthImg from "/public/images/documentation/nextauth.webp";
 import typescriptImg from "/public/images/documentation/Categories=Typescript.svg";
-import axiosImg from "/public/images/documentation/axios.svg";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useState } from "react";
 import { DocNavigation } from "./DocNavigation";
@@ -35,12 +33,6 @@ export const Introduction = () => {
     },
     {
       id: "4",
-      packageName: "NextAuth",
-      img: nextauthImg,
-      version: "4.24.11",
-    },
-    {
-      id: "5",
       packageName: "Typescript",
       img: typescriptImg,
       version: "5.6.3",

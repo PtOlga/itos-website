@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const page = () => {
+const Page = () => {
   const t = useTranslations('pages.faqs')
 
   return (
@@ -24,4 +24,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

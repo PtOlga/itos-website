@@ -7,6 +7,8 @@ export default createMiddleware({
   localePrefix: 'as-needed'
 })
 
+// matcher must be static — keep locale list in sync with src/i18n/config.ts
 export const config = {
-  matcher: ['/', '/(sv|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)']
+  matcher: ['/', '/(sv|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'
+  ]
 }

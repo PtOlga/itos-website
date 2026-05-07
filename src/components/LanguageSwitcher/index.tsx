@@ -10,8 +10,9 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
 
   const switchLocale = (newLocale: Locale) => {
-    router.replace(pathname, {locale: newLocale});
-  };
+    if (newLocale === locale) return
+    router.replace(pathname, { locale: newLocale, scroll: false })
+  }
 
   return (
     <div className="flex items-center gap-2">
