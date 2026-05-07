@@ -1,31 +1,36 @@
 import HeroSub from '@/components/SharedComponent/HeroSub'
-import LegalPageContent, { type LegalSection } from '@/components/SharedComponent/LegalPageContent'
-import { getTranslations } from 'next-intl/server'
+import LegalPageContent from '@/components/SharedComponent/LegalPageContent'
 import { Metadata } from 'next'
+import { getLegalPageContent } from '@/lib/content/legal'
+import { type Locale } from '@/i18n/config'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('legal.privacy.hero')
+type PrivacyPolicyPageProps = {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: PrivacyPolicyPageProps): Promise<Metadata> {
+  const { locale } = await params
+  const content = await getLegalPageContent(locale as Locale, 'privacy-policy')
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
+    title: content.hero.metaTitle,
+    description: content.hero.metaDescription,
   }
 }
 
-export default async function PrivacyPolicyPage() {
-  const t = await getTranslations('legal.privacy')
-  const intro = t.raw('intro') as string[]
-  const sections = t.raw('sections') as LegalSection[]
+export default async function PrivacyPolicyPage({ params }: PrivacyPolicyPageProps) {
+  const { locale } = await params
+  const content = await getLegalPageContent(locale as Locale, 'privacy-policy')
 
   return (
     <>
-      <HeroSub title={t('hero.title')} description={t('hero.description')} />
+      <HeroSub title={content.hero.title} description={content.hero.description} />
       <LegalPageContent
-        updatedLabel={t('updatedLabel')}
-        updatedDate={t('updatedDate')}
-        contactLabel={t('contactLabel')}
-        intro={intro}
-        sections={sections}
-        contactEmail='5441700@gmail.com'
+        updatedLabel={content.updatedLabel}
+        updatedDate={content.updatedDate}
+        contactLabel={content.contactLabel}
+        intro={content.intro}
+        sections={content.sections}
+        contactEmail={content.contactEmail}
       />
     </>
   )

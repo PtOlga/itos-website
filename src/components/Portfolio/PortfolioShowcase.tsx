@@ -1,60 +1,32 @@
 import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
+import type { CaseStudy, CaseStudyGroup, CasesPageContent } from '@/types/content'
 
 type Project = {
   id: number
+  slug: string
   title: string
   label: string
   href?: string
   description: string
   category: string
-  group: ProjectGroupKey
+  group: CaseStudyGroup
   tags: string[]
   previewClass: string
   previewImage?: string
   previewDurationMs?: number
 }
 
-type ProjectGroupKey = 'websites' | 'webApps' | 'wpPlugins' | 'automation'
+const filterOrder: CaseStudyGroup[] = ['websites', 'webApps', 'wpPlugins', 'automation']
 
-type ProjectKey =
-  | 'interpolCheck'
-  | 'statusLaw'
-  | 'portfolio'
-  | 'prados'
-  | 'diskCatalog'
-  | 'megaPdfCompressor'
-  | 'gdprScanner'
-  | 'planfixReminder'
-
-type ProjectCopy = {
-  title: string
-  label: string
-  description: string
-  category: string
-  tags: string[]
-}
-
-const projectOrder: ProjectKey[] = [
-  'interpolCheck',
-  'statusLaw',
-  'portfolio',
-  'prados',
-  'diskCatalog',
-  'megaPdfCompressor',
-  'gdprScanner',
-  'planfixReminder',
-]
-
-const projectVisuals: Record<ProjectKey, Omit<Project, 'id' | 'title' | 'label' | 'description' | 'category' | 'tags'>> = {
-  interpolCheck: { group: 'websites', href: 'https://interpol-check.me', previewClass: 'from-[#0f2234] via-[#162b40] to-[#1d3248]', previewImage: '/images/portfolio-details/interpol-check-me.webp', previewDurationMs: 36000 },
-  statusLaw: { group: 'websites', href: 'https://status.law', previewClass: 'from-[#13283d] via-[#1a3652] to-[#244867]', previewImage: '/images/portfolio-details/status-law.webp', previewDurationMs: 18000 },
-  portfolio: { group: 'websites', href: 'https://ptolga.github.io', previewClass: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]', previewImage: '/images/portfolio-details/ptolga-github.webp', previewDurationMs: 36000 },
-  prados: { group: 'websites', href: 'https://prados.org.ua', previewClass: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]', previewImage: '/images/portfolio-details/prados.webp', previewDurationMs: 22000 },
-  diskCatalog: { group: 'webApps', href: 'https://disk-catalog-488612.web.app', previewClass: 'from-[#143041] via-[#1d4b5d] to-[#2a687a]', previewImage: '/images/portfolio-details/disk-catalog.webp', previewDurationMs: 20000 },
-  megaPdfCompressor: { group: 'webApps', href: 'https://mega-pdf-compressor-en.up.railway.app', previewClass: 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]', previewImage: '/images/portfolio-details/mega-pdf-compressor.webp', previewDurationMs: 21000 },
-  gdprScanner: { group: 'wpPlugins', previewClass: 'from-[#23283a] via-[#31384f] to-[#48516d]' },
-  planfixReminder: { group: 'automation', previewClass: 'from-[#182d2c] via-[#22504a] to-[#2e776d]' },
+const projectPreviewClasses: Record<string, string> = {
+  'interpol-check': 'from-[#0f2234] via-[#162b40] to-[#1d3248]',
+  'status-law': 'from-[#13283d] via-[#1a3652] to-[#244867]',
+  portfolio: 'from-[#11263d] via-[#163a5c] to-[#1d4f7d]',
+  prados: 'from-[#1c2d58] via-[#22427f] to-[#2f58a8]',
+  'disk-catalog': 'from-[#143041] via-[#1d4b5d] to-[#2a687a]',
+  'mega-pdf-compressor': 'from-[#1d2340] via-[#2d2f63] to-[#3e438b]',
+  'gdpr-scanner': 'from-[#23283a] via-[#31384f] to-[#48516d]',
+  'planfix-reminder': 'from-[#182d2c] via-[#22504a] to-[#2e776d]',
 }
 
 const BrowserPreview = ({ project }: { project: Project }) => (
@@ -124,20 +96,24 @@ const BrowserPreview = ({ project }: { project: Project }) => (
   </div>
 )
 
-export default async function PortfolioShowcase({ contactHref }: { contactHref: string }) {
-  const t = await getTranslations('portfolioPage')
-  const projects: Project[] = projectOrder.map((key, index) => ({
+function mapProjects(projects: CaseStudy[]): Project[] {
+  return projects.map((project, index) => ({
     id: index + 1,
-    ...(t.raw(`projects.${key}`) as ProjectCopy),
-    ...projectVisuals[key],
+    ...project,
+    previewClass: projectPreviewClasses[project.slug] ?? 'from-[#18304a] via-[#244867] to-[#2f58a8]',
   }))
+}
 
-  const filters = [
-    { id: 'websites' as const, label: t('filters.websites') },
-    { id: 'webApps' as const, label: t('filters.webApps') },
-    { id: 'wpPlugins' as const, label: t('filters.wpPlugins') },
-    { id: 'automation' as const, label: t('filters.automation') },
-  ]
+export default function PortfolioShowcase({
+  contactHref,
+  content,
+}: {
+  contactHref: string
+  content: CasesPageContent
+}) {
+  const projects = mapProjects(content.projects)
+
+  const filters = filterOrder.map((id) => ({ id, label: content.filters[id] }))
 
   const projectsByGroup = filters.map((filter) => ({
     ...filter,
@@ -150,13 +126,13 @@ export default async function PortfolioShowcase({ contactHref }: { contactHref: 
         <div className='mb-8 grid gap-4 rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight lg:grid-cols-[1fr_auto] lg:items-center'>
           <div className='max-w-720'>
             <span className='mb-3 inline-flex rounded-full bg-LightApricot/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-secondary dark:text-LightApricot'>
-              {t('eyebrow')}
+              {content.eyebrow}
             </span>
             <h2 className='mb-3 text-2xl font-semibold text-secondary dark:text-white md:text-3xl'>
-              {t('title')}
+              {content.title}
             </h2>
             <p className='text-sm leading-7 text-SlateBlue dark:text-gray md:text-base'>
-              {t('description')}
+              {content.description}
             </p>
           </div>
 
@@ -221,16 +197,16 @@ export default async function PortfolioShowcase({ contactHref }: { contactHref: 
                       <div className='flex flex-wrap gap-3'>
                         {project.href ? (
                           <a href={project.href} target='_blank' rel='noopener noreferrer' className='inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-darkprimary'>
-                            {t('actions.openProject')}
+                            {content.actions.openProject}
                           </a>
                         ) : (
                           <span className='inline-flex items-center justify-center rounded-full bg-BorderLine px-4 py-2.5 text-sm font-medium text-secondary dark:bg-secondary dark:text-white'>
-                            {t('actions.linkComingSoon')}
+                            {content.actions.linkComingSoon}
                           </span>
                         )}
 
                         <Link href={contactHref} className='inline-flex items-center justify-center rounded-full border border-BorderLine px-4 py-2.5 text-sm font-medium text-secondary transition-colors hover:border-primary hover:text-primary dark:border-dark_border dark:text-white dark:hover:border-LightApricot dark:hover:text-LightApricot'>
-                          {t('actions.needSomethingSimilar')}
+                          {content.actions.needSomethingSimilar}
                         </Link>
                       </div>
                     </div>

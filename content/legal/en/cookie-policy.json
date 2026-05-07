@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "Cookie Policy",
+    "metaTitle": "Cookie Policy & Analytics Consent",
+    "description": "How ITOS uses cookies and similar technologies on this website, including analytics tools that are only activated after consent.",
+    "metaDescription": "Learn which cookies ITOS uses, how analytics are enabled after consent, and how to manage cookie preferences on this website."
+  },
+  "updatedLabel": "Last updated",
+  "updatedDate": "21 April 2026",
+  "contactLabel": "Contact",
+  "contactEmail": "5441700@gmail.com",
+  "intro": [
+    "This Cookie Policy explains what cookies are, which cookies may be used on this website, and how you can manage your preferences.",
+    "Because ITOS is a Sweden-based business serving users in Sweden and the EU, ITOS uses a consent-based approach for optional analytics in line with GDPR and ePrivacy expectations."
+  ],
+  "sections": [
+    {
+      "title": "What cookies are",
+      "paragraphs": [
+        "Cookies are small text files stored on your device when you visit a website. They can help a website remember your preferences, understand traffic patterns, and improve the user experience."
+      ]
+    },
+    {
+      "title": "Types of cookies we use",
+      "items": [
+        "Strictly necessary cookies — required for essential website functions, including remembering your cookie preference.",
+        "Analytics cookies — used only after your consent to understand traffic and improve the website."
+      ]
+    },
+    {
+      "title": "Essential consent cookie",
+      "paragraphs": [
+        "When you interact with the cookie banner, your choice is stored in a small preference cookie and local browser storage so the site can remember whether you accepted or rejected optional analytics.",
+        "The current cookie name used for this purpose is itos_cookie_consent. This cookie is necessary to respect your choice and does not require optional analytics consent."
+      ]
+    },
+    {
+      "title": "Analytics cookies and tools",
+      "paragraphs": [
+        "If you accept analytics, this website may load Google Analytics (Google tag / GA4) and, where temporarily enabled, other analytics tools to measure visits, page views, and general website usage.",
+        "These tools may set their own measurement cookies or use similar technologies. They are not activated until you provide consent through the cookie banner. If you reject optional cookies, analytics remain disabled."
+      ]
+    },
+    {
+      "title": "How to manage your choices",
+      "items": [
+        "You can accept or reject optional analytics from the cookie banner when you first visit the site.",
+        "You can reopen the banner later using the Cookie settings button in the footer.",
+        "You can also manage or delete cookies through your browser settings at any time."
+      ]
+    },
+    {
+      "title": "Third-party services",
+      "paragraphs": [
+        "When analytics are enabled, Google and any temporarily enabled analytics provider may process technical data about your visit as independent providers under their own privacy and cookie documentation.",
+        "Where third-party providers process data outside the EU or EEA, appropriate safeguards required under the GDPR are used where applicable."
+      ]
+    },
+    {
+      "title": "Updates and contact",
+      "paragraphs": [
+        "This Cookie Policy may be updated from time to time to reflect legal, technical, or business changes. The latest update date is shown at the top of this page.",
+        "If you have questions about cookies or privacy on this website, contact ITOS at 5441700@gmail.com."
+      ]
+    }
+  ]
+}

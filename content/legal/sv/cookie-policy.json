@@ -1,0 +1,67 @@
+{
+  "hero": {
+    "title": "Cookiepolicy",
+    "metaTitle": "Cookiepolicy och analyssamtycke",
+    "description": "Hur ITOS använder cookies och liknande tekniker på denna webbplats, inklusive analysverktyg som endast aktiveras efter samtycke.",
+    "metaDescription": "Läs vilka cookies ITOS använder, hur analys aktiveras efter samtycke och hur du hanterar cookie-inställningar på webbplatsen."
+  },
+  "updatedLabel": "Senast uppdaterad",
+  "updatedDate": "21 april 2026",
+  "contactLabel": "Kontakt",
+  "contactEmail": "5441700@gmail.com",
+  "intro": [
+    "Denna cookiepolicy förklarar vad cookies är, vilka cookies som kan användas på denna webbplats och hur du kan hantera dina val.",
+    "Eftersom ITOS är en svensk verksamhet som betjänar användare i Sverige och EU använder ITOS en samtyckesbaserad modell för valfri analys i linje med GDPR och kraven kring elektronisk integritet."
+  ],
+  "sections": [
+    {
+      "title": "Vad cookies är",
+      "paragraphs": [
+        "Cookies är små textfiler som lagras på din enhet när du besöker en webbplats. De kan hjälpa en webbplats att komma ihåg dina inställningar, förstå trafikmönster och förbättra användarupplevelsen."
+      ]
+    },
+    {
+      "title": "Vilka typer av cookies vi använder",
+      "items": [
+        "Strikt nödvändiga cookies — krävs för grundläggande funktioner på webbplatsen, inklusive att komma ihåg ditt val om cookies.",
+        "Analyscookies — används endast efter ditt samtycke för att förstå trafik och förbättra webbplatsen."
+      ]
+    },
+    {
+      "title": "Nödvändig samtyckescookie",
+      "paragraphs": [
+        "När du använder cookie-bannern sparas ditt val i en liten preferenscookie och i lokal webblagring så att webbplatsen kan komma ihåg om du har accepterat eller avvisat valfri analys.",
+        "Det aktuella cookienamnet som används för detta ändamål är itos_cookie_consent. Denna cookie är nödvändig för att respektera ditt val och kräver inte samtycke till valfri analys."
+      ]
+    },
+    {
+      "title": "Analyscookies och verktyg",
+      "paragraphs": [
+        "Om du accepterar analys kan denna webbplats ladda Google Analytics (Google tag / GA4) och, när det är tillfälligt aktiverat, andra analysverktyg för att mäta besök, sidvisningar och allmän användning av webbplatsen.",
+        "Dessa verktyg kan sätta egna mätcookies eller använda liknande tekniker. De aktiveras inte förrän du lämnar samtycke via cookie-bannern. Om du avvisar valfria cookies förblir analysen avstängd."
+      ]
+    },
+    {
+      "title": "Hur du hanterar dina val",
+      "items": [
+        "Du kan acceptera eller avvisa valfri analys i cookie-bannern när du besöker webbplatsen första gången.",
+        "Du kan öppna bannern igen senare via knappen Cookie-inställningar i footern.",
+        "Du kan också hantera eller radera cookies via inställningarna i din webbläsare när som helst."
+      ]
+    },
+    {
+      "title": "Tredjepartstjänster",
+      "paragraphs": [
+        "När analys är aktiverad kan Google och en eventuellt tillfälligt aktiverad analysleverantör behandla tekniska uppgifter om ditt besök som självständiga leverantörer enligt sina egna integritets- och cookiepolicys.",
+        "När tredjepartsleverantörer behandlar uppgifter utanför EU eller EES används lämpliga skyddsåtgärder som krävs enligt GDPR, där det är tillämpligt."
+      ]
+    },
+    {
+      "title": "Uppdateringar och kontakt",
+      "paragraphs": [
+        "Denna cookiepolicy kan uppdateras då och då för att återspegla rättsliga, tekniska eller affärsmässiga förändringar. Datumet för senaste uppdatering visas högst upp på denna sida.",
+        "Om du har frågor om cookies eller integritet på denna webbplats kan du kontakta ITOS på 5441700@gmail.com."
+      ]
+    }
+  ]
+}

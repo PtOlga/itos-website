@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "title": "Privacy Policy",
+    "metaTitle": "Privacy Policy & GDPR Information",
+    "description": "How ITOS, a Sweden-based business, handles personal data under the GDPR and applicable Swedish law.",
+    "metaDescription": "Read how ITOS handles personal data, contact requests, analytics consent, and GDPR-related responsibilities under Swedish and EU law."
+  },
+  "updatedLabel": "Last updated",
+  "updatedDate": "21 April 2026",
+  "contactLabel": "Contact",
+  "contactEmail": "5441700@gmail.com",
+  "intro": [
+    "This Privacy Policy explains how ITOS, based in Sweden, collects, uses, stores, and protects personal data when you use this website, contact ITOS, or request services.",
+    "ITOS aims to process personal data transparently, securely, and in accordance with the EU General Data Protection Regulation (GDPR) and applicable Swedish data protection law."
+  ],
+  "sections": [
+    {
+      "title": "Who is responsible for your personal data",
+      "paragraphs": [
+        "ITOS is a Sweden-based business operating from Charlottenberg, Sweden. For the purposes of this website and client communication, ITOS acts as the data controller for personal data described in this policy.",
+        "If you have questions about privacy, personal data, or your rights, you can contact ITOS by email at 5441700@gmail.com."
+      ]
+    },
+    {
+      "title": "What personal data we may collect",
+      "items": [
+        "Contact details you provide, such as your name, email address, phone number, and business details.",
+        "The contents of messages, project requests, and other information you submit through the contact form, email, or phone.",
+        "Technical and usage information about visits to the website, but only where optional analytics have been accepted.",
+        "Records needed to prepare quotes, provide services, answer questions, and maintain business communication."
+      ]
+    },
+    {
+      "title": "Why we use personal data",
+      "items": [
+        "To respond to inquiries and communicate with potential or existing clients.",
+        "To prepare proposals, provide requested services, and manage project-related communication.",
+        "To operate, secure, and improve the website and its content.",
+        "To measure website performance through analytics where you have given consent.",
+        "To comply with accounting, tax, legal, or regulatory obligations under Swedish and EU law."
+      ]
+    },
+    {
+      "title": "Legal bases under the GDPR",
+      "items": [
+        "Consent — for optional analytics cookies and related measurement tools.",
+        "Pre-contractual steps or contract performance — when you ask for a quote, discuss a project, or become a client.",
+        "Legitimate interests — for day-to-day business communication, site security, and service improvement where those interests are not overridden by your rights.",
+        "Legal obligation — where information must be retained or disclosed to comply with applicable law."
+      ]
+    },
+    {
+      "title": "Sharing data with service providers",
+      "paragraphs": [
+        "ITOS may use trusted service providers to help operate the website and deliver services, for example hosting providers, website infrastructure, analytics providers, and communication or form-handling tools such as EmailJS.",
+        "These providers only receive personal data where necessary for their role and are expected to process it under appropriate confidentiality and data protection obligations. ITOS does not sell your personal data."
+      ]
+    },
+    {
+      "title": "International data transfers",
+      "paragraphs": [
+        "Some providers used by ITOS may process data outside the EU or EEA. Where that happens, appropriate safeguards such as contractual protections, standard contractual clauses, or other lawful transfer mechanisms required under the GDPR are used where applicable."
+      ]
+    },
+    {
+      "title": "How long we keep data",
+      "paragraphs": [
+        "Personal data is kept only for as long as necessary for the purpose for which it was collected, including responding to inquiries, managing ongoing business relationships, providing services, and meeting legal or accounting requirements.",
+        "If you contact ITOS but do not become a client, your information is generally kept only as long as reasonably necessary to manage the conversation and any follow-up, unless it must be retained for legal reasons."
+      ]
+    },
+    {
+      "title": "Your rights",
+      "items": [
+        "The right to access your personal data.",
+        "The right to request correction of inaccurate or incomplete data.",
+        "The right to request deletion where applicable.",
+        "The right to restrict processing in certain situations.",
+        "The right to object to processing based on legitimate interests.",
+        "The right to data portability where the GDPR applies.",
+        "The right to withdraw consent at any time for processing based on consent, including analytics cookies."
+      ]
+    },
+    {
+      "title": "Complaints and supervisory authority",
+      "paragraphs": [
+        "If you believe your personal data has been handled unlawfully, you have the right to contact ITOS first so the issue can be reviewed.",
+        "You also have the right to lodge a complaint with the Swedish Authority for Privacy Protection (Integritetsskyddsmyndigheten, IMY), which is the supervisory authority in Sweden for data protection matters."
+      ]
+    }
+  ]
+}

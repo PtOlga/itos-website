@@ -1,33 +1,37 @@
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import PortfolioShowcase from '@/components/Portfolio/PortfolioShowcase'
 import React from "react";
-import { getTranslations } from 'next-intl/server'
 import { Metadata } from "next";
+import { getCasesPageContent } from '@/lib/content/cases'
+import { type Locale } from '@/i18n/config'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('portfolioPage.hero')
+type PortfolioPageProps = {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: PortfolioPageProps): Promise<Metadata> {
+  const { locale } = await params
+  const content = await getCasesPageContent(locale as Locale)
   return {
-    title: t('metaTitle'),
-    description: t('metaDescription'),
+    title: content.hero.metaTitle,
+    description: content.hero.metaDescription,
   }
 }
 
 const page = async ({
   params,
-}: {
-  params: Promise<{ locale: string }>
-}) => {
-  const t = await getTranslations('portfolioPage.hero')
+}: PortfolioPageProps) => {
   const { locale } = await params
+  const content = await getCasesPageContent(locale as Locale)
   const contactHref = locale === 'en' ? '/en/contact' : '/contact'
 
   return (
     <>
       <HeroSub
-        title={t('title')}
-        description={t('description')}
+        title={content.hero.title}
+        description={content.hero.description}
       />
-      <PortfolioShowcase contactHref={contactHref} />
+      <PortfolioShowcase contactHref={contactHref} content={content} />
     </>
   );
 };

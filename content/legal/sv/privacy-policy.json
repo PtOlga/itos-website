@@ -1,0 +1,92 @@
+{
+  "hero": {
+    "title": "Integritetspolicy",
+    "metaTitle": "Integritetspolicy och GDPR-information",
+    "description": "Hur ITOS, ett svenskt företag, behandlar personuppgifter enligt GDPR och tillämplig svensk lagstiftning.",
+    "metaDescription": "Läs hur ITOS behandlar personuppgifter, kontaktförfrågningar, analyssamtycke och GDPR-relaterat ansvar enligt svensk och europeisk lag."
+  },
+  "updatedLabel": "Senast uppdaterad",
+  "updatedDate": "21 april 2026",
+  "contactLabel": "Kontakt",
+  "contactEmail": "5441700@gmail.com",
+  "intro": [
+    "Denna integritetspolicy förklarar hur ITOS, baserat i Sverige, samlar in, använder, lagrar och skyddar personuppgifter när du använder denna webbplats, kontaktar ITOS eller begär tjänster.",
+    "ITOS strävar efter att behandla personuppgifter öppet, säkert och i enlighet med EU:s allmänna dataskyddsförordning (GDPR) samt tillämplig svensk dataskyddslagstiftning."
+  ],
+  "sections": [
+    {
+      "title": "Vem som ansvarar för dina personuppgifter",
+      "paragraphs": [
+        "ITOS är en verksamhet baserad i Charlottenberg, Sverige. För denna webbplats och klientkommunikation är ITOS personuppgiftsansvarig för de personuppgifter som beskrivs i denna policy.",
+        "Om du har frågor om integritet, personuppgifter eller dina rättigheter kan du kontakta ITOS via e-post på 5441700@gmail.com."
+      ]
+    },
+    {
+      "title": "Vilka personuppgifter vi kan samla in",
+      "items": [
+        "Kontaktuppgifter som du lämnar, till exempel namn, e-postadress, telefonnummer och företagsuppgifter.",
+        "Innehållet i meddelanden, projektförfrågningar och annan information som du skickar via kontaktformulär, e-post eller telefon.",
+        "Teknisk information och användningsdata om besök på webbplatsen, men endast om du har accepterat valfri analys.",
+        "Uppgifter som behövs för att ta fram offerter, leverera tjänster, besvara frågor och upprätthålla affärskommunikation."
+      ]
+    },
+    {
+      "title": "Varför vi använder personuppgifter",
+      "items": [
+        "För att besvara förfrågningar och kommunicera med potentiella eller befintliga kunder.",
+        "För att ta fram förslag, leverera begärda tjänster och hantera projektrelaterad kommunikation.",
+        "För att driva, säkra och förbättra webbplatsen och dess innehåll.",
+        "För att mäta webbplatsens prestanda genom analysverktyg där du har lämnat samtycke.",
+        "För att uppfylla bokföringsmässiga, skattemässiga, rättsliga eller regulatoriska skyldigheter enligt svensk och europeisk rätt."
+      ]
+    },
+    {
+      "title": "Rättsliga grunder enligt GDPR",
+      "items": [
+        "Samtycke — för valfria analyscookies och relaterade mätverktyg.",
+        "Åtgärder före avtal eller fullgörande av avtal — när du begär offert, diskuterar ett projekt eller blir kund.",
+        "Berättigat intresse — för löpande affärskommunikation, webbplatssäkerhet och förbättring av tjänster där dessa intressen inte väger tyngre än dina rättigheter.",
+        "Rättslig förpliktelse — när information måste bevaras eller lämnas ut för att följa tillämplig lag."
+      ]
+    },
+    {
+      "title": "Delning av uppgifter med tjänsteleverantörer",
+      "paragraphs": [
+        "ITOS kan använda betrodda tjänsteleverantörer för att driva webbplatsen och leverera tjänster, till exempel hostingleverantörer, webbplatsinfrastruktur, analysleverantörer och kommunikations- eller formulärverktyg såsom EmailJS.",
+        "Dessa leverantörer får endast tillgång till personuppgifter när det är nödvändigt för deras uppdrag och förväntas behandla uppgifterna under lämpliga krav på sekretess och dataskydd. ITOS säljer inte dina personuppgifter."
+      ]
+    },
+    {
+      "title": "Internationella dataöverföringar",
+      "paragraphs": [
+        "Vissa leverantörer som används av ITOS kan behandla uppgifter utanför EU eller EES. När detta sker används lämpliga skyddsåtgärder, såsom avtalsmässiga skydd, standardavtalsklausuler eller andra lagliga överföringsmekanismer som krävs enligt GDPR, där det är tillämpligt."
+      ]
+    },
+    {
+      "title": "Hur länge vi sparar uppgifter",
+      "paragraphs": [
+        "Personuppgifter sparas endast så länge som det är nödvändigt för det ändamål de samlades in för, inklusive att besvara förfrågningar, hantera affärsrelationer, leverera tjänster och uppfylla rättsliga eller bokföringsmässiga krav.",
+        "Om du kontaktar ITOS men inte blir kund sparas dina uppgifter normalt endast så länge som det är rimligt nödvändigt för att hantera dialogen och eventuell uppföljning, om de inte måste sparas av rättsliga skäl."
+      ]
+    },
+    {
+      "title": "Dina rättigheter",
+      "items": [
+        "Rätt att få tillgång till dina personuppgifter.",
+        "Rätt att begära rättelse av felaktiga eller ofullständiga uppgifter.",
+        "Rätt att begära radering när det är tillämpligt.",
+        "Rätt att begränsa behandling i vissa situationer.",
+        "Rätt att invända mot behandling som grundas på berättigat intresse.",
+        "Rätt till dataportabilitet där GDPR är tillämplig.",
+        "Rätt att när som helst återkalla samtycke för behandling som grundas på samtycke, inklusive analyscookies."
+      ]
+    },
+    {
+      "title": "Klagomål och tillsynsmyndighet",
+      "paragraphs": [
+        "Om du anser att dina personuppgifter har hanterats olagligt har du rätt att först kontakta ITOS så att frågan kan granskas.",
+        "Du har också rätt att lämna in klagomål till Integritetsskyddsmyndigheten (IMY), som är tillsynsmyndighet i Sverige för dataskyddsfrågor."
+      ]
+    }
+  ]
+}

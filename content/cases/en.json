@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "title": "Portfolio",
+    "metaTitle": "Portfolio: Websites, Apps & Automation",
+    "description": "A selection of websites, web apps, and automation projects I've built for clients and my own products.",
+    "metaDescription": "Explore selected websites, web apps, WordPress plugins, and automation projects built for clients and internal products by ITOS."
+  },
+  "eyebrow": "Selected work",
+  "title": "Websites, web apps, and automation I've built",
+  "description": "Here you can see real examples of my work — from client websites and web apps to WordPress plugins and automation tools. Each case shows the project type, a short description, and a link when the project is public.",
+  "filters": {
+    "websites": "Websites",
+    "webApps": "Web apps",
+    "wpPlugins": "WP plugins",
+    "automation": "Automation"
+  },
+  "actions": {
+    "openProject": "View project",
+    "linkComingSoon": "Link coming soon",
+    "needSomethingSimilar": "I want something similar"
+  },
+  "projects": [
+    {
+      "slug": "interpol-check",
+      "title": "Interpol Check",
+      "label": "interpol-check.me",
+      "href": "https://interpol-check.me",
+      "description": "Landing page focused on lead generation: INTERPOL database checks, regional pricing, and a clear client inquiry flow.",
+      "category": "Website",
+      "group": "websites",
+      "tags": ["Legal services", "Landing page", "Lead generation"],
+      "previewImage": "/images/portfolio-details/interpol-check-me.webp",
+      "previewDurationMs": 36000
+    },
+    {
+      "slug": "status-law",
+      "title": "Status Law",
+      "label": "status.law",
+      "href": "https://status.law",
+      "description": "Corporate website for a law firm with service presentation, trust-oriented structure, and straightforward contact paths for new clients.",
+      "category": "Website",
+      "group": "websites",
+      "tags": ["Corporate site", "Law firm", "Trust-building"],
+      "previewImage": "/images/portfolio-details/status-law.webp",
+      "previewDurationMs": 18000
+    },
+    {
+      "slug": "portfolio",
+      "title": "Portfolio",
+      "label": "ptolga.github.io",
+      "href": "https://ptolga.github.io",
+      "description": "Personal bilingual portfolio with project filtering and PDF resume generation — designed to present services, skills, and completed work clearly.",
+      "category": "Website",
+      "group": "websites",
+      "tags": ["Portfolio", "Bilingual", "PDF resume"],
+      "previewImage": "/images/portfolio-details/ptolga-github.webp",
+      "previewDurationMs": 36000
+    },
+    {
+      "slug": "prados",
+      "title": "PraDos",
+      "label": "prados.org.ua",
+      "href": "https://prados.org.ua",
+      "description": "Website for a Ukrainian non-profit organization that provides legal help to Ukrainians living abroad.",
+      "category": "Website",
+      "group": "websites",
+      "tags": ["Non-profit", "Legal help", "Information site"],
+      "previewImage": "/images/portfolio-details/prados.webp",
+      "previewDurationMs": 22000
+    },
+    {
+      "slug": "disk-catalog",
+      "title": "Disk Catalog",
+      "label": "disk-catalog-488612.web.app",
+      "href": "https://disk-catalog-488612.web.app",
+      "description": "PWA catalog for DVD and audio collections with barcode scanning and mobile search across the library.",
+      "category": "Web app",
+      "group": "webApps",
+      "tags": ["PWA", "Barcode scanning", "Mobile-first"],
+      "previewImage": "/images/portfolio-details/disk-catalog.webp",
+      "previewDurationMs": 20000
+    },
+    {
+      "slug": "mega-pdf-compressor",
+      "title": "MEGA PDF Compressor",
+      "label": "mega-pdf-compressor-en.up.railway.app",
+      "href": "https://mega-pdf-compressor-en.up.railway.app",
+      "description": "Web app for batch PDF compression from local folders or MEGA cloud storage using the iLovePDF API.",
+      "category": "Web app",
+      "group": "webApps",
+      "tags": ["PDF tools", "Cloud integration", "Batch processing"],
+      "previewImage": "/images/portfolio-details/mega-pdf-compressor.webp",
+      "previewDurationMs": 21000
+    },
+    {
+      "slug": "gdpr-scanner",
+      "title": "GDPR Scanner",
+      "label": "WordPress plugin",
+      "description": "WordPress plugin concept for scanning websites for GDPR-related elements and helping with a quick privacy compliance review.",
+      "category": "WP plugin",
+      "group": "wpPlugins",
+      "tags": ["WordPress", "Privacy", "Compliance"]
+    },
+    {
+      "slug": "planfix-reminder",
+      "title": "PlanFix Reminder",
+      "label": "Desktop app",
+      "description": "Desktop automation tool that sends task reminders from PlanFix to WhatsApp, reducing manual follow-up work.",
+      "category": "CRM / Automation",
+      "group": "automation",
+      "tags": ["Automation", "PlanFix", "WhatsApp"]
+    }
+  ]
+}

@@ -1,10 +1,4 @@
-import Link from 'next/link'
-
-export type LegalSection = {
-  title: string
-  paragraphs?: string[]
-  items?: string[]
-}
+import type { LegalSection } from '@/types/content'
 
 type LegalPageContentProps = {
   updatedLabel: string

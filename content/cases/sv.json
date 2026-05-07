@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "title": "Portfolio",
+    "metaTitle": "Portfolio: webbplatser, appar och automation",
+    "description": "Ett urval av webbplatser, webbappar och automationsprojekt som jag har byggt för kunder och egna produkter.",
+    "metaDescription": "Se ett urval av webbplatser, webbappar, WordPress-plugins och automatiseringsprojekt som jag har byggt för kunder och egna produkter."
+  },
+  "eyebrow": "Utvalda projekt",
+  "title": "Webbplatser, webbappar och automation jag har byggt",
+  "description": "Här ser du konkreta exempel på mitt arbete — från kundwebbplatser och webbappar till WordPress-plugins och automatiseringsverktyg. Varje case visar typ av projekt, kort beskrivning och länk när projektet är publikt.",
+  "filters": {
+    "websites": "Webbplatser",
+    "webApps": "Webbappar",
+    "wpPlugins": "WP-plugins",
+    "automation": "Automatisering"
+  },
+  "actions": {
+    "openProject": "Visa projekt",
+    "linkComingSoon": "Länk kommer snart",
+    "needSomethingSimilar": "Jag vill ha något liknande"
+  },
+  "projects": [
+    {
+      "slug": "interpol-check",
+      "title": "Interpol Check",
+      "label": "interpol-check.me",
+      "href": "https://interpol-check.me",
+      "description": "Landningssida fokuserad på leadgenerering: INTERPOL-kontroller, regional prissättning och ett tydligt flöde för klientförfrågningar.",
+      "category": "Webbplats",
+      "group": "websites",
+      "tags": ["Juridiska tjänster", "Landningssida", "Leadgenerering"],
+      "previewImage": "/images/portfolio-details/interpol-check-me.webp",
+      "previewDurationMs": 36000
+    },
+    {
+      "slug": "status-law",
+      "title": "Status Law",
+      "label": "status.law",
+      "href": "https://status.law",
+      "description": "Företagswebbplats för en juristbyrå med tjänstepresentation, förtroendeskapande struktur och tydliga kontaktvägar för nya klienter.",
+      "category": "Webbplats",
+      "group": "websites",
+      "tags": ["Företagswebbplats", "Juristbyrå", "Förtroende"],
+      "previewImage": "/images/portfolio-details/status-law.webp",
+      "previewDurationMs": 18000
+    },
+    {
+      "slug": "portfolio",
+      "title": "Portfolio",
+      "label": "ptolga.github.io",
+      "href": "https://ptolga.github.io",
+      "description": "Tvåspråkig personlig portfolio med projektfiltrering och PDF-CV — utformad för att presentera tjänster, kompetens och färdiga arbeten tydligt.",
+      "category": "Webbplats",
+      "group": "websites",
+      "tags": ["Portfolio", "Tvåspråkig", "PDF-CV"],
+      "previewImage": "/images/portfolio-details/ptolga-github.webp",
+      "previewDurationMs": 36000
+    },
+    {
+      "slug": "prados",
+      "title": "PraDos",
+      "label": "prados.org.ua",
+      "href": "https://prados.org.ua",
+      "description": "Webbplats för en ukrainsk ideell organisation som erbjuder juridisk hjälp till ukrainare som bor utomlands.",
+      "category": "Webbplats",
+      "group": "websites",
+      "tags": ["Ideell organisation", "Juridisk hjälp", "Informationssajt"],
+      "previewImage": "/images/portfolio-details/prados.webp",
+      "previewDurationMs": 22000
+    },
+    {
+      "slug": "disk-catalog",
+      "title": "Disk Catalog",
+      "label": "disk-catalog-488612.web.app",
+      "href": "https://disk-catalog-488612.web.app",
+      "description": "PWA-katalog för DVD- och ljudsamlingar med streckkodsskanning och mobilsökning i hela biblioteket.",
+      "category": "Webbapp",
+      "group": "webApps",
+      "tags": ["PWA", "Streckkodsskanning", "Mobil först"],
+      "previewImage": "/images/portfolio-details/disk-catalog.webp",
+      "previewDurationMs": 20000
+    },
+    {
+      "slug": "mega-pdf-compressor",
+      "title": "MEGA PDF Compressor",
+      "label": "mega-pdf-compressor-en.up.railway.app",
+      "href": "https://mega-pdf-compressor-en.up.railway.app",
+      "description": "Webbapp för batchkomprimering av PDF-filer från lokala mappar eller MEGA-lagring med hjälp av iLovePDF API.",
+      "category": "Webbapp",
+      "group": "webApps",
+      "tags": ["PDF-verktyg", "Molnintegration", "Batchbearbetning"],
+      "previewImage": "/images/portfolio-details/mega-pdf-compressor.webp",
+      "previewDurationMs": 21000
+    },
+    {
+      "slug": "gdpr-scanner",
+      "title": "GDPR Scanner",
+      "label": "WordPress-plugin",
+      "description": "WordPress-pluginkoncept för att skanna webbplatser efter GDPR-relaterade element och hjälpa till med en snabb integritetsgranskning.",
+      "category": "WP-plugin",
+      "group": "wpPlugins",
+      "tags": ["WordPress", "Integritet", "Efterlevnad"]
+    },
+    {
+      "slug": "planfix-reminder",
+      "title": "PlanFix Reminder",
+      "label": "Desktopapp",
+      "description": "Desktopverktyg för automation som skickar uppgiftspåminnelser från PlanFix till WhatsApp och minskar manuellt uppföljningsarbete.",
+      "category": "CRM / Automatisering",
+      "group": "automation",
+      "tags": ["Automatisering", "PlanFix", "WhatsApp"]
+    }
+  ]
+}
