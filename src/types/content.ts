@@ -8,6 +8,7 @@ export type BlogPageContent = {
   readMoreLabel: string
   backLabel: string
   publishedLabel: string
+  ctaLabel: string
 }
 
 export type BlogPostFrontmatter = {

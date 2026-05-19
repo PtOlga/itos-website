@@ -7,5 +7,6 @@
   "emptyMessage": "The blog is under construction. I'm preparing useful articles — check back soon.",
   "readMoreLabel": "Read article",
   "backLabel": "Back to blog",
-  "publishedLabel": "Published"
+  "publishedLabel": "Published",
+  "ctaLabel": "Let's discuss your idea"
 }

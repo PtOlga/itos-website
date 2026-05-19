@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { locale, slug } = await params
   const typedLocale = locale as Locale
+  const contactHref = getLocalizedPath('/contact', typedLocale)
   const [post, pageContent] = await Promise.all([
     getBlogPostBySlug(typedLocale, slug),
     getBlogPageContent(typedLocale),
@@ -92,9 +93,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           ) : null}
 
           <div
-            className='space-y-5 text-sm leading-7 text-SlateBlue dark:text-gray md:text-base'
+            className='text-sm leading-7 text-SlateBlue dark:text-gray md:text-base [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:uppercase [&_h2]:tracking-[0.04em] [&_h2]:text-secondary dark:[&_h2]:text-white [&_p]:my-4 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:my-2 [&_hr]:my-8 [&_hr]:border-BorderLine dark:[&_hr]:border-dark_border'
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
+
+          <div className='mt-10 border-t border-BorderLine pt-8 dark:border-dark_border'>
+            <Link
+              href={contactHref}
+              className='inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-darkprimary'
+            >
+              {pageContent.ctaLabel}
+            </Link>
+          </div>
         </article>
       </div>
     </section>
