@@ -108,7 +108,9 @@
       "description": "Desktopverktyg för automation som skickar uppgiftspåminnelser från PlanFix till WhatsApp och minskar manuellt uppföljningsarbete.",
       "category": "CRM / Automatisering",
       "group": "automation",
-      "tags": ["Automatisering", "PlanFix", "WhatsApp"]
+      "tags": ["Automatisering", "PlanFix", "WhatsApp"],
+      "previewImage": "/images/portfolio-details/planfix_reminder_help.webp",
+      "previewDurationMs": 22000
     }
   ]
 }
