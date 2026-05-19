@@ -73,10 +73,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p className='text-sm text-SlateBlue dark:text-gray'>
               {pageContent.publishedLabel}: {formatPostDate(post.date, typedLocale)}
             </p>
-            <h1 className='mt-3 text-3xl font-semibold text-secondary dark:text-white md:text-4xl'>
+            <h1 className='mt-3 max-w-3xl text-secondary dark:text-white'>
               {post.title}
             </h1>
-            <p className='mt-4 text-base leading-7 text-SlateBlue dark:text-gray md:text-lg'>
+            <p className='mt-6 max-w-3xl text-base font-normal leading-7 text-SlateBlue dark:text-darktext md:text-lg'>
               {post.excerpt}
             </p>
           </div>
@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           ) : null}
 
           <div
-            className='text-sm leading-7 text-SlateBlue dark:text-gray md:text-base [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:uppercase [&_h2]:tracking-[0.04em] [&_h2]:text-secondary dark:[&_h2]:text-white [&_p]:my-4 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:my-2 [&_hr]:my-8 [&_hr]:border-BorderLine dark:[&_hr]:border-dark_border'
+            className='blog-details text-base font-normal leading-7 md:text-lg'
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
 
