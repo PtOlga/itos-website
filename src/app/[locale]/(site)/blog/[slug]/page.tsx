@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import { locales, type Locale } from '@/i18n/config'
-import { getLocalizedPath } from '@/utils/localePath'
+import { getLocalizedPath, getPathnameForLocale } from '@/utils/localePath'
 import { getBlogPageContent, getBlogPostBySlug, getBlogStaticSlugs } from '@/lib/content/blog'
 
 type BlogPostPageProps = {
@@ -55,6 +55,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   ])
 
   if (!post) {
+    const requestedPath = `/blog/${slug}`
+    const localizedPath = getPathnameForLocale(requestedPath, typedLocale)
+
+    if (localizedPath !== requestedPath) {
+      redirect(getLocalizedPath(localizedPath, typedLocale))
+    }
+
     notFound()
   }
 
