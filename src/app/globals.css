@@ -180,6 +180,10 @@
   @apply font-bold dark:text-white;
 }
 
+.blog-details a {
+  @apply font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-darkprimary dark:text-LightApricot dark:decoration-LightApricot/50 dark:hover:text-white;
+}
+
 .blog-details ul {
   @apply mb-8 list-inside list-disc space-y-3 text-SlateBlue dark:text-darktext;
 }
