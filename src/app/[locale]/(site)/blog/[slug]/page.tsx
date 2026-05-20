@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <p className='text-sm text-SlateBlue dark:text-gray'>
               {pageContent.publishedLabel}: {formatPostDate(post.date, typedLocale)}
             </p>
-            <h1 className='mt-3 max-w-3xl text-secondary dark:text-white'>
+            <h1 className='mt-3 max-w-3xl text-primary dark:text-white'>
               {post.title}
             </h1>
             <p className='mt-6 max-w-3xl text-base font-normal leading-7 text-SlateBlue dark:text-darktext md:text-lg'>

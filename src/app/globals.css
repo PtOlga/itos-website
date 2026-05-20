@@ -193,15 +193,36 @@
 }
 
 .blog-details h1 {
-  @apply mb-8 text-3xl font-bold text-secondary dark:text-white sm:text-4xl md:text-[40px] leading-[3rem];
+  @apply mb-8 text-3xl font-bold sm:text-4xl md:text-[40px] leading-[3rem];
+  color: #1358d8;
+}
+
+.dark .blog-details h1 {
+  color: #ffffff;
 }
 
 .blog-details h2 {
-  @apply mb-8 text-2xl font-bold text-secondary dark:text-white sm:text-3xl md:text-4xl;
+  @apply mb-8 text-2xl font-bold sm:text-3xl md:text-4xl;
+  color: #e07a2f;
+  border-left: 4px solid #1358d8;
+  padding-left: 1rem;
+}
+
+.dark .blog-details h2 {
+  color: #f9c78f;
+  border-left-color: #3187f4;
 }
 
 .blog-details h3 {
-  @apply mb-6 text-2xl font-bold dark:text-white sm:text-[28px] leading-[2.25rem];
+  @apply mb-6 text-2xl font-bold sm:text-[28px] leading-[2.25rem];
+  color: #1358d8;
+  border-left: 4px solid #e07a2f;
+  padding-left: 0.75rem;
+}
+
+.dark .blog-details h3 {
+  color: #3187f4;
+  border-left-color: #f9c78f;
 }
 
 /* Style.css */
