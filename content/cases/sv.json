@@ -105,10 +105,10 @@
       "slug": "planfix-reminder",
       "title": "PlanFix Reminder",
       "label": "Desktopapp",
-      "description": "Desktopverktyg för automation som skickar uppgiftspåminnelser från PlanFix till WhatsApp och minskar manuellt uppföljningsarbete.",
+      "description": "Windows-desktopapp som hämtar uppgifter från PlanFix API och visar animerade popup-notiser — med kategorisering (försenade/brådskande/aktuella), snooze-funktion och systemtray-hantering.",
       "category": "CRM / Automatisering",
       "group": "automation",
-      "tags": ["Automatisering", "PlanFix", "WhatsApp"],
+      "tags": ["Python", "Desktop", "PlanFix"],
       "previewImage": "/images/portfolio-details/planfix_reminder_help.webp",
       "previewDurationMs": 22000
     }
