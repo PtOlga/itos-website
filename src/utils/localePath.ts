@@ -7,6 +7,10 @@ const localizedBlogSlugs: Record<string, Record<Locale, string>> = {
     sv: 'vilken-webbplats-behover-du-och-behover-du-en-alls',
     en: 'what-kind-of-website-do-you-need-and-do-you-need-one-at-all',
   },
+  aiWebsiteGuide: {
+    sv: 'en-webbplats-pa-5-minuter-med-hjalp-av-ai-vad-far-du-egentligen',
+    en: 'a-website-in-5-minutes-with-ai-what-do-you-really-get',
+  },
 }
 
 function getLocalizedBlogSlug(slug: string, locale: Locale) {
