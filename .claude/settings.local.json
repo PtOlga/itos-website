@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npx tsc *)",
       "Bash(npm run *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(dir \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\public\\\\images\\\\portfolio-details\\\\\" /b)",
+      "PowerShell(Start-Process \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\itos_flyer_v42_back.html\")"
     ]
   }
 }
