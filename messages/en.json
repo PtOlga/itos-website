@@ -145,12 +145,13 @@
       "title": "Cost calculator",
       "websiteType": "Website type",
       "total": "Total",
+      "additionalHoursNote": "Additional work hours are billed at €50/hour or 550 SEK/hour.",
       "calculateOrder": "Calculate & Order"
     },
     "websiteTypes": {
       "landing": "One-page website (Landing)",
-      "multipage": "Multi-page website",
-      "store": "Online store"
+      "multipage": "Multi-page website (up to 5 pages)",
+      "store": "Online store (up to 10 pages)"
     },
     "categories": {
       "main": "Main options",
@@ -160,14 +161,14 @@
       "store": "Store"
     },
     "options": {
-      "news": "News",
+      "news": "News section",
       "catalog": "Catalog",
       "search": "Search",
       "gallery": "Photo gallery",
-      "articles": "Articles",
+      "articles": "Blog page + homepage article preview",
       "map": "Geo map (Google)",
       "faq": "Frequently asked questions (FAQ)",
-      "reviews": "Discussion / Reviews",
+      "reviews": "Customer reviews section",
       "sitemap": "Site map (XML)",
       "microformats": "Structured data for Google",
       "rss": "RSS feed",

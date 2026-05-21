@@ -145,12 +145,13 @@
       "title": "Kostnadskalkylator",
       "websiteType": "Webbplatstyp",
       "total": "Totalt",
+      "additionalHoursNote": "Ytterligare arbetstimmar debiteras med 50 euro per timme eller 550 kr per timme.",
       "calculateOrder": "Beräkna & Beställ"
     },
     "websiteTypes": {
       "landing": "Ensidig webbplats (Landing)",
-      "multipage": "Flersidig webbplats",
-      "store": "Nätbutik"
+      "multipage": "Flersidig webbplats (upp till 5 sidor)",
+      "store": "Nätbutik (upp till 10 sidor)"
     },
     "categories": {
       "main": "Huvudalternativ",
@@ -160,14 +161,14 @@
       "store": "Butik"
     },
     "options": {
-      "news": "Nyheter",
+      "news": "Nyhetssektion",
       "catalog": "Katalog",
       "search": "Sök",
       "gallery": "Fotogalleri",
-      "articles": "Artiklar",
+      "articles": "Bloggsida + artikelpreview på startsidan",
       "map": "Geokarta (Google)",
       "faq": "Vanliga frågor (FAQ)",
-      "reviews": "Diskussion / Recensioner",
+      "reviews": "Sektion med kundomdömen",
       "sitemap": "Webbplatskarta (XML)",
       "microformats": "Structured data for Google",
       "rss": "RSS-flöde",

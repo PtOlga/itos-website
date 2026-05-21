@@ -208,6 +208,9 @@ const PriceCalculator = () => {
 
           {/* Total */}
           <div className="border-t border-BorderLine dark:border-dark_border pt-8 mt-8">
+            <p className="mb-4 text-sm leading-6 text-SlateBlue dark:text-darktext md:text-base">
+              {t('calculator.additionalHoursNote')}
+            </p>
             <div className="flex items-center justify-between mb-6">
               <span className="text-2xl font-bold text-secondary dark:text-white">{t('calculator.total')}:</span>
               <span className="text-4xl font-bold text-primary">{formatPrice(calculateTotal())}</span>

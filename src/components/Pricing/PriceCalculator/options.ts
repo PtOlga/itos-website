@@ -22,13 +22,13 @@ export const projectTypes: ProjectType[] = [
   },
   {
     id: 'multipage',
-    name: 'Multi-page website',
+    name: 'Multi-page website (up to 5 pages)',
     basePrice: 990,
     basePriceSEK: 11000,
   },
   {
     id: 'store',
-    name: 'Online store',
+    name: 'Online store (up to 10 pages)',
     basePrice: 1490,
     basePriceSEK: 16200,
   },
