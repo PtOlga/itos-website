@@ -17,35 +17,35 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'landing',
     name: 'One-page website (Landing)',
-    basePrice: 280,
-    basePriceSEK: 2200,
+    basePrice: 380,
+    basePriceSEK: 4200,
   },
   {
     id: 'multipage',
     name: 'Multi-page website',
-    basePrice: 780,
-    basePriceSEK: 7900,
+    basePrice: 990,
+    basePriceSEK: 11000,
   },
   {
     id: 'store',
     name: 'Online store',
-    basePrice: 930,
-    basePriceSEK: 9700,
+    basePrice: 1490,
+    basePriceSEK: 16200,
   },
 ]
 
 export const calculatorOptions: CalculatorOption[] = [
   // Main options
-  { id: 'news', name: 'News', price: 40, priceSEK: 460, category: 'main' },
-  { id: 'catalog', name: 'Catalog', price: 180, priceSEK: 2100, category: 'main' },
-  { id: 'search', name: 'Search', price: 100, priceSEK: 1150, category: 'main' },
+  { id: 'news', name: 'News section', price: 80, priceSEK: 900, category: 'main' },
+  { id: 'catalog', name: 'Catalog', price: 250, priceSEK: 2700, category: 'main' },
+  { id: 'search', name: 'Search', price: 150, priceSEK: 1700, category: 'main' },
   { id: 'gallery', name: 'Photo gallery', price: 160, priceSEK: 1850, category: 'main' },
-  { id: 'articles', name: 'Articles', price: 100, priceSEK: 1150, category: 'main' },
-  { id: 'map', name: 'Geo map (Google)', price: 60, priceSEK: 690, category: 'main' },
+  { id: 'articles', name: 'Blog page + homepage article preview', price: 150, priceSEK: 1650, category: 'main' },
+  { id: 'map', name: 'Geo map (Google)', price: 60, priceSEK: 650, category: 'main' },
 
   // Interactive communication
   { id: 'faq', name: 'Frequently asked questions (FAQ)', price: 60, priceSEK: 690, category: 'communication' },
-  { id: 'reviews', name: 'Discussion / Reviews', price: 50, priceSEK: 580, category: 'communication' },
+  { id: 'reviews', name: 'Customer reviews section', price: 50, priceSEK: 550, category: 'communication' },
 
   // SEO functions
   { id: 'sitemap', name: 'Site map (XML)', price: 0, priceSEK: 460, category: 'seo' },
@@ -54,7 +54,7 @@ export const calculatorOptions: CalculatorOption[] = [
 
   // Additional features
   { id: 'excel-import', name: 'Import-Export price Excel', price: 140, priceSEK: 1610, category: 'additional' },
-  { id: 'multilang', name: 'Additional languages on site', price: 300, priceSEK: 3450, category: 'additional' },
+  { id: 'multilang', name: 'Additional languages on site', price: 350, priceSEK: 3800, category: 'additional' },
 
   // Store options
   { id: 'product-variants', name: 'Product variants (sizes, colors, configurations)', price: 150, priceSEK: 1730, category: 'store' },
