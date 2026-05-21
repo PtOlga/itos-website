@@ -53,8 +53,8 @@ export const calculatorOptions: CalculatorOption[] = [
   { id: 'rss', name: 'RSS feed', price: 0, priceSEK: 580, category: 'seo' },
 
   // Additional features
-  { id: 'excel-import', name: 'Import-Export price Excel', price: 140, priceSEK: 1610, category: 'additional' },
-  { id: 'multilang', name: 'Additional languages on site', price: 350, priceSEK: 3800, category: 'additional' },
+  { id: 'excel-import', name: 'Import-Export price Excel', price: 300, priceSEK: 3300, category: 'additional' },
+  { id: 'multilang', name: 'Additional languages on site', price: 550, priceSEK: 6000, category: 'additional' },
 
   // Store options
   { id: 'product-variants', name: 'Product variants (sizes, colors, configurations)', price: 150, priceSEK: 1730, category: 'store' },
