@@ -49,12 +49,10 @@ export const calculatorOptions: CalculatorOption[] = [
 
   // SEO functions
   { id: 'sitemap', name: 'Site map (XML)', price: 0, priceSEK: 460, category: 'seo' },
-  { id: 'microformats', name: 'Microformats', price: 150, priceSEK: 1730, category: 'seo' },
+  { id: 'microformats', name: 'Structured data for Google', price: 150, priceSEK: 1730, category: 'seo' },
   { id: 'rss', name: 'RSS feed', price: 0, priceSEK: 580, category: 'seo' },
 
   // Additional features
-  { id: 'auto-import', name: 'Auto-import articles from internet', price: 140, priceSEK: 1610, category: 'additional' },
-  { id: 'ads', name: 'Advertising rotation (text, banners, links)', price: 90, priceSEK: 1040, category: 'additional' },
   { id: 'excel-import', name: 'Import-Export price Excel', price: 140, priceSEK: 1610, category: 'additional' },
   { id: 'multilang', name: 'Additional languages on site', price: 300, priceSEK: 3450, category: 'additional' },
 
