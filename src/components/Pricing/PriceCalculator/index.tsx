@@ -70,6 +70,10 @@ const PriceCalculator = () => {
     return isSEK ? `${amount.toLocaleString('sv-SE')} kr` : `€${amount}`
   }
 
+  const getOptionPrice = (option: CalculatorOption) => {
+    return isSEK ? option.priceSEK : option.price
+  }
+
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
@@ -187,9 +191,11 @@ const PriceCalculator = () => {
                         className="w-5 h-5 text-primary rounded"
                       />
                       <span className="text-base text-secondary dark:text-white flex-1">{t(`options.${optionTranslationKey[option.id]}`)}</span>
-                      <span className="text-base font-bold text-primary">
-                        {formatPrice(isSEK ? option.priceSEK : option.price)}
-                      </span>
+                      {getOptionPrice(option) > 0 ? (
+                        <span className="text-base font-bold text-primary">
+                          {formatPrice(getOptionPrice(option))}
+                        </span>
+                      ) : null}
                     </label>
                   ))}
                 </div>

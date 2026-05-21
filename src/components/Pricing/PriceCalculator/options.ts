@@ -17,19 +17,19 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'landing',
     name: 'One-page website (Landing)',
-    basePrice: 190,
+    basePrice: 280,
     basePriceSEK: 2200,
   },
   {
     id: 'multipage',
     name: 'Multi-page website',
-    basePrice: 690,
+    basePrice: 780,
     basePriceSEK: 7900,
   },
   {
     id: 'store',
     name: 'Online store',
-    basePrice: 840,
+    basePrice: 930,
     basePriceSEK: 9700,
   },
 ]
@@ -48,9 +48,9 @@ export const calculatorOptions: CalculatorOption[] = [
   { id: 'reviews', name: 'Discussion / Reviews', price: 50, priceSEK: 580, category: 'communication' },
 
   // SEO functions
-  { id: 'sitemap', name: 'Site map (XML)', price: 40, priceSEK: 460, category: 'seo' },
+  { id: 'sitemap', name: 'Site map (XML)', price: 0, priceSEK: 460, category: 'seo' },
   { id: 'microformats', name: 'Microformats', price: 150, priceSEK: 1730, category: 'seo' },
-  { id: 'rss', name: 'RSS feed', price: 50, priceSEK: 580, category: 'seo' },
+  { id: 'rss', name: 'RSS feed', price: 0, priceSEK: 580, category: 'seo' },
 
   // Additional features
   { id: 'auto-import', name: 'Auto-import articles from internet', price: 140, priceSEK: 1610, category: 'additional' },
