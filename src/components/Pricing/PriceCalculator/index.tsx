@@ -117,7 +117,10 @@ const PriceCalculator = () => {
   }
 
   const getOptionsByCategory = (category: CalculatorOption['category']) => {
-    return calculatorOptions.filter((option) => option.category === category)
+    return calculatorOptions.filter((option) => {
+      if (option.category !== category) return false
+      return getOptionPrice(option) > 0
+    })
   }
 
   const shouldShowCategory = (category: CalculatorOption['category']) => {
