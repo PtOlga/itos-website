@@ -134,12 +134,16 @@
     "description": "Use the calculator below to see the project price based on your requirements",
     "metaDescription": "Estimate the cost of your website project and send a request for a tailored quote based on your goals, features, and requirements.",
     "steps": {
-      "step1Title": "Check domain",
-      "step1Desc": "Check domain for availability",
-      "step2Title": "Template selection",
-      "step2Desc": "Select template in \"design\" section or any other",
-      "step3Title": "Options selection",
-      "step3Desc": "Select necessary CMS options in calculator below"
+      "step1Title": "Requirements and setup",
+      "step1Desc": "We discuss your goals, site structure, and required features. If needed, I help with domain and hosting.",
+      "step2Title": "Price, timeline, and prepayment",
+      "step2Desc": "We agree on the price and timeline. After confirmation, a 50% upfront payment is made.",
+      "step3Title": "Development and review",
+      "step3Desc": "I build the website and show you a finished version for review.",
+      "step4Title": "Final payment and launch",
+      "step4Desc": "After approval, the remaining 50% is paid and the website is published.",
+      "step5Title": "One month of support",
+      "step5Desc": "For one month after launch, I answer questions and help with basic support."
     },
     "calculator": {
       "title": "Cost calculator",

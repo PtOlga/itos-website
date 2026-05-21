@@ -134,12 +134,16 @@
     "description": "Använd kalkylatorn nedan för att se projektpriset baserat på dina krav",
     "metaDescription": "Beräkna kostnaden för ditt webbprojekt och skicka en förfrågan för en offert anpassad efter mål, funktioner och behov.",
     "steps": {
-      "step1Title": "Kontrollera domän",
-      "step1Desc": "Kontrollera domäntillgänglighet",
-      "step2Title": "Mallval",
-      "step2Desc": "Välj mall i \"design\"-sektionen eller någon annan",
-      "step3Title": "Alternativval",
-      "step3Desc": "Välj nödvändiga CMS-alternativ i kalkylatorn nedan"
+      "step1Title": "Krav och förberedelser",
+      "step1Desc": "Vi går igenom mål, struktur och funktioner. Vid behov hjälper jag till med domän och webbhotell.",
+      "step2Title": "Pris, tidsplan och förskott",
+      "step2Desc": "Vi kommer överens om pris och tidsplan. Efter godkännande betalas 50 % i förskott.",
+      "step3Title": "Utveckling och genomgång",
+      "step3Desc": "Jag bygger webbplatsen och visar en färdig version för granskning.",
+      "step4Title": "Slutbetalning och lansering",
+      "step4Desc": "Efter godkännande betalas resterande 50 %, därefter publiceras webbplatsen.",
+      "step5Title": "En månads support",
+      "step5Desc": "Under en månad efter lansering svarar jag på frågor och hjälper till med grundläggande support."
     },
     "calculator": {
       "title": "Kostnadskalkylator",
