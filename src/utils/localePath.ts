@@ -11,6 +11,10 @@ const localizedBlogSlugs: Record<string, Record<Locale, string>> = {
     sv: 'en-webbplats-pa-5-minuter-med-hjalp-av-ai-vad-far-du-egentligen',
     en: 'a-website-in-5-minutes-with-ai-what-do-you-really-get',
   },
+  cmsGuide: {
+    sv: 'behover-din-webbplats-ett-cms',
+    en: 'does-your-website-need-a-cms',
+  },
 }
 
 function getLocalizedBlogSlug(slug: string, locale: Locale) {
