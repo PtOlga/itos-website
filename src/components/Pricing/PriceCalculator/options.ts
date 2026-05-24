@@ -17,8 +17,8 @@ export const projectTypes: ProjectType[] = [
   {
     id: 'landing',
     name: 'One-page website (Landing)',
-    basePrice: 380,
-    basePriceSEK: 4200,
+    basePrice: 450,
+    basePriceSEK: 5000,
   },
   {
     id: 'multipage',
