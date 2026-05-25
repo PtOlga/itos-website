@@ -18,7 +18,7 @@ const Counter = () => {
         <div className='flex flex-wrap items-center md:justify-between justify-center md:gap-0 gap-9'>
           {items.map((item, index) => (
             <div
-              key={index}
+              key={item.key}
               className='flex flex-col items-center gap-4'
               data-aos='fade-up'
               data-aos-delay={`${index * 200}`}

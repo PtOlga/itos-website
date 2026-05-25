@@ -34,8 +34,8 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       </Link>
       {submenuOpen && item.submenu && (
         <div className="bg-white dark:bg-darkmode p-2 w-full">
-          {item.submenu.map((subItem, index) => (
-            <Link key={index} href={getLocalizedPath(subItem.href, locale)} className={`block py-2 px-3 text-gray-500 hover:bg-gray-200 ${isPathActive(path, subItem.href) ? 'text-primary!' : null}`}>
+          {item.submenu.map((subItem) => (
+            <Link key={subItem.href} href={getLocalizedPath(subItem.href, locale)} className={`block py-2 px-3 text-gray-500 hover:bg-gray-200 ${isPathActive(path, subItem.href) ? 'text-primary!' : null}`}>
               {subItem.label}
             </Link>
           ))}

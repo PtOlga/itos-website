@@ -48,11 +48,8 @@ const Header: React.FC = () => {
   }, [handleClickOutside])
 
   useEffect(() => {
-    if (navbarOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    document.body.style.overflow = navbarOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [navbarOpen])
 
   return (
@@ -75,8 +72,8 @@ const Header: React.FC = () => {
             />
           </Link>
           <ul className='hidden lg:flex grow items-center justify-center gap-6'>
-            {headerData.map((item, index) => (
-              <HeaderLink key={index} item={item} />
+            {headerData.map((item) => (
+              <HeaderLink key={item.href} item={item} />
             ))}
           </ul>
           <div className='flex items-center xl:gap-4 lg:gap-2 gap-2'>
@@ -147,8 +144,8 @@ const Header: React.FC = () => {
             </button>
           </div>
           <nav className='flex flex-col items-start p-4'>
-            {headerData.map((item, index) => (
-              <MobileHeaderLink key={index} item={item} />
+            {headerData.map((item) => (
+              <MobileHeaderLink key={item.href} item={item} />
             ))}
           </nav>
         </div>

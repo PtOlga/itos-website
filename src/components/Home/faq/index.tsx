@@ -23,7 +23,7 @@ const FaqQuestion = () => {
 
             {items.map((item, index) => (
               <div
-                key={index}
+                key={item.question}
                 className={`accordion__item ${
                   activeIndex === index ? 'accordion__item--active' : ''
                 }`}>
