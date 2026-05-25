@@ -113,11 +113,11 @@ const PriceCalculator = ({ hideSteps = false }: PriceCalculatorProps) => {
       if (data.url) {
         window.location.href = data.url
       } else {
-        alert(t('errors.checkout'))
+        toast.error(t('errors.checkout'))
       }
     } catch (error) {
       console.error('Checkout error:', error)
-      alert(t('errors.checkout'))
+      toast.error(t('errors.checkout'))
     } finally {
       setIsLoading(false)
     }
