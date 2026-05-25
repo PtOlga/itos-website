@@ -198,6 +198,77 @@
     },
     "errors": {
       "checkout": "Something went wrong. Please try again."
+    },
+    "page": {
+      "label": "Pricing",
+      "heading": "Website development",
+      "subheading": "Fixed price. No hidden fees."
+    },
+    "packages": {
+      "from": "from",
+      "mostPopular": "Most popular",
+      "getStarted": "Get started",
+      "footnote": "* Hosting and domain are not included and billed separately.",
+      "landing": {
+        "name": "Landing Page",
+        "f1": "1 page, responsive design",
+        "f2": "Up to 6 sections (hero, services, about, contacts, etc.)",
+        "f3": "Contact form",
+        "f4": "Basic SEO setup (meta tags)",
+        "f5": "3 revision rounds included"
+      },
+      "business": {
+        "name": "Business Website",
+        "f1": "Up to 5 pages, responsive design",
+        "f2": "Contact form + Google Maps",
+        "f3": "SEO setup + Google Analytics",
+        "f4": "Mobile optimization",
+        "f5": "3 revision rounds included"
+      },
+      "ecommerce": {
+        "name": "E-commerce",
+        "f1": "Online store with product catalog",
+        "f2": "Payment system integration",
+        "f3": "Order management",
+        "f4": "SEO setup + analytics",
+        "f5": "Mobile optimization",
+        "f6": "3 revision rounds included"
+      }
+    },
+    "calculatorToggle": "Want to estimate the final cost? Configure your project →",
+    "hourly": {
+      "title": "Other services",
+      "subtitle": "Minimum 1 hour. Billed in 15-minute increments.",
+      "s1": {
+        "name": "Website maintenance",
+        "desc": "Updates, backups, security, performance monitoring, minor content edits"
+      },
+      "s2": {
+        "name": "Web development",
+        "desc": "Custom pages, redesign, copywriting, speed and mobile optimization"
+      },
+      "s3": {
+        "name": "Forms & integrations",
+        "desc": "Complex forms, CRM and payment integrations, analytics setup, site migration"
+      },
+      "s4": {
+        "name": "Automation & AI",
+        "desc": "Business scripts, AI tool integration, workflow automation, internal tools"
+      },
+      "s5": {
+        "name": "SEO & advertising",
+        "desc": "Google Ads, SEO promotion, competitor analysis, social media content"
+      },
+      "s6": {
+        "name": "Consulting & strategy",
+        "desc": "IT strategy, tool selection, digital presence planning"
+      }
+    },
+    "infoStrip": {
+      "minimumOrder": { "label": "Minimum order", "value": "1 hour" },
+      "timeTracking": { "label": "Time tracking", "value": "15-min increments" },
+      "payment": { "label": "Payment", "value": "Within 7 days" },
+      "fixedPrice": { "label": "Fixed price", "value": "Available on request" }
     }
   },
   "counter": {

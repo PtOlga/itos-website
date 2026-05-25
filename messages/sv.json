@@ -198,6 +198,77 @@
     },
     "errors": {
       "checkout": "Något gick fel. Försök igen."
+    },
+    "page": {
+      "label": "Priser",
+      "heading": "Webbutveckling",
+      "subheading": "Fast pris. Inga dolda avgifter."
+    },
+    "packages": {
+      "from": "från",
+      "mostPopular": "Mest populär",
+      "getStarted": "Kom igång",
+      "footnote": "* Hosting och domän ingår inte och faktureras separat.",
+      "landing": {
+        "name": "Landningssida",
+        "f1": "1 sida, responsiv design",
+        "f2": "Upp till 6 sektioner (hero, tjänster, om oss, kontakt, etc.)",
+        "f3": "Kontaktformulär",
+        "f4": "Grundläggande SEO-inställning (meta-taggar)",
+        "f5": "3 korrekturrundar ingår"
+      },
+      "business": {
+        "name": "Företagswebbplats",
+        "f1": "Upp till 5 sidor, responsiv design",
+        "f2": "Kontaktformulär + Google Maps",
+        "f3": "SEO-inställning + Google Analytics",
+        "f4": "Mobiloptimering",
+        "f5": "3 korrekturrundar ingår"
+      },
+      "ecommerce": {
+        "name": "E-handel",
+        "f1": "Nätbutik med produktkatalog",
+        "f2": "Integration av betalningssystem",
+        "f3": "Orderhantering",
+        "f4": "SEO-inställning + analys",
+        "f5": "Mobiloptimering",
+        "f6": "3 korrekturrundar ingår"
+      }
+    },
+    "calculatorToggle": "Vill du beräkna slutpriset? Konfigurera ditt projekt →",
+    "hourly": {
+      "title": "Övriga tjänster",
+      "subtitle": "Minimum 1 timme. Debiteras i 15-minutersintervall.",
+      "s1": {
+        "name": "Webbplatsunderhåll",
+        "desc": "Uppdateringar, säkerhetskopior, säkerhet, prestandaövervakning, mindre innehållsredigeringar"
+      },
+      "s2": {
+        "name": "Webbutveckling",
+        "desc": "Anpassade sidor, redesign, copywriting, hastighets- och mobiloptimering"
+      },
+      "s3": {
+        "name": "Formulär & integrationer",
+        "desc": "Komplexa formulär, CRM- och betalningsintegrationer, analysinställningar, webbplatsmigrering"
+      },
+      "s4": {
+        "name": "Automatisering & AI",
+        "desc": "Affärsskript, AI-verktygsintegration, arbetsflödesautomation, interna verktyg"
+      },
+      "s5": {
+        "name": "SEO & annonsering",
+        "desc": "Google Ads, SEO-marknadsföring, konkurrentanalys, innehåll för sociala medier"
+      },
+      "s6": {
+        "name": "Konsultation & strategi",
+        "desc": "IT-strategi, verktygsval, planering av digital närvaro"
+      }
+    },
+    "infoStrip": {
+      "minimumOrder": { "label": "Minimibeställning", "value": "1 timme" },
+      "timeTracking": { "label": "Tidsspårning", "value": "15-minutersintervall" },
+      "payment": { "label": "Betalning", "value": "Inom 7 dagar" },
+      "fixedPrice": { "label": "Fast pris", "value": "Tillgängligt på begäran" }
     }
   },
   "counter": {
