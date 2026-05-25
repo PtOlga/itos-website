@@ -10,9 +10,9 @@ import Lottie from 'lottie-react'
 import contactAnimation from '../../../../public/animations/contact-us-itos.json'
 import emailjs from '@emailjs/browser'
 
-const SERVICE_ID = 'service_ji0tfkm'
-const TEMPLATE_ID = 'template_fzdqm4x'
-const PUBLIC_KEY = 'u3MskHaERL6uivJcK'
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ''
 
 const ContactForm = () => {
   const t = useTranslations('contact')

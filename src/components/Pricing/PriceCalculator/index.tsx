@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
+import toast from 'react-hot-toast'
 import { projectTypes, calculatorOptions } from './options'
 import type { ProjectType, CalculatorOption } from './options'
 

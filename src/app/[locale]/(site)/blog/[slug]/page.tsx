@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
 import type { Metadata } from 'next'
+import DOMPurify from 'isomorphic-dompurify'
 import { locales, type Locale } from '@/i18n/config'
 import { getLocalizedPath, getPathnameForLocale } from '@/utils/localePath'
 import { getBlogPageContent, getBlogPostBySlug, getBlogStaticSlugs } from '@/lib/content/blog'
@@ -101,7 +102,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <div
             className='blog-details text-base font-normal leading-7 md:text-lg'
-            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.contentHtml) }}
           />
 
           <div className='mt-10 border-t border-BorderLine pt-8 dark:border-dark_border'>

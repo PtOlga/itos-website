@@ -4,7 +4,7 @@ import './globals.css'
 import { DENIED_ANALYTICS_CONSENT } from '@/utils/consent'
 
 const dmsans = DM_Sans({ subsets: ['latin'] })
-const AHREFS_ANALYTICS_KEY = 'TwtKVhhnWtH5kaegiFlDwg'
+const AHREFS_ANALYTICS_KEY = process.env.NEXT_PUBLIC_AHREFS_KEY ?? ''
 const CONSENT_DEFAULT_SCRIPT = `window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}window.gtag=window.gtag||gtag;window.gtag('consent','default',${JSON.stringify({ ...DENIED_ANALYTICS_CONSENT, wait_for_update: 500 })});`
 
 export default async function RootLayout({

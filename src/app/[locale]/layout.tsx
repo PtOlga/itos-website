@@ -11,7 +11,7 @@ import { locales, type Locale } from '@/i18n/config';
 import { Metadata } from 'next';
 import ConsentManager from '@/components/Consent/ConsentManager'
 
-const GOOGLE_TAG_ID = "G-NYPHMV09ZH";
+const GOOGLE_TAG_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID ?? ''
 
 export const metadata: Metadata = {
   title: {
