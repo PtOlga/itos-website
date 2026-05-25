@@ -4,6 +4,7 @@ import { getTranslations } from 'next-intl/server'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import {
+  ArrowRight,
   Check,
   Wrench,
   Code2,
@@ -95,8 +96,8 @@ const Page = () => {
             {t('page.heading')}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {packagesMeta.map((pkg) => {
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {packagesMeta.map((pkg, index) => {
               // Build translated feature list explicitly to keep TS happy
               const features: string[] = pkg.id === 'landing'
                 ? [
@@ -132,12 +133,18 @@ const Page = () => {
               return (
                 <div
                   key={pkg.id}
-                  className={`relative flex flex-col bg-white dark:bg-darklight rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow ${
+                  data-aos="fade-up"
+                  data-aos-delay={`${120 + index * 120}`}
+                  data-aos-duration="800"
+                  className={`group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(240,123,42,0.18)] dark:bg-darklight ${
                     pkg.popular
-                      ? 'border-2 border-primary'
-                      : 'border border-BorderLine dark:border-dark_border'
+                      ? 'border-2 border-primary hover:border-[#F07B2A]'
+                      : 'border border-BorderLine hover:border-[#F07B2A]/60 dark:border-dark_border dark:hover:border-[#F07B2A]/60'
                   }`}
                 >
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
                   {/* Most popular badge */}
                   {pkg.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
@@ -150,14 +157,17 @@ const Page = () => {
                     </div>
                   )}
 
+                  <div className="relative z-[1] flex h-full flex-col">
+                    <div className="mb-5 h-1 w-14 rounded-full bg-[#F07B2A]/65 transition-all duration-300 group-hover:w-24 group-hover:bg-[#F07B2A]" />
+
                   {/* Package name */}
-                  <h3 className="text-xl font-bold text-secondary dark:text-white mb-3 mt-2">
+                  <h3 className="mb-3 mt-2 text-xl font-bold text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D]">
                     {name}
                   </h3>
 
                   {/* Price */}
                   <div className="mb-6">
-                    <p className="text-3xl font-bold text-primary leading-tight">
+                    <p className="text-3xl font-bold leading-tight text-primary transition-transform duration-300 group-hover:translate-x-1">
                       <span className="text-sm font-normal text-SlateBlue dark:text-darktext mr-1">
                         {t('packages.from')}
                       </span>
@@ -175,7 +185,7 @@ const Page = () => {
                     {features.map((feature, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2 text-sm text-SlateBlue dark:text-darktext"
+                        className="flex items-start gap-2 text-sm text-SlateBlue transition-transform duration-300 group-hover:translate-x-1 dark:text-darktext"
                       >
                         <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                         <span>{feature}</span>
@@ -186,10 +196,14 @@ const Page = () => {
                   {/* CTA */}
                   <Link
                     href="/contact"
-                    className="btn block text-center py-3 rounded-lg font-semibold"
+                    className="btn mt-auto block rounded-lg py-3 text-center font-semibold transition-all duration-300 group-hover:shadow-[0_12px_25px_rgba(240,123,42,0.18)]"
                   >
-                    {t('packages.getStarted')}
+                    <span className="inline-flex items-center gap-2">
+                      {t('packages.getStarted')}
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
                   </Link>
+                  </div>
                 </div>
               )
             })}
@@ -218,8 +232,8 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {hourlyMeta.map(({ key, rate, rateSEK, Icon }) => {
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {hourlyMeta.map(({ key, rate, rateSEK, Icon }, index) => {
               const name = key === 's1' ? t('hourly.s1.name')
                 : key === 's2' ? t('hourly.s2.name')
                 : key === 's3' ? t('hourly.s3.name')
@@ -237,33 +251,39 @@ const Page = () => {
               return (
                 <div
                   key={key}
-                  className="flex gap-4 bg-white dark:bg-darkmode rounded-2xl p-5 border border-BorderLine dark:border-dark_border hover:shadow-md transition-shadow"
+                  data-aos="fade-up"
+                  data-aos-delay={`${120 + index * 90}`}
+                  data-aos-duration="750"
+                  className="group flex h-full min-h-[220px] flex-col rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#F07B2A]/55 hover:shadow-[0_18px_40px_rgba(240,123,42,0.14)] dark:bg-darkmode dark:border-dark_border dark:hover:border-[#F07B2A]/50"
                 >
-                  {/* Icon */}
-                  <div className="shrink-0 w-11 h-11 flex items-center justify-center rounded-xl bg-primary/10 dark:bg-primary/20">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <div className="mb-6 flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-300 group-hover:bg-[#F07B2A]/15 dark:bg-primary/20 dark:group-hover:bg-[#F07B2A]/20">
+                      <Icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-[#F07B2A]" />
+                    </div>
+
+                    <div className="shrink-0 rounded-full bg-[#FFF2E8] px-3 py-1 text-right dark:bg-[#F07B2A]/15">
+                      <span className="whitespace-nowrap text-sm font-bold text-[#C85E10] dark:text-[#FFB16D]">
+                        {rate}&nbsp;€/h
+                      </span>
+                      {isSEK && (
+                        <p className="mt-0.5 whitespace-nowrap text-[11px] text-[#C85E10]/80 dark:text-[#FFB16D]/80">
+                          {rateSEK}&nbsp;kr/h
+                        </p>
+                      )}
+                    </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-3 mb-1.5">
-                      <h3 className="font-bold text-secondary dark:text-white leading-tight">
+                  <div className="flex min-w-0 flex-1 flex-col">
+                    <div className="mb-3">
+                      <h3 className="text-lg font-bold leading-tight text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D]">
                         {name}
                       </h3>
-                      <div className="text-right shrink-0">
-                        <span className="font-bold text-primary whitespace-nowrap">
-                          {rate}&nbsp;€/h
-                        </span>
-                        {isSEK && (
-                          <p className="text-xs text-SlateBlue dark:text-darktext mt-0.5 whitespace-nowrap">
-                            {rateSEK}&nbsp;kr/h
-                          </p>
-                        )}
-                      </div>
                     </div>
-                    <p className="text-sm text-SlateBlue dark:text-darktext leading-relaxed">
+                    <p className="flex-1 text-sm leading-relaxed text-SlateBlue dark:text-darktext">
                       {desc}
                     </p>
+
+                    <div className="mt-5 h-1 w-12 rounded-full bg-primary/20 transition-all duration-300 group-hover:w-20 group-hover:bg-[#F07B2A]" />
                   </div>
                 </div>
               )

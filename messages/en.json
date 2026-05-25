@@ -237,6 +237,7 @@
       }
     },
     "calculatorToggle": "Want to estimate the final cost? Configure your project →",
+    "calculatorToggleHint": "Interactive estimate",
     "hourly": {
       "title": "Other services",
       "subtitle": "Minimum 1 hour. Billed in 15-minute increments.",
