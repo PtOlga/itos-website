@@ -93,6 +93,7 @@ const PriceCalculator = ({ hideSteps = false }: PriceCalculatorProps) => {
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(10_000),
         body: JSON.stringify({
           amount: calculateTotal(),
           currency: isSEK ? 'sek' : 'eur',
@@ -104,11 +105,13 @@ const PriceCalculator = ({ hideSteps = false }: PriceCalculatorProps) => {
         }),
       })
 
-      const data = await response.json()
-
       if (!response.ok) {
-        throw new Error(data.error || t('errors.checkout'))
+        // Parse error body only when we know it failed; ignore parse errors on error responses
+        const errData = await response.json().catch(() => ({}))
+        throw new Error((errData as { error?: string }).error || t('errors.checkout'))
       }
+
+      const data = await response.json()
 
       if (data.url) {
         window.location.href = data.url
@@ -116,8 +119,14 @@ const PriceCalculator = ({ hideSteps = false }: PriceCalculatorProps) => {
         toast.error(t('errors.checkout'))
       }
     } catch (error) {
-      console.error('Checkout error:', error)
-      toast.error(t('errors.checkout'))
+      if (error instanceof DOMException && error.name === 'TimeoutError') {
+        toast.error(t('errors.timeout'))
+      } else {
+        toast.error(error instanceof Error ? error.message : t('errors.checkout'))
+      }
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Checkout error:', error)
+      }
     } finally {
       setIsLoading(false)
     }

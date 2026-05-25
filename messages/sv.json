@@ -198,7 +198,8 @@
       "processing": "Bearbetar..."
     },
     "errors": {
-      "checkout": "Något gick fel. Försök igen."
+      "checkout": "Något gick fel. Försök igen.",
+      "timeout": "Förfrågan tog för lång tid. Kontrollera din anslutning och försök igen."
     },
     "page": {
       "label": "Priser",

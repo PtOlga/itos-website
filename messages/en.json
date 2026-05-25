@@ -198,7 +198,8 @@
       "processing": "Processing..."
     },
     "errors": {
-      "checkout": "Something went wrong. Please try again."
+      "checkout": "Something went wrong. Please try again.",
+      "timeout": "Request timed out. Please check your connection and try again."
     },
     "page": {
       "label": "Pricing",
