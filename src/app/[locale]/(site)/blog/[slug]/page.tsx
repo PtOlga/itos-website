@@ -106,12 +106,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* flow-root creates a block formatting context that cleanly contains the float */}
           <div className='blog-details flow-root text-base font-normal leading-7 md:text-lg'>
             {post.coverImage ? (
-              <div className='float-right ml-6 mb-4 w-36 sm:w-44 md:w-56'>
+              <div className='float-right ml-8 mb-4 w-44 sm:w-56 md:w-72 lg:w-80'>
                 <Image
                   src={post.coverImage}
                   alt={post.title}
-                  width={224}
-                  height={224}
+                  width={320}
+                  height={320}
                   className='h-auto w-full'
                   style={{ height: 'auto' }}
                 />
