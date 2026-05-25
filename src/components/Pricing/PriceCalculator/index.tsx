@@ -30,7 +30,11 @@ const optionTranslationKey: Record<string, string> = {
 
 const pricingSteps = [1, 2, 3, 4, 5] as const
 
-const PriceCalculator = () => {
+interface PriceCalculatorProps {
+  hideSteps?: boolean
+}
+
+const PriceCalculator = ({ hideSteps = false }: PriceCalculatorProps) => {
   const t = useTranslations('pricing')
   const locale = useLocale()
   const isSEK = locale === 'sv'
@@ -134,27 +138,29 @@ const PriceCalculator = () => {
     <section className="py-20 dark:bg-darkmode">
       <div className="container">
         {/* Steps */}
-        <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5">
-          {pricingSteps.map((step, index) => (
-            <div
-              key={step}
-              className="text-center"
-              data-aos="fade-up"
-              data-aos-delay={`${200 + index * 150}`}
-              data-aos-duration="1000"
-            >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white">
-                {step}
+        {!hideSteps && (
+          <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5">
+            {pricingSteps.map((step, index) => (
+              <div
+                key={step}
+                className="text-center"
+                data-aos="fade-up"
+                data-aos-delay={`${200 + index * 150}`}
+                data-aos-duration="1000"
+              >
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white">
+                  {step}
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-secondary dark:text-white">
+                  {t(`steps.step${step}Title`)}
+                </h3>
+                <p className="text-SlateBlue dark:text-darktext">
+                  {t(`steps.step${step}Desc`)}
+                </p>
               </div>
-              <h3 className="mb-2 text-xl font-bold text-secondary dark:text-white">
-                {t(`steps.step${step}Title`)}
-              </h3>
-              <p className="text-SlateBlue dark:text-darktext">
-                {t(`steps.step${step}Desc`)}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Calculator */}
         <div className="bg-white dark:bg-darklight rounded-2xl shadow-lg p-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">

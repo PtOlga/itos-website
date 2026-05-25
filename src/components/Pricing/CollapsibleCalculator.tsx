@@ -35,7 +35,7 @@ const CollapsibleCalculator = () => {
             isOpen ? 'max-h-[6000px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <PriceCalculator />
+          <PriceCalculator hideSteps />
         </div>
       </div>
     </div>

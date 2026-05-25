@@ -54,13 +54,46 @@ const Page = () => {
 
       {/* ── 1. Hero ─────────────────────────────────────────────────────── */}
       <HeroSub
-        title={t('page.heading')}
+        title={t('page.heroTitle')}
         description={t('page.subheading')}
       />
 
-      {/* ── 2. Website Packages ─────────────────────────────────────────── */}
+      {/* ── 2. Process steps ────────────────────────────────────────────── */}
+      <section className="py-16 bg-white dark:bg-darkmode">
+        <div className="container">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5">
+            {([1, 2, 3, 4, 5] as const).map((step, index) => (
+              <div key={step} className="text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white">
+                  {step}
+                </div>
+                <h3 className="mb-2 text-lg font-bold text-secondary dark:text-white">
+                  {step === 1 ? t('steps.step1Title')
+                   : step === 2 ? t('steps.step2Title')
+                   : step === 3 ? t('steps.step3Title')
+                   : step === 4 ? t('steps.step4Title')
+                   : t('steps.step5Title')}
+                </h3>
+                <p className="text-sm text-SlateBlue dark:text-darktext">
+                  {step === 1 ? t('steps.step1Desc')
+                   : step === 2 ? t('steps.step2Desc')
+                   : step === 3 ? t('steps.step3Desc')
+                   : step === 4 ? t('steps.step4Desc')
+                   : t('steps.step5Desc')}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. Website Packages ─────────────────────────────────────────── */}
       <section className="pb-20 bg-white dark:bg-darkmode">
         <div className="container">
+
+          <h2 className="text-3xl font-bold text-secondary dark:text-white text-center mb-10">
+            {t('page.heading')}
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {packagesMeta.map((pkg) => {
@@ -169,10 +202,10 @@ const Page = () => {
         </div>
       </section>
 
-      {/* ── 3. Collapsible Calculator ────────────────────────────────────── */}
+      {/* ── 4. Collapsible Calculator ────────────────────────────────────── */}
       <CollapsibleCalculator />
 
-      {/* ── 4. Hourly Services ──────────────────────────────────────────── */}
+      {/* ── 5. Hourly Services ──────────────────────────────────────────── */}
       <section className="py-16 bg-AliceBlue dark:bg-darklight">
         <div className="container">
 
@@ -239,7 +272,7 @@ const Page = () => {
         </div>
       </section>
 
-      {/* ── 5. Info Strip ───────────────────────────────────────────────── */}
+      {/* ── 6. Info Strip ───────────────────────────────────────────────── */}
       <section className="py-10 bg-white dark:bg-darkmode border-t border-BorderLine dark:border-dark_border">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
