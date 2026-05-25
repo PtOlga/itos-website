@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { Loader2 } from 'lucide-react'
 import Lottie from 'lottie-react'
 import contactAnimation from '../../../../public/animations/contact-us-itos.json'
 import emailjs from '@emailjs/browser'
@@ -95,6 +96,7 @@ const ContactForm = () => {
                       id='firstName'
                       type='text'
                       required
+                      disabled={loading}
                       value={formData.firstName}
                       onChange={handleChange}
                     />
@@ -105,6 +107,7 @@ const ContactForm = () => {
                       id='lastName'
                       type='text'
                       required
+                      disabled={loading}
                       value={formData.lastName}
                       onChange={handleChange}
                     />
@@ -119,6 +122,7 @@ const ContactForm = () => {
                       id='email'
                       type='email'
                       required
+                      disabled={loading}
                       value={formData.email}
                       onChange={handleChange}
                     />
@@ -128,6 +132,7 @@ const ContactForm = () => {
                     <Input
                       id='phone'
                       type='tel'
+                      disabled={loading}
                       value={formData.phone}
                       onChange={handleChange}
                     />
@@ -141,6 +146,7 @@ const ContactForm = () => {
                     id='message'
                     required
                     rows={5}
+                    disabled={loading}
                     placeholder={t('form.messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
@@ -158,8 +164,15 @@ const ContactForm = () => {
                   <Button
                     type='submit'
                     disabled={loading}
-                    className='bg-primary hover:bg-darkprimary mt-4 px-8 py-6'>
-                    {loading ? '...' : t('form.submit')}
+                    className='bg-primary hover:bg-darkprimary mt-4 px-8 py-6 disabled:opacity-60 disabled:cursor-not-allowed'>
+                    {loading ? (
+                      <span className='inline-flex items-center gap-2'>
+                        <Loader2 className='h-4 w-4 animate-spin' />
+                        {t('form.sending')}
+                      </span>
+                    ) : (
+                      t('form.submit')
+                    )}
                   </Button>
                 </div>
 

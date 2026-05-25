@@ -117,6 +117,7 @@
       "message": "Ditt meddelande",
       "messagePlaceholder": "Beskriv din uppgift eller fråga...",
       "submit": "Skicka meddelande",
+      "sending": "Skickar...",
       "successMessage": "Tack! Jag återkommer snart.",
       "errorMessage": "Något gick fel. Försök igen.",
       "sendAnother": "Skicka ett nytt meddelande"
