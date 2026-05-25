@@ -145,18 +145,6 @@ const Page = () => {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100" />
                   <div className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                  {/* Most popular badge */}
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                      <span
-                        className="inline-block text-white text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap"
-                        style={{ backgroundColor: '#F07B2A' }}
-                      >
-                        {t('packages.mostPopular')}
-                      </span>
-                    </div>
-                  )}
-
                   <div className="relative z-[1] flex h-full flex-col">
                     <div className="mb-5 h-1 w-14 rounded-full bg-[#F07B2A]/65 transition-all duration-300 group-hover:w-24 group-hover:bg-[#F07B2A]" />
 
@@ -171,13 +159,8 @@ const Page = () => {
                       <span className="text-sm font-normal text-SlateBlue dark:text-darktext mr-1">
                         {t('packages.from')}
                       </span>
-                      {pkg.priceEUR}&nbsp;€
+                      {isSEK ? <>{pkg.priceSEK}&nbsp;kr</> : <>{pkg.priceEUR}&nbsp;€</>}
                     </p>
-                    {isSEK && (
-                      <p className="text-sm text-SlateBlue dark:text-darktext mt-1">
-                        / {pkg.priceSEK}&nbsp;kr
-                      </p>
-                    )}
                   </div>
 
                   {/* Feature list */}
@@ -263,13 +246,8 @@ const Page = () => {
 
                     <div className="shrink-0 rounded-full bg-[#FFF2E8] px-3 py-1 text-right dark:bg-[#F07B2A]/15">
                       <span className="whitespace-nowrap text-sm font-bold text-[#C85E10] dark:text-[#FFB16D]">
-                        {rate}&nbsp;€/h
+                        {isSEK ? <>{rateSEK}&nbsp;kr/h</> : <>{rate}&nbsp;€/h</>}
                       </span>
-                      {isSEK && (
-                        <p className="mt-0.5 whitespace-nowrap text-[11px] text-[#C85E10]/80 dark:text-[#FFB16D]/80">
-                          {rateSEK}&nbsp;kr/h
-                        </p>
-                      )}
                     </div>
                   </div>
 
