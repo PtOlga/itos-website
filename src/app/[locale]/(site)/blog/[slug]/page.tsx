@@ -43,6 +43,21 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: post.coverImage
+      ? {
+          title: post.title,
+          description: post.excerpt,
+          images: [{ url: post.coverImage, width: 400, height: 400, alt: post.title }],
+        }
+      : undefined,
+    twitter: post.coverImage
+      ? {
+          card: 'summary_large_image',
+          title: post.title,
+          description: post.excerpt,
+          images: [post.coverImage],
+        }
+      : undefined,
   }
 }
 
@@ -89,21 +104,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </p>
           </div>
 
-          {post.coverImage ? (
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              width={1200}
-              height={630}
-              className='mb-8 w-full rounded-3xl border border-BorderLine object-cover dark:border-dark_border'
-              style={{ height: 'auto' }}
-            />
-          ) : null}
-
-          <div
-            className='blog-details text-base font-normal leading-7 md:text-lg'
-            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.contentHtml) }}
-          />
+          {/* flow-root creates a block formatting context that cleanly contains the float */}
+          <div className='blog-details flow-root text-base font-normal leading-7 md:text-lg'>
+            {post.coverImage ? (
+              <div className='float-right ml-6 mb-4 w-36 sm:w-44 md:w-56'>
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  width={224}
+                  height={224}
+                  className='h-auto w-full'
+                  style={{ height: 'auto' }}
+                />
+              </div>
+            ) : null}
+            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(post.contentHtml) }} />
+          </div>
 
           <div className='mt-10 border-t border-BorderLine pt-8 dark:border-dark_border'>
             <Link
