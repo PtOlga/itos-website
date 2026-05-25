@@ -1,11 +1,20 @@
 import createMiddleware from 'next-intl/middleware'
+import { NextResponse, type NextRequest } from 'next/server'
 import { defaultLocale, locales } from './i18n/config'
 
-export default createMiddleware({
+const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
   localePrefix: 'as-needed',
 })
+
+export default function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith('/.well-known/')) {
+    return NextResponse.next()
+  }
+
+  return intlMiddleware(request)
+}
 
 // Single catch-all matcher: skip static files, API routes, and Next.js internals.
 // next-intl handles locale detection at runtime — no need to enumerate locales here.
