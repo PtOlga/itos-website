@@ -22,6 +22,9 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // remark v15 and remark-html v16 are pure ESM — exclude from webpack bundle
+  // so Node.js loads them natively via dynamic import() in blog.ts
+  serverExternalPackages: ['remark', 'remark-html', 'unified'],
   images: {
     unoptimized: true,
   },

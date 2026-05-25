@@ -1,6 +1,4 @@
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
 import type { Locale } from '@/i18n/config'
 import type { BlogPageContent, BlogPost, BlogPostFrontmatter, BlogPostSummary } from '@/types/content'
 import { listContentDirectory, pathExists, readContentFile, readContentJson } from './shared'
@@ -64,7 +62,12 @@ export async function getBlogPostBySlug(locale: Locale, slug: string): Promise<B
   }
 
   const { data, content } = matter(source)
-  const processedContent = await remark().use(html).process(content)
+
+  // Dynamic imports: remark v15 and remark-html v16 are pure ESM.
+  // Using await import() lets Node.js load them as ESM even from a CJS bundle.
+  const { remark } = await import('remark')
+  const { default: remarkHtml } = await import('remark-html')
+  const processedContent = await remark().use(remarkHtml).process(content)
 
   return {
     ...mapSummary(slug, data as BlogPostFrontmatter),
