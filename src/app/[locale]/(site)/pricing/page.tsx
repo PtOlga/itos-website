@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Lightbulb,
 } from 'lucide-react'
+import HeroSub from '@/components/SharedComponent/HeroSub'
 import CollapsibleCalculator from '@/components/Pricing/CollapsibleCalculator'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -52,19 +53,10 @@ const Page = () => {
     <main className="dark:bg-darkmode">
 
       {/* ── 1. Hero ─────────────────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white dark:bg-darkmode">
-        <div className="container text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-SlateBlue dark:text-darktext mb-4">
-            {t('page.label')}
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-secondary dark:text-white mb-4">
-            {t('page.heading')}
-          </h1>
-          <p className="text-xl text-SlateBlue dark:text-darktext">
-            {t('page.subheading')}
-          </p>
-        </div>
-      </section>
+      <HeroSub
+        title={t('page.heading')}
+        description={t('page.subheading')}
+      />
 
       {/* ── 2. Website Packages ─────────────────────────────────────────── */}
       <section className="pb-20 bg-white dark:bg-darkmode">
