@@ -7,16 +7,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Loader2 } from 'lucide-react'
-import dynamic from 'next/dynamic'
-import contactAnimation from '../../../../public/animations/contact-us-itos.json'
+import Image from 'next/image'
 import emailjs from '@emailjs/browser'
-
-const Lottie = dynamic(() => import('lottie-react'), {
-  ssr: false,
-  loading: () => (
-    <div className='w-full max-w-md h-64 bg-primary/5 rounded-2xl animate-pulse' />
-  ),
-})
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''
@@ -189,12 +181,15 @@ const ContactForm = () => {
             )}
           </div>
 
-          {/* Animation — right */}
+          {/* Phone illustration — right */}
           <div className='hidden lg:flex items-center justify-center'>
-            <Lottie
-              animationData={contactAnimation}
-              loop={true}
-              className='w-full max-w-md'
+            <Image
+              src='/images/contact/phone.webp'
+              alt='Contact illustration'
+              width={600}
+              height={437}
+              className='w-full max-w-lg h-auto'
+              style={{ height: 'auto' }}
             />
           </div>
 
