@@ -103,20 +103,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </p>
           </div>
 
-          {/* flow-root creates a block formatting context that cleanly contains the float */}
-          <div className='blog-details flow-root text-base font-normal leading-7 md:text-lg'>
-            {post.coverImage ? (
-              <div className='float-right ml-8 mb-4 w-44 sm:w-56 md:w-72 lg:w-80'>
-                <Image
-                  src={post.coverImage}
-                  alt={post.title}
-                  width={320}
-                  height={320}
-                  className='h-auto w-full'
-                  style={{ height: 'auto' }}
-                />
-              </div>
-            ) : null}
+          {post.coverImage ? (
+            <div className='mb-8 flex justify-center'>
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                width={600}
+                height={600}
+                className='h-auto w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg'
+                style={{ height: 'auto' }}
+              />
+            </div>
+          ) : null}
+
+          <div className='blog-details text-base font-normal leading-7 md:text-lg'>
             <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
           </div>
 
