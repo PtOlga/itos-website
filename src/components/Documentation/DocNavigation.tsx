@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useTranslations } from "next-intl"
 
 export const DocNavigation = () => {
@@ -11,10 +11,6 @@ export const DocNavigation = () => {
     function getNavItem(item:string){
         setNavItem(item)
     }
-
-    useEffect(() => {
-     console.log(navItem);
-    },[navItem])
 
     const DocsNav = [
         {

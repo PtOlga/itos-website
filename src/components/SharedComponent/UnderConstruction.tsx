@@ -1,7 +1,14 @@
 'use client'
 
-import Lottie from 'lottie-react'
+import dynamic from 'next/dynamic'
 import catAnimation from '../../../public/animations/cat-playing-animation.json'
+
+const Lottie = dynamic(() => import('lottie-react'), {
+  ssr: false,
+  loading: () => (
+    <div className='w-64 h-64 md:w-80 md:h-80 bg-primary/5 rounded-full animate-pulse' />
+  ),
+})
 
 interface UnderConstructionProps {
   title?: string

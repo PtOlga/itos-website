@@ -7,9 +7,16 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Loader2 } from 'lucide-react'
-import Lottie from 'lottie-react'
+import dynamic from 'next/dynamic'
 import contactAnimation from '../../../../public/animations/contact-us-itos.json'
 import emailjs from '@emailjs/browser'
+
+const Lottie = dynamic(() => import('lottie-react'), {
+  ssr: false,
+  loading: () => (
+    <div className='w-full max-w-md h-64 bg-primary/5 rounded-2xl animate-pulse' />
+  ),
+})
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''
@@ -55,7 +62,9 @@ const ContactForm = () => {
       setStatus('success')
       setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' })
     } catch (error) {
-      console.error('EmailJS error:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.error('EmailJS error:', error)
+      }
       setStatus('error')
     } finally {
       setLoading(false)

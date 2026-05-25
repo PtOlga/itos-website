@@ -53,7 +53,9 @@ const HowWeWork = () => {
         )
         setAnimationsData(loadedAnimations)
       } catch (error) {
-        console.error('Error loading animations:', error)
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error loading animations:', error)
+        }
       }
     }
 

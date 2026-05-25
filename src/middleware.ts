@@ -2,13 +2,15 @@ import createMiddleware from 'next-intl/middleware'
 import { defaultLocale, locales } from './i18n/config'
 
 export default createMiddleware({
-  locales: locales,
+  locales,
   defaultLocale,
-  localePrefix: 'as-needed'
+  localePrefix: 'as-needed',
 })
 
-// matcher must be static — keep locale list in sync with src/i18n/config.ts
+// Single catch-all matcher: skip static files, API routes, and Next.js internals.
+// next-intl handles locale detection at runtime — no need to enumerate locales here.
+// When adding a new locale, only update src/i18n/config.ts.
 export const config = {
-  matcher: ['/', '/(sv|en)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'
-  ]
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'
+  ],
 }
