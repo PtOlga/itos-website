@@ -1,0 +1,3 @@
+Contact: mailto:5441700@gmail.com
+Preferred-Languages: en, sv, ru
+Canonical: https://itos.nu/.well-known/security.txt
