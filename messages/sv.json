@@ -237,7 +237,7 @@
       }
     },
     "calculatorToggle": "Vill du beräkna slutpriset? Konfigurera ditt projekt →",
-    "calculatorToggleHint": "Interaktiv prisuppskattning",
+    "calculatorToggleHint": "Gratis uppskattning · tar 1 minut",
     "hourly": {
       "title": "Övriga tjänster",
       "subtitle": "Minimum 1 timme. Debiteras i 15-minutersintervall.",
