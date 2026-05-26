@@ -6,10 +6,11 @@ import { useLocale } from 'next-intl';
 import { type Locale } from '@/i18n/config';
 import { getLocalizedPath, isPathActive } from '@/utils/localePath';
 
-const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const MobileHeaderLink: React.FC<{ item: HeaderItem; onClose: () => void }> = ({ item, onClose }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
-  const handleToggle = () => {
+  const handleToggle = (e: React.MouseEvent) => {
+    e.preventDefault();
     setSubmenuOpen(!submenuOpen);
   };
 
@@ -21,8 +22,8 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
   return (
     <div className="relative w-full">
       <Link
-      href={itemHref}
-        onClick={item.submenu ? handleToggle : undefined}
+        href={itemHref}
+        onClick={item.submenu ? handleToggle : onClose}
         className={`flex items-center justify-between w-full py-2 px-3 rounded-md text-black dark:text-white focus:outline-hidden ${itemIsActive ? 'bg-primary text-white! dark:bg-primary dark:text-white' : null}`}
       >
         {item.label}
@@ -35,7 +36,7 @@ const MobileHeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       {submenuOpen && item.submenu && (
         <div className="bg-white dark:bg-darkmode p-2 w-full">
           {item.submenu.map((subItem) => (
-            <Link key={subItem.href} href={getLocalizedPath(subItem.href, locale)} className={`block py-2 px-3 text-gray-500 hover:bg-gray-200 ${isPathActive(path, subItem.href) ? 'text-primary!' : null}`}>
+            <Link key={subItem.href} href={getLocalizedPath(subItem.href, locale)} onClick={onClose} className={`block py-2 px-3 text-gray-500 hover:bg-gray-200 ${isPathActive(path, subItem.href) ? 'text-primary!' : null}`}>
               {subItem.label}
             </Link>
           ))}
