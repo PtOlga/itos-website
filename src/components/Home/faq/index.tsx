@@ -52,7 +52,7 @@ const FaqQuestion = () => {
               </div>
             ))}
 
-            <div className='accordion__item accordion__item--static text-center bg-[#FFF7EF] dark:bg-[#F07B2A]/10 py-8'>
+            <div className='accordion__item accordion__item--static text-center bg-white dark:bg-darklight py-8'>
               <p className='text-secondary dark:text-white font-normal text-base text-center pb-2'>
                 {t('contactText')}
               </p>

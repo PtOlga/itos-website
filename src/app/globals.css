@@ -283,7 +283,7 @@
 
 /* FAQ section css */
 .accordion__item:not(:last-child) {
-  @apply border-b-BorderLine dark:border-dark_border border-b border-solid;
+  @apply border-b border-solid border-b-[#F07B2A]/30 dark:border-b-[#F07B2A]/40;
 }
 .accordion__item--active .accordion__btn {
   @apply border-b-2 border-solid border-[#F07B2A]/55 bg-[#FFF7EF] text-[#C85E10] dark:border-[#F07B2A]/60 dark:bg-[#F07B2A]/10 dark:text-[#FFB16D];
