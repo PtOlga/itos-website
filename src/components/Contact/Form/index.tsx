@@ -184,7 +184,7 @@ const ContactForm = () => {
           {/* Phone illustration — right */}
           <div className='hidden lg:flex items-center justify-center'>
             <Image
-              src='/images/contact/phone.webp'
+              src='/images/contact/phone.svg'
               alt='Contact illustration'
               width={600}
               height={437}
