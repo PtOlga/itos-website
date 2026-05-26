@@ -80,7 +80,9 @@ const Header: React.FC = () => {
             <button
               aria-label='Toggle theme'
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className='flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white'>
+              tabIndex={-1}
+              aria-hidden='true'
+              className='invisible pointer-events-none flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white'>
               <svg
                 viewBox='0 0 16 16'
                 className={`hidden h-6 w-6 dark:block ${

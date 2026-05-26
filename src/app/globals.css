@@ -286,7 +286,7 @@
   @apply border-b-BorderLine dark:border-dark_border border-b border-solid;
 }
 .accordion__item--active .accordion__btn {
-  @apply border-b-2 border-solid border-BorderLine dark:border-primary text-primary dark:text-primary;
+  @apply border-b-2 border-solid border-[#F07B2A]/55 bg-[#FFF7EF] text-[#C85E10] dark:border-[#F07B2A]/60 dark:bg-[#F07B2A]/10 dark:text-[#FFB16D];
 }
 .accordion__item--active .accordion__content {
   @apply opacity-100 translate-x-0 max-h-full;
@@ -302,6 +302,10 @@
 }
 .dark .icon-fill {
   --icon-color: #ffffff;
+}
+.accordion__btn:hover .icon-fill,
+.accordion__item--active .icon-fill {
+  fill: #f07b2a;
 }
 /* Slick Slider */
 .slick-dots li button:before {

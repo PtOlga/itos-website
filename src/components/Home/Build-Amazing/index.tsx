@@ -5,6 +5,11 @@ import { useTranslations } from 'next-intl'
 
 const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
   const t = useTranslations('services')
+  const serviceCardClass = 'relative h-full overflow-hidden rounded-[1.5rem] border border-BorderLine bg-white p-8 shadow-light_shadwo transition-all duration-300 hover:-translate-y-2 hover:border-[#F07B2A]/60 hover:shadow-[0_20px_45px_rgba(240,123,42,0.18)] dark:border-dark_border dark:bg-darklight dark:shadow-darkmd dark:hover:border-[#F07B2A]/60'
+  const serviceIconClass = 'relative z-[1] bg-no-repeat w-10 h-10 inline-block transition-transform duration-300 group-hover:scale-110'
+  const serviceTitleClass = 'relative z-[1] text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3 transition-colors duration-300 group-hover:text-[#C85E10] dark:group-hover:text-[#FFB16D]'
+  const serviceTextClass = 'relative z-[1] text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'
+  const serviceLinkClass = 'relative z-[1] text-primary text-base font-normal flex items-center gap-3 transition-all duration-300 group-hover:text-[#F07B2A]'
 
   return (
     <>
@@ -131,19 +136,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos='fade-up'
                 data-aos-delay='200'
                 data-aos-duration='1000'>
-                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                <div className={serviceCardClass}>
+                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
+                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
-                    className='bg-no-repeat w-10 h-10 inline-block'
+                    className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
-                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                  <h6 className={serviceTitleClass}>
                     {t('cards.webDev.title')}
                   </h6>
-                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                  <p className={serviceTextClass}>
                     {t('cards.webDev.description')}
                   </p>
                   <Link
                     href='/portfolio'
-                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    className={serviceLinkClass}>
                     {t('cards.webDev.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
@@ -160,19 +167,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos='fade-up'
                 data-aos-delay='400'
                 data-aos-duration='1000'>
-                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                <div className={serviceCardClass}>
+                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
+                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
-                    className='bg-no-repeat w-10 h-10 inline-block'
+                    className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/coded.svg')` }}></i>
-                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                  <h6 className={serviceTitleClass}>
                     {t('cards.ai.title')}
                   </h6>
-                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                  <p className={serviceTextClass}>
                     {t('cards.ai.description')}
                   </p>
                   <Link
                     href='/portfolio'
-                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    className={serviceLinkClass}>
                     {t('cards.ai.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
@@ -189,19 +198,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos='fade-up'
                 data-aos-delay='600'
                 data-aos-duration='1000'>
-                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                <div className={serviceCardClass}>
+                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
+                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
-                    className='bg-no-repeat w-10 h-10 inline-block'
+                    className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/amazing.svg')` }}></i>
-                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                  <h6 className={serviceTitleClass}>
                     {t('cards.tools.title')}
                   </h6>
-                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                  <p className={serviceTextClass}>
                     {t('cards.tools.description')}
                   </p>
                   <Link
                     href='/portfolio'
-                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    className={serviceLinkClass}>
                     {t('cards.tools.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
@@ -218,19 +229,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos='fade-up'
                 data-aos-delay='800'
                 data-aos-duration='1000'>
-                <div className='shadow-light_shadwo dark:shadow-darkmd p-8 rounded-14 group-hover:cursor-pointer'>
+                <div className={serviceCardClass}>
+                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
+                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
-                    className='bg-no-repeat w-10 h-10 inline-block'
+                    className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
-                  <h6 className='text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3'>
+                  <h6 className={serviceTitleClass}>
                     {t('cards.crm.title')}
                   </h6>
-                  <p className='text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'>
+                  <p className={serviceTextClass}>
                     {t('cards.crm.description')}
                   </p>
                   <Link
                     href='/contact'
-                    className='text-primary text-base font-normal flex items-center gap-3 transition-all group'>
+                    className={serviceLinkClass}>
                     {t('cards.crm.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'

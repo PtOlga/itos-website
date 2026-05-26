@@ -19,16 +19,16 @@ const FaqQuestion = () => {
           <h2 className='text-secondary dark:text-white text-center'>
             {t('title')}
           </h2>
-          <div className='overflow-hidden relative z-10 lg:w-770 w-full m-auto bg-white rounded-2xl shadow-light-shadwo dark:shadow-none dark:border dark:border-solid dark:border-dark_border'>
+          <div className='overflow-hidden relative z-10 lg:w-770 w-full m-auto bg-white rounded-2xl border border-BorderLine shadow-light-shadwo dark:bg-darklight dark:shadow-none dark:border-dark_border'>
 
             {items.map((item, index) => (
               <div
                 key={item.question}
-                className={`accordion__item ${
+                className={`accordion__item transition-colors duration-300 hover:bg-[#FFF7EF] dark:hover:bg-[#F07B2A]/10 ${
                   activeIndex === index ? 'accordion__item--active' : ''
                 }`}>
                 <button
-                  className='accordion__btn flex justify-between items-center w-full text-xl font-bold text-left cursor-pointer p-8 border-none outline-hidden bg-white dark:bg-darklight text-secondary dark:text-white hover:bg-AliceBlue dark:hover:bg-darkmode group'
+                  className='accordion__btn flex justify-between items-center w-full text-xl font-bold text-left cursor-pointer p-8 border-none outline-hidden bg-transparent text-secondary dark:text-white hover:text-[#C85E10] dark:hover:text-[#FFB16D] transition-colors duration-300 group'
                   onClick={() => toggleAccordion(index)}>
                   <span className='text-20 font-bold'>{item.question}</span>
                   <span className='rounded-full rotate-0 group-active:rotate-180 transition-width opacity-90'>
@@ -44,7 +44,7 @@ const FaqQuestion = () => {
                   </span>
                 </button>
 
-                <div className='accordion__content font-light max-h-0 opacity-0 overflow-hidden translate-x-4 dark:bg-darkmode'>
+                <div className='accordion__content font-light max-h-0 opacity-0 overflow-hidden translate-x-4 bg-[#FFF7EF]/50 dark:bg-[#F07B2A]/5'>
                   <p className='text-SlateBlue dark:text-darktext font-normal text-base px-7 py-4'>
                     {item.answer}
                   </p>
@@ -52,13 +52,13 @@ const FaqQuestion = () => {
               </div>
             ))}
 
-            <div className='accordion__item accordion__item--static text-center bg-AliceBlue dark:bg-darklight py-8'>
+            <div className='accordion__item accordion__item--static text-center bg-[#FFF7EF] dark:bg-[#F07B2A]/10 py-8'>
               <p className='text-secondary dark:text-white font-normal text-base text-center pb-2'>
                 {t('contactText')}
               </p>
               <Link
                 href='/contact'
-                className='text-primary dark:text-darkprimary text-base font-normal hover:text-black dark:hover:text-LightApricot'>
+                className='text-primary dark:text-darkprimary text-base font-normal transition-colors duration-300 hover:text-[#C85E10] dark:hover:text-[#FFB16D]'>
                 {t('contactLink')}
               </Link>
             </div>
