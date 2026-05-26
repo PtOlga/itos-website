@@ -44,25 +44,27 @@ const BlogPage = async ({ params }: BlogPageProps) => {
       <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
         <div className='container'>
           {posts.length ? (
-            <div className='grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
+            <div className='grid gap-5 lg:grid-cols-2'>
               {posts.map((post) => (
-                <article key={post.slug} className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-white shadow-light-shadwo dark:border-dark_border dark:bg-darklight'>
+                <article key={post.slug} className='flex flex-col sm:flex-row overflow-hidden rounded-[1.5rem] border border-BorderLine bg-white shadow-light-shadwo dark:border-dark_border dark:bg-darklight'>
                   {post.coverImage ? (
-                    <div className='relative h-56'>
+                    <div className='relative h-52 sm:h-auto sm:w-1/2 shrink-0'>
                       <Image src={post.coverImage} alt={post.title} fill className='object-cover' />
                     </div>
                   ) : null}
 
-                  <div className='p-6'>
-                    <p className='text-sm text-SlateBlue dark:text-gray'>
-                      {content.publishedLabel}: {formatPostDate(post.date, typedLocale)}
-                    </p>
-                    <h2 className='mt-3 text-xl font-semibold text-secondary dark:text-white'>
-                      {post.title}
-                    </h2>
-                    <p className='mt-3 text-sm leading-7 text-SlateBlue dark:text-gray'>
-                      {post.excerpt}
-                    </p>
+                  <div className='flex flex-col justify-between p-6'>
+                    <div>
+                      <p className='text-sm text-SlateBlue dark:text-gray'>
+                        {content.publishedLabel}: {formatPostDate(post.date, typedLocale)}
+                      </p>
+                      <h2 className='mt-3 text-xl font-semibold text-secondary dark:text-white'>
+                        {post.title}
+                      </h2>
+                      <p className='mt-3 text-sm leading-7 text-SlateBlue dark:text-gray'>
+                        {post.excerpt}
+                      </p>
+                    </div>
                     <Link
                       href={getLocalizedPath(`/blog/${post.slug}`, typedLocale)}
                       className='mt-5 inline-flex text-sm font-medium text-primary hover:underline dark:text-LightApricot'
