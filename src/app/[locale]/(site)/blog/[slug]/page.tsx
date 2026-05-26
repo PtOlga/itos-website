@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -102,19 +101,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.excerpt}
             </p>
           </div>
-
-          {post.coverImage ? (
-            <div className='mb-8 flex justify-center'>
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                width={600}
-                height={600}
-                className='h-auto w-full max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-xs'
-                style={{ height: 'auto' }}
-              />
-            </div>
-          ) : null}
 
           <div className='blog-details text-base font-normal leading-7 md:text-lg'>
             <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
