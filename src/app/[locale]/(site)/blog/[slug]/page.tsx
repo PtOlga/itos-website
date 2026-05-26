@@ -110,7 +110,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 alt={post.title}
                 width={600}
                 height={600}
-                className='h-auto w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg'
+                className='h-auto w-full max-w-[160px] sm:max-w-[200px] md:max-w-[240px] lg:max-w-xs'
                 style={{ height: 'auto' }}
               />
             </div>
