@@ -722,9 +722,9 @@
     "items": [
       {
         "question": "How much does a website cost?",
-        "answer": "The price depends on the complexity. A simple landing page starts from 4,200 SEK / €380. A multi-page business website costs 11,000–14,000 SEK, and an advanced website with integrations costs 15,000–25,000 SEK. The first consultation is free — I'll give you an exact quote after reviewing your needs."
+        "answer": "The price depends on the complexity. A simple landing page starts from €450. A multi-page business website costs from €990, and an advanced website with integrations costs from €1,490. The first consultation is free — I'll give you an exact quote after reviewing your needs."
       },
-      {
+      { 
         "question": "How long does it take to build a website?",
         "answer": "A simple website takes 1–2 weeks. A standard business website takes 3–5 weeks. Complex projects with custom integrations or e-commerce typically take 6–8 weeks. The exact timeline depends heavily on how quickly you provide content, feedback, and approvals."
       },
