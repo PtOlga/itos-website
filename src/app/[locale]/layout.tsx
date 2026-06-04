@@ -11,6 +11,7 @@ import { locales, type Locale } from '@/i18n/config';
 import { Metadata } from 'next';
 import ConsentManager from '@/components/Consent/ConsentManager'
 import { Toaster } from 'react-hot-toast'
+import ChatWidget from '@/components/ChatWidget'
 
 const GOOGLE_TAG_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID ?? ''
 
@@ -61,6 +62,7 @@ export default async function LocaleLayout({
         <ConsentManager googleTagId={GOOGLE_TAG_ID} />
         <Toaster position="bottom-right" />
         <ScrollToTop />
+        <ChatWidget />
       </ThemeProvider>
     </NextIntlClientProvider>
   );
