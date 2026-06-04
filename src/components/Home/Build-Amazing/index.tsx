@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
   const t = useTranslations('services')
   const serviceCardClass = 'itos-card itos-card-interactive h-full p-8'
-  const serviceIconClass = 'relative z-[1] bg-no-repeat w-10 h-10 inline-block transition-transform duration-300 group-hover:scale-110'
+  const serviceBarClass = 'relative z-[1] mb-3 h-1 w-14 rounded-full bg-[#F07B2A]/65 transition-all duration-300 group-hover:w-24 group-hover:bg-[#F07B2A]'
   const serviceTitleClass = 'relative z-[1] text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3 transition-colors duration-300 group-hover:text-[#C85E10] dark:group-hover:text-[#FFB16D]'
   const serviceTextClass = 'relative z-[1] text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'
   const serviceLinkClass = 'relative z-[1] text-primary text-base font-normal flex items-center gap-3 transition-all duration-300 group-hover:text-[#F07B2A]'
@@ -137,9 +137,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='200'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <i
-                    className={serviceIconClass}
-                    style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
+                  <div className={serviceBarClass} />
                   <h6 className={serviceTitleClass}>
                     {t('cards.webDev.title')}
                   </h6>
@@ -166,9 +164,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='400'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <i
-                    className={serviceIconClass}
-                    style={{ backgroundImage: `url('/images/build-amazing/coded.svg')` }}></i>
+                  <div className={serviceBarClass} />
                   <h6 className={serviceTitleClass}>
                     {t('cards.ai.title')}
                   </h6>
@@ -195,9 +191,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='600'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <i
-                    className={serviceIconClass}
-                    style={{ backgroundImage: `url('/images/build-amazing/amazing.svg')` }}></i>
+                  <div className={serviceBarClass} />
                   <h6 className={serviceTitleClass}>
                     {t('cards.tools.title')}
                   </h6>
@@ -224,9 +218,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='800'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <i
-                    className={serviceIconClass}
-                    style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
+                  <div className={serviceBarClass} />
                   <h6 className={serviceTitleClass}>
                     {t('cards.crm.title')}
                   </h6>
