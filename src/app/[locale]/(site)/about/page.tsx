@@ -96,7 +96,7 @@ const page = async ({ params }: AboutPageProps) => {
 
                 {/* Title + description */}
                 <div className='flex flex-1 flex-col justify-center px-8 py-10'>
-                  <h3 className='mb-3 text-xl font-medium text-secondary dark:text-white'>
+                  <h3 className='mb-3 text-xl font-medium text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D]'>
                     {step.title}
                   </h3>
                   <p className='text-[15px] leading-relaxed text-SlateBlue dark:text-darktext'>
