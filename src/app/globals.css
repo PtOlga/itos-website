@@ -405,6 +405,14 @@
   }
 }
 
+/* Contact form — orange focus on inputs */
+#contact-form input:focus-visible,
+#contact-form textarea:focus-visible {
+  border-color: #F07B2A;
+  box-shadow: 0 0 0 1px #F07B2A, 0 0 0 4px rgba(240, 123, 42, 0.15);
+  outline: none;
+}
+
 /* Pricing steps — sliding arrow connector */
 @keyframes arrowSlide {
   0%, 100% { transform: translateX(0);    opacity: 0.4; }
