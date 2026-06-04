@@ -6,6 +6,7 @@ import Link from 'next/link'
 import {
   ArrowRight,
   Check,
+  ChevronRight,
   Wrench,
   Code2,
   Settings2,
@@ -64,10 +65,18 @@ const Page = () => {
         <div className="container">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-5">
             {([1, 2, 3, 4, 5] as const).map((step, index) => (
-              <div key={step} className="text-center">
+              <div key={step} className="text-center relative">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white">
                   {step}
                 </div>
+                {index < 4 && (
+                  <div className="hidden xl:block absolute top-8 right-0 translate-x-1/2 -translate-y-1/2 z-10">
+                    <ChevronRight
+                      className="h-6 w-6 text-[#F07B2A]"
+                      style={{ animation: `arrowSlide 1.4s ease-in-out ${index * 0.28}s infinite` }}
+                    />
+                  </div>
+                )}
                 <h3 className="mb-2 text-lg font-bold text-secondary dark:text-white">
                   {step === 1 ? t('steps.step1Title')
                    : step === 2 ? t('steps.step2Title')

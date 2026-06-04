@@ -404,3 +404,9 @@
     transform: scale(0.95);
   }
 }
+
+/* Pricing steps — sliding arrow connector */
+@keyframes arrowSlide {
+  0%, 100% { transform: translateX(0);    opacity: 0.4; }
+  50%       { transform: translateX(6px); opacity: 1;   }
+}
