@@ -2,14 +2,17 @@
 import React from 'react'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { Code2, Bot, Settings2, TrendingUp } from 'lucide-react'
 
 const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
   const t = useTranslations('services')
-  const serviceCardClass = 'itos-card itos-card-interactive h-full p-8'
-  const serviceBarClass = 'relative z-[1] mb-3 h-1 w-14 rounded-full bg-[#F07B2A]/65 transition-all duration-300 group-hover:w-24 group-hover:bg-[#F07B2A]'
-  const serviceTitleClass = 'relative z-[1] text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3 transition-colors duration-300 group-hover:text-[#C85E10] dark:group-hover:text-[#FFB16D]'
-  const serviceTextClass = 'relative z-[1] text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'
+
+  const serviceCardClass = 'itos-card itos-card-interactive h-full p-8 flex flex-col'
+  const serviceTitleClass = 'relative z-[1] text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 mb-3 transition-colors duration-300 group-hover:text-[#C85E10] dark:group-hover:text-[#FFB16D]'
+  const serviceTextClass = 'relative z-[1] flex-1 text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 mb-5'
   const serviceLinkClass = 'relative z-[1] text-primary text-base font-normal flex items-center gap-3 transition-all duration-300 group-hover:text-[#F07B2A]'
+  const serviceBarClass = 'relative z-[1] mt-auto mb-5 h-1 w-12 rounded-full bg-primary/20 transition-all duration-300 group-hover:w-20 group-hover:bg-[#F07B2A]'
+  const serviceIconClass = 'relative z-[1] mb-6 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-300 group-hover:bg-[#F07B2A]/15 dark:bg-primary/20 dark:group-hover:bg-[#F07B2A]/20'
 
   return (
     <>
@@ -54,7 +57,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                       </clipPath>
                     </defs>
                   </svg>
-
                   <span className='text-base font-normal text-SlateBlue dark:text-darktext'>
                     {t('features.consultation')}
                   </span>
@@ -85,7 +87,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                       </clipPath>
                     </defs>
                   </svg>
-
                   <span className='text-base font-normal text-SlateBlue dark:text-darktext'>
                     {t('features.pricing')}
                   </span>
@@ -116,7 +117,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                       </clipPath>
                     </defs>
                   </svg>
-
                   <span className='text-base font-normal text-SlateBlue dark:text-darktext'>
                     {t('features.support')}
                   </span>
@@ -129,6 +129,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 </Link>
               </div>
             </div>
+
             <div className='grid md:grid-cols-2 grid-cols-1 gap-7'>
               {/* Web Development */}
               <div
@@ -137,22 +138,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='200'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className={serviceBarClass} />
+                  <div className={serviceIconClass}>
+                    <Code2 className='h-6 w-6 text-primary transition-colors duration-300 group-hover:text-[#F07B2A]' />
+                  </div>
                   <h6 className={serviceTitleClass}>
                     {t('cards.webDev.title')}
                   </h6>
                   <p className={serviceTextClass}>
                     {t('cards.webDev.description')}
                   </p>
-                  <Link
-                    href='/portfolio'
-                    className={serviceLinkClass}>
+                  <div className={serviceBarClass} />
+                  <Link href='/portfolio' className={serviceLinkClass}>
                     {t('cards.webDev.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
-                      style={{
-                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
-                      }}></i>
+                      style={{ backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')` }}></i>
                   </Link>
                 </div>
               </div>
@@ -164,22 +164,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='400'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className={serviceBarClass} />
+                  <div className={serviceIconClass}>
+                    <Bot className='h-6 w-6 text-primary transition-colors duration-300 group-hover:text-[#F07B2A]' />
+                  </div>
                   <h6 className={serviceTitleClass}>
                     {t('cards.ai.title')}
                   </h6>
                   <p className={serviceTextClass}>
                     {t('cards.ai.description')}
                   </p>
-                  <Link
-                    href='/portfolio'
-                    className={serviceLinkClass}>
+                  <div className={serviceBarClass} />
+                  <Link href='/portfolio' className={serviceLinkClass}>
                     {t('cards.ai.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
-                      style={{
-                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
-                      }}></i>
+                      style={{ backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')` }}></i>
                   </Link>
                 </div>
               </div>
@@ -191,22 +190,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='600'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className={serviceBarClass} />
+                  <div className={serviceIconClass}>
+                    <Settings2 className='h-6 w-6 text-primary transition-colors duration-300 group-hover:text-[#F07B2A]' />
+                  </div>
                   <h6 className={serviceTitleClass}>
                     {t('cards.tools.title')}
                   </h6>
                   <p className={serviceTextClass}>
                     {t('cards.tools.description')}
                   </p>
-                  <Link
-                    href='/portfolio'
-                    className={serviceLinkClass}>
+                  <div className={serviceBarClass} />
+                  <Link href='/portfolio' className={serviceLinkClass}>
                     {t('cards.tools.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
-                      style={{
-                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
-                      }}></i>
+                      style={{ backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')` }}></i>
                   </Link>
                 </div>
               </div>
@@ -218,22 +216,21 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='800'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className={serviceBarClass} />
+                  <div className={serviceIconClass}>
+                    <TrendingUp className='h-6 w-6 text-primary transition-colors duration-300 group-hover:text-[#F07B2A]' />
+                  </div>
                   <h6 className={serviceTitleClass}>
                     {t('cards.crm.title')}
                   </h6>
                   <p className={serviceTextClass}>
                     {t('cards.crm.description')}
                   </p>
-                  <Link
-                    href='/contact'
-                    className={serviceLinkClass}>
+                  <div className={serviceBarClass} />
+                  <Link href='/contact' className={serviceLinkClass}>
                     {t('cards.crm.button')}
                     <i
                       className='bg-no-repeat bg-contain w-4 h-3 inline-block transform transition-transform duration-300 ease-in-out group-hover:translate-x-1'
-                      style={{
-                        backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')`,
-                      }}></i>
+                      style={{ backgroundImage: `url('/images/build-amazing/right-arrow-blue.svg')` }}></i>
                   </Link>
                 </div>
               </div>

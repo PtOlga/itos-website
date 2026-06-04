@@ -50,7 +50,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
                   {post.coverImage ? (
                     <div className='relative h-56 overflow-hidden'>
                       <Image src={post.coverImage} alt={post.title} fill className='object-cover' />
-                      <div className='absolute inset-0 bg-[#F07B2A]/0 transition-colors duration-300 group-hover:bg-[#F07B2A]/10' />
+                      <div className='absolute inset-0 bg-gradient-to-br from-[#F07B2A]/10 via-transparent to-[#F07B2A]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100' />
                     </div>
                   ) : null}
 
