@@ -7,7 +7,6 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Loader2 } from 'lucide-react'
-import Image from 'next/image'
 import emailjs from '@emailjs/browser'
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
@@ -183,13 +182,11 @@ const ContactForm = () => {
 
           {/* Phone illustration — right */}
           <div className='hidden lg:flex items-center justify-center'>
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src='/images/contact/phone.svg'
               alt='Contact illustration'
-              width={600}
-              height={437}
               className='w-full max-w-lg h-auto'
-              style={{ height: 'auto' }}
             />
           </div>
 
