@@ -16,6 +16,8 @@ const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ''
 const ContactForm = () => {
   const t = useTranslations('contact')
 
+  const inputClass = 'focus-visible:border-[#F07B2A] focus-visible:ring-[#F07B2A] focus-visible:shadow-[0_0_0_3px_rgba(240,123,42,0.15)]'
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -99,6 +101,7 @@ const ContactForm = () => {
                       disabled={loading}
                       value={formData.firstName}
                       onChange={handleChange}
+                      className={inputClass}
                     />
                   </div>
                   <div className='mx-0 my-2.5 flex-1 space-y-2'>
@@ -110,6 +113,7 @@ const ContactForm = () => {
                       disabled={loading}
                       value={formData.lastName}
                       onChange={handleChange}
+                      className={inputClass}
                     />
                   </div>
                 </div>
@@ -125,6 +129,7 @@ const ContactForm = () => {
                       disabled={loading}
                       value={formData.email}
                       onChange={handleChange}
+                      className={inputClass}
                     />
                   </div>
                   <div className='mx-0 my-2.5 flex-1 space-y-2'>
@@ -135,6 +140,7 @@ const ContactForm = () => {
                       disabled={loading}
                       value={formData.phone}
                       onChange={handleChange}
+                      className={inputClass}
                     />
                   </div>
                 </div>
@@ -150,7 +156,7 @@ const ContactForm = () => {
                     placeholder={t('form.messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
-                    className='resize-none'
+                    className={`resize-none ${inputClass}`}
                   />
                 </div>
 
