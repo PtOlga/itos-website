@@ -2,6 +2,7 @@
 import React, { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Github } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 import type { Locale } from '@/i18n/config'
@@ -39,6 +40,9 @@ const Footer: FC = () => {
     { name: t('cookiePolicy'), href: getLocalizedPath('/cookie-policy', locale) },
   ]
 
+  const linkClass = 'text-base font-normal text-SlateBlue leading-8 transition-colors duration-300 hover:text-LightApricot'
+  const socialClass = 'flex h-10 w-10 items-center justify-center rounded-full bg-white/8 text-white/70 transition-all duration-300 hover:bg-LightApricot/20 hover:text-LightApricot'
+
   return (
     <footer
       className={`relative dark:bg-darkmode bg-[url('/images/footer/ftr-bg.webp')] bg-cover bg-no-repeat w-full h-full ${
@@ -59,22 +63,17 @@ const Footer: FC = () => {
                 quality={100}
               />
             </Link>
-            <ul className='flex items-center gap-5'>
+            <ul className='flex items-center gap-3'>
               {/* LinkedIn */}
               <li>
                 <Link
                   href='https://www.linkedin.com/in/olga-petrovskaya/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label='LinkedIn'>
-                  <svg
-                    width='26'
-                    height='28'
-                    viewBox='0 0 26 28'
-                    fill='#fff'
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='hover:fill-LightApricot transition-colors'>
-                    <path d='M5.8 3.2C5.8 4.9 4.5 6.2 2.9 6.2C1.3 6.2 0 4.9 0 3.2C0 1.5 1.3 0.2 2.9 0.2C4.5 0.2 5.8 1.5 5.8 3.2ZM5.8 8.8H0V27.8H5.8V8.8ZM15.1 8.8H9.4V27.8H15.1V17.9C15.1 12.4 22 12 22 17.9V27.8H27.8V16.1C27.8 6.5 17.1 6.9 15.1 11.6V8.8Z' />
+                  aria-label='LinkedIn'
+                  className={socialClass}>
+                  <svg viewBox='0 0 24 24' fill='currentColor' className='h-5 w-5'>
+                    <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' />
                   </svg>
                 </Link>
               </li>
@@ -84,16 +83,9 @@ const Footer: FC = () => {
                   href='https://github.com/PtOlga'
                   target='_blank'
                   rel='noopener noreferrer'
-                  aria-label='GitHub'>
-                  <svg
-                    width='26'
-                    height='27'
-                    viewBox='0 0 24 24'
-                    fill='#fff'
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='hover:fill-LightApricot transition-colors'>
-                    <path d='M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.41 15 22.815C15 23.13 15.225 23.505 15.825 23.385C18.2072 22.5807 20.2772 21.0497 21.7437 19.0074C23.2101 16.965 23.9993 14.5143 24 12C24 5.37 18.63 0 12 0Z' />
-                  </svg>
+                  aria-label='GitHub'
+                  className={socialClass}>
+                  <Github className='h-5 w-5' />
                 </Link>
               </li>
             </ul>
@@ -109,7 +101,7 @@ const Footer: FC = () => {
               </p>
               <ul>
                 {companyLinks.map((item) => (
-                  <li key={item.name} className='text-base font-normal text-SlateBlue leading-8 hover:text-white'>
+                  <li key={item.name} className={linkClass}>
                     <Link href={item.href}>{item.name}</Link>
                   </li>
                 ))}
@@ -123,7 +115,7 @@ const Footer: FC = () => {
               </p>
               <ul>
                 {serviceLinks.map((item) => (
-                  <li key={item.name} className='text-base font-normal text-SlateBlue leading-8 hover:text-white'>
+                  <li key={item.name} className={linkClass}>
                     <Link href={item.href}>{item.name}</Link>
                   </li>
                 ))}
@@ -136,13 +128,11 @@ const Footer: FC = () => {
                 {t('contactTitle')}
               </p>
               <ul className='flex flex-col gap-2'>
-                <li className='text-base font-normal text-SlateBlue leading-8 hover:text-white'>
+                <li className={linkClass}>
                   <span className='select-all'>5441700@gmail.com</span>
                 </li>
-                <li className='text-base font-normal text-SlateBlue leading-8 hover:text-white'>
-                  <Link href='tel:+46737686471'>
-                    +46 737 686 471
-                  </Link>
+                <li className={linkClass}>
+                  <Link href='tel:+46737686471'>+46 737 686 471</Link>
                 </li>
                 <li className='text-base font-normal text-SlateBlue leading-8'>
                   {tLocation('address')}
@@ -159,14 +149,14 @@ const Footer: FC = () => {
                 © Copyright 2025. {t('allRightsReserved')}{' '}
                 <Link
                   href={getLocalizedPath('/', locale)}
-                  className='hover:text-primary'>
+                  className='transition-colors duration-300 hover:text-LightApricot'>
                   ITOS
                 </Link>
               </p>
               <button
                 type='button'
                 onClick={openCookieSettings}
-                className='text-sm font-medium text-SlateBlue underline-offset-4 transition hover:text-white hover:underline'
+                className='text-sm font-medium text-SlateBlue underline-offset-4 transition-colors duration-300 hover:text-LightApricot hover:underline'
               >
                 {t('cookieSettings')}
               </button>
@@ -175,7 +165,7 @@ const Footer: FC = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className='text-sm font-medium text-SlateBlue underline-offset-4 transition hover:text-white hover:underline'
+                    className='text-sm font-medium text-SlateBlue underline-offset-4 transition-colors duration-300 hover:text-LightApricot hover:underline'
                   >
                     {item.name}
                   </Link>
