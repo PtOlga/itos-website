@@ -57,7 +57,8 @@ const BlogPage = async ({ params }: BlogPageProps) => {
                     <p className='text-sm text-SlateBlue dark:text-gray'>
                       {content.publishedLabel}: {formatPostDate(post.date, typedLocale)}
                     </p>
-                    <h2 className='mt-3 text-xl font-semibold text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D]'>
+                    <div className='mt-3 mb-3 h-1 w-14 rounded-full bg-[#F07B2A]/65 transition-all duration-300 group-hover:w-24 group-hover:bg-[#F07B2A]' />
+                    <h2 className='text-xl font-semibold text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D]'>
                       {post.title}
                     </h2>
                     <p className='mt-3 text-sm leading-7 text-SlateBlue dark:text-gray'>
