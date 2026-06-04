@@ -753,5 +753,15 @@
         "answer": "Support efter lansering inkluderar uppdateringar, felrättningar, teknisk hjälp och mindre förbättringar. Priset är 300–800 kr/timme, och månatliga supportpaket finns från 2 000 kr/månad."
       }
     ]
+  },
+  "serviceTags": {
+    "website":    "Webbplats",
+    "landing":    "Landningssida",
+    "ecommerce":  "E-handel",
+    "crm":        "CRM-system",
+    "automation": "Automatisering",
+    "ai":         "AI-lösningar",
+    "tools":      "Företagsverktyg",
+    "wordpress":  "WordPress"
   }
 }

@@ -5,6 +5,7 @@ import Hero from '@/components/Home/Hero';
 import BuildAmazing from '@/components/Home/Build-Amazing'
 import HowWeWork from '@/components/Home/HowWeWork';
 import Counter from '@/components/Home/Counter';
+import ServiceTags from '@/components/Home/ServiceTags';
 import FaqQuestion from '@/components/Home/faq';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,6 +23,7 @@ export default function Home() {
       <BuildAmazing isSpace={true} />
       <HowWeWork/>
       <Counter/>
+      <ServiceTags/>
       <FaqQuestion/>
     </main>
   )

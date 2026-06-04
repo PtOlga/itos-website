@@ -753,5 +753,15 @@
         "answer": "Post-launch support includes updates, bug fixes, technical assistance, and small improvements. The rate is 300–800 SEK/hour, and monthly support packages are also available from 2,000 SEK/month."
       }
     ]
+  },
+  "serviceTags": {
+    "website":    "Website",
+    "landing":    "Landing page",
+    "ecommerce":  "E-commerce",
+    "crm":        "CRM",
+    "automation": "Automation",
+    "ai":         "AI solutions",
+    "tools":      "Business tools",
+    "wordpress":  "WordPress"
   }
 }
