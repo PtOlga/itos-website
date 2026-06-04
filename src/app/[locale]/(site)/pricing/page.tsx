@@ -98,7 +98,7 @@ const Page = () => {
       </section>
 
       {/* ── 3. Website Packages ─────────────────────────────────────────── */}
-      <section className="pb-20 bg-white dark:bg-darkmode">
+      <section className="pb-20 bg-AliceBlue dark:bg-darkmode">
         <div className="container">
 
           <h2 className="text-3xl font-bold text-secondary dark:text-white text-center mb-10">
