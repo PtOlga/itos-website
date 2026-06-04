@@ -82,7 +82,7 @@ const page = async ({ params }: AboutPageProps) => {
                 data-aos='fade-up'
                 data-aos-delay={`${index * 150}`}
                 data-aos-duration='1000'
-                className='group flex items-stretch overflow-hidden rounded-xl border border-BorderLine bg-white shadow-light-shadwo transition-colors duration-300 hover:border-[#e07a2f] dark:border-dark_border dark:bg-darklight dark:shadow-darkmd dark:hover:border-[#e07a2f]'
+                className='itos-card itos-card-interactive group flex items-stretch'
               >
                 {/* Step number */}
                 <div className='flex min-w-[120px] items-center justify-center px-6 py-10'>

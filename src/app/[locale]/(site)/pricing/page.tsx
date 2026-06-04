@@ -237,7 +237,7 @@ const Page = () => {
                   data-aos="fade-up"
                   data-aos-delay={`${120 + index * 90}`}
                   data-aos-duration="750"
-                  className="group flex h-full flex-col rounded-[1.5rem] border border-BorderLine bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-[#F07B2A]/55 hover:shadow-[0_18px_40px_rgba(240,123,42,0.14)] dark:bg-darkmode dark:border-dark_border dark:hover:border-[#F07B2A]/50"
+                  className="itos-card itos-card-interactive group flex h-full flex-col p-5 dark:bg-darkmode"
                 >
                   <div className="mb-6 flex items-start justify-between gap-4">
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 transition-colors duration-300 group-hover:bg-[#F07B2A]/15 dark:bg-primary/20 dark:group-hover:bg-[#F07B2A]/20">
