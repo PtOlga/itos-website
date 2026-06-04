@@ -46,7 +46,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
           {posts.length ? (
             <div className='grid gap-5 md:grid-cols-2 xl:grid-cols-3'>
               {posts.map((post) => (
-                <article key={post.slug} className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-white shadow-light-shadwo dark:border-dark_border dark:bg-darklight'>
+                <article key={post.slug} className='itos-card itos-card-interactive group'>
                   {post.coverImage ? (
                     <div className='relative h-56'>
                       <Image src={post.coverImage} alt={post.title} fill className='object-cover' />
@@ -57,7 +57,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
                     <p className='text-sm text-SlateBlue dark:text-gray'>
                       {content.publishedLabel}: {formatPostDate(post.date, typedLocale)}
                     </p>
-                    <h2 className='mt-3 text-xl font-semibold text-secondary dark:text-white'>
+                    <h2 className='mt-3 text-xl font-semibold text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D]'>
                       {post.title}
                     </h2>
                     <p className='mt-3 text-sm leading-7 text-SlateBlue dark:text-gray'>
@@ -65,7 +65,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
                     </p>
                     <Link
                       href={getLocalizedPath(`/blog/${post.slug}`, typedLocale)}
-                      className='mt-5 inline-flex text-sm font-medium text-primary hover:underline dark:text-LightApricot'
+                      className='mt-5 inline-flex text-sm font-medium text-primary transition-colors duration-300 group-hover:text-[#F07B2A] dark:text-LightApricot'
                     >
                       {content.readMoreLabel} →
                     </Link>
@@ -74,7 +74,7 @@ const BlogPage = async ({ params }: BlogPageProps) => {
               ))}
             </div>
           ) : (
-            <div className='rounded-[1.5rem] border border-BorderLine bg-white p-8 text-center shadow-light-shadwo dark:border-dark_border dark:bg-darklight'>
+            <div className='itos-card p-8 text-center'>
               <h2 className='text-2xl font-semibold text-secondary dark:text-white'>{content.emptyTitle}</h2>
               <p className='mt-3 text-base text-SlateBlue dark:text-gray'>{content.emptyMessage}</p>
             </div>

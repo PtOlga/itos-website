@@ -33,8 +33,8 @@ const page = async ({ params }: AboutPageProps) => {
 
       <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
         <div className='container'>
-          <div className='grid gap-8 rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight dark:shadow-darkmd lg:grid-cols-[380px_minmax(0,1fr)] lg:p-8'>
-            <div className='overflow-hidden rounded-[1.5rem] border border-BorderLine bg-AliceBlue dark:border-dark_border dark:bg-darklight'>
+          <div className='itos-card grid gap-8 p-6 lg:grid-cols-[380px_minmax(0,1fr)] lg:p-8'>
+            <div className='itos-card overflow-hidden bg-AliceBlue shadow-none dark:bg-darklight dark:shadow-none'>
               <Image
                 src={content.image.src}
                 alt={content.image.alt}

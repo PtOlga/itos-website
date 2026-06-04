@@ -120,6 +120,47 @@
 }
 }
 
+@layer components {
+  .itos-card {
+    @apply rounded-[1.5rem] border border-BorderLine bg-white shadow-light-shadwo dark:border-dark_border dark:bg-darklight dark:shadow-darkmd;
+  }
+
+  .itos-card-interactive {
+    @apply relative isolate overflow-hidden transition-all duration-300;
+  }
+
+  .itos-card-interactive::before {
+    content: '';
+    background: linear-gradient(135deg, rgb(240 123 42 / 0), transparent 48%, rgb(240 123 42 / 0));
+    @apply pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-300;
+  }
+
+  .itos-card-interactive::after {
+    content: '';
+    background: rgb(240 123 42 / 0.12);
+    @apply pointer-events-none absolute -right-12 -top-12 z-0 h-28 w-28 rounded-full opacity-0 blur-3xl transition-opacity duration-300;
+  }
+
+  .itos-card-interactive > * {
+    @apply relative z-[1];
+  }
+
+  .itos-card-interactive:hover {
+    transform: translateY(-0.5rem);
+    border-color: rgb(240 123 42 / 0.6);
+    box-shadow: 0 20px 45px rgb(240 123 42 / 0.18);
+  }
+
+  .itos-card-interactive:hover::before {
+    background: linear-gradient(135deg, rgb(240 123 42 / 0.1), transparent 48%, rgb(240 123 42 / 0.05));
+    @apply opacity-100;
+  }
+
+  .itos-card-interactive:hover::after {
+    @apply opacity-100;
+  }
+}
+
 @layer utilities {
   html {
     scroll-behavior: smooth;

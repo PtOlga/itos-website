@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 
 const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
   const t = useTranslations('services')
-  const serviceCardClass = 'relative h-full overflow-hidden rounded-[1.5rem] border border-BorderLine bg-white p-8 shadow-light_shadwo transition-all duration-300 hover:-translate-y-2 hover:border-[#F07B2A]/60 hover:shadow-[0_20px_45px_rgba(240,123,42,0.18)] dark:border-dark_border dark:bg-darklight dark:shadow-darkmd dark:hover:border-[#F07B2A]/60'
+  const serviceCardClass = 'itos-card itos-card-interactive h-full p-8'
   const serviceIconClass = 'relative z-[1] bg-no-repeat w-10 h-10 inline-block transition-transform duration-300 group-hover:scale-110'
   const serviceTitleClass = 'relative z-[1] text-[22px] leading-[2rem] font-bold text-secondary dark:text-white max-w-200 pt-3 transition-colors duration-300 group-hover:text-[#C85E10] dark:group-hover:text-[#FFB16D]'
   const serviceTextClass = 'relative z-[1] text-14 text-SlateBlue dark:text-darktext font-normal max-w-200 pt-3 pb-7'
@@ -137,8 +137,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='200'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
-                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
                     className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>
@@ -168,8 +166,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='400'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
-                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
                     className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/coded.svg')` }}></i>
@@ -199,8 +195,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='600'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
-                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
                     className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/amazing.svg')` }}></i>
@@ -230,8 +224,6 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
                 data-aos-delay='800'
                 data-aos-duration='1000'>
                 <div className={serviceCardClass}>
-                  <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F07B2A]/0 via-transparent to-[#F07B2A]/0 opacity-0 transition-opacity duration-300 group-hover:from-[#F07B2A]/10 group-hover:to-[#F07B2A]/5 group-hover:opacity-100' />
-                  <div className='pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-[#F07B2A]/12 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100' />
                   <i
                     className={serviceIconClass}
                     style={{ backgroundImage: `url('/images/build-amazing/beautiful-design.svg')` }}></i>

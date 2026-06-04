@@ -19,7 +19,7 @@ const FaqQuestion = () => {
           <h2 className='text-secondary dark:text-white text-center'>
             {t('title')}
           </h2>
-          <div className='overflow-hidden relative z-10 lg:w-770 w-full m-auto bg-white rounded-2xl border border-BorderLine shadow-light-shadwo dark:bg-darklight dark:shadow-none dark:border-dark_border'>
+          <div className='itos-card overflow-hidden relative z-10 lg:w-770 w-full m-auto rounded-2xl dark:shadow-none'>
 
             {items.map((item, index) => (
               <div

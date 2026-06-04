@@ -20,7 +20,7 @@ export default function LegalPageContent({
   return (
     <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
       <div className='container max-w-4xl'>
-        <div className='rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight md:p-8'>
+        <div className='itos-card p-6 md:p-8'>
           <div className='mb-8 rounded-2xl bg-AliceBlue p-5 dark:bg-secondary'>
             <p className='text-xs font-semibold uppercase tracking-[0.18em] text-primary dark:text-LightApricot'>
               {updatedLabel}

@@ -125,7 +125,7 @@ export default function PortfolioShowcase({
   return (
     <section className='bg-AliceBlue py-16 dark:bg-darkmode'>
       <div className='container'>
-        <div className='mb-8 grid gap-4 rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight lg:grid-cols-[1fr_auto] lg:items-center'>
+        <div className='itos-card mb-8 grid gap-4 p-6 lg:grid-cols-[1fr_auto] lg:items-center'>
           <div className='max-w-720'>
             <span className='mb-3 inline-flex rounded-full bg-LightApricot/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-secondary dark:text-LightApricot'>
               {content.eyebrow}
@@ -143,7 +143,7 @@ export default function PortfolioShowcase({
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className='rounded-2xl border border-BorderLine bg-AliceBlue px-4 py-3 text-sm font-medium text-secondary transition-colors hover:border-primary hover:text-primary dark:border-dark_border dark:bg-secondary dark:text-white dark:hover:border-LightApricot dark:hover:text-LightApricot'
+                className='rounded-2xl border border-BorderLine bg-AliceBlue px-4 py-3 text-sm font-medium text-secondary transition-colors hover:border-[#F07B2A]/60 hover:text-[#C85E10] dark:border-dark_border dark:bg-secondary dark:text-white dark:hover:border-[#F07B2A]/60 dark:hover:text-[#FFB16D]'
               >
                 {item.label}
               </a>
@@ -165,7 +165,7 @@ export default function PortfolioShowcase({
 
               <div className='grid gap-5 xl:grid-cols-2'>
                 {group.projects.map((project) => (
-                  <article key={project.id} className='group grid gap-5 rounded-[1.5rem] border border-BorderLine bg-white p-5 shadow-light-shadwo transition-transform duration-300 hover:-translate-y-1 dark:border-dark_border dark:bg-darklight lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start'>
+                  <article key={project.id} className='itos-card itos-card-interactive group grid gap-5 p-5 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start'>
                     <div>
                       <BrowserPreview project={project} />
                     </div>
@@ -181,7 +181,7 @@ export default function PortfolioShowcase({
                               {project.category}
                             </span>
                           </div>
-                          <h3 className='text-xl font-semibold text-secondary dark:text-white md:text-2xl'>{project.title}</h3>
+                          <h3 className='text-xl font-semibold text-secondary transition-colors duration-300 group-hover:text-[#C85E10] dark:text-white dark:group-hover:text-[#FFB16D] md:text-2xl'>{project.title}</h3>
                           <p className='mt-1 text-sm text-primary dark:text-LightApricot'>{project.label}</p>
                         </div>
                       </div>
@@ -207,7 +207,7 @@ export default function PortfolioShowcase({
                           </span>
                         )}
 
-                        <Link href={contactHref} className='inline-flex items-center justify-center rounded-full border border-BorderLine px-4 py-2.5 text-sm font-medium text-secondary transition-colors hover:border-primary hover:text-primary dark:border-dark_border dark:text-white dark:hover:border-LightApricot dark:hover:text-LightApricot'>
+                        <Link href={contactHref} className='inline-flex items-center justify-center rounded-full border border-BorderLine px-4 py-2.5 text-sm font-medium text-secondary transition-colors hover:border-[#F07B2A]/60 hover:text-[#C85E10] dark:border-dark_border dark:text-white dark:hover:border-[#F07B2A]/60 dark:hover:text-[#FFB16D]'>
                           {content.actions.needSomethingSimilar}
                         </Link>
                       </div>

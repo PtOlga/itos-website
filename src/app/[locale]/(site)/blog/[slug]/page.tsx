@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           ← {pageContent.backLabel}
         </Link>
 
-        <article className='rounded-[1.5rem] border border-BorderLine bg-white p-6 shadow-light-shadwo dark:border-dark_border dark:bg-darklight md:p-8'>
+        <article className='itos-card p-6 md:p-8'>
           <div className='mb-6'>
             <p className='text-sm text-SlateBlue dark:text-gray'>
               {pageContent.publishedLabel}: {formatPostDate(post.date, typedLocale)}
