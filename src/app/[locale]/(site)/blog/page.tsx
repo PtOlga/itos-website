@@ -48,8 +48,9 @@ const BlogPage = async ({ params }: BlogPageProps) => {
               {posts.map((post) => (
                 <article key={post.slug} className='itos-card itos-card-interactive group'>
                   {post.coverImage ? (
-                    <div className='relative h-56'>
+                    <div className='relative h-56 overflow-hidden'>
                       <Image src={post.coverImage} alt={post.title} fill className='object-cover' />
+                      <div className='absolute inset-0 bg-[#F07B2A]/0 transition-colors duration-300 group-hover:bg-[#F07B2A]/10' />
                     </div>
                   ) : null}
 
