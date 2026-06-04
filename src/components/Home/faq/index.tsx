@@ -13,7 +13,7 @@ const FaqQuestion = () => {
   }
 
   return (
-    <section className='dark:bg-darkmode pt-40 pb-20'>
+    <section className='bg-AliceBlue dark:bg-darkmode pt-40 pb-20'>
       <div className='container'>
         <div className='flex flex-col gap-y-8'>
           <h2 className='text-secondary dark:text-white text-center'>

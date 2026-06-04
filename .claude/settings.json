@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "PowerShell($f = \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\public\\\\images\\\\contact\\\\phone.svg\"; [PSCustomObject]@{ Size = \\(Get-Item $f\\).Length; FirstBytes = [System.Text.Encoding]::UTF8.GetString\\(\\(Get-Content $f -Encoding Byte -TotalCount 200\\)\\) })",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(Get-ChildItem -Path \"e:\\\\Code\\\\GitHub\\\\itos-website\" -Force)",
+      "Bash(Select-Object Name, FullName)"
     ],
     "additionalDirectories": [
       "e:\\Code\\GitHub\\itos-website\\src\\app\\[locale]\\(site)\\about"

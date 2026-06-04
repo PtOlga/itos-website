@@ -16,7 +16,7 @@ const BuildAmazing = ({ isSpace }: { isSpace: boolean }) => {
 
   return (
     <>
-      <section className={`${isSpace ? '' : ''} dark:bg-darkmode pt-40 pb-20`}>
+      <section className='bg-AliceBlue dark:bg-darkmode pt-40 pb-20'>
         <div className='container'>
           <div className='grid lg:grid-cols-2 grid-cols-1 items-center'>
             <div

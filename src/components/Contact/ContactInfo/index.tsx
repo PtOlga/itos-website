@@ -11,7 +11,7 @@ const ContactInfo = () => {
   const cardClass = 'itos-card itos-card-interactive group flex flex-col p-8 flex-1'
 
   return (
-    <section className='dark:bg-darkmode py-20'>
+    <section className='bg-AliceBlue dark:bg-darkmode py-20'>
       <div className='container'>
         <div className='flex md:flex-row flex-col gap-6'>
 
