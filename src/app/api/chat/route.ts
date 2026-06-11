@@ -21,6 +21,20 @@ function checkRateLimit(ip: string): boolean {
 
 export type ChatMessage = { role: 'user' | 'assistant'; content: string }
 
+// Strip Markdown formatting so the chat bubble (plain-text rendering) doesn't
+// show raw **, __, ##, backticks etc. if the model ignores the prompt rule.
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*\*(.+?)\*\*\*/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/(^|[^*])\*(?!\s)([^*\n]+?)\*(?!\*)/g, '$1$2')
+    .replace(/(^|[^_])_(?!\s)([^_\n]+?)_(?!_)/g, '$1$2')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+}
+
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for') ?? 'unknown'
 
@@ -53,7 +67,7 @@ export async function POST(req: NextRequest) {
       try { leadData = JSON.parse(leadMatch[1].trim()) } catch {}
     }
 
-    const visibleText = text.replace(/<lead>[\s\S]*?<\/lead>/, '').trim()
+    const visibleText = stripMarkdown(text.replace(/<lead>[\s\S]*?<\/lead>/, '').trim())
 
     if (leadData) {
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'

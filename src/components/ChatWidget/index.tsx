@@ -32,6 +32,13 @@ export default function ChatWidget() {
     if (open) setTimeout(() => inputRef.current?.focus(), 100)
   }, [open])
 
+  function closeAndReset() {
+    setOpen(false)
+    setMessages([{ role: 'assistant', content: WELCOME[locale] ?? WELCOME.en }])
+    setInput('')
+    setShowWA(false)
+  }
+
   async function send() {
     const text = input.trim()
     if (!text || loading) return
@@ -105,6 +112,14 @@ export default function ChatWidget() {
                 {locale === 'sv' ? 'Svarar direkt' : 'Replies instantly'}
               </p>
             </div>
+            <button
+              onClick={closeAndReset}
+              aria-label={locale === 'sv' ? 'Stäng och rensa chatt' : 'Close and clear chat'}
+              title={locale === 'sv' ? 'Stäng och rensa chatt' : 'Close and clear chat'}
+              className='ml-auto flex h-8 w-8 items-center justify-center rounded-full text-white/90 transition-colors hover:bg-white/20 hover:text-white'
+            >
+              <X className='h-5 w-5' />
+            </button>
           </div>
 
           {/* Messages */}
