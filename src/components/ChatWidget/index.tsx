@@ -42,15 +42,21 @@ export default function ChatWidget() {
     setLoading(true)
 
     try {
+      // Anthropic API requires the first message to be 'user' — strip the welcome assistant message
+      const firstUserIdx = updated.findIndex(m => m.role === 'user')
+      const apiMessages = firstUserIdx >= 0 ? updated.slice(firstUserIdx) : updated
+
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: updated, locale }),
+        body: JSON.stringify({ messages: apiMessages, locale }),
       })
       const data = await res.json()
       if (data.message) {
         setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
         if (data.hasLead) setShowWA(true)
+      } else if (data.error) {
+        throw new Error(data.error)
       }
     } catch {
       setMessages(prev => [...prev, {

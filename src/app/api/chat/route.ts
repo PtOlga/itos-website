@@ -37,31 +37,37 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'No messages provided' }, { status: 400 })
   }
 
-  const response = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 400,
-    system: buildSystemPrompt(locale ?? 'sv'),
-    messages,
-  })
+  try {
+    const response = await client.messages.create({
+      model: 'claude-3-5-haiku-20241022',
+      max_tokens: 400,
+      system: buildSystemPrompt(locale ?? 'sv'),
+      messages,
+    })
 
-  const text = response.content[0].type === 'text' ? response.content[0].text : ''
+    const text = response.content[0].type === 'text' ? response.content[0].text : ''
 
-  // Extract lead data if Claude included the <lead> block
-  const leadMatch = text.match(/<lead>([\s\S]*?)<\/lead>/)
-  const leadData = leadMatch ? JSON.parse(leadMatch[1].trim()) : null
+    const leadMatch = text.match(/<lead>([\s\S]*?)<\/lead>/)
+    let leadData = null
+    if (leadMatch) {
+      try { leadData = JSON.parse(leadMatch[1].trim()) } catch {}
+    }
 
-  // Strip the <lead> block from the visible message
-  const visibleText = text.replace(/<lead>[\s\S]*?<\/lead>/, '').trim()
+    const visibleText = text.replace(/<lead>[\s\S]*?<\/lead>/, '').trim()
 
-  // Fire-and-forget lead creation
-  if (leadData) {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? ''
-    fetch(`${baseUrl}/api/lead`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(leadData),
-    }).catch(() => {})
+    if (leadData) {
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'
+      fetch(`${baseUrl}/api/lead`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadData),
+      }).catch(() => {})
+    }
+
+    return NextResponse.json({ message: visibleText, hasLead: !!leadData })
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Unknown error'
+    console.error('[chat] Claude error:', msg)
+    return NextResponse.json({ error: msg }, { status: 500 })
   }
-
-  return NextResponse.json({ message: visibleText, hasLead: !!leadData })
 }

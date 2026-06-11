@@ -4,7 +4,8 @@
       "PowerShell($f = \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\public\\\\images\\\\contact\\\\phone.svg\"; [PSCustomObject]@{ Size = \\(Get-Item $f\\).Length; FirstBytes = [System.Text.Encoding]::UTF8.GetString\\(\\(Get-Content $f -Encoding Byte -TotalCount 200\\)\\) })",
       "Bash(node -e ' *)",
       "Bash(Get-ChildItem -Path \"e:\\\\Code\\\\GitHub\\\\itos-website\" -Force)",
-      "Bash(Select-Object Name, FullName)"
+      "Bash(Select-Object Name, FullName)",
+      "PowerShell(if \\(Test-Path \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\.env.local\"\\) { Get-Content \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\.env.local\" | ForEach-Object { if \\($_ -match \"^[^#=\\\\s]\"\\) { $parts = $_ -split \"=\", 2; \"$\\($parts[0]\\)=$\\(if\\($parts.Count -gt 1 -and $parts[1].Length -gt 0\\){'[SET]'}else{'[EMPTY]'}\\)\" } } } else { \"No .env.local found\" })"
     ],
     "additionalDirectories": [
       "e:\\Code\\GitHub\\itos-website\\src\\app\\[locale]\\(site)\\about"
