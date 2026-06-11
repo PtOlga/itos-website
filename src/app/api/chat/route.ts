@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
 import { buildSystemPrompt } from '@/lib/chatbot/systemPrompt'
+import { sendLeadToTelegram } from '@/lib/notifications/telegram'
+import { createZohoLead } from '@/lib/notifications/zoho'
+import type { LeadData } from '@/lib/notifications/types'
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
@@ -62,20 +65,18 @@ export async function POST(req: NextRequest) {
     const text = response.content[0].type === 'text' ? response.content[0].text : ''
 
     const leadMatch = text.match(/<lead>([\s\S]*?)<\/lead>/)
-    let leadData = null
+    let leadData: LeadData | null = null
     if (leadMatch) {
-      try { leadData = JSON.parse(leadMatch[1].trim()) } catch {}
+      try { leadData = JSON.parse(leadMatch[1].trim()) as LeadData } catch {}
     }
 
     const visibleText = stripMarkdown(text.replace(/<lead>[\s\S]*?<\/lead>/, '').trim())
 
     if (leadData) {
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000'
-      fetch(`${baseUrl}/api/lead`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(leadData),
-      }).catch(() => {})
+      void Promise.allSettled([
+        sendLeadToTelegram(leadData),
+        createZohoLead(leadData),
+      ])
     }
 
     return NextResponse.json({ message: visibleText, hasLead: !!leadData })
