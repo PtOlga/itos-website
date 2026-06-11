@@ -58,10 +58,11 @@ export default function ChatWidget() {
       } else if (data.error) {
         throw new Error(data.error)
       }
-    } catch {
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err)
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: locale === 'sv' ? 'Ett fel uppstod. Försök igen.' : 'An error occurred. Please try again.',
+        content: `DEBUG: ${errMsg}`,
       }])
     } finally {
       setLoading(false)
