@@ -15,6 +15,8 @@ The application currently includes:
 - legal pages rendered from content JSON
 - a Stripe-powered website pricing calculator
 - a contact form powered by EmailJS
+- an AI chat assistant (Claude) with locale-aware system prompt and inline lead capture
+- Telegram and Zoho CRM notifications for captured leads
 - a shadcn/ui demo page
 
 ## Current Features
@@ -29,6 +31,8 @@ The application currently includes:
 - localized MDX blog posts with per-locale static generation
 - Stripe Checkout integration for pricing requests
 - EmailJS-based contact form submission
+- Anthropic Claude chat widget with plain-text output, language auto-detection, and close-and-reset control
+- lead delivery to Telegram and Zoho CRM via `Promise.allSettled` so one channel failing does not block the other
 - reusable UI components with shadcn/ui and Radix primitives
 - AOS-based scroll animations
 - Railway deployment configuration
@@ -91,7 +95,8 @@ Main routes live under `src/app/[locale]`.
 ### API routes
 
 - `/api/checkout` — creates a Stripe Checkout session
-- `/api/auth/[...nextauth]` — disabled compatibility endpoint returning `404`
+- `/api/chat` — proxies user messages to Anthropic Claude, strips Markdown, parses inline `<lead>{…}</lead>` blocks, and triggers lead notifications
+- `/api/lead` — thin HTTP wrapper around the shared notification helpers (Telegram + Zoho)
 
 ### Disabled routes
 
@@ -107,6 +112,8 @@ Main routes live under `src/app/[locale]`.
 - **Content:** MDX + JSON content files, `gray-matter`, `remark`, `remark-html`
 - **Forms:** EmailJS
 - **Payments:** Stripe Checkout
+- **AI:** Anthropic Claude (`@anthropic-ai/sdk`, model `claude-haiku-4-5`)
+- **Lead delivery:** Telegram Bot API, Zoho CRM REST API
 - **Utilities:** `clsx`, `tailwind-merge`, `class-variance-authority`, `date-fns`, `aos`
 - **Deployment:** Railway
 
@@ -133,23 +140,41 @@ Start from the example file:
 cp .env.example .env
 ```
 
-At minimum, configure the Stripe-related values for the pricing flow:
+The full set of supported variables lives in `.env.example`. Group by feature:
 
 ```env
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
-STRIPE_SECRET_KEY=replace-with-stripe-secret-key
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=replace-with-stripe-publishable-key
+# Contact form (EmailJS) — https://www.emailjs.com/
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
 
-# Optional site metadata
-SITE_NAME=ITOS
-AUTHOR_NAME=ITOS
+# Analytics
+NEXT_PUBLIC_GOOGLE_TAG_ID=
+NEXT_PUBLIC_AHREFS_KEY=
+
+# Stripe pricing calculator — https://stripe.com/
+STRIPE_SECRET_KEY=
+
+# Public app base URL (used for Stripe redirects; falls back to request origin if omitted)
+NEXT_PUBLIC_BASE_URL=
+
+# Claude AI chatbot — https://console.anthropic.com/
+ANTHROPIC_API_KEY=
+
+# Telegram lead notifications — create bot via @BotFather
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+
+# Zoho CRM lead creation — https://api-console.zoho.eu/
+ZOHO_ACCESS_TOKEN=
+ZOHO_DOMAIN=zohoapis.eu
 ```
 
 Notes:
 
 - use Stripe test keys for local development
-- `.env.example` still contains legacy NextAuth-related variables; authentication is currently disabled at runtime
-- the contact form currently uses EmailJS identifiers defined in `src/components/Contact/Form/index.tsx`
+- all chatbot and notification credentials are optional; if `ANTHROPIC_API_KEY` is missing the chat returns an error, and if Telegram/Zoho variables are missing those channels silently skip
+- `NEXT_PUBLIC_BASE_URL` is only consumed by the Stripe checkout flow; the chat and lead notifications call third-party APIs directly
 
 ### Run Locally
 
@@ -212,14 +237,18 @@ itos-website/
 │   │   │   ├── layout.tsx
 │   │   │   └── page.tsx
 │   │   ├── api/
-│   │   │   ├── auth/[...nextauth]/
-│   │   │   └── checkout/
+│   │   │   ├── chat/              # Anthropic Claude proxy + lead parser
+│   │   │   ├── checkout/          # Stripe Checkout session
+│   │   │   └── lead/              # HTTP wrapper around notification helpers
 │   │   ├── globals.css
 │   │   └── not-found.tsx
 │   ├── components/
+│   │   └── ChatWidget/            # Floating chat UI with close-and-reset
 │   ├── i18n/
 │   ├── lib/
-│   │   └── content/               # Content readers for pages, blog, cases, legal
+│   │   ├── chatbot/               # System prompt builder for Claude
+│   │   ├── content/               # Content readers for pages, blog, cases, legal
+│   │   └── notifications/         # Telegram + Zoho lead delivery helpers
 │   ├── middleware.ts
 │   ├── types/
 │   └── utils/
@@ -243,13 +272,31 @@ Current checkout behavior:
 - builds locale-aware success and cancel URLs back to the pricing page
 - supports `card` and `klarna`
 
+## AI Chat and Lead Capture
+
+The chat assistant lives in `src/components/ChatWidget` and talks to `/api/chat`.
+
+Behavior:
+
+- model: `claude-haiku-4-5` (Anthropic), invoked via `@anthropic-ai/sdk`
+- system prompt is built per request in `src/lib/chatbot/systemPrompt.ts` and includes locale, owner identity (Olga Saether), service catalogue, and the rule to reply in plain text
+- responses are passed through a server-side Markdown stripper so the UI never renders raw `**bold**`, headings, or backticks
+- when the model returns a `<lead>{ name, contact, project, budget? }</lead>` block, the chat route parses it, removes the block from the visible reply, and dispatches notifications in parallel
+
+Rate limiting: requests from a single IP are capped at 20 messages per hour (in-memory `Map`; resets on server restart).
+
+Lead delivery (`src/lib/notifications/`):
+
+- `sendLeadToTelegram(lead)` posts an HTML-formatted message via the Telegram Bot API; no-op if `TELEGRAM_BOT_TOKEN` or `TELEGRAM_CHAT_ID` is missing
+- `createZohoLead(lead)` creates a record in Zoho CRM via REST; no-op if `ZOHO_ACCESS_TOKEN` is missing
+- both helpers are called through `Promise.allSettled`, so one failing channel never blocks the other or the chat response
+- `/api/lead` exposes the same helpers over HTTP for external integrations (for example, forms outside the chat flow)
+
 ## Authentication Status
 
 Authentication is currently disabled at runtime:
 
 - `/signin` and `/signup` intentionally return `404`
-- `/api/auth/[...nextauth]` returns a disabled JSON response with `404`
-- legacy auth-related environment variables remain in `.env.example` for compatibility/history, but they are not part of the active flow
 
 ## UI Components
 

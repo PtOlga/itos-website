@@ -8,7 +8,8 @@
       "PowerShell(if \\(Test-Path \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\.env.local\"\\) { Get-Content \"e:\\\\Code\\\\GitHub\\\\itos-website\\\\.env.local\" | ForEach-Object { if \\($_ -match \"^[^#=\\\\s]\"\\) { $parts = $_ -split \"=\", 2; \"$\\($parts[0]\\)=$\\(if\\($parts.Count -gt 1 -and $parts[1].Length -gt 0\\){'[SET]'}else{'[EMPTY]'}\\)\" } } } else { \"No .env.local found\" })"
     ],
     "additionalDirectories": [
-      "e:\\Code\\GitHub\\itos-website\\src\\app\\[locale]\\(site)\\about"
+      "e:\\Code\\GitHub\\itos-website\\src\\app\\[locale]\\(site)\\about",
+      "e:\\Code\\GitHub\\planfix_reminder"
     ]
   }
 }
