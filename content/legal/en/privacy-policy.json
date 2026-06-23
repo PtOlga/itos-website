@@ -6,7 +6,7 @@
     "metaDescription": "Read how ITOS handles personal data, contact requests, analytics consent, and GDPR-related responsibilities under Swedish and EU law."
   },
   "updatedLabel": "Last updated",
-  "updatedDate": "21 April 2026",
+  "updatedDate": "23 June 2026",
   "contactLabel": "Contact",
   "contactEmail": "5441700@gmail.com",
   "intro": [
@@ -26,6 +26,7 @@
       "items": [
         "Contact details you provide, such as your name, email address, phone number, and business details.",
         "The contents of messages, project requests, and other information you submit through the contact form, email, or phone.",
+        "Messages, transcripts, and any contact or project details you provide through the website's chat assistant.",
         "Technical and usage information about visits to the website, but only where optional analytics have been accepted.",
         "Records needed to prepare quotes, provide services, answer questions, and maintain business communication."
       ]
@@ -50,23 +51,32 @@
       ]
     },
     {
+      "title": "Chat assistant and AI processing",
+      "paragraphs": [
+        "This website offers an optional chat assistant. When you use it, the content of your messages is sent to Anthropic PBC, a service provider in the United States, to generate the assistant's replies.",
+        "A transcript of the conversation, including any contact details you share, may also be forwarded to ITOS through Telegram for review and follow-up. If the assistant identifies a project inquiry, the related contact and project details may additionally be added to the ITOS customer relationship management (CRM) system, hosted by Zoho Corporation, to organise follow-up communication.",
+        "The chat assistant is intended for general questions about ITOS services. Please do not share sensitive personal data, financial information, health data, or other confidential information through the chat."
+      ]
+    },
+    {
       "title": "Sharing data with service providers",
       "paragraphs": [
-        "ITOS may use trusted service providers to help operate the website and deliver services, for example hosting providers, website infrastructure, analytics providers, and communication or form-handling tools such as EmailJS.",
+        "ITOS may use trusted service providers to help operate the website and deliver services, including hosting providers, website infrastructure, analytics providers, communication and form-handling tools such as EmailJS, the AI provider Anthropic PBC for the chat assistant, Telegram for internal notifications about chat conversations and inquiries, and the Zoho CRM platform for managing customer inquiries.",
         "These providers only receive personal data where necessary for their role and are expected to process it under appropriate confidentiality and data protection obligations. ITOS does not sell your personal data."
       ]
     },
     {
       "title": "International data transfers",
       "paragraphs": [
-        "Some providers used by ITOS may process data outside the EU or EEA. Where that happens, appropriate safeguards such as contractual protections, standard contractual clauses, or other lawful transfer mechanisms required under the GDPR are used where applicable."
+        "Some providers used by ITOS may process data outside the EU or EEA. This currently includes Anthropic PBC, which processes chat messages in the United States, and Telegram, which operates globally. Where personal data is transferred outside the EU or EEA, appropriate safeguards such as contractual protections, standard contractual clauses, or other lawful transfer mechanisms required under the GDPR are used where applicable."
       ]
     },
     {
       "title": "How long we keep data",
       "paragraphs": [
         "Personal data is kept only for as long as necessary for the purpose for which it was collected, including responding to inquiries, managing ongoing business relationships, providing services, and meeting legal or accounting requirements.",
-        "If you contact ITOS but do not become a client, your information is generally kept only as long as reasonably necessary to manage the conversation and any follow-up, unless it must be retained for legal reasons."
+        "If you contact ITOS but do not become a client, your information is generally kept only as long as reasonably necessary to manage the conversation and any follow-up, unless it must be retained for legal reasons.",
+        "Chat conversations forwarded to Telegram for review remain in that internal channel as part of business communication records and are retained for the time needed to respond to inquiries, follow up on potential projects, and maintain ordinary business correspondence."
       ]
     },
     {

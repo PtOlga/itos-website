@@ -6,7 +6,7 @@
     "metaDescription": "Läs hur ITOS behandlar personuppgifter, kontaktförfrågningar, analyssamtycke och GDPR-relaterat ansvar enligt svensk och europeisk lag."
   },
   "updatedLabel": "Senast uppdaterad",
-  "updatedDate": "21 april 2026",
+  "updatedDate": "23 juni 2026",
   "contactLabel": "Kontakt",
   "contactEmail": "5441700@gmail.com",
   "intro": [
@@ -26,6 +26,7 @@
       "items": [
         "Kontaktuppgifter som du lämnar, till exempel namn, e-postadress, telefonnummer och företagsuppgifter.",
         "Innehållet i meddelanden, projektförfrågningar och annan information som du skickar via kontaktformulär, e-post eller telefon.",
+        "Meddelanden, utskrifter och eventuella kontakt- eller projektuppgifter som du lämnar via webbplatsens chattassistent.",
         "Teknisk information och användningsdata om besök på webbplatsen, men endast om du har accepterat valfri analys.",
         "Uppgifter som behövs för att ta fram offerter, leverera tjänster, besvara frågor och upprätthålla affärskommunikation."
       ]
@@ -50,23 +51,32 @@
       ]
     },
     {
+      "title": "Chattassistent och AI-behandling",
+      "paragraphs": [
+        "Denna webbplats erbjuder en valfri chattassistent. När du använder den skickas innehållet i dina meddelanden till Anthropic PBC, en tjänsteleverantör i USA, för att generera assistentens svar.",
+        "En utskrift av konversationen, inklusive eventuella kontaktuppgifter som du delar, kan även vidarebefordras till ITOS via Telegram för granskning och uppföljning. Om assistenten identifierar en projektförfrågan kan tillhörande kontakt- och projektuppgifter dessutom läggas till i ITOS CRM-system, som tillhandahålls av Zoho Corporation, för att organisera uppföljande kommunikation.",
+        "Chattassistenten är avsedd för allmänna frågor om ITOS tjänster. Dela inte känsliga personuppgifter, finansiell information, hälsodata eller annan konfidentiell information via chatten."
+      ]
+    },
+    {
       "title": "Delning av uppgifter med tjänsteleverantörer",
       "paragraphs": [
-        "ITOS kan använda betrodda tjänsteleverantörer för att driva webbplatsen och leverera tjänster, till exempel hostingleverantörer, webbplatsinfrastruktur, analysleverantörer och kommunikations- eller formulärverktyg såsom EmailJS.",
+        "ITOS kan använda betrodda tjänsteleverantörer för att driva webbplatsen och leverera tjänster, inklusive hostingleverantörer, webbplatsinfrastruktur, analysleverantörer, kommunikations- och formulärverktyg såsom EmailJS, AI-leverantören Anthropic PBC för chattassistenten, Telegram för interna meddelanden om chattkonversationer och förfrågningar samt CRM-plattformen Zoho för hantering av kundförfrågningar.",
         "Dessa leverantörer får endast tillgång till personuppgifter när det är nödvändigt för deras uppdrag och förväntas behandla uppgifterna under lämpliga krav på sekretess och dataskydd. ITOS säljer inte dina personuppgifter."
       ]
     },
     {
       "title": "Internationella dataöverföringar",
       "paragraphs": [
-        "Vissa leverantörer som används av ITOS kan behandla uppgifter utanför EU eller EES. När detta sker används lämpliga skyddsåtgärder, såsom avtalsmässiga skydd, standardavtalsklausuler eller andra lagliga överföringsmekanismer som krävs enligt GDPR, där det är tillämpligt."
+        "Vissa leverantörer som används av ITOS kan behandla uppgifter utanför EU eller EES. Detta omfattar för närvarande Anthropic PBC, som behandlar chattmeddelanden i USA, och Telegram, som drivs globalt. När personuppgifter överförs utanför EU eller EES används lämpliga skyddsåtgärder, såsom avtalsmässiga skydd, standardavtalsklausuler eller andra lagliga överföringsmekanismer som krävs enligt GDPR, där det är tillämpligt."
       ]
     },
     {
       "title": "Hur länge vi sparar uppgifter",
       "paragraphs": [
         "Personuppgifter sparas endast så länge som det är nödvändigt för det ändamål de samlades in för, inklusive att besvara förfrågningar, hantera affärsrelationer, leverera tjänster och uppfylla rättsliga eller bokföringsmässiga krav.",
-        "Om du kontaktar ITOS men inte blir kund sparas dina uppgifter normalt endast så länge som det är rimligt nödvändigt för att hantera dialogen och eventuell uppföljning, om de inte måste sparas av rättsliga skäl."
+        "Om du kontaktar ITOS men inte blir kund sparas dina uppgifter normalt endast så länge som det är rimligt nödvändigt för att hantera dialogen och eventuell uppföljning, om de inte måste sparas av rättsliga skäl.",
+        "Chattkonversationer som vidarebefordras till Telegram för granskning sparas i den interna kanalen som en del av affärskommunikationsregister och behålls under den tid som krävs för att besvara förfrågningar, följa upp eventuella projekt och upprätthålla normal affärskommunikation."
       ]
     },
     {

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { useLocale } from 'next-intl'
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react'
 import type { Locale } from '@/i18n/config'
@@ -10,6 +10,19 @@ const WHATSAPP_NUMBER = '46737686471'
 const WELCOME: Record<string, string> = {
   sv: 'Hej! 👋 Jag är ITOS-assistenten. Vad kan jag hjälpa dig med idag? Webbplats, CRM, automatisering eller något annat?',
   en: 'Hi! 👋 I\'m the ITOS assistant. What can I help you with today? A website, CRM, automation, or something else?',
+}
+
+const PRIVACY_NOTICE: Record<string, { text: string; href: string }> = {
+  sv: { text: 'Konversationer kan granskas för att förbättra servicen.', href: '/privacy-policy' },
+  en: { text: 'Conversations may be reviewed to improve our service.',    href: '/en/privacy-policy' },
+}
+
+function newSession() {
+  const sessionId =
+    typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+      ? crypto.randomUUID()
+      : `s_${Date.now()}_${Math.random().toString(36).slice(2)}`
+  return { sessionId, startedAt: new Date().toISOString() }
 }
 
 export default function ChatWidget() {
@@ -23,6 +36,11 @@ export default function ChatWidget() {
   ])
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef  = useRef<HTMLInputElement>(null)
+  const sessionRef = useRef(newSession())
+  const messagesRef = useRef<ChatMessage[]>(messages)
+  const transcriptSentRef = useRef(false)
+
+  useEffect(() => { messagesRef.current = messages }, [messages])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -32,11 +50,49 @@ export default function ChatWidget() {
     if (open) setTimeout(() => inputRef.current?.focus(), 100)
   }, [open])
 
+  const sendTranscript = useCallback(() => {
+    if (transcriptSentRef.current) return
+    const current = messagesRef.current
+    if (!current.some(m => m.role === 'user')) return
+
+    transcriptSentRef.current = true
+    const payload = JSON.stringify({
+      sessionId: sessionRef.current.sessionId,
+      locale,
+      startedAt: sessionRef.current.startedAt,
+      messages: current,
+    })
+
+    try {
+      if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
+        navigator.sendBeacon('/api/chat/transcript', new Blob([payload], { type: 'application/json' }))
+      } else {
+        void fetch('/api/chat/transcript', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: payload,
+          keepalive: true,
+        }).catch(() => {})
+      }
+    } catch {
+      // ignore — transcript delivery is best-effort
+    }
+  }, [locale])
+
+  useEffect(() => {
+    const handler = () => sendTranscript()
+    window.addEventListener('beforeunload', handler)
+    return () => window.removeEventListener('beforeunload', handler)
+  }, [sendTranscript])
+
   function closeAndReset() {
+    sendTranscript()
     setOpen(false)
     setMessages([{ role: 'assistant', content: WELCOME[locale] ?? WELCOME.en }])
     setInput('')
     setShowWA(false)
+    sessionRef.current = newSession()
+    transcriptSentRef.current = false
   }
 
   async function send() {
@@ -187,6 +243,19 @@ export default function ChatWidget() {
               <Send className='h-4 w-4' />
             </button>
           </div>
+
+          {/* Privacy notice */}
+          <p className='px-4 pb-3 text-[10px] leading-snug text-gray-400 dark:text-gray-500'>
+            {PRIVACY_NOTICE[locale]?.text ?? PRIVACY_NOTICE.en.text}{' '}
+            <a
+              href={PRIVACY_NOTICE[locale]?.href ?? PRIVACY_NOTICE.en.href}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline transition-colors hover:text-[#F07B2A]'
+            >
+              {locale === 'sv' ? 'Integritetspolicy' : 'Privacy policy'}
+            </a>
+          </p>
 
         </div>
       )}
