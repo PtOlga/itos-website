@@ -29,7 +29,7 @@ const Location = () => {
           {/* Email + Phone */}
           <div className='flex flex-col gap-3'>
             <span className='select-all sm:text-2xl text-xl text-secondary dark:text-darkprimary font-medium'>
-              5441700@gmail.com
+              info@itos.nu
             </span>
             <Link
               href='tel:+46737686471'

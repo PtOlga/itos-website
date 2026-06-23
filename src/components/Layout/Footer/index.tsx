@@ -129,7 +129,7 @@ const Footer: FC = () => {
               </p>
               <ul className='flex flex-col gap-2'>
                 <li className={linkClass}>
-                  <span className='select-all'>5441700@gmail.com</span>
+                  <span className='select-all'>info@itos.nu</span>
                 </li>
                 <li className={linkClass}>
                   <Link href='tel:+46737686471'>+46 737 686 471</Link>
