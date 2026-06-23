@@ -7,6 +7,9 @@ const REQUIRED_ENV = [
   'NEXT_PUBLIC_EMAILJS_SERVICE_ID',
   'NEXT_PUBLIC_EMAILJS_TEMPLATE_ID',
   'NEXT_PUBLIC_EMAILJS_PUBLIC_KEY',
+  'ANTHROPIC_API_KEY',
+  'TELEGRAM_BOT_TOKEN',
+  'TELEGRAM_CHAT_ID',
 ]
 const missing = REQUIRED_ENV.filter((key) => !process.env[key])
 if (missing.length > 0) {
